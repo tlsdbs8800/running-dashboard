@@ -223,7 +223,7 @@ function planForUser(userData, userName, isGf = false) {
     {
       offset: 0, type: "couple",
       label: `커플런 ${coupleKm}km`,
-      desc: `여친 페이스 기준 · HR ${mafHR-10}~${mafHR} 유지 · 대화 가능한 속도 · 7:50~8:10/km`,
+      desc: `Jenny 페이스 기준 · HR ${mafHR-10}~${mafHR} 유지 · 대화 가능한 속도 · 7:50~8:10/km`,
     },
     {
       offset: 1, type: "rest",
@@ -259,7 +259,7 @@ function planForUser(userData, userName, isGf = false) {
     {
       offset: 0, type: "couple",
       label: `커플런 ${coupleKm}km`,
-      desc: "여친 페이스 맞추기 · Easy Z2 · HR 136~146(MAF) · 대화 가능한 속도",
+      desc: "Jenny 페이스 맞추기 · Easy Z2 · HR 136~146(MAF) · 대화 가능한 속도",
     },
     {
       offset: 1, type: "easy",
@@ -371,7 +371,7 @@ function generate() {
   const sunday = addDays(monday, 6);
 
   const yunhoPlan = planForUser(yunho, "윤호", false);
-  const gfPlan    = planForUser(gf, "여친", true);
+  const gfPlan    = planForUser(gf, "Jenny", true);
   const lthrTest  = lthrTestRecommendation(yunho);
 
   // If test is suitable this week, replace Thursday's Long Run note
@@ -396,10 +396,23 @@ function generate() {
   writeFileSync(join(__dirname, "data/weekly-plan.json"), JSON.stringify(plan, null, 2));
   console.log(`주간 훈련 계획 생성 완료 → ${monday} ~ ${sunday}`);
   if (plan.yunho) console.log(`  윤호: ${plan.yunho.phaseLabel}, 목표 ${plan.yunho.targetWeeklyKm}km`);
-  if (plan.gf)    console.log(`  여친: ${plan.gf.phaseLabel}, 목표 ${plan.gf.targetWeeklyKm}km`);
+  if (plan.gf)    console.log(`  Jenny: ${plan.gf.phaseLabel}, 목표 ${plan.gf.targetWeeklyKm}km`);
 
   // Regenerate dashboard with new plan
   execSync("node generate-dashboard.js", { cwd: __dirname, stdio: "inherit" });
+
+  // Push updated dashboard to GitHub Pages
+  try {
+    execSync("git add dashboard.html", { cwd: __dirname, stdio: "pipe" });
+    const today = new Date().toISOString().substring(0, 10);
+    execSync(`git commit -m "dashboard: ${today} 주간 계획 갱신"`, { cwd: __dirname, stdio: "pipe" });
+    execSync("git push", { cwd: __dirname, stdio: "pipe" });
+    console.log("GitHub Pages 푸시 완료 ✓");
+  } catch (e) {
+    if (!e.stderr?.toString().includes("nothing to commit")) {
+      console.log("GitHub 푸시 실패:", e.message?.split("\n")[0]);
+    }
+  }
 }
 
 generate();

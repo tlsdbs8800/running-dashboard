@@ -28,7 +28,7 @@ const USERS = {
   gf: {
     sessionFile: join(__dirname, "sessions/gf-session.json"),
     dataFile: join(__dirname, "data/gf.json"),
-    name: "여친",
+    name: "Jenny",
     birthYear: 2001,
     targetWeightKg: null,
     goalDistanceKm: 20,
@@ -318,7 +318,7 @@ async function main() {
     } catch (err) {
       console.error(`[${USERS[userId].name}] 동기화 실패: ${err.message}`);
       if (err.message.includes("401")) {
-        console.error(`  → 세션 만료됨. ${userId === "yunho" ? "윤호" : "여친"} 가민에 재로그인 후 쿠키를 sessions/${userId}-session.json에 업데이트해주세요.`);
+        console.error(`  → 세션 만료됨. ${userId === "yunho" ? "윤호" : "Jenny"} 가민에 재로그인 후 쿠키를 sessions/${userId}-session.json에 업데이트해주세요.`);
       }
     }
   }
@@ -327,14 +327,29 @@ async function main() {
 async function generateDashboard() {
   try {
     const { default: generate } = await import("./generate-dashboard.js?" + Date.now());
-    // generate-dashboard.js calls generate() on import — already done
   } catch (e) {
-    // Re-run as a fresh module (import cache workaround)
     const { execSync } = await import("node:child_process");
     execSync("node generate-dashboard.js", { cwd: __dirname, stdio: "inherit" });
   }
 }
 
+async function pushDashboard() {
+  const { execSync } = await import("node:child_process");
+  try {
+    execSync('git add dashboard.html', { cwd: __dirname, stdio: "pipe" });
+    const today = new Date().toISOString().substring(0, 10);
+    execSync(`git commit -m "dashboard: ${today} 자동 갱신"`, { cwd: __dirname, stdio: "pipe" });
+    execSync('git push', { cwd: __dirname, stdio: "inherit" });
+    console.log("대시보드 GitHub 푸시 완료 ✓");
+  } catch (e) {
+    // No changes to commit, or push failed — non-fatal
+    if (!e.message?.includes("nothing to commit")) {
+      console.log("GitHub 푸시 실패 (원격 연결 확인):", e.message?.split("\n")[0]);
+    }
+  }
+}
+
 main()
   .then(() => generateDashboard())
+  .then(() => pushDashboard())
   .catch(console.error);

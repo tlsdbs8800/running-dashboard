@@ -199,37 +199,37 @@ function generate() {
     --gf: #ec4899;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); font-size: 14px; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
-  h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
-  .sync-time { font-size: 12px; color: var(--text3); margin-bottom: 24px; }
-  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  body { font-family: -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); font-size: 14px; -webkit-text-size-adjust: 100%; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px 16px; }
+  h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .sync-time { font-size: 12px; color: var(--text3); margin-bottom: 20px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  @media (max-width: 700px) { .grid2, .grid3, .grid4 { grid-template-columns: 1fr; } }
-  .card { background: var(--card); border-radius: 12px; padding: 18px 20px; border: 1px solid var(--border); }
-  .card-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text3); margin-bottom: 12px; }
-  .big-num { font-size: 32px; font-weight: 700; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .card { background: var(--card); border-radius: 12px; padding: 16px 18px; border: 1px solid var(--border); }
+  .card-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text3); margin-bottom: 10px; }
+  .big-num { font-size: 30px; font-weight: 700; }
   .sub { font-size: 12px; color: var(--text2); margin-top: 4px; }
   .badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 600; }
   .badge-low { background: #fef3c7; color: #92400e; }
   .badge-moderate { background: #dbeafe; color: #1e40af; }
   .badge-high { background: #dcfce7; color: #166534; }
   .badge-ok { background: #dcfce7; color: #166534; }
-  .section-title { font-size: 16px; font-weight: 700; margin: 28px 0 12px; }
-  .runner-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-  .runner-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .section-title { font-size: 15px; font-weight: 700; margin: 24px 0 10px; }
+  .runner-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .runner-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .runner-name { font-size: 13px; font-weight: 600; }
   /* Roadmap */
-  .roadmap { position: relative; padding: 8px 0; }
+  .roadmap { position: relative; padding: 6px 0; }
   .roadmap-track { height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; margin: 8px 0; }
   .roadmap-fill { height: 100%; border-radius: 99px; transition: width .4s ease; }
   .roadmap-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--text3); }
   .roadmap-markers { display: flex; justify-content: space-between; font-size: 10px; color: var(--text3); margin-top: 4px; }
   /* Table */
-  table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  th { text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--text3); padding: 6px 8px; border-bottom: 1px solid var(--border); }
-  td { padding: 8px 8px; border-bottom: 1px solid var(--border); }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 420px; }
+  th { text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--text3); padding: 6px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  td { padding: 8px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
   tr:last-child td { border-bottom: none; }
   .pace-chip { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 500; }
   .z1 { background: #ecfdf5; color: #065f46; }
@@ -238,6 +238,27 @@ function generate() {
   .z4 { background: #fff1f2; color: #9f1239; }
   /* Chart containers */
   .chart-wrap { position: relative; height: 180px; }
+
+  /* ── 모바일 ── */
+  @media (max-width: 680px) {
+    .container { padding: 14px 12px; }
+    h1 { font-size: 17px; }
+    .grid2, .grid3, .grid4 { grid-template-columns: 1fr; gap: 10px; }
+    .card { padding: 14px 14px; border-radius: 10px; }
+    .big-num { font-size: 26px; }
+    .section-title { font-size: 14px; margin: 20px 0 8px; }
+    .chart-wrap { height: 160px; }
+    /* status grid: 2x2 on mobile */
+    .grid4 { grid-template-columns: 1fr 1fr; }
+    /* roadmap markers — hide middle ones on very small screens */
+    .roadmap-markers span:nth-child(2),
+    .roadmap-markers span:nth-child(3) { display: none; }
+    /* weekly plan day rows */
+    .day-desc { display: none; }
+  }
+  @media (max-width: 380px) {
+    .grid4 { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
@@ -306,7 +327,7 @@ function generate() {
     <div class="card">
       <div class="runner-header">
         <div class="runner-dot" style="background:var(--gf)"></div>
-        <div class="runner-name">여친</div>
+        <div class="runner-name">Jenny</div>
         <span class="badge badge-ok" style="margin-left:auto">Long Run ${gfCurrentLR.toFixed(1)}km</span>
       </div>
       <div class="roadmap">
@@ -327,7 +348,7 @@ function generate() {
       <div style="margin-top:8px;font-size:11px;color:var(--text3)">목표: 2026년 말까지 20km 편안하게 완주 · 주 3회 올 이지</div>
     </div>` : `
     <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:120px;color:var(--text3);flex-direction:column;gap:8px">
-      <div>여친 데이터 연동 대기 중</div>
+      <div>Jenny 데이터 연동 대기 중</div>
       <div style="font-size:12px">sessions/gf-session.json 추가 필요</div>
     </div>`}
   </div>
@@ -348,9 +369,9 @@ function generate() {
     </div>
   </div>
 
-  <!-- Pace Trend + HR Zone (여친) -->
+  <!-- Pace Trend + HR Zone (Jenny) -->
   ${gf ? `
-  <div class="section-title">페이스 트렌드 &amp; HR 존 분포 — 여친</div>
+  <div class="section-title">페이스 트렌드 &amp; HR 존 분포 — Jenny</div>
   <div class="grid2">
     <div class="card">
       <div class="card-title">페이스 추이 (최근 20회)</div>
@@ -438,7 +459,7 @@ function generate() {
   <div class="grid2">
     ${["yunho", "gf"].map((uid) => {
       const p = plan[uid];
-      if (!p) return `<div class="card" style="color:var(--text3);display:flex;align-items:center;justify-content:center">${uid === "gf" ? "여친 계획 없음" : "윤호 계획 없음"}</div>`;
+      if (!p) return `<div class="card" style="color:var(--text3);display:flex;align-items:center;justify-content:center">${uid === "gf" ? "Jenny 계획 없음" : "윤호 계획 없음"}</div>`;
       const typeColor = { rest: "#e5e7eb", easy: "#dcfce7", tempo: "#dbeafe", long: "#ede9fe", couple: "#fce7f3", fasted: "#fef9c3" };
       const typeText  = { rest: "#6b7280", easy: "#166534", tempo: "#1e40af", long: "#6d28d9", couple: "#9d174d", fasted: "#854d0e" };
       return `
@@ -455,7 +476,7 @@ function generate() {
             <div style="width:24px;height:24px;border-radius:50%;background:${typeColor[day.type] ?? "#e5e7eb"};color:${typeText[day.type] ?? "#374151"};display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">${day.dayName}</div>
             <div style="flex:1;min-width:0">
               <div style="font-size:12px;font-weight:500;color:${typeText[day.type] ?? "var(--text)"}">${day.label}</div>
-              ${day.desc ? `<div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${day.desc}</div>` : ""}
+              ${day.desc ? `<div class="day-desc" style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${day.desc}</div>` : ""}
             </div>
             <div style="font-size:10px;color:var(--text3);flex-shrink:0">${day.date.slice(5)}</div>
           </div>`).join("")}
@@ -475,15 +496,11 @@ function generate() {
   <!-- Recent Runs Table -->
   <div class="section-title">최근 러닝 기록 (윤호)</div>
   <div class="card">
+    <div class="table-wrap">
     <table>
       <thead>
         <tr>
-          <th>날짜</th>
-          <th>거리</th>
-          <th>페이스</th>
-          <th>평균 HR</th>
-          <th>시간</th>
-          <th>HR 존</th>
+          <th>날짜</th><th>거리</th><th>페이스</th><th>평균 HR</th><th>시간</th><th>HR 존</th>
         </tr>
       </thead>
       <tbody>
@@ -503,12 +520,14 @@ function generate() {
         }).join("")}
       </tbody>
     </table>
+    </div>
   </div>
 
   <!-- GF Runs Table -->
   ${gfRecentRuns.length > 0 ? `
-  <div class="section-title">최근 러닝 기록 (여친)</div>
+  <div class="section-title">최근 러닝 기록 (Jenny)</div>
   <div class="card">
+    <div class="table-wrap">
     <table>
       <thead><tr><th>날짜</th><th>거리</th><th>페이스</th><th>평균 HR</th><th>시간</th><th>HR 존</th></tr></thead>
       <tbody>
@@ -528,6 +547,7 @@ function generate() {
         }).join("")}
       </tbody>
     </table>
+    </div>
   </div>` : ''}
 
 </div>
@@ -555,7 +575,7 @@ new Chart(document.getElementById('weeklyChart'), {
     labels: yunhoWeekly.map(w => w.label),
     datasets: [
       { label: '윤호 (km)', data: yunhoWeekly.map(w => w.km), backgroundColor: 'rgba(59,130,246,0.7)', borderRadius: 4 },
-      ...(gfWeekly.length ? [{ label: '여친 (km)', data: gfWeekly.map(w => w.km), backgroundColor: 'rgba(236,72,153,0.7)', borderRadius: 4 }] : [])
+      ...(gfWeekly.length ? [{ label: 'Jenny (km)', data: gfWeekly.map(w => w.km), backgroundColor: 'rgba(236,72,153,0.7)', borderRadius: 4 }] : [])
     ]
   },
   options: { ...chartDefaults, scales: { ...chartDefaults.scales, y: { ...chartDefaults.scales.y, title: { display: true, text: 'km' } } } }
@@ -569,7 +589,7 @@ new Chart(document.getElementById('longRunChart'), {
     labels: lrLabels,
     datasets: [
       { label: '윤호 Long Run (km)', data: yunhoLR.map(w => w.km), borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', tension: 0.3, fill: true, pointRadius: 4 },
-      ...(gfLR.length ? [{ label: '여친 Long Run (km)', data: gfLR.map(w => w.km), borderColor: '#ec4899', backgroundColor: 'rgba(236,72,153,0.1)', tension: 0.3, fill: true, pointRadius: 4 }] : []),
+      ...(gfLR.length ? [{ label: 'Jenny Long Run (km)', data: gfLR.map(w => w.km), borderColor: '#ec4899', backgroundColor: 'rgba(236,72,153,0.1)', tension: 0.3, fill: true, pointRadius: 4 }] : []),
       { label: '목표 (21.1km)', data: lrLabels.map(() => 21.1), borderColor: '#22c55e', borderDash: [5,5], borderWidth: 1.5, pointRadius: 0, fill: false }
     ]
   },
