@@ -1,0 +1,14 @@
+{
+  "name": "running-tracker",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "sync": "node sync.js",
+    "sync:yunho": "node sync.js --user yunho",
+    "sync:gf": "node sync.js --user gf",
+    "dashboard": "open dashboard.html"
+  },
+  "dependencies": {
+    "@etweisberg/garmin-connect-mcp": "^0.1.22"
+  }
+}

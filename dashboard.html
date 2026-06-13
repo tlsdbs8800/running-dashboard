@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>러닝 코치 대시보드</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #f4f4f8;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --text2: #555577;
+    --text3: #8888aa;
+    --border: #e0e0f0;
+    --blue: #3b82f6;
+    --green: #22c55e;
+    --orange: #f97316;
+    --red: #ef4444;
+    --purple: #a855f7;
+    --yunho: #3b82f6;
+    --gf: #ec4899;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); font-size: 14px; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+  h1 { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+  .sync-time { font-size: 12px; color: var(--text3); margin-bottom: 24px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 700px) { .grid2, .grid3, .grid4 { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border-radius: 12px; padding: 18px 20px; border: 1px solid var(--border); }
+  .card-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text3); margin-bottom: 12px; }
+  .big-num { font-size: 32px; font-weight: 700; }
+  .sub { font-size: 12px; color: var(--text2); margin-top: 4px; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 99px; font-size: 11px; font-weight: 600; }
+  .badge-low { background: #fef3c7; color: #92400e; }
+  .badge-moderate { background: #dbeafe; color: #1e40af; }
+  .badge-high { background: #dcfce7; color: #166534; }
+  .badge-ok { background: #dcfce7; color: #166534; }
+  .section-title { font-size: 16px; font-weight: 700; margin: 28px 0 12px; }
+  .runner-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .runner-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .runner-name { font-size: 13px; font-weight: 600; }
+  /* Roadmap */
+  .roadmap { position: relative; padding: 8px 0; }
+  .roadmap-track { height: 8px; background: var(--border); border-radius: 99px; overflow: hidden; margin: 8px 0; }
+  .roadmap-fill { height: 100%; border-radius: 99px; transition: width .4s ease; }
+  .roadmap-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--text3); }
+  .roadmap-markers { display: flex; justify-content: space-between; font-size: 10px; color: var(--text3); margin-top: 4px; }
+  /* Table */
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--text3); padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  td { padding: 8px 8px; border-bottom: 1px solid var(--border); }
+  tr:last-child td { border-bottom: none; }
+  .pace-chip { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 500; }
+  .z1 { background: #ecfdf5; color: #065f46; }
+  .z2 { background: #eff6ff; color: #1e40af; }
+  .z3 { background: #fffbeb; color: #92400e; }
+  .z4 { background: #fff1f2; color: #9f1239; }
+  /* Chart containers */
+  .chart-wrap { position: relative; height: 180px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🏃 러닝 코치 대시보드</h1>
+  <div class="sync-time">마지막 동기화: 2026. 6. 13. 오후 9:36:18</div>
+
+  <!-- Status Cards -->
+  <div class="section-title">오늘 상태</div>
+  <div class="grid4">
+    <div class="card">
+      <div class="card-title">훈련 준비도</div>
+      <div class="big-num" style="color:var(--orange)">
+        42<span style="font-size:16px;font-weight:400">/100</span>
+      </div>
+      <div class="sub">
+        <span class="badge badge-low">
+          LOW
+        </span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">수면 점수</div>
+      <div class="big-num">64</div>
+      <div class="sub">5시간 54분</div>
+    </div>
+    <div class="card">
+      <div class="card-title">VO2 Max</div>
+      <div class="big-num">44.6</div>
+      <div class="sub">평균~양호 구간</div>
+    </div>
+    <div class="card">
+      <div class="card-title">체중</div>
+      <div class="big-num">72<span style="font-size:16px;font-weight:400">kg</span></div>
+      <div class="sub">목표 70kg · 잔여 2.0kg</div>
+    </div>
+  </div>
+
+  <!-- Half Marathon Roadmap -->
+  <div class="section-title">하프 마라톤 로드맵 — 목표 21.1km / 2시간</div>
+  <div class="grid2">
+    
+    <div class="card">
+      <div class="runner-header">
+        <div class="runner-dot" style="background:var(--yunho)"></div>
+        <div class="runner-name">윤호</div>
+        <span class="badge badge-ok" style="margin-left:auto">Long Run 10.0km</span>
+      </div>
+      <div class="roadmap">
+        <div class="roadmap-track"><div class="roadmap-fill" style="width:47.4%;background:var(--yunho)"></div></div>
+        <div class="roadmap-labels">
+          <span>0km</span>
+          <span style="font-weight:600;color:var(--yunho)">10.0km ← 지금</span>
+          <span>21.1km</span>
+        </div>
+        <div class="roadmap-markers" style="margin-top:8px">
+          <span>▲<br>현재</span>
+          <span style="text-align:center">▲<br>12km</span>
+          <span style="text-align:center">▲<br>15km</span>
+          <span style="text-align:center">▲<br>18km</span>
+          <span style="text-align:right">🏁<br>21.1km</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="runner-header">
+        <div class="runner-dot" style="background:var(--gf)"></div>
+        <div class="runner-name">여친</div>
+        <span class="badge badge-ok" style="margin-left:auto">Long Run 10.0km</span>
+      </div>
+      <div class="roadmap">
+        <div class="roadmap-track"><div class="roadmap-fill" style="width:50.2%;background:var(--gf)"></div></div>
+        <div class="roadmap-labels">
+          <span>0km</span>
+          <span style="font-weight:600;color:var(--gf)">10.0km ← 지금</span>
+          <span>20km</span>
+        </div>
+        <div class="roadmap-markers" style="margin-top:8px">
+          <span>▲<br>현재</span>
+          <span style="text-align:center">▲<br>10km</span>
+          <span style="text-align:center">▲<br>14km</span>
+          <span style="text-align:center">▲<br>17km</span>
+          <span style="text-align:right">🏁<br>20km</span>
+        </div>
+      </div>
+      <div style="margin-top:8px;font-size:11px;color:var(--text3)">목표: 2026년 말까지 20km 편안하게 완주 · 주 3회 올 이지</div>
+    </div>
+  </div>
+
+  <!-- Pace Trend + HR Zone (윤호) -->
+  <div class="section-title">페이스 트렌드 &amp; HR 존 분포 — 윤호</div>
+  <div class="grid2">
+    <div class="card">
+      <div class="card-title">페이스 추이 (최근 20회)</div>
+      <div class="chart-wrap"><canvas id="paceTrendChart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">HR 존 분포 (최근 30회)</div>
+      <div class="chart-wrap" style="height:160px"><canvas id="hrZoneChart"></canvas></div>
+      <div style="font-size:11px;color:var(--text3);margin-top:8px;text-align:center">
+        MAF 146 · Z1 &lt;136 · Z2 136~146 · Z3 ~161 · Z4 ~174 · Z5 175+
+      </div>
+    </div>
+  </div>
+
+  <!-- Pace Trend + HR Zone (여친) -->
+  
+  <div class="section-title">페이스 트렌드 &amp; HR 존 분포 — 여친</div>
+  <div class="grid2">
+    <div class="card">
+      <div class="card-title">페이스 추이 (최근 20회)</div>
+      <div class="chart-wrap"><canvas id="gfPaceTrendChart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">HR 존 분포 (최근 30회)</div>
+      <div class="chart-wrap" style="height:160px"><canvas id="gfHrZoneChart"></canvas></div>
+      <div style="font-size:11px;color:var(--text3);margin-top:8px;text-align:center">
+        MAF 155 · Z1 &lt;145 · Z2 145~155 · Z3 ~170 · Z4 ~183 · Z5 184+
+      </div>
+    </div>
+  </div>
+
+  <!-- Weight Trend + Guide -->
+  <div class="section-title">체중 트렌드</div>
+  <div class="grid2">
+    <div class="card">
+      <div class="card-title">체중 변화 (목표 70kg)</div>
+      <div class="chart-wrap"><canvas id="weightChart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-title">체중 기록 가이드</div>
+      <div style="display:flex;flex-direction:column;gap:10px;font-size:13px">
+        <div style="display:flex;gap:10px;align-items:flex-start">
+          <span style="font-size:18px">📅</span>
+          <div><strong>주 1회 — 매주 월요일 아침</strong><br>
+          <span style="color:var(--text2);font-size:12px">하프 훈련 기간 내내 같은 요일 유지. 화요일 Solo Run 전날이라 컨디션도 안정적.</span></div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start">
+          <span style="font-size:18px">⏰</span>
+          <div><strong>기상 직후, 화장실 다녀온 뒤</strong><br>
+          <span style="color:var(--text2);font-size:12px">음식·물 섭취 전. 이 조건만 지키면 ±0.3kg 오차 이내로 일관성 유지됨.</span></div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start">
+          <span style="font-size:18px">📈</span>
+          <div><strong>4주 트렌드로 판단</strong><br>
+          <span style="color:var(--text2);font-size:12px">일주일 단위 등락은 무시. 장거리 런 다음날은 염증으로 1~2kg 늘 수 있음 — 정상.</span></div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:flex-start">
+          <span style="font-size:18px">💻</span>
+          <div><strong>기록 방법</strong><br>
+          <code style="font-size:12px;background:var(--bg);padding:2px 6px;border-radius:4px">node log-weight.js 71.5</code><br>
+          <span style="color:var(--text2);font-size:12px">터미널에서 실행하면 대시보드 자동 갱신.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Weekly Mileage Chart -->
+  <div class="section-title">주간 누적 거리 (최근 12주)</div>
+  <div class="card">
+    <div class="chart-wrap"><canvas id="weeklyChart"></canvas></div>
+  </div>
+
+  <!-- Long Run Progression -->
+  <div class="section-title">Long Run 거리 진행 (최근 12주)</div>
+  <div class="card">
+    <div class="chart-wrap"><canvas id="longRunChart"></canvas></div>
+  </div>
+
+  <!-- LTHR Test Banner -->
+  
+  <div style="margin:24px 0 0;padding:14px 18px;border-radius:10px;border-left:4px solid #d1d5db;background:#f9fafb;display:flex;align-items:center;gap:12px">
+    <span style="font-size:22px">⏳</span>
+    <div>
+      <div style="font-size:13px;font-weight:600;color:#6b7280">
+        LTHR 테스트 — 아직 아님
+      </div>
+      <div style="font-size:12px;color:#9ca3af;margin-top:2px">
+        준비도 42/100 — 60 이상일 때 추천
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Weekly Training Plan -->
+  
+  <div class="section-title">이번 주 훈련 계획 <span style="font-size:12px;font-weight:400;color:var(--text3)">2026-06-15 ~ 2026-06-21</span></div>
+  <div class="grid2">
+    
+      <div class="card">
+        <div class="runner-header" style="margin-bottom:8px">
+          <div class="runner-dot" style="background:var(--yunho)"></div>
+          <div class="runner-name">윤호</div>
+          <span style="font-size:11px;color:var(--text3);margin-left:auto">발전 단계 · 목표 27km</span>
+        </div>
+        <div style="font-size:12px;color:var(--text2);margin-bottom:10px;padding:6px 8px;background:var(--bg);border-radius:6px">🔴 볼륨 줄이고 회복 우선 — ⚠ 주간 볼륨 37% 증가 — 10% 룰 초과 준비도 보통(42/100).</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#fce7f3;color:#9d174d;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">월</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#9d174d">커플런 6km</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">여친 페이스 맞추기 · Easy Z2 · HR 136~146(MAF) · 대화 가능한 속도</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-15</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#dcfce7;color:#166534;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">화</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#166534">Solo Easy Run 6km</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">혼자 HR 136~146(MAF) 유지 · 페이스 신경 끄기 · 처음엔 9:00/km 이상도 정상</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-16</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#e5e7eb;color:#6b7280;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">수</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#6b7280">휴식</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">스트레칭 or 폼롤러 · 내일 롱런 준비</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-17</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#ede9fe;color:#6d28d9;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">목</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#6d28d9">Long Run 10km</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">전체 Easy Z2 · 준비도 낮음(42/100) — 완주가 목표</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-18</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#e5e7eb;color:#6b7280;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">금</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#6b7280">휴식</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">롱런 다음날 완전 회복 · 가벼운 걷기 OK</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-19</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#fef9c3;color:#854d0e;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">토</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#854d0e">공복런 5km</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">기상 직후 아무것도 안 먹고 · Easy Z2 · HR 136~146(MAF) · 지방 연소 최적 구간</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-20</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#e5e7eb;color:#6b7280;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">일</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#6b7280">휴식</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">한 주 마무리 · 다음 주 계획 확인</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-21</div>
+          </div>
+        </div>
+        <div style="margin-top:10px;font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:8px">
+          지난주 5회 · 27.5km · Long Run 10km
+        </div>
+      </div>
+      <div class="card">
+        <div class="runner-header" style="margin-bottom:8px">
+          <div class="runner-dot" style="background:var(--gf)"></div>
+          <div class="runner-name">여친</div>
+          <span style="font-size:11px;color:var(--text3);margin-left:auto">기초 단계 · 목표 12km</span>
+        </div>
+        <div style="font-size:12px;color:var(--text2);margin-bottom:10px;padding:6px 8px;background:var(--bg);border-radius:6px">🟡 플래그 확인 후 강도 조절 — ⚠ 평균 페이스 7:42/km — 목표보다 빠름 (7:50~8:10 유지)</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#fce7f3;color:#9d174d;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">월</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#9d174d">커플런 5km</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">여친 페이스 기준 · HR 145~155 유지 · 대화 가능한 속도 · 7:50~8:10/km</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-15</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#e5e7eb;color:#6b7280;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">화</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#6b7280">휴식</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">가벼운 스트레칭 OK · 런 사이 최소 1일 휴식</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-16</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#e5e7eb;color:#6b7280;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">수</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#6b7280">휴식</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">내일 롱런 준비 · 충분한 수면</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-17</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#ede9fe;color:#6d28d9;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">목</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#6d28d9">Long Run 7.7km</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">전체 Easy Z2 · HR 155 이하 유지 · 7:50~8:10/km · 준비도 미확인/100</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-18</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#e5e7eb;color:#6b7280;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">금</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#6b7280">휴식</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">롱런 다음날 완전 회복 · 가벼운 걷기 OK</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-19</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#dcfce7;color:#166534;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">토</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#166534">Easy Run 4km</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">이지 런 · HR 155 이하 · 7:50~8:10/km · 다리 풀어주기</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-20</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;border-radius:50%;background:#e5e7eb;color:#6b7280;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;flex-shrink:0">일</div>
+            <div style="flex:1;min-width:0">
+              <div style="font-size:12px;font-weight:500;color:#6b7280">휴식</div>
+              <div style="font-size:11px;color:var(--text3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">한 주 마무리 · 다음 주 계획 확인</div>
+            </div>
+            <div style="font-size:10px;color:var(--text3);flex-shrink:0">06-21</div>
+          </div>
+        </div>
+        <div style="margin-top:10px;font-size:11px;color:var(--text3);border-top:1px solid var(--border);padding-top:8px">
+          지난주 1회 · 5km · Long Run 7km
+        </div>
+      </div>
+  </div>
+
+  <!-- Recent Runs Table -->
+  <div class="section-title">최근 러닝 기록 (윤호)</div>
+  <div class="card">
+    <table>
+      <thead>
+        <tr>
+          <th>날짜</th>
+          <th>거리</th>
+          <th>페이스</th>
+          <th>평균 HR</th>
+          <th>시간</th>
+          <th>HR 존</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>2026-06-13 09:48:35</td>
+            <td>2.48km</td>
+            <td>7:06/km</td>
+            <td>152 bpm</td>
+            <td>17:37</td>
+            <td><span class="pace-chip z3">Z3</span></td>
+          </tr><tr>
+            <td>2026-06-11 15:27:11</td>
+            <td>10.01km</td>
+            <td>7:59/km</td>
+            <td>144 bpm</td>
+            <td>1:19:55</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
+            <td>2026-06-09 16:50:01</td>
+            <td>5.00km</td>
+            <td>7:40/km</td>
+            <td>145 bpm</td>
+            <td>38:19</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
+            <td>2026-06-08 15:00:37</td>
+            <td>5.01km</td>
+            <td>7:49/km</td>
+            <td>133 bpm</td>
+            <td>39:10</td>
+            <td><span class="pace-chip z1">Z1</span></td>
+          </tr><tr>
+            <td>2026-06-06 09:58:10</td>
+            <td>5.00km</td>
+            <td>7:45/km</td>
+            <td>136 bpm</td>
+            <td>38:48</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
+            <td>2026-06-04 16:15:39</td>
+            <td>10.01km</td>
+            <td>8:02/km</td>
+            <td>140 bpm</td>
+            <td>1:20:20</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
+            <td>2026-06-02 16:49:56</td>
+            <td>5.00km</td>
+            <td>7:47/km</td>
+            <td>145 bpm</td>
+            <td>38:59</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
+            <td>2026-06-01 16:27:57</td>
+            <td>5.00km</td>
+            <td>7:52/km</td>
+            <td>135 bpm</td>
+            <td>39:24</td>
+            <td><span class="pace-chip z1">Z1</span></td>
+          </tr><tr>
+            <td>2026-05-29 15:25:01</td>
+            <td>10.01km</td>
+            <td>7:55/km</td>
+            <td>143 bpm</td>
+            <td>1:19:08</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
+            <td>2026-05-28 16:52:14</td>
+            <td>5.01km</td>
+            <td>7:50/km</td>
+            <td>134 bpm</td>
+            <td>39:15</td>
+            <td><span class="pace-chip z1">Z1</span></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- GF Runs Table -->
+  
+  <div class="section-title">최근 러닝 기록 (여친)</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>날짜</th><th>거리</th><th>페이스</th><th>평균 HR</th><th>시간</th><th>HR 존</th></tr></thead>
+      <tbody>
+        <tr>
+            <td>2026-06-06 09:58:10</td>
+            <td>5.01km</td>
+            <td>7:42/km</td>
+            <td>141 bpm</td>
+            <td>38:35</td>
+            <td><span class="pace-chip z1">Z1</span></td>
+          </tr><tr>
+            <td>2026-06-04 16:40:40</td>
+            <td>7.00km</td>
+            <td>8:06/km</td>
+            <td>142 bpm</td>
+            <td>56:47</td>
+            <td><span class="pace-chip z1">Z1</span></td>
+          </tr><tr>
+            <td>2026-05-28 16:52:14</td>
+            <td>5.03km</td>
+            <td>7:48/km</td>
+            <td>152 bpm</td>
+            <td>39:14</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
+            <td>2026-05-05 16:29:56</td>
+            <td>5.01km</td>
+            <td>7:53/km</td>
+            <td>153 bpm</td>
+            <td>39:29</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
+            <td>2026-05-01 15:48:32</td>
+            <td>7.01km</td>
+            <td>8:10/km</td>
+            <td>143 bpm</td>
+            <td>57:15</td>
+            <td><span class="pace-chip z1">Z1</span></td>
+          </tr><tr>
+            <td>2026-04-30 17:51:22</td>
+            <td>5.08km</td>
+            <td>8:21/km</td>
+            <td>145 bpm</td>
+            <td>42:25</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
+            <td>2026-04-21 17:21:54</td>
+            <td>5.01km</td>
+            <td>7:52/km</td>
+            <td>146 bpm</td>
+            <td>39:29</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
+            <td>2026-04-17 15:40:43</td>
+            <td>10.01km</td>
+            <td>7:58/km</td>
+            <td>151 bpm</td>
+            <td>1:19:43</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
+            <td>2026-04-16 17:49:05</td>
+            <td>5.04km</td>
+            <td>7:51/km</td>
+            <td>143 bpm</td>
+            <td>39:33</td>
+            <td><span class="pace-chip z1">Z1</span></td>
+          </tr><tr>
+            <td>2026-04-14 17:39:00</td>
+            <td>3.57km</td>
+            <td>7:54/km</td>
+            <td>149 bpm</td>
+            <td>28:10</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<script>
+const yunhoWeekly = [{"label":"03/22","km":10.8},{"label":"03/29","km":19},{"label":"04/05","km":26},{"label":"04/12","km":23.6},{"label":"04/19","km":20},{"label":"04/26","km":20.9},{"label":"05/03","km":20},{"label":"05/10","km":20},{"label":"05/17","km":25},{"label":"05/24","km":20},{"label":"05/31","km":20},{"label":"06/07","km":20}];
+const gfWeekly = [{"label":"03/22","km":0},{"label":"03/29","km":0},{"label":"04/05","km":0},{"label":"04/12","km":18.6},{"label":"04/19","km":5},{"label":"04/26","km":12.1},{"label":"05/03","km":5},{"label":"05/10","km":0},{"label":"05/17","km":0},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":0}];
+const yunhoLR = [{"label":"03/22","km":6.6},{"label":"03/29","km":9},{"label":"04/05","km":10},{"label":"04/12","km":10},{"label":"04/19","km":10},{"label":"04/26","km":10},{"label":"05/03","km":10},{"label":"05/10","km":10},{"label":"05/17","km":10},{"label":"05/24","km":10},{"label":"05/31","km":10},{"label":"06/07","km":10}];
+const gfLR = [{"label":"03/22","km":null},{"label":"03/29","km":null},{"label":"04/05","km":null},{"label":"04/12","km":10},{"label":"04/19","km":5},{"label":"04/26","km":7},{"label":"05/03","km":5},{"label":"05/10","km":null},{"label":"05/17","km":null},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":null}];
+
+const chartDefaults = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: { legend: { position: 'top', labels: { font: { size: 12 } } } },
+  scales: {
+    x: { ticks: { font: { size: 11 }, maxRotation: 45 }, grid: { display: false } },
+    y: { ticks: { font: { size: 11 } }, beginAtZero: true }
+  }
+};
+
+// Weekly mileage bar chart
+new Chart(document.getElementById('weeklyChart'), {
+  type: 'bar',
+  data: {
+    labels: yunhoWeekly.map(w => w.label),
+    datasets: [
+      { label: '윤호 (km)', data: yunhoWeekly.map(w => w.km), backgroundColor: 'rgba(59,130,246,0.7)', borderRadius: 4 },
+      ...(gfWeekly.length ? [{ label: '여친 (km)', data: gfWeekly.map(w => w.km), backgroundColor: 'rgba(236,72,153,0.7)', borderRadius: 4 }] : [])
+    ]
+  },
+  options: { ...chartDefaults, scales: { ...chartDefaults.scales, y: { ...chartDefaults.scales.y, title: { display: true, text: 'km' } } } }
+});
+
+// Long Run progression line chart
+const lrLabels = yunhoLR.map(w => w.label);
+new Chart(document.getElementById('longRunChart'), {
+  type: 'line',
+  data: {
+    labels: lrLabels,
+    datasets: [
+      { label: '윤호 Long Run (km)', data: yunhoLR.map(w => w.km), borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', tension: 0.3, fill: true, pointRadius: 4 },
+      ...(gfLR.length ? [{ label: '여친 Long Run (km)', data: gfLR.map(w => w.km), borderColor: '#ec4899', backgroundColor: 'rgba(236,72,153,0.1)', tension: 0.3, fill: true, pointRadius: 4 }] : []),
+      { label: '목표 (21.1km)', data: lrLabels.map(() => 21.1), borderColor: '#22c55e', borderDash: [5,5], borderWidth: 1.5, pointRadius: 0, fill: false }
+    ]
+  },
+  options: { ...chartDefaults, scales: { ...chartDefaults.scales, y: { ...chartDefaults.scales.y, suggestedMax: 25, title: { display: true, text: 'km' } } } }
+});
+
+// Pace trend (sec/km → display as min:sec)
+const paceTrend = [{"date":"05-07 15:28:14","pace":473,"hr":140,"zone":2},{"date":"05-08 15:00:55","pace":465,"hr":154,"zone":3},{"date":"05-11 17:05:10","pace":440,"hr":135,"zone":1},{"date":"05-14 15:18:10","pace":463,"hr":137,"zone":2},{"date":"05-15 15:00:19","pace":460,"hr":141,"zone":2},{"date":"05-18 16:36:24","pace":466,"hr":139,"zone":2},{"date":"05-19 16:27:30","pace":478,"hr":134,"zone":1},{"date":"05-21 15:07:56","pace":465,"hr":129,"zone":1},{"date":"05-22 15:13:31","pace":472,"hr":146,"zone":2},{"date":"05-25 16:23:09","pace":481,"hr":135,"zone":1},{"date":"05-28 16:52:14","pace":470,"hr":134,"zone":1},{"date":"05-29 15:25:01","pace":475,"hr":143,"zone":2},{"date":"06-01 16:27:57","pace":472,"hr":135,"zone":1},{"date":"06-02 16:49:56","pace":467,"hr":145,"zone":2},{"date":"06-04 16:15:39","pace":482,"hr":140,"zone":2},{"date":"06-06 09:58:10","pace":465,"hr":136,"zone":2},{"date":"06-08 15:00:37","pace":469,"hr":133,"zone":1},{"date":"06-09 16:50:01","pace":460,"hr":145,"zone":2},{"date":"06-11 15:27:11","pace":479,"hr":144,"zone":2},{"date":"06-13 09:48:35","pace":426,"hr":152,"zone":3}];
+const zoneColors = ['#6b7280','#16a34a','#2563eb','#d97706','#dc2626','#9333ea'];
+if (document.getElementById('paceTrendChart') && paceTrend.length > 0) {
+  new Chart(document.getElementById('paceTrendChart'), {
+    type: 'line',
+    data: {
+      labels: paceTrend.map(p => p.date),
+      datasets: [{
+        label: '페이스 (min/km)',
+        data: paceTrend.map(p => p.pace ? Math.round(p.pace / 6) / 10 : null),
+        borderColor: '#3b82f6',
+        backgroundColor: 'rgba(59,130,246,0.08)',
+        tension: 0.3, fill: true, pointRadius: 5,
+        pointBackgroundColor: paceTrend.map(p => zoneColors[p.zone] ?? '#3b82f6'),
+        pointBorderColor: '#fff', pointBorderWidth: 1.5,
+        spanGaps: true,
+      }]
+    },
+    options: {
+      ...chartDefaults,
+      plugins: { ...chartDefaults.plugins, tooltip: { callbacks: {
+        label: (ctx) => {
+          const sec = paceTrend[ctx.dataIndex]?.pace;
+          if (!sec) return '--';
+          return `${Math.floor(sec/60)}:${String(Math.round(sec%60)).padStart(2,'0')}/km  HR ${paceTrend[ctx.dataIndex]?.hr ?? '--'}`;
+        }
+      }}},
+      scales: { ...chartDefaults.scales,
+        y: { ...chartDefaults.scales.y, reverse: true,
+          ticks: { font: { size: 11 }, callback: (v) => v.toFixed(1) },
+          title: { display: true, text: 'min/km (낮을수록 빠름)' }
+        }
+      }
+    }
+  });
+}
+
+// HR zone bar chart
+const zoneCounts = [12,16,2,0,0];
+const yunhoMAF = 146;
+function hrZoneLabels(maf) {
+  return [`Z1\n<${maf-10}`, `Z2\n${maf-10}~${maf}`, `Z3\n~${maf+15}`, `Z4\n~${maf+28}`, `Z5\n${maf+29}+`];
+}
+if (document.getElementById('hrZoneChart')) {
+  new Chart(document.getElementById('hrZoneChart'), {
+    type: 'bar',
+    data: {
+      labels: hrZoneLabels(yunhoMAF),
+      datasets: [{ label: '런 횟수', data: zoneCounts,
+        backgroundColor: ['#d1fae5','#dbeafe','#fef3c7','#fee2e2','#fae8ff'],
+        borderColor:      ['#16a34a','#2563eb','#d97706','#dc2626','#9333ea'],
+        borderWidth: 1.5, borderRadius: 4
+      }]
+    },
+    options: { ...chartDefaults,
+      plugins: { legend: { display: false } },
+      scales: { ...chartDefaults.scales, y: { ...chartDefaults.scales.y, ticks: { stepSize: 1 } } }
+    }
+  });
+}
+
+// GF pace trend chart
+const gfPaceTrend = [{"date":"06-03 18:11:36","pace":479,"hr":149,"zone":2},{"date":"06-05 19:56:33","pace":453,"hr":151,"zone":2},{"date":"06-07 11:16:36","pace":434,"hr":153,"zone":2},{"date":"06-10 12:51:18","pace":435,"hr":158,"zone":3},{"date":"06-25 18:25:34","pace":568,"hr":146,"zone":2},{"date":"07-16 18:11:38","pace":605,"hr":151,"zone":2},{"date":"08-26 17:42:23","pace":396,"hr":179,"zone":4},{"date":"08-28 17:37:31","pace":407,"hr":176,"zone":4},{"date":"09-03 16:57:11","pace":383,"hr":175,"zone":4},{"date":"04-11 12:35:10","pace":483,"hr":156,"zone":3},{"date":"04-14 17:39:00","pace":474,"hr":149,"zone":2},{"date":"04-16 17:49:05","pace":471,"hr":143,"zone":1},{"date":"04-17 15:40:43","pace":478,"hr":151,"zone":2},{"date":"04-21 17:21:54","pace":472,"hr":146,"zone":2},{"date":"04-30 17:51:22","pace":501,"hr":145,"zone":2},{"date":"05-01 15:48:32","pace":490,"hr":143,"zone":1},{"date":"05-05 16:29:56","pace":473,"hr":153,"zone":2},{"date":"05-28 16:52:14","pace":468,"hr":152,"zone":2},{"date":"06-04 16:40:40","pace":486,"hr":142,"zone":1},{"date":"06-06 09:58:10","pace":462,"hr":141,"zone":1}];
+const gfMAF = 155;
+if (document.getElementById('gfPaceTrendChart') && gfPaceTrend.length > 0) {
+  new Chart(document.getElementById('gfPaceTrendChart'), {
+    type: 'line',
+    data: {
+      labels: gfPaceTrend.map(p => p.date),
+      datasets: [{
+        label: '페이스 (min/km)',
+        data: gfPaceTrend.map(p => p.pace ? Math.round(p.pace / 6) / 10 : null),
+        borderColor: '#ec4899',
+        backgroundColor: 'rgba(236,72,153,0.08)',
+        tension: 0.3, fill: true, pointRadius: 5,
+        pointBackgroundColor: gfPaceTrend.map(p => zoneColors[p.zone] ?? '#ec4899'),
+        pointBorderColor: '#fff', pointBorderWidth: 1.5,
+        spanGaps: true,
+      }]
+    },
+    options: {
+      ...chartDefaults,
+      plugins: { ...chartDefaults.plugins, tooltip: { callbacks: {
+        label: (ctx) => {
+          const sec = gfPaceTrend[ctx.dataIndex]?.pace;
+          if (!sec) return '--';
+          return `${Math.floor(sec/60)}:${String(Math.round(sec%60)).padStart(2,'0')}/km  HR ${gfPaceTrend[ctx.dataIndex]?.hr ?? '--'}`;
+        }
+      }}},
+      scales: { ...chartDefaults.scales,
+        y: { ...chartDefaults.scales.y, reverse: true,
+          ticks: { font: { size: 11 }, callback: (v) => v.toFixed(1) },
+          title: { display: true, text: 'min/km (낮을수록 빠름)' }
+        }
+      }
+    }
+  });
+}
+
+// GF HR zone bar chart
+const gfZoneCounts = [6,16,5,3,0];
+if (document.getElementById('gfHrZoneChart')) {
+  new Chart(document.getElementById('gfHrZoneChart'), {
+    type: 'bar',
+    data: {
+      labels: hrZoneLabels(gfMAF),
+      datasets: [{ label: '런 횟수', data: gfZoneCounts,
+        backgroundColor: ['#d1fae5','#fce7f3','#fef3c7','#fee2e2','#fae8ff'],
+        borderColor:      ['#16a34a','#ec4899','#d97706','#dc2626','#9333ea'],
+        borderWidth: 1.5, borderRadius: 4
+      }]
+    },
+    options: { ...chartDefaults,
+      plugins: { legend: { display: false } },
+      scales: { ...chartDefaults.scales, y: { ...chartDefaults.scales.y, ticks: { stepSize: 1 } } }
+    }
+  });
+}
+
+// Weight trend
+const weightData = [{"date":"2026-02-24","kg":72},{"date":"2026-06-13","kg":72}];
+if (document.getElementById('weightChart') && weightData.length > 1) {
+  new Chart(document.getElementById('weightChart'), {
+    type: 'line',
+    data: {
+      labels: weightData.map(w => w.date.slice(5)),
+      datasets: [
+        { label: '체중 (kg)', data: weightData.map(w => w.kg),
+          borderColor: '#f97316', backgroundColor: 'rgba(249,115,22,0.1)',
+          tension: 0.3, fill: true, pointRadius: 4 },
+        { label: '목표 70kg', data: weightData.map(() => 70),
+          borderColor: '#22c55e', borderDash: [5,5], borderWidth: 1.5, pointRadius: 0, fill: false }
+      ]
+    },
+    options: { ...chartDefaults,
+      scales: { ...chartDefaults.scales,
+        y: { ...chartDefaults.scales.y,
+          min: Math.floor(Math.min(...weightData.map(w => w.kg), 70) - 1),
+          max: Math.ceil(Math.max(...weightData.map(w => w.kg)) + 1),
+          title: { display: true, text: 'kg' }
+        }
+      }
+    }
+  });
+}
+</script>
+</body>
+</html>
