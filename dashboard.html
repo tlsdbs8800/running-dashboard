@@ -510,6 +510,13 @@
       <thead><tr><th>날짜</th><th>거리</th><th>페이스</th><th>평균 HR</th><th>시간</th><th>HR 존</th></tr></thead>
       <tbody>
         <tr>
+            <td>2026-06-15</td>
+            <td>5.01km</td>
+            <td>8:01/km</td>
+            <td>132 bpm</td>
+            <td>40:07</td>
+            <td><span class="pace-chip z1">Z1</span></td>
+          </tr><tr>
             <td>2026-06-06 09:58:10</td>
             <td>5.01km</td>
             <td>7:42/km</td>
@@ -572,13 +579,6 @@
             <td>143 bpm</td>
             <td>39:33</td>
             <td><span class="pace-chip z1">Z1</span></td>
-          </tr><tr>
-            <td>2026-04-14 17:39:00</td>
-            <td>3.57km</td>
-            <td>7:54/km</td>
-            <td>149 bpm</td>
-            <td>28:10</td>
-            <td><span class="pace-chip z2">Z2</span></td>
           </tr>
       </tbody>
     </table>
@@ -589,9 +589,9 @@
 
 <script>
 const yunhoWeekly = [{"label":"03/29","km":19},{"label":"04/05","km":26},{"label":"04/12","km":23.6},{"label":"04/19","km":20},{"label":"04/26","km":20.9},{"label":"05/03","km":20},{"label":"05/10","km":20},{"label":"05/17","km":25},{"label":"05/24","km":20},{"label":"05/31","km":20},{"label":"06/07","km":20},{"label":"06/14","km":0}];
-const gfWeekly = [{"label":"03/29","km":0},{"label":"04/05","km":0},{"label":"04/12","km":18.6},{"label":"04/19","km":5},{"label":"04/26","km":12.1},{"label":"05/03","km":5},{"label":"05/10","km":0},{"label":"05/17","km":0},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":0},{"label":"06/14","km":0}];
+const gfWeekly = [{"label":"03/29","km":0},{"label":"04/05","km":0},{"label":"04/12","km":18.6},{"label":"04/19","km":5},{"label":"04/26","km":12.1},{"label":"05/03","km":5},{"label":"05/10","km":0},{"label":"05/17","km":0},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":0},{"label":"06/14","km":5}];
 const yunhoLR = [{"label":"03/29","km":9},{"label":"04/05","km":10},{"label":"04/12","km":10},{"label":"04/19","km":10},{"label":"04/26","km":10},{"label":"05/03","km":10},{"label":"05/10","km":10},{"label":"05/17","km":10},{"label":"05/24","km":10},{"label":"05/31","km":10},{"label":"06/07","km":10},{"label":"06/14","km":null}];
-const gfLR = [{"label":"03/29","km":null},{"label":"04/05","km":null},{"label":"04/12","km":10},{"label":"04/19","km":5},{"label":"04/26","km":7},{"label":"05/03","km":5},{"label":"05/10","km":null},{"label":"05/17","km":null},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":null},{"label":"06/14","km":null}];
+const gfLR = [{"label":"03/29","km":null},{"label":"04/05","km":null},{"label":"04/12","km":10},{"label":"04/19","km":5},{"label":"04/26","km":7},{"label":"05/03","km":5},{"label":"05/10","km":null},{"label":"05/17","km":null},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":null},{"label":"06/14","km":5}];
 
 const chartDefaults = {
   responsive: true,
@@ -694,7 +694,7 @@ if (document.getElementById('hrZoneChart')) {
 }
 
 // GF pace trend chart
-const gfPaceTrend = [{"date":"06-03 18:11:36","pace":479,"hr":149,"zone":2},{"date":"06-05 19:56:33","pace":453,"hr":151,"zone":2},{"date":"06-07 11:16:36","pace":434,"hr":153,"zone":2},{"date":"06-10 12:51:18","pace":435,"hr":158,"zone":3},{"date":"06-25 18:25:34","pace":568,"hr":146,"zone":2},{"date":"07-16 18:11:38","pace":605,"hr":151,"zone":2},{"date":"08-26 17:42:23","pace":396,"hr":179,"zone":4},{"date":"08-28 17:37:31","pace":407,"hr":176,"zone":4},{"date":"09-03 16:57:11","pace":383,"hr":175,"zone":4},{"date":"04-11 12:35:10","pace":483,"hr":156,"zone":3},{"date":"04-14 17:39:00","pace":474,"hr":149,"zone":2},{"date":"04-16 17:49:05","pace":471,"hr":143,"zone":1},{"date":"04-17 15:40:43","pace":478,"hr":151,"zone":2},{"date":"04-21 17:21:54","pace":472,"hr":146,"zone":2},{"date":"04-30 17:51:22","pace":501,"hr":145,"zone":2},{"date":"05-01 15:48:32","pace":490,"hr":143,"zone":1},{"date":"05-05 16:29:56","pace":473,"hr":153,"zone":2},{"date":"05-28 16:52:14","pace":468,"hr":152,"zone":2},{"date":"06-04 16:40:40","pace":486,"hr":142,"zone":1},{"date":"06-06 09:58:10","pace":462,"hr":141,"zone":1}];
+const gfPaceTrend = [{"date":"06-05 19:56:33","pace":453,"hr":151,"zone":2},{"date":"06-07 11:16:36","pace":434,"hr":153,"zone":2},{"date":"06-10 12:51:18","pace":435,"hr":158,"zone":3},{"date":"06-25 18:25:34","pace":568,"hr":146,"zone":2},{"date":"07-16 18:11:38","pace":605,"hr":151,"zone":2},{"date":"08-26 17:42:23","pace":396,"hr":179,"zone":4},{"date":"08-28 17:37:31","pace":407,"hr":176,"zone":4},{"date":"09-03 16:57:11","pace":383,"hr":175,"zone":4},{"date":"04-11 12:35:10","pace":483,"hr":156,"zone":3},{"date":"04-14 17:39:00","pace":474,"hr":149,"zone":2},{"date":"04-16 17:49:05","pace":471,"hr":143,"zone":1},{"date":"04-17 15:40:43","pace":478,"hr":151,"zone":2},{"date":"04-21 17:21:54","pace":472,"hr":146,"zone":2},{"date":"04-30 17:51:22","pace":501,"hr":145,"zone":2},{"date":"05-01 15:48:32","pace":490,"hr":143,"zone":1},{"date":"05-05 16:29:56","pace":473,"hr":153,"zone":2},{"date":"05-28 16:52:14","pace":468,"hr":152,"zone":2},{"date":"06-04 16:40:40","pace":486,"hr":142,"zone":1},{"date":"06-06 09:58:10","pace":462,"hr":141,"zone":1},{"date":"06-15","pace":481,"hr":132,"zone":1}];
 const gfMAF = 155;
 if (document.getElementById('gfPaceTrendChart') && gfPaceTrend.length > 0) {
   new Chart(document.getElementById('gfPaceTrendChart'), {
@@ -732,7 +732,7 @@ if (document.getElementById('gfPaceTrendChart') && gfPaceTrend.length > 0) {
 }
 
 // GF HR zone bar chart
-const gfZoneCounts = [6,16,5,3,0];
+const gfZoneCounts = [7,16,4,3,0];
 if (document.getElementById('gfHrZoneChart')) {
   new Chart(document.getElementById('gfHrZoneChart'), {
     type: 'bar',
