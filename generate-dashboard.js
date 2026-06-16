@@ -113,11 +113,17 @@ function longRunProgression(activities, numWeeks = 12) {
   return weeks;
 }
 
+function loadDailyReport() {
+  const p = join(__dirname, "data/daily-report.json");
+  return existsSync(p) ? JSON.parse(readFileSync(p, "utf-8")) : null;
+}
+
 function generate() {
   const yunho = loadUser("yunho.json");
   const gf = loadUser("gf.json");
   const plan = loadPlan();
   const manualWeight = loadWeightManual();
+  const daily = loadDailyReport();
 
   const yunhoWeekly = yunho ? weeklyMileage(yunho.activities) : [];
   const gfWeekly = gf ? weeklyMileage(gf.activities) : [];
@@ -203,6 +209,14 @@ function generate() {
   .container { max-width: 1100px; margin: 0 auto; padding: 20px 16px; }
   h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
   .sync-time { font-size: 12px; color: var(--text3); margin-bottom: 20px; }
+  .daily-report-card { background: var(--card); border-radius: 12px; padding: 18px 20px; margin-bottom: 20px; }
+  .dr-verdict { font-size: 18px; font-weight: 700; margin-bottom: 14px; }
+  .dr-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 12px; }
+  .dr-item { display: flex; flex-direction: column; gap: 2px; }
+  .dr-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .05em; }
+  .dr-val { font-size: 14px; color: var(--text1); }
+  .dr-advice { background: var(--bg); border-radius: 8px; padding: 10px 14px; font-size: 13px; color: var(--text2); line-height: 1.6; margin-top: 4px; }
+  .dr-tomorrow { font-size: 12px; color: var(--text3); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
@@ -265,6 +279,34 @@ function generate() {
 <div class="container">
   <h1>🏃 러닝 코치 대시보드</h1>
   <div class="sync-time">마지막 동기화: ${lastSync}</div>
+
+  <!-- Daily Report: morning/evening -->
+  ${daily ? `
+  <div class="section-title">${daily.mode === 'morning' ? '☀️ 오늘 컨디션 & 훈련 추천' : '🌙 오늘 런 분석'}</div>
+  <div class="daily-report-card" style="border-left:4px solid ${daily.verdictColor ?? daily.zoneColor ?? '#3b82f6'}">
+    ${daily.mode === 'morning' ? `
+      <div class="dr-verdict" style="color:${daily.verdictColor}">${daily.verdict}</div>
+      <div class="dr-grid">
+        <div class="dr-item"><span class="dr-label">준비도</span><span class="dr-val">${daily.readiness ?? '--'}/100 ${daily.readinessLvl ? '· '+daily.readinessLvl : ''}</span></div>
+        <div class="dr-item"><span class="dr-label">수면</span><span class="dr-val">${daily.sleepNote || '--'}</span></div>
+        ${daily.hrvNote ? `<div class="dr-item"><span class="dr-label">HRV</span><span class="dr-val">${daily.hrvNote}</span></div>` : ''}
+        <div class="dr-item"><span class="dr-label">오늘 훈련</span><span class="dr-val" style="font-weight:600">${daily.adjustedLabel ?? daily.todayPlanOrigLabel ?? '--'}</span></div>
+      </div>
+      ${daily.advice ? `<div class="dr-advice">💡 ${daily.advice}</div>` : ''}
+    ` : `
+      ${daily.hasRun ? `
+        <div class="dr-grid">
+          <div class="dr-item"><span class="dr-label">거리</span><span class="dr-val" style="font-weight:600">${daily.km}km ${daily.planComparison ? '· '+daily.planComparison : ''}</span></div>
+          <div class="dr-item"><span class="dr-label">페이스</span><span class="dr-val">${daily.paceStr}/km</span></div>
+          <div class="dr-item"><span class="dr-label">평균 HR</span><span class="dr-val" style="color:${daily.zoneColor}">${daily.avgHR} bpm · ${daily.zoneLabel}</span></div>
+        </div>
+        <div class="dr-advice">📝 ${daily.feedback}</div>
+      ` : `<div class="dr-advice">${daily.feedback}</div>`}
+      ${daily.tomorrowPlan ? `<div class="dr-tomorrow">내일: ${daily.tomorrowPlan.label} — ${daily.tomorrowPlan.desc}</div>` : ''}
+    `}
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">${new Date(daily.generatedAt).toLocaleString('ko-KR')} 생성</div>
+  </div>
+  ` : ''}
 
   <!-- Status Cards -->
   <div class="section-title">오늘 상태</div>

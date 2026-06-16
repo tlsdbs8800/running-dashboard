@@ -1,0 +1,19 @@
+{
+  "mode": "morning",
+  "date": "2026-06-16",
+  "generatedAt": "2026-06-16T05:50:41.247Z",
+  "readiness": 50,
+  "readinessLvl": "MODERATE",
+  "sleepScore": 57,
+  "sleepMin": 400,
+  "hrv": null,
+  "verdict": "🟡 보통 — 계획대로, 몸 무거우면 1km 줄이기",
+  "verdictColor": "#d97706",
+  "advice": "혼자 HR 136~146(MAF) 유지 · 페이스 신경 끄기 · 처음엔 9:00/km 이상도 정상 · 페이스 10~15초 여유있게",
+  "adjustedLabel": "Solo Easy Run 4km (무거우면 3km)",
+  "hrvNote": "",
+  "sleepNote": "6시간 40분 · 수면 점수 57",
+  "todayPlanType": "easy",
+  "todayPlanOrigLabel": "Solo Easy Run 4km",
+  "todayPlanDesc": "혼자 HR 136~146(MAF) 유지 · 페이스 신경 끄기 · 처음엔 9:00/km 이상도 정상"
+}

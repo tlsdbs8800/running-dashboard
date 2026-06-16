@@ -26,6 +26,14 @@
   .container { max-width: 1100px; margin: 0 auto; padding: 20px 16px; }
   h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
   .sync-time { font-size: 12px; color: var(--text3); margin-bottom: 20px; }
+  .daily-report-card { background: var(--card); border-radius: 12px; padding: 18px 20px; margin-bottom: 20px; }
+  .dr-verdict { font-size: 18px; font-weight: 700; margin-bottom: 14px; }
+  .dr-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 12px; }
+  .dr-item { display: flex; flex-direction: column; gap: 2px; }
+  .dr-label { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: .05em; }
+  .dr-val { font-size: 14px; color: var(--text1); }
+  .dr-advice { background: var(--bg); border-radius: 8px; padding: 10px 14px; font-size: 13px; color: var(--text2); line-height: 1.6; margin-top: 4px; }
+  .dr-tomorrow { font-size: 12px; color: var(--text3); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
@@ -88,6 +96,18 @@
 <div class="container">
   <h1>🏃 러닝 코치 대시보드</h1>
   <div class="sync-time">마지막 동기화: 2026. 6. 16. 오후 3:24:28</div>
+
+  <!-- Daily Report: morning/evening -->
+  
+  <div class="section-title">🌙 오늘 런 분석</div>
+  <div class="daily-report-card" style="border-left:4px solid #3b82f6">
+    
+      <div class="dr-advice">오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.</div>
+      <div class="dr-tomorrow">내일: 휴식 — 스트레칭 or 폼롤러 · 내일 롱런 준비</div>
+    
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">2026. 6. 16. 오후 3:50:36 생성</div>
+  </div>
+  
 
   <!-- Status Cards -->
   <div class="section-title">오늘 상태</div>
