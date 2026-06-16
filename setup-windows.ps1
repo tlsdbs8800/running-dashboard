@@ -94,40 +94,58 @@ $syncBat = "$projectDir\run-sync.bat"
 cd /d "$projectDir"
 git pull --rebase origin main
 python sync.py
+node generate-daily-report.js morning
 node generate-dashboard.js
 git add data\ dashboard.html
-git commit -m "sync: auto" 2>nul
+git commit -m "[morning] auto" 2>nul
 git push
 "@ | Set-Content $syncBat -Encoding UTF8
 
-# 일요일 플랜 생성 포함
-$planBat = "$projectDir\run-sync-plan.bat"
+# 저녁 sync (런 분석)
+$eveningBat = "$projectDir\run-sync-evening.bat"
 @"
 @echo off
 cd /d "$projectDir"
 git pull --rebase origin main
 python sync.py
+node generate-daily-report.js evening
+node generate-dashboard.js
+git add data\ dashboard.html
+git commit -m "[evening] auto" 2>nul
+git push
+"@ | Set-Content $eveningBat -Encoding UTF8
+
+# 일요일 저녁 (런 분석 + 주간 플랜)
+$sundayBat = "$projectDir\run-sync-sunday.bat"
+@"
+@echo off
+cd /d "$projectDir"
+git pull --rebase origin main
+python sync.py
+node generate-daily-report.js evening
 node generate-dashboard.js
 node generate-plan.js
 git add data\ dashboard.html
-git commit -m "sync+plan: auto" 2>nul
+git commit -m "[sunday] auto" 2>nul
 git push
-"@ | Set-Content $planBat -Encoding UTF8
+"@ | Set-Content $sundayBat -Encoding UTF8
 
-# 작업 등록 (월~토: sync만 / 일: sync+plan)
-$trigger   = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday,Tuesday,Wednesday,Thursday,Friday,Saturday -At "20:00"
-$triggerSun = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Sunday -At "20:00"
-$action    = New-ScheduledTaskAction -Execute $syncBat
-$actionSun = New-ScheduledTaskAction -Execute $planBat
+# 작업 등록
+$triggerMorning    = New-ScheduledTaskTrigger -Daily -At "07:00"
+$triggerEvening    = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday,Tuesday,Wednesday,Thursday,Friday,Saturday -At "19:00"
+$triggerSunEvening = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Sunday -At "19:00"
+
 $settings  = New-ScheduledTaskSettingsSet -WakeToRun -ExecutionTimeLimit (New-TimeSpan -Minutes 10)
 $principal = New-ScheduledTaskPrincipal -UserId $env:USERNAME -RunLevel Highest
 
-Register-ScheduledTask -TaskName "${taskName}_WeekDay" -Trigger $trigger    -Action $action    -Settings $settings -Principal $principal -Force | Out-Null
-Register-ScheduledTask -TaskName "${taskName}_Sunday"  -Trigger $triggerSun -Action $actionSun -Settings $settings -Principal $principal -Force | Out-Null
+Register-ScheduledTask -TaskName "${taskName}_Morning"    -Trigger $triggerMorning    -Action (New-ScheduledTaskAction -Execute $syncBat)     -Settings $settings -Principal $principal -Force | Out-Null
+Register-ScheduledTask -TaskName "${taskName}_Evening"    -Trigger $triggerEvening    -Action (New-ScheduledTaskAction -Execute $eveningBat)   -Settings $settings -Principal $principal -Force | Out-Null
+Register-ScheduledTask -TaskName "${taskName}_SunEvening" -Trigger $triggerSunEvening -Action (New-ScheduledTaskAction -Execute $sundayBat)    -Settings $settings -Principal $principal -Force | Out-Null
 
-Write-Host "  ✓ 작업 스케줄러 등록 완료 (매일 오후 8시)" -ForegroundColor Green
+Write-Host "  ✓ 작업 스케줄러 등록 완료 (오전 7시 / 오후 7시)" -ForegroundColor Green
 
 Write-Host "`n=== 설치 완료 ===" -ForegroundColor Cyan
 Write-Host "  대시보드: https://tlsdbs8800.github.io/running-dashboard/dashboard.html"
-Write-Host "  매일 오후 8시 자동 sync + GitHub 푸시"
+Write-Host "  오전 7시: 컨디션 체크 + 오늘 훈련 추천"
+Write-Host "  오후 7시: 런 분석 + 내일 예고"
 Write-Host "  절전 모드에서도 자동으로 깨어나 실행됩니다`n"
