@@ -99,6 +99,8 @@ node generate-dashboard.js
 git add data\ dashboard.html
 git commit -m "[morning] auto" 2>nul
 git push
+timeout /t 30 /nobreak
+rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 "@ | Set-Content $syncBat -Encoding UTF8
 
 # 저녁 sync (런 분석)
@@ -113,6 +115,8 @@ node generate-dashboard.js
 git add data\ dashboard.html
 git commit -m "[evening] auto" 2>nul
 git push
+timeout /t 30 /nobreak
+rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 "@ | Set-Content $eveningBat -Encoding UTF8
 
 # 일요일 저녁 (런 분석 + 주간 플랜)
@@ -128,6 +132,8 @@ node generate-plan.js
 git add data\ dashboard.html
 git commit -m "[sunday] auto" 2>nul
 git push
+timeout /t 30 /nobreak
+rundll32.exe powrprof.dll,SetSuspendState 0,1,0
 "@ | Set-Content $sundayBat -Encoding UTF8
 
 # 작업 등록
