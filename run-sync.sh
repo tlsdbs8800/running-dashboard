@@ -6,6 +6,8 @@
 
 cd "$(dirname "$0")"
 
+export PATH="/usr/local/bin:/usr/bin:/bin:$PATH"
+
 HOUR=$(date +%H)
 if [ -z "$1" ]; then
   if [ "$HOUR" -ge 7 ] && [ "$HOUR" -lt 12 ]; then
