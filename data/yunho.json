@@ -1,0 +1,606 @@
+{
+  "userId": "yunho",
+  "name": "윤호",
+  "garminDisplayName": "f3040a20-cefc-4019-872a-24d3a09b9525",
+  "targetWeightKg": 70,
+  "goalDistanceKm": 21.1,
+  "goalTimeMin": 120,
+  "activities": [
+    {
+      "id": 23253704232,
+      "date": "2026-06-15",
+      "distanceM": 5006,
+      "durationSec": 2404,
+      "avgHR": 133,
+      "maxHR": 148,
+      "avgPaceSecPerKm": 480,
+      "calories": 340,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23228594376,
+      "date": "2026-06-13 09:48:35",
+      "distanceM": 2479,
+      "durationSec": 1057,
+      "avgHR": 152,
+      "maxHR": 178,
+      "avgPaceSecPerKm": 426,
+      "calories": 186,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23208215126,
+      "date": "2026-06-11 15:27:11",
+      "distanceM": 10005,
+      "durationSec": 4795,
+      "avgHR": 144,
+      "maxHR": 159,
+      "avgPaceSecPerKm": 479,
+      "calories": 678,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23184003704,
+      "date": "2026-06-09 16:50:01",
+      "distanceM": 5003,
+      "durationSec": 2299,
+      "avgHR": 145,
+      "maxHR": 162,
+      "avgPaceSecPerKm": 460,
+      "calories": 364,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23171109664,
+      "date": "2026-06-08 15:00:37",
+      "distanceM": 5006,
+      "durationSec": 2350,
+      "avgHR": 133,
+      "maxHR": 154,
+      "avgPaceSecPerKm": 469,
+      "calories": 346,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23145371575,
+      "date": "2026-06-06 09:58:10",
+      "distanceM": 5005,
+      "durationSec": 2328,
+      "avgHR": 136,
+      "maxHR": 160,
+      "avgPaceSecPerKm": 465,
+      "calories": 359,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23124645334,
+      "date": "2026-06-04 16:15:39",
+      "distanceM": 10005,
+      "durationSec": 4820,
+      "avgHR": 140,
+      "maxHR": 152,
+      "avgPaceSecPerKm": 482,
+      "calories": 682,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23099907401,
+      "date": "2026-06-02 16:49:56",
+      "distanceM": 5004,
+      "durationSec": 2339,
+      "avgHR": 145,
+      "maxHR": 160,
+      "avgPaceSecPerKm": 467,
+      "calories": 358,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23087540930,
+      "date": "2026-06-01 16:27:57",
+      "distanceM": 5005,
+      "durationSec": 2364,
+      "avgHR": 135,
+      "maxHR": 148,
+      "avgPaceSecPerKm": 472,
+      "calories": 343,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23052374930,
+      "date": "2026-05-29 15:25:01",
+      "distanceM": 10006,
+      "durationSec": 4748,
+      "avgHR": 143,
+      "maxHR": 160,
+      "avgPaceSecPerKm": 475,
+      "calories": 690,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23040701030,
+      "date": "2026-05-28 16:52:14",
+      "distanceM": 5008,
+      "durationSec": 2355,
+      "avgHR": 134,
+      "maxHR": 153,
+      "avgPaceSecPerKm": 470,
+      "calories": 346,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23002792799,
+      "date": "2026-05-25 16:23:09",
+      "distanceM": 5001,
+      "durationSec": 2403,
+      "avgHR": 135,
+      "maxHR": 144,
+      "avgPaceSecPerKm": 481,
+      "calories": 338,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22968004646,
+      "date": "2026-05-22 15:13:31",
+      "distanceM": 10004,
+      "durationSec": 4721,
+      "avgHR": 146,
+      "maxHR": 159,
+      "avgPaceSecPerKm": 472,
+      "calories": 696,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22955906467,
+      "date": "2026-05-21 15:07:56",
+      "distanceM": 5005,
+      "durationSec": 2326,
+      "avgHR": 129,
+      "maxHR": 142,
+      "avgPaceSecPerKm": 465,
+      "calories": 343,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22932068196,
+      "date": "2026-05-19 16:27:30",
+      "distanceM": 5005,
+      "durationSec": 2393,
+      "avgHR": 134,
+      "maxHR": 148,
+      "avgPaceSecPerKm": 478,
+      "calories": 341,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22920376232,
+      "date": "2026-05-18 16:36:24",
+      "distanceM": 5006,
+      "durationSec": 2331,
+      "avgHR": 139,
+      "maxHR": 155,
+      "avgPaceSecPerKm": 466,
+      "calories": 352,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22886034441,
+      "date": "2026-05-15 15:00:19",
+      "distanceM": 10003,
+      "durationSec": 4597,
+      "avgHR": 141,
+      "maxHR": 156,
+      "avgPaceSecPerKm": 460,
+      "calories": 692,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22874266987,
+      "date": "2026-05-14 15:18:10",
+      "distanceM": 5006,
+      "durationSec": 2317,
+      "avgHR": 137,
+      "maxHR": 158,
+      "avgPaceSecPerKm": 463,
+      "calories": 353,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22839867572,
+      "date": "2026-05-11 17:05:10",
+      "distanceM": 5007,
+      "durationSec": 2202,
+      "avgHR": 135,
+      "maxHR": 150,
+      "avgPaceSecPerKm": 440,
+      "calories": 350,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22804648944,
+      "date": "2026-05-08 15:00:55",
+      "distanceM": 10007,
+      "durationSec": 4651,
+      "avgHR": 154,
+      "maxHR": 181,
+      "avgPaceSecPerKm": 465,
+      "calories": 777,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22793035400,
+      "date": "2026-05-07 15:28:14",
+      "distanceM": 5005,
+      "durationSec": 2366,
+      "avgHR": 140,
+      "maxHR": 152,
+      "avgPaceSecPerKm": 473,
+      "calories": 356,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22769425985,
+      "date": "2026-05-05 16:29:55",
+      "distanceM": 5006,
+      "durationSec": 2383,
+      "avgHR": 134,
+      "maxHR": 147,
+      "avgPaceSecPerKm": 476,
+      "calories": 346,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22721393438,
+      "date": "2026-05-01 15:48:32",
+      "distanceM": 10006,
+      "durationSec": 4900,
+      "avgHR": 135,
+      "maxHR": 147,
+      "avgPaceSecPerKm": 490,
+      "calories": 681,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22710989337,
+      "date": "2026-04-30 17:51:21",
+      "distanceM": 5081,
+      "durationSec": 2506,
+      "avgHR": 125,
+      "maxHR": 137,
+      "avgPaceSecPerKm": 493,
+      "calories": 344,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22671660545,
+      "date": "2026-04-27 07:50:11",
+      "distanceM": 5771,
+      "durationSec": 2767,
+      "avgHR": 140,
+      "maxHR": 164,
+      "avgPaceSecPerKm": 479,
+      "calories": 417,
+      "name": "Sydney - Mon easy"
+    },
+    {
+      "id": 22647215745,
+      "date": "2026-04-25 08:07:44",
+      "distanceM": 5003,
+      "durationSec": 2163,
+      "avgHR": 142,
+      "maxHR": 166,
+      "avgPaceSecPerKm": 432,
+      "calories": 369,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22626872564,
+      "date": "2026-04-23 15:36:18",
+      "distanceM": 10004,
+      "durationSec": 4689,
+      "avgHR": 139,
+      "maxHR": 150,
+      "avgPaceSecPerKm": 469,
+      "calories": 695,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22602428034,
+      "date": "2026-04-21 17:21:50",
+      "distanceM": 5005,
+      "durationSec": 2375,
+      "avgHR": 129,
+      "maxHR": 141,
+      "avgPaceSecPerKm": 474,
+      "calories": 341,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22590394060,
+      "date": "2026-04-20 16:45:13",
+      "distanceM": 5004,
+      "durationSec": 2240,
+      "avgHR": 136,
+      "maxHR": 149,
+      "avgPaceSecPerKm": 448,
+      "calories": 360,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22555464568,
+      "date": "2026-04-17 15:40:43",
+      "distanceM": 10006,
+      "durationSec": 4720,
+      "avgHR": 141,
+      "maxHR": 158,
+      "avgPaceSecPerKm": 472,
+      "calories": 726,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22544126321,
+      "date": "2026-04-16 17:49:05",
+      "distanceM": 5006,
+      "durationSec": 2349,
+      "avgHR": 130,
+      "maxHR": 138,
+      "avgPaceSecPerKm": 469,
+      "calories": 348,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22519546592,
+      "date": "2026-04-14 17:39:00",
+      "distanceM": 3566,
+      "durationSec": 1689,
+      "avgHR": 129,
+      "maxHR": 146,
+      "avgPaceSecPerKm": 474,
+      "calories": 255,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22507678958,
+      "date": "2026-04-13 16:44:58",
+      "distanceM": 5006,
+      "durationSec": 2292,
+      "avgHR": 135,
+      "maxHR": 149,
+      "avgPaceSecPerKm": 458,
+      "calories": 343,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22473571231,
+      "date": "2026-04-10 15:10:46",
+      "distanceM": 10004,
+      "durationSec": 4699,
+      "avgHR": 153,
+      "maxHR": 175,
+      "avgPaceSecPerKm": 470,
+      "calories": 716,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22462714152,
+      "date": "2026-04-09 17:46:53",
+      "distanceM": 6005,
+      "durationSec": 2926,
+      "avgHR": 135,
+      "maxHR": 150,
+      "avgPaceSecPerKm": 487,
+      "calories": 418,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22435343215,
+      "date": "2026-04-07 15:38:43",
+      "distanceM": 5004,
+      "durationSec": 2319,
+      "avgHR": 145,
+      "maxHR": 163,
+      "avgPaceSecPerKm": 463,
+      "calories": 351,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22422746215,
+      "date": "2026-04-06 16:28:14",
+      "distanceM": 5019,
+      "durationSec": 2341,
+      "avgHR": 133,
+      "maxHR": 143,
+      "avgPaceSecPerKm": 466,
+      "calories": 346,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22387196412,
+      "date": "2026-04-03 06:55:09",
+      "distanceM": 9005,
+      "durationSec": 4012,
+      "avgHR": 149,
+      "maxHR": 163,
+      "avgPaceSecPerKm": 446,
+      "calories": 644,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22367520275,
+      "date": "2026-04-01 15:15:03",
+      "distanceM": 5005,
+      "durationSec": 2231,
+      "avgHR": 136,
+      "maxHR": 160,
+      "avgPaceSecPerKm": 446,
+      "calories": 348,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22358329714,
+      "date": "2026-03-31 21:16:35",
+      "distanceM": 5006,
+      "durationSec": 2143,
+      "avgHR": 151,
+      "maxHR": 165,
+      "avgPaceSecPerKm": 428,
+      "calories": 360,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22292453228,
+      "date": "2026-03-25 19:21:00",
+      "distanceM": 6567,
+      "durationSec": 3177,
+      "avgHR": 137,
+      "maxHR": 154,
+      "avgPaceSecPerKm": 484,
+      "calories": 469,
+      "name": "Melbourne Running"
+    },
+    {
+      "id": 22277481483,
+      "date": "2026-03-24 10:02:18",
+      "distanceM": 4216,
+      "durationSec": 1991,
+      "avgHR": 130,
+      "maxHR": 147,
+      "avgPaceSecPerKm": 472,
+      "calories": 289,
+      "name": "Melbourne Running"
+    },
+    {
+      "id": 22233691718,
+      "date": "2026-03-20 15:13:28",
+      "distanceM": 9003,
+      "durationSec": 3858,
+      "avgHR": 156,
+      "maxHR": 179,
+      "avgPaceSecPerKm": 429,
+      "calories": 672,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22222158018,
+      "date": "2026-03-19 15:16:45",
+      "distanceM": 6007,
+      "durationSec": 2594,
+      "avgHR": 141,
+      "maxHR": 163,
+      "avgPaceSecPerKm": 432,
+      "calories": 421,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22187977926,
+      "date": "2026-03-16 14:58:03",
+      "distanceM": 6003,
+      "durationSec": 2436,
+      "avgHR": 154,
+      "maxHR": 175,
+      "avgPaceSecPerKm": 406,
+      "calories": 443,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22155914135,
+      "date": "2026-03-13 14:41:12",
+      "distanceM": 8007,
+      "durationSec": 3312,
+      "avgHR": 151,
+      "maxHR": 172,
+      "avgPaceSecPerKm": 414,
+      "calories": 589,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22145131018,
+      "date": "2026-03-12 14:57:29",
+      "distanceM": 5001,
+      "durationSec": 2019,
+      "avgHR": 152,
+      "maxHR": 170,
+      "avgPaceSecPerKm": 404,
+      "calories": 366,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22122625592,
+      "date": "2026-03-10 17:15:06",
+      "distanceM": 6005,
+      "durationSec": 2713,
+      "avgHR": 140,
+      "maxHR": 158,
+      "avgPaceSecPerKm": 452,
+      "calories": 421,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22110366960,
+      "date": "2026-03-09 14:34:04",
+      "distanceM": 5009,
+      "durationSec": 1940,
+      "avgHR": 147,
+      "maxHR": 163,
+      "avgPaceSecPerKm": 387,
+      "calories": 358,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22077354498,
+      "date": "2026-03-06 15:29:00",
+      "distanceM": 8005,
+      "durationSec": 3310,
+      "avgHR": 163,
+      "maxHR": 189,
+      "avgPaceSecPerKm": 414,
+      "calories": 608,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 22067078841,
+      "date": "2026-03-05 18:00:32",
+      "distanceM": 5507,
+      "durationSec": 2382,
+      "avgHR": 143,
+      "maxHR": 166,
+      "avgPaceSecPerKm": 433,
+      "calories": 385,
+      "name": "Sydney Running"
+    }
+  ],
+  "vo2max": [
+    {
+      "date": "2026-06-15",
+      "value": 44.6
+    },
+    {
+      "date": "2026-06-13",
+      "value": 44.6
+    }
+  ],
+  "weight": [
+    {
+      "date": "2026-02-24",
+      "kg": 72
+    }
+  ],
+  "sleep": [
+    {
+      "date": "2026-06-16",
+      "score": 57,
+      "durationMin": 400
+    }
+  ],
+  "trainingReadiness": {
+    "date": "2026-06-16",
+    "score": 50,
+    "level": "MODERATE",
+    "feedbackShort": "FOCUS_ON_ENERGY_LEVELS",
+    "sleepScore": 57,
+    "recoveryTimeMin": 194
+  },
+  "lastSync": "2026-06-16T05:24:28.829075Z",
+  "birthYear": 1992,
+  "age": 34,
+  "mafHR": 146
+}

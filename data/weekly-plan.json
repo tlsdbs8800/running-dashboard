@@ -1,0 +1,161 @@
+{
+  "weekStart": "2026-06-15",
+  "weekEnd": "2026-06-21",
+  "generatedAt": "2026-06-14T11:15:42.476Z",
+  "lthrTest": {
+    "suitable": false,
+    "readiness": 42,
+    "reason": "준비도 42/100 — 60 이상일 때 추천",
+    "recommendedDay": null
+  },
+  "yunho": {
+    "name": "윤호",
+    "phase": 2,
+    "phaseLabel": "발전 단계",
+    "analysis": {
+      "lastWeekKm": 22.5,
+      "avgWeekKm4w": 23.1,
+      "longRunKm": 10,
+      "avgHR": 144,
+      "readinessScore": 42,
+      "readinessLevel": "LOW",
+      "runsLastWeek": 4
+    },
+    "targetWeeklyKm": 23,
+    "longRunTarget": 10,
+    "coachNote": "🔴 볼륨 줄이고 회복 우선 — ⚠ 이지 런 비율 75% — 80/20 원칙 미달 (Z1~Z2 비율 부족) 준비도 보통(42/100).",
+    "schedule": [
+      {
+        "offset": 0,
+        "type": "couple",
+        "label": "커플런 5km",
+        "desc": "Jenny 페이스 맞추기 · Easy Z2 · HR 136~146(MAF) · 대화 가능한 속도",
+        "date": "2026-06-15",
+        "dayName": "월"
+      },
+      {
+        "offset": 1,
+        "type": "easy",
+        "label": "Solo Easy Run 4km",
+        "desc": "혼자 HR 136~146(MAF) 유지 · 페이스 신경 끄기 · 처음엔 9:00/km 이상도 정상",
+        "date": "2026-06-16",
+        "dayName": "화"
+      },
+      {
+        "offset": 2,
+        "type": "rest",
+        "label": "휴식",
+        "desc": "스트레칭 or 폼롤러 · 내일 롱런 준비",
+        "date": "2026-06-17",
+        "dayName": "수"
+      },
+      {
+        "offset": 3,
+        "type": "long",
+        "label": "Long Run 10km",
+        "desc": "전체 Easy Z2 · 준비도 낮음(42/100) — 완주가 목표",
+        "date": "2026-06-18",
+        "dayName": "목"
+      },
+      {
+        "offset": 4,
+        "type": "rest",
+        "label": "휴식",
+        "desc": "롱런 다음날 완전 회복 · 가벼운 걷기 OK",
+        "date": "2026-06-19",
+        "dayName": "금"
+      },
+      {
+        "offset": 5,
+        "type": "fasted",
+        "label": "공복런 5km",
+        "desc": "기상 직후 아무것도 안 먹고 · Easy Z2 · HR 136~146(MAF) · 지방 연소 최적 구간",
+        "date": "2026-06-20",
+        "dayName": "토"
+      },
+      {
+        "offset": 6,
+        "type": "rest",
+        "label": "휴식",
+        "desc": "한 주 마무리 · 다음 주 계획 확인",
+        "date": "2026-06-21",
+        "dayName": "일"
+      }
+    ]
+  },
+  "gf": {
+    "name": "Jenny",
+    "phase": 1,
+    "phaseLabel": "기초 단계",
+    "analysis": {
+      "lastWeekKm": 0,
+      "avgWeekKm4w": 4.3,
+      "longRunKm": 7,
+      "avgHR": null,
+      "readinessScore": null,
+      "readinessLevel": "UNKNOWN",
+      "runsLastWeek": 0
+    },
+    "targetWeeklyKm": 12,
+    "longRunTarget": 7.7,
+    "coachNote": "✅ 이번 주 계획대로 진행",
+    "schedule": [
+      {
+        "offset": 0,
+        "type": "couple",
+        "label": "커플런 5km",
+        "desc": "Jenny 페이스 기준 · HR 145~155 유지 · 대화 가능한 속도 · 7:50~8:10/km",
+        "date": "2026-06-15",
+        "dayName": "월"
+      },
+      {
+        "offset": 1,
+        "type": "rest",
+        "label": "휴식",
+        "desc": "가벼운 스트레칭 OK · 런 사이 최소 1일 휴식",
+        "date": "2026-06-16",
+        "dayName": "화"
+      },
+      {
+        "offset": 2,
+        "type": "rest",
+        "label": "휴식",
+        "desc": "내일 롱런 준비 · 충분한 수면",
+        "date": "2026-06-17",
+        "dayName": "수"
+      },
+      {
+        "offset": 3,
+        "type": "long",
+        "label": "Long Run 7.7km",
+        "desc": "전체 Easy Z2 · HR 155 이하 유지 · 7:50~8:10/km · 준비도 미확인/100",
+        "date": "2026-06-18",
+        "dayName": "목"
+      },
+      {
+        "offset": 4,
+        "type": "rest",
+        "label": "휴식",
+        "desc": "롱런 다음날 완전 회복 · 가벼운 걷기 OK",
+        "date": "2026-06-19",
+        "dayName": "금"
+      },
+      {
+        "offset": 5,
+        "type": "easy",
+        "label": "Easy Run 4km",
+        "desc": "이지 런 · HR 155 이하 · 7:50~8:10/km · 다리 풀어주기",
+        "date": "2026-06-20",
+        "dayName": "토"
+      },
+      {
+        "offset": 6,
+        "type": "rest",
+        "label": "휴식",
+        "desc": "한 주 마무리 · 다음 주 계획 확인",
+        "date": "2026-06-21",
+        "dayName": "일"
+      }
+    ]
+  }
+}
