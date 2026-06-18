@@ -95,23 +95,24 @@
 <body>
 <div class="container">
   <h1>🏃 러닝 코치 대시보드</h1>
-  <div class="sync-time">마지막 동기화: 2026. 6. 18. 오전 11:35:26</div>
+  <div class="sync-time">마지막 동기화: 2026. 6. 18. 오후 8:09:58</div>
 
   <!-- Daily Report: morning/evening -->
   
-  <div class="section-title">☀️ 오늘 컨디션 & 훈련 추천</div>
+  <div class="section-title">🌙 오늘 런 분석</div>
   <div class="daily-report-card" style="border-left:4px solid #16a34a">
     
-      <div class="dr-verdict" style="color:#16a34a">✅ 컨디션 좋음 — 계획대로 달려도 돼</div>
-      <div class="dr-grid">
-        <div class="dr-item"><span class="dr-label">준비도</span><span class="dr-val">74/100 · MODERATE</span></div>
-        <div class="dr-item"><span class="dr-label">수면</span><span class="dr-val">7시간 40분 · 수면 점수 85</span></div>
-        
-        <div class="dr-item"><span class="dr-label">오늘 훈련</span><span class="dr-val" style="font-weight:600">Long Run 10km</span></div>
-      </div>
-      <div class="dr-advice">💡 전체 Easy Z2 · 준비도 낮음(42/100) — 완주가 목표 · HR 136~146 유지</div>
+      
+        <div class="dr-grid">
+          <div class="dr-item"><span class="dr-label">거리</span><span class="dr-val" style="font-weight:600">10km · ✅ 계획 달성</span></div>
+          <div class="dr-item"><span class="dr-label">페이스</span><span class="dr-val">8:05/km</span></div>
+          <div class="dr-item"><span class="dr-label">평균 HR</span><span class="dr-val" style="color:#16a34a">140 bpm · Z2 (MAF 이지)</span></div>
+        </div>
+        <div class="dr-advice">📝 완벽한 이지 런이야! HR 140 · 8:05/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져.</div>
+      
+      <div class="dr-tomorrow">내일: 휴식 — 롱런 다음날 완전 회복 · 가벼운 걷기 OK</div>
     
-    <div style="font-size:11px;color:var(--muted);margin-top:8px">2026. 6. 18. 오전 11:35:26 생성</div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">2026. 6. 18. 오후 8:09:58 생성</div>
   </div>
   
 
@@ -120,8 +121,8 @@
   <div class="grid4">
     <div class="card">
       <div class="card-title">훈련 준비도</div>
-      <div class="big-num" style="color:var(--green)">
-        74<span style="font-size:16px;font-weight:400">/100</span>
+      <div class="big-num" style="color:var(--orange)">
+        58<span style="font-size:16px;font-weight:400">/100</span>
       </div>
       <div class="sub">
         <span class="badge badge-moderate">
@@ -452,6 +453,13 @@
       </thead>
       <tbody>
         <tr>
+            <td>2026-06-18</td>
+            <td>10.01km</td>
+            <td>8:05/km</td>
+            <td>140 bpm</td>
+            <td>1:20:52</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
             <td>2026-06-16</td>
             <td>5.01km</td>
             <td>7:46/km</td>
@@ -514,13 +522,6 @@
             <td>145 bpm</td>
             <td>38:59</td>
             <td><span class="pace-chip z2">Z2</span></td>
-          </tr><tr>
-            <td>2026-06-01 16:27:57</td>
-            <td>5.00km</td>
-            <td>7:52/km</td>
-            <td>135 bpm</td>
-            <td>39:24</td>
-            <td><span class="pace-chip z1">Z1</span></td>
           </tr>
       </tbody>
     </table>
@@ -614,9 +615,9 @@
 </div>
 
 <script>
-const yunhoWeekly = [{"label":"03/29","km":19},{"label":"04/05","km":26},{"label":"04/12","km":23.6},{"label":"04/19","km":20},{"label":"04/26","km":20.9},{"label":"05/03","km":20},{"label":"05/10","km":20},{"label":"05/17","km":25},{"label":"05/24","km":20},{"label":"05/31","km":20},{"label":"06/07","km":20},{"label":"06/14","km":10}];
+const yunhoWeekly = [{"label":"03/29","km":19},{"label":"04/05","km":26},{"label":"04/12","km":23.6},{"label":"04/19","km":20},{"label":"04/26","km":20.9},{"label":"05/03","km":20},{"label":"05/10","km":20},{"label":"05/17","km":25},{"label":"05/24","km":20},{"label":"05/31","km":20},{"label":"06/07","km":20},{"label":"06/14","km":20}];
 const gfWeekly = [{"label":"03/29","km":0},{"label":"04/05","km":0},{"label":"04/12","km":18.6},{"label":"04/19","km":5},{"label":"04/26","km":12.1},{"label":"05/03","km":5},{"label":"05/10","km":0},{"label":"05/17","km":0},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":0},{"label":"06/14","km":5}];
-const yunhoLR = [{"label":"03/29","km":9},{"label":"04/05","km":10},{"label":"04/12","km":10},{"label":"04/19","km":10},{"label":"04/26","km":10},{"label":"05/03","km":10},{"label":"05/10","km":10},{"label":"05/17","km":10},{"label":"05/24","km":10},{"label":"05/31","km":10},{"label":"06/07","km":10},{"label":"06/14","km":5}];
+const yunhoLR = [{"label":"03/29","km":9},{"label":"04/05","km":10},{"label":"04/12","km":10},{"label":"04/19","km":10},{"label":"04/26","km":10},{"label":"05/03","km":10},{"label":"05/10","km":10},{"label":"05/17","km":10},{"label":"05/24","km":10},{"label":"05/31","km":10},{"label":"06/07","km":10},{"label":"06/14","km":10}];
 const gfLR = [{"label":"03/29","km":null},{"label":"04/05","km":null},{"label":"04/12","km":10},{"label":"04/19","km":5},{"label":"04/26","km":7},{"label":"05/03","km":5},{"label":"05/10","km":null},{"label":"05/17","km":null},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":null},{"label":"06/14","km":5}];
 
 const chartDefaults = {
@@ -658,7 +659,7 @@ new Chart(document.getElementById('longRunChart'), {
 });
 
 // Pace trend (sec/km → display as min:sec)
-const paceTrend = [{"date":"05-11 17:05:10","pace":440,"hr":135,"zone":1},{"date":"05-14 15:18:10","pace":463,"hr":137,"zone":2},{"date":"05-15 15:00:19","pace":460,"hr":141,"zone":2},{"date":"05-18 16:36:24","pace":466,"hr":139,"zone":2},{"date":"05-19 16:27:30","pace":478,"hr":134,"zone":1},{"date":"05-21 15:07:56","pace":465,"hr":129,"zone":1},{"date":"05-22 15:13:31","pace":472,"hr":146,"zone":2},{"date":"05-25 16:23:09","pace":481,"hr":135,"zone":1},{"date":"05-28 16:52:14","pace":470,"hr":134,"zone":1},{"date":"05-29 15:25:01","pace":475,"hr":143,"zone":2},{"date":"06-01 16:27:57","pace":472,"hr":135,"zone":1},{"date":"06-02 16:49:56","pace":467,"hr":145,"zone":2},{"date":"06-04 16:15:39","pace":482,"hr":140,"zone":2},{"date":"06-06 09:58:10","pace":465,"hr":136,"zone":2},{"date":"06-08 15:00:37","pace":469,"hr":133,"zone":1},{"date":"06-09 16:50:01","pace":460,"hr":145,"zone":2},{"date":"06-11 15:27:11","pace":479,"hr":144,"zone":2},{"date":"06-13 09:48:35","pace":426,"hr":152,"zone":3},{"date":"06-15","pace":480,"hr":133,"zone":1},{"date":"06-16","pace":466,"hr":138,"zone":2}];
+const paceTrend = [{"date":"05-14 15:18:10","pace":463,"hr":137,"zone":2},{"date":"05-15 15:00:19","pace":460,"hr":141,"zone":2},{"date":"05-18 16:36:24","pace":466,"hr":139,"zone":2},{"date":"05-19 16:27:30","pace":478,"hr":134,"zone":1},{"date":"05-21 15:07:56","pace":465,"hr":129,"zone":1},{"date":"05-22 15:13:31","pace":472,"hr":146,"zone":2},{"date":"05-25 16:23:09","pace":481,"hr":135,"zone":1},{"date":"05-28 16:52:14","pace":470,"hr":134,"zone":1},{"date":"05-29 15:25:01","pace":475,"hr":143,"zone":2},{"date":"06-01 16:27:57","pace":472,"hr":135,"zone":1},{"date":"06-02 16:49:56","pace":467,"hr":145,"zone":2},{"date":"06-04 16:15:39","pace":482,"hr":140,"zone":2},{"date":"06-06 09:58:10","pace":465,"hr":136,"zone":2},{"date":"06-08 15:00:37","pace":469,"hr":133,"zone":1},{"date":"06-09 16:50:01","pace":460,"hr":145,"zone":2},{"date":"06-11 15:27:11","pace":479,"hr":144,"zone":2},{"date":"06-13 09:48:35","pace":426,"hr":152,"zone":3},{"date":"06-15","pace":480,"hr":133,"zone":1},{"date":"06-16","pace":466,"hr":138,"zone":2},{"date":"06-18","pace":485,"hr":140,"zone":2}];
 const zoneColors = ['#6b7280','#16a34a','#2563eb','#d97706','#dc2626','#9333ea'];
 if (document.getElementById('paceTrendChart') && paceTrend.length > 0) {
   new Chart(document.getElementById('paceTrendChart'), {
