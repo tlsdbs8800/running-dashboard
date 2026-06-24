@@ -1,9 +1,19 @@
 {
-  "mode": "evening",
-  "date": "2026-06-23",
-  "generatedAt": "2026-06-23T09:17:54.000Z",
-  "hasRun": false,
-  "isRestDay": false,
-  "feedback": "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
-  "tomorrowPlan": null
+  "mode": "morning",
+  "date": "2026-06-24",
+  "generatedAt": "2026-06-24T20:44:31.962Z",
+  "readiness": null,
+  "readinessLvl": null,
+  "sleepScore": null,
+  "sleepMin": null,
+  "hrv": null,
+  "verdict": "📊 준비도 데이터 없음",
+  "verdictColor": "#64748b",
+  "advice": "",
+  "adjustedLabel": "휴식",
+  "hrvNote": "",
+  "sleepNote": "",
+  "todayPlanType": null,
+  "todayPlanOrigLabel": null,
+  "todayPlanDesc": null
 }
