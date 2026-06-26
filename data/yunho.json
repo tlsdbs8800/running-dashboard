@@ -652,20 +652,20 @@
   ],
   "sleep": [
     {
-      "date": "2026-06-26",
-      "score": 79,
-      "durationMin": 422
+      "date": "2026-06-27",
+      "score": 74,
+      "durationMin": 510
     }
   ],
   "trainingReadiness": {
-    "date": "2026-06-26",
-    "score": 63,
+    "date": "2026-06-27",
+    "score": 71,
     "level": "MODERATE",
-    "feedbackShort": "BALANCE_STRESS_AND_RECOVERY",
-    "sleepScore": 79,
-    "recoveryTimeMin": 567
+    "feedbackShort": "GOOD_SLEEP_HISTORY",
+    "sleepScore": 74,
+    "recoveryTimeMin": 1
   },
-  "lastSync": "2026-06-26T09:00:06.011239Z",
+  "lastSync": "2026-06-26T22:11:52.209834Z",
   "birthYear": 1992,
   "age": 34,
   "mafHR": 146
