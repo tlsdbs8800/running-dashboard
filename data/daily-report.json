@@ -1,19 +1,9 @@
 {
-  "mode": "morning",
-  "date": "2026-06-25",
-  "generatedAt": "2026-06-25T22:52:53.256Z",
-  "readiness": 63,
-  "readinessLvl": "MODERATE",
-  "sleepScore": 79,
-  "sleepMin": 422,
-  "hrv": null,
-  "verdict": "🟡 보통 — 계획대로, 몸 무거우면 1km 줄이기",
-  "verdictColor": "#d97706",
-  "advice": " · 페이스 10~15초 여유있게",
-  "adjustedLabel": "휴식",
-  "hrvNote": "",
-  "sleepNote": "7시간 2분 · 수면 점수 79",
-  "todayPlanType": null,
-  "todayPlanOrigLabel": null,
-  "todayPlanDesc": null
+  "mode": "evening",
+  "date": "2026-06-26",
+  "generatedAt": "2026-06-26T09:00:06.274Z",
+  "hasRun": false,
+  "isRestDay": false,
+  "feedback": "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
+  "tomorrowPlan": null
 }
