@@ -7,6 +7,17 @@
   "goalTimeMin": 120,
   "activities": [
     {
+      "id": 23413995575,
+      "date": "2026-06-29",
+      "distanceM": 5005,
+      "durationSec": 2419,
+      "avgHR": 135.0,
+      "maxHR": 147.0,
+      "avgPaceSecPerKm": 483,
+      "calories": 338.0,
+      "name": "Sydney Running"
+    },
+    {
       "id": 23390298504,
       "date": "2026-06-27",
       "distanceM": 5008,
@@ -670,13 +681,13 @@
   ],
   "trainingReadiness": {
     "date": "2026-06-29",
-    "score": 35,
+    "score": 26,
     "level": "LOW",
     "feedbackShort": "FIND_TIME_TO_RELAX",
     "sleepScore": 57,
-    "recoveryTimeMin": 44
+    "recoveryTimeMin": 873
   },
-  "lastSync": "2026-06-28T22:23:07.620919Z",
+  "lastSync": "2026-06-29T09:05:25.443344Z",
   "birthYear": 1992,
   "age": 34,
   "mafHR": 146
