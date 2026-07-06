@@ -95,7 +95,7 @@
 <body>
 <div class="container">
   <h1>🏃 러닝 코치 대시보드</h1>
-  <div class="sync-time">마지막 동기화: 2026. 7. 4. 오후 7:00:31</div>
+  <div class="sync-time">마지막 동기화: 2026. 7. 6. 오후 7:05:51</div>
 
   <!-- Daily Report: morning/evening -->
   
@@ -105,7 +105,7 @@
       <div class="dr-advice">오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.</div>
       
     
-    <div style="font-size:11px;color:var(--muted);margin-top:8px">2026. 7. 4. 오후 7:00:31 생성</div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">2026. 7. 6. 오후 7:05:52 생성</div>
   </div>
   
 
@@ -114,19 +114,19 @@
   <div class="grid4">
     <div class="card">
       <div class="card-title">훈련 준비도</div>
-      <div class="big-num" style="color:var(--green)">
-        70<span style="font-size:16px;font-weight:400">/100</span>
+      <div class="big-num" style="color:var(--orange)">
+        40<span style="font-size:16px;font-weight:400">/100</span>
       </div>
       <div class="sub">
-        <span class="badge badge-moderate">
-          MODERATE
+        <span class="badge badge-low">
+          LOW
         </span>
       </div>
     </div>
     <div class="card">
       <div class="card-title">수면 점수</div>
-      <div class="big-num">72</div>
-      <div class="sub">8시간 43분</div>
+      <div class="big-num">51</div>
+      <div class="sub">7시간 1분</div>
     </div>
     <div class="card">
       <div class="card-title">VO2 Max</div>
@@ -608,10 +608,10 @@
 </div>
 
 <script>
-const yunhoWeekly = [{"label":"04/12","km":23.6},{"label":"04/19","km":20},{"label":"04/26","km":20.9},{"label":"05/03","km":20},{"label":"05/10","km":20},{"label":"05/17","km":25},{"label":"05/24","km":20},{"label":"05/31","km":20},{"label":"06/07","km":20},{"label":"06/14","km":25},{"label":"06/21","km":20},{"label":"06/28","km":21}];
-const gfWeekly = [{"label":"04/12","km":18.6},{"label":"04/19","km":5},{"label":"04/26","km":12.1},{"label":"05/03","km":5},{"label":"05/10","km":0},{"label":"05/17","km":0},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":0},{"label":"06/14","km":5},{"label":"06/21","km":0},{"label":"06/28","km":0}];
-const yunhoLR = [{"label":"04/12","km":10},{"label":"04/19","km":10},{"label":"04/26","km":10},{"label":"05/03","km":10},{"label":"05/10","km":10},{"label":"05/17","km":10},{"label":"05/24","km":10},{"label":"05/31","km":10},{"label":"06/07","km":10},{"label":"06/14","km":10},{"label":"06/21","km":10},{"label":"06/28","km":11}];
-const gfLR = [{"label":"04/12","km":10},{"label":"04/19","km":5},{"label":"04/26","km":7},{"label":"05/03","km":5},{"label":"05/10","km":null},{"label":"05/17","km":null},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":null},{"label":"06/14","km":5},{"label":"06/21","km":null},{"label":"06/28","km":null}];
+const yunhoWeekly = [{"label":"04/19","km":20},{"label":"04/26","km":20.9},{"label":"05/03","km":20},{"label":"05/10","km":20},{"label":"05/17","km":25},{"label":"05/24","km":20},{"label":"05/31","km":20},{"label":"06/07","km":20},{"label":"06/14","km":25},{"label":"06/21","km":20},{"label":"06/28","km":21},{"label":"07/05","km":0}];
+const gfWeekly = [{"label":"04/19","km":5},{"label":"04/26","km":12.1},{"label":"05/03","km":5},{"label":"05/10","km":0},{"label":"05/17","km":0},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":0},{"label":"06/14","km":5},{"label":"06/21","km":0},{"label":"06/28","km":0},{"label":"07/05","km":0}];
+const yunhoLR = [{"label":"04/19","km":10},{"label":"04/26","km":10},{"label":"05/03","km":10},{"label":"05/10","km":10},{"label":"05/17","km":10},{"label":"05/24","km":10},{"label":"05/31","km":10},{"label":"06/07","km":10},{"label":"06/14","km":10},{"label":"06/21","km":10},{"label":"06/28","km":11},{"label":"07/05","km":null}];
+const gfLR = [{"label":"04/19","km":5},{"label":"04/26","km":7},{"label":"05/03","km":5},{"label":"05/10","km":null},{"label":"05/17","km":null},{"label":"05/24","km":5},{"label":"05/31","km":7},{"label":"06/07","km":null},{"label":"06/14","km":5},{"label":"06/21","km":null},{"label":"06/28","km":null},{"label":"07/05","km":null}];
 
 const chartDefaults = {
   responsive: true,
