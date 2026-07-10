@@ -1,9 +1,17 @@
 {
   "mode": "evening",
-  "date": "2026-07-06",
-  "generatedAt": "2026-07-06T09:05:52.134Z",
-  "hasRun": false,
-  "isRestDay": false,
-  "feedback": "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
+  "date": "2026-07-10",
+  "generatedAt": "2026-07-10T09:36:52.062Z",
+  "hasRun": true,
+  "km": 5,
+  "paceStr": "5:50",
+  "avgHR": 167,
+  "maxHR": 197,
+  "zone": 4,
+  "zoneLabel": "Z4 (힘듦)",
+  "zoneColor": "#ef4444",
+  "planComparison": "",
+  "plannedKm": null,
+  "feedback": "HR 167(Z4 (힘듦)) — 오늘은 좀 빡세게 달렸어. 이지 런 날엔 HR 146 아래로 유지해야 MAF 훈련 효과가 나와. 내일 or 모레 충분히 쉬기.",
   "tomorrowPlan": null
 }
