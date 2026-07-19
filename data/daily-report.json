@@ -1,9 +1,19 @@
 {
-  "mode": "evening",
-  "date": "2026-07-11",
-  "generatedAt": "2026-07-11T09:00:06.374Z",
-  "hasRun": false,
-  "isRestDay": false,
-  "feedback": "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
-  "tomorrowPlan": null
+  "mode": "morning",
+  "date": "2026-07-19",
+  "generatedAt": "2026-07-19T22:26:54.313Z",
+  "readiness": 72,
+  "readinessLvl": "MODERATE",
+  "sleepScore": 89,
+  "sleepMin": 462,
+  "hrv": null,
+  "verdict": "✅ 컨디션 좋음 — 계획대로 달려도 돼",
+  "verdictColor": "#16a34a",
+  "advice": " · HR 136~146 유지",
+  "adjustedLabel": "휴식",
+  "hrvNote": "",
+  "sleepNote": "7시간 42분 · 수면 점수 89",
+  "todayPlanType": null,
+  "todayPlanOrigLabel": null,
+  "todayPlanDesc": null
 }
