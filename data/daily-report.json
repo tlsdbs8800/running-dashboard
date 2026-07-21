@@ -1,9 +1,17 @@
 {
   "mode": "evening",
-  "date": "2026-07-19",
-  "generatedAt": "2026-07-19T23:28:22.024Z",
-  "hasRun": false,
-  "isRestDay": false,
-  "feedback": "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
+  "date": "2026-07-21",
+  "generatedAt": "2026-07-21T20:46:12.608Z",
+  "hasRun": true,
+  "km": 5,
+  "paceStr": "7:40",
+  "avgHR": 143,
+  "maxHR": 160,
+  "zone": 2,
+  "zoneLabel": "Z2 (MAF 이지)",
+  "zoneColor": "#16a34a",
+  "planComparison": "",
+  "plannedKm": null,
+  "feedback": "완벽한 이지 런이야! HR 143 · 7:40/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져.",
   "tomorrowPlan": null
 }
