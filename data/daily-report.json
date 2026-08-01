@@ -1,17 +1,9 @@
 {
   "mode": "evening",
-  "date": "2026-07-30",
-  "generatedAt": "2026-07-30T09:00:04.655Z",
-  "hasRun": true,
-  "km": 12,
-  "paceStr": "7:33",
-  "avgHR": 147,
-  "maxHR": 164,
-  "zone": 3,
-  "zoneLabel": "Z3 (적당히 힘듦)",
-  "zoneColor": "#f59e0b",
-  "planComparison": "",
-  "plannedKm": null,
-  "feedback": "HR 147로 MAF(146)보다 조금 올라갔어. 이지 런에선 Z2 이하 유지가 목표야. 다음엔 페이스를 10~15초 더 줄여봐.",
+  "date": "2026-08-01",
+  "generatedAt": "2026-08-01T09:00:07.900Z",
+  "hasRun": false,
+  "isRestDay": false,
+  "feedback": "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
   "tomorrowPlan": null
 }
