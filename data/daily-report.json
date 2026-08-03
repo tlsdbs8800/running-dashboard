@@ -1,9 +1,19 @@
 {
-  "mode": "evening",
+  "mode": "morning",
   "date": "2026-08-03",
-  "generatedAt": "2026-08-03T09:01:06.760Z",
-  "hasRun": false,
-  "isRestDay": false,
-  "feedback": "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
-  "tomorrowPlan": null
+  "generatedAt": "2026-08-03T21:02:27.501Z",
+  "readiness": 41,
+  "readinessLvl": "LOW",
+  "sleepScore": null,
+  "sleepMin": null,
+  "hrv": null,
+  "verdict": "🔴 컨디션 낮음 — 볼륨 줄이고 여유있게",
+  "verdictColor": "#dc2626",
+  "advice": " · 페이스 20~30초 느리게 · HR 146 이하 철저히",
+  "adjustedLabel": "휴식",
+  "hrvNote": "",
+  "sleepNote": "",
+  "todayPlanType": null,
+  "todayPlanOrigLabel": null,
+  "todayPlanDesc": null
 }
