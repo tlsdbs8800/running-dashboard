@@ -62,7 +62,7 @@ async function refreshSessionIfNeeded(config) {
   try { playwright = await import("playwright"); }
   catch { throw new Error("playwright not available"); }
 
-  const browser = await playwright.chromium.launch({ headless: true });
+  const browser = await playwright.chromium.launch({ headless: true, executablePath: '/opt/pw-browsers/chromium' });
   const context = await browser.newContext();
   await context.addCookies(session.cookies.map((c) => ({
     name: c.name, value: c.value, domain: c.domain, path: "/",
