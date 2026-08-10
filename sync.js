@@ -112,17 +112,8 @@ async function fetchUserData(userId, config) {
 
   await refreshSessionIfNeeded(config);
 
-  let GarminClient;
-  try {
-    const mod = await import("@etweisberg/garmin-connect-mcp");
-    GarminClient = mod.GarminClient;
-  } catch {
-    // Try local node_modules path
-    const localMod = await import(join(__dirname, "node_modules/@etweisberg/garmin-connect-mcp/dist/garmin-client.js"));
-    GarminClient = localMod.GarminClient;
-  }
-
-  const client = new GarminClient(config.sessionFile);
+  const { LocalGarminClient } = await import("./garmin-client-local.js");
+  const client = new LocalGarminClient(config.sessionFile);
 
   try {
     console.log(`[${config.name}] 데이터 수집 시작...`);
