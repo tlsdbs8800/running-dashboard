@@ -6,7 +6,7 @@
  *    that doesn't exist on macOS; here we let Playwright use its default chromium.
  */
 
-import { GarminClient } from "@etweisberg/garmin-connect-mcp";
+import { GarminClient } from "@etweisberg/garmin-connect-mcp/dist/garmin-client.js";
 
 export class LocalGarminClient extends GarminClient {
   async init() {
