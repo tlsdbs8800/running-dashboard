@@ -327,11 +327,11 @@ async function generateDashboard() {
 async function pushDashboard() {
   const { execSync } = await import("node:child_process");
   try {
-    execSync('git add dashboard.html', { cwd: __dirname, stdio: "pipe" });
+    execSync('git add dashboard.html data/yunho.json data/gf.json', { cwd: __dirname, stdio: "pipe" });
     const today = new Date().toISOString().substring(0, 10);
-    execSync(`git commit -m "dashboard: ${today} 자동 갱신"`, { cwd: __dirname, stdio: "pipe" });
+    execSync(`git commit -m "sync: ${today} 데이터 갱신"`, { cwd: __dirname, stdio: "pipe" });
     execSync('git push', { cwd: __dirname, stdio: "inherit" });
-    console.log("대시보드 GitHub 푸시 완료 ✓");
+    console.log("데이터 + 대시보드 GitHub 푸시 완료 ✓");
   } catch (e) {
     // No changes to commit, or push failed — non-fatal
     if (!e.message?.includes("nothing to commit")) {
