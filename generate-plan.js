@@ -1,6 +1,6 @@
 /**
  * Sunday evening: analyze last week's data → generate next week's training plan.
- * Saves to data/weekly-plan.json and regenerates dashboard.html.
+ * Saves to data/weekly-plan.json and regenerates index.html.
  *
  * Training principles applied:
  *  - 10% rule: weekly mileage increase capped at 10%
@@ -403,7 +403,7 @@ function generate() {
 
   // Push updated dashboard to GitHub Pages
   try {
-    execSync("git add dashboard.html", { cwd: __dirname, stdio: "pipe" });
+    execSync("git add index.html", { cwd: __dirname, stdio: "pipe" });
     const today = new Date().toISOString().substring(0, 10);
     execSync(`git commit -m "dashboard: ${today} 주간 계획 갱신"`, { cwd: __dirname, stdio: "pipe" });
     execSync("git push", { cwd: __dirname, stdio: "pipe" });

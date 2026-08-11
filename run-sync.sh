@@ -41,7 +41,7 @@ if [ "$DAY" = "7" ] && [ "$MODE" = "evening" ]; then
 fi
 
 # 6. GitHub 푸시
-git add data/ dashboard.html
+git add data/ index.html
 if git commit -m "[$MODE] $(date '+%Y-%m-%d %H:%M') 자동 갱신" 2>/dev/null; then
   git push && echo "GitHub 푸시 완료 ✓" || echo "GitHub 푸시 실패"
 else

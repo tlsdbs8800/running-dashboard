@@ -32,7 +32,7 @@ if [ "${TODAY_COUNT:-0}" -gt "${LAST_COUNT:-0}" ]; then
   node generate-daily-report.js evening
   node generate-dashboard.js
 
-  git add data/ dashboard.html
+  git add data/ index.html
   git commit -m "sync: $TODAY 런 후 자동 갱신" 2>/dev/null && \
     git push && echo "GitHub 푸시 완료 ✓" || echo "푸시 실패"
 fi

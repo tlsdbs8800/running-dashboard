@@ -1,6 +1,6 @@
 /**
- * Reads data/*.json and generates a self-contained dashboard.html with embedded data.
- * No server needed — just open dashboard.html in any browser.
+ * Reads data/*.json and generates a self-contained index.html with embedded data.
+ * No server needed — just open index.html in any browser.
  */
 
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
@@ -788,7 +788,7 @@ if (document.getElementById('weightChart') && weightData.length > 1) {
 </body>
 </html>`;
 
-  const outPath = join(__dirname, "dashboard.html");
+  const outPath = join(__dirname, "index.html");
   writeFileSync(outPath, html);
   console.log(`대시보드 생성 완료 → ${outPath}`);
 }
