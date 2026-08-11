@@ -255,8 +255,108 @@ function getTomorrow(plan, todayDate) {
   return plan.yunho.schedule.find(s => s.date === tomorrowStr) ?? null;
 }
 
+// ─── JENNY EVENING ───────────────────────────────────────────────────────────
+function generateGfEvening(gf) {
+  const today  = todayStr();
+  const maf    = gf?.mafHR ?? 155;
+  const todayRun = (gf?.activities ?? []).find(a => a.date === today);
+
+  if (!todayRun) {
+    return {
+      mode: "evening", date: today, generatedAt: new Date().toISOString(),
+      hasRun: false,
+      feedback: "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
+    };
+  }
+
+  const km    = (todayRun.distanceM ?? 0) / 1000;
+  const pace  = todayRun.avgPaceSecPerKm;
+  const avgHR = todayRun.avgHR;
+  const zone  = hrZone(avgHR, maf);
+  const zoneLabels = ["","Z1 (매우 쉬움)","Z2 (MAF 이지)","Z3 (적당히 힘듦)","Z4 (힘듦)","Z5 (최대)"];
+  const zoneColors = ["","#22c55e","#16a34a","#f59e0b","#ef4444","#991b1b"];
+  const paceStr = secToMMSS(pace);
+
+  // Jenny는 올 이지 (MAF 이하) 훈련 — 페이스 7:50~8:10 목표
+  let feedback = "";
+  if (zone <= 2 && pace >= 470 && pace <= 490) {
+    feedback = `완벽한 이지 런이야! HR ${avgHR} · ${paceStr}/km — MAF 존에서 목표 페이스 정확히 맞췄어.`;
+  } else if (zone <= 2) {
+    feedback = `이지 런 잘 됐어. HR ${avgHR}(Z${zone}) 유지. ${pace < 470 ? `페이스(${paceStr})가 조금 빠른 편이야 — 여유 있게 달려도 돼.` : ""}`;
+  } else if (zone === 3) {
+    feedback = `HR ${avgHR}로 MAF(${maf})보다 조금 올라갔어. 다음엔 페이스를 10~15초 더 줄여봐.`;
+  } else {
+    feedback = `HR ${avgHR}(${zoneLabels[zone]}) — 올 이지 훈련 중엔 HR ${maf} 이하로 유지하는 게 목표야. 다음엔 천천히!`;
+  }
+
+  // 다이내믹스
+  const gct  = todayRun.groundContactTimeMs;
+  const vo   = todayRun.verticalOscillationCm;
+  const vr   = todayRun.verticalRatio;
+  const cad  = todayRun.cadence;
+  const power = todayRun.normPowerW ?? todayRun.avgPowerW;
+
+  function evalGCT(ms) {
+    if (!ms) return null;
+    if (ms < 230) return { rating:"최상", color:"#16a34a", tip:"지면 접촉 시간이 매우 짧아 — 탄성이 좋은 폼이야." };
+    if (ms < 260) return { rating:"좋음", color:"#22c55e", tip:null };
+    if (ms < 290) return { rating:"보통", color:"#f59e0b", tip:"발을 빠르게 들어올리는 연습을 해봐." };
+    return { rating:"개선 필요", color:"#ef4444", tip:"케이던스 높이기가 도움 돼." };
+  }
+  function evalVO(cm) {
+    if (!cm) return null;
+    if (cm < 6)  return { rating:"최상", color:"#16a34a", tip:null };
+    if (cm < 8)  return { rating:"좋음", color:"#22c55e", tip:null };
+    if (cm < 10) return { rating:"보통", color:"#f59e0b", tip:"위아래 튀는 동작을 줄여봐. 코어를 더 잡아봐." };
+    return { rating:"개선 필요", color:"#ef4444", tip:"수직 진동이 큰 편이야 — 에너지를 앞으로 써봐." };
+  }
+  function evalCadence(spm) {
+    if (!spm) return null;
+    if (spm >= 175) return { rating:"좋음", color:"#22c55e", tip:null };
+    if (spm >= 165) return { rating:"보통", color:"#f59e0b", tip:"케이던스를 5~10 높이면 효율이 올라가." };
+    return { rating:"낮음", color:"#ef4444", tip:"보폭을 줄이고 발 회전을 빠르게 해봐." };
+  }
+
+  const dynamics = {
+    gct:     { value:gct,   unit:"ms",  label:"지면 접촉", ...evalGCT(gct) },
+    vo:      { value:vo,    unit:"cm",  label:"수직 진동", ...evalVO(vo) },
+    vr:      { value:vr,    unit:"%",   label:"수직 비율", rating: vr ? (vr<8?"좋음":"보통") : null, color: vr ? (vr<8?"#22c55e":"#f59e0b") : null },
+    cadence: { value:cad,   unit:"spm", label:"케이던스",  ...evalCadence(cad) },
+    power:   { value:power, unit:"W",   label:"파워 (NP)", rating:null },
+  };
+
+  const trainingEffectKo = {
+    "NO_BENEFIT":"효과 없음","MINOR_BENEFIT":"미미한 효과","MAINTAINING":"유지",
+    "MAINTAINING_AEROBIC_BASE":"유산소 기초 유지","IMPROVING":"향상",
+    "HIGHLY_IMPROVING":"크게 향상","OVERREACHING":"과훈련","AEROBIC_BASE":"유산소 기초",
+  };
+
+  const dynamicsTip = [dynamics.gct, dynamics.vo, dynamics.cadence]
+    .filter(d => d?.tip && d?.rating && !["최상","좋음"].includes(d.rating))
+    .map(d => d.tip)[0];
+  if (dynamicsTip) feedback += " · " + dynamicsTip;
+
+  return {
+    mode: "evening", date: today, generatedAt: new Date().toISOString(),
+    hasRun: true,
+    km: Math.round(km * 10) / 10,
+    paceStr, avgHR, maxHR: todayRun.maxHR,
+    zone, zoneLabel: zoneLabels[zone] ?? "", zoneColor: zoneColors[zone] ?? "",
+    feedback, dynamics,
+    aerobicEffect: todayRun.aerobicEffect,
+    anaerobicEffect: todayRun.anaerobicEffect,
+    trainingEffectLabel: trainingEffectKo[todayRun.trainingEffectLabel] ?? todayRun.trainingEffectLabel ?? null,
+    trainingLoad: todayRun.trainingLoad,
+    hrZoneSec: todayRun.hrZoneSec ?? null,
+    elevationGainM: todayRun.elevationGainM,
+    fastest1kmSec: todayRun.fastest1kmSec,
+    steps: todayRun.steps,
+  };
+}
+
 // ─── MAIN ────────────────────────────────────────────────────────────────────
 const yunho = load("yunho.json");
+const gf    = load("gf.json");
 const plan  = load("weekly-plan.json");
 
 let report;
@@ -269,3 +369,10 @@ if (mode === "evening") {
 writeFileSync(join(__dirname, "data/daily-report.json"), JSON.stringify(report, null, 2));
 console.log(`[daily-report] ${mode} 리포트 생성 완료 → data/daily-report.json`);
 console.log(`  ${report.verdict ?? report.feedback ?? ""}`);
+
+// Jenny evening report (항상 생성)
+if (gf) {
+  const gfReport = generateGfEvening(gf);
+  writeFileSync(join(__dirname, "data/daily-report-gf.json"), JSON.stringify(gfReport, null, 2));
+  console.log(`[daily-report-gf] Jenny 리포트 생성 완료`);
+}
