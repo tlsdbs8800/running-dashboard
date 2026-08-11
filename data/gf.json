@@ -7,6 +7,50 @@
   "goalTimeMin": null,
   "activities": [
     {
+      "id": 23450374499,
+      "date": "2026-07-02",
+      "distanceM": 7007,
+      "durationSec": 3460,
+      "avgHR": 130,
+      "maxHR": 151,
+      "avgPaceSecPerKm": 494,
+      "calories": 403,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23426652249,
+      "date": "2026-06-30",
+      "distanceM": 4005,
+      "durationSec": 1933,
+      "avgHR": 128,
+      "maxHR": 145,
+      "avgPaceSecPerKm": 483,
+      "calories": 232,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23372317013,
+      "date": "2026-06-25",
+      "distanceM": 7007,
+      "durationSec": 3392,
+      "avgHR": 128,
+      "maxHR": 142,
+      "avgPaceSecPerKm": 484,
+      "calories": 401,
+      "name": "Sydney Running"
+    },
+    {
+      "id": 23291432607,
+      "date": "2026-06-18",
+      "distanceM": 7007,
+      "durationSec": 3397,
+      "avgHR": 135,
+      "maxHR": 148,
+      "avgPaceSecPerKm": 485,
+      "calories": 473,
+      "name": "Sydney Running"
+    },
+    {
       "id": 23253704275,
       "date": "2026-06-15",
       "distanceM": 5007,
@@ -357,13 +401,13 @@
   "weight": [],
   "sleep": [
     {
-      "date": "2026-06-15",
+      "date": "2026-08-11",
       "score": null,
       "durationMin": null
     }
   ],
   "trainingReadiness": null,
-  "lastSync": "2026-06-15T11:12:13.051Z",
+  "lastSync": "2026-08-11T01:46:47.589Z",
   "birthYear": 2001,
   "age": 25,
   "mafHR": 155
