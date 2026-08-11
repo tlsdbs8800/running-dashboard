@@ -25,7 +25,7 @@ echo "=== $(date '+%Y-%m-%d %H:%M:%S') [$MODE] 동기화 시작 ==="
 git pull --rebase origin main 2>/dev/null && echo "git pull 완료" || echo "git pull 실패 (무시)"
 
 # 2. 가민 데이터 수집
-python3 sync.py
+node sync.js
 
 # 3. 일일 리포트 생성 (morning or evening)
 node generate-daily-report.js $MODE
