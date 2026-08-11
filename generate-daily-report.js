@@ -280,7 +280,7 @@ function generateGfEvening(gf) {
     return {
       mode: "evening", date: today, generatedAt: new Date().toISOString(),
       hasRun: false,
-      feedback: "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
+      feedback: "No run data yet today. If you ran, sync your Garmin watch with your phone.",
     };
   }
 
@@ -288,20 +288,19 @@ function generateGfEvening(gf) {
   const pace  = todayRun.avgPaceSecPerKm;
   const avgHR = todayRun.avgHR;
   const zone  = hrZone(avgHR, maf);
-  const zoneLabels = ["","Z1 (매우 쉬움)","Z2 (MAF 이지)","Z3 (적당히 힘듦)","Z4 (힘듦)","Z5 (최대)"];
+  const zoneLabels = ["","Z1 (Very Easy)","Z2 (MAF Easy)","Z3 (Moderate)","Z4 (Hard)","Z5 (Max)"];
   const zoneColors = ["","#22c55e","#16a34a","#f59e0b","#ef4444","#991b1b"];
   const paceStr = secToMMSS(pace);
 
-  // Jenny는 올 이지 (MAF 이하) 훈련 — 페이스 7:50~8:10 목표
   let feedback = "";
   if (zone <= 2 && pace >= 470 && pace <= 490) {
-    feedback = `완벽한 이지 런이야! HR ${avgHR} · ${paceStr}/km — MAF 존에서 목표 페이스 정확히 맞췄어.`;
+    feedback = `Perfect easy run! HR ${avgHR} · ${paceStr}/km — nailed the target pace in the MAF zone.`;
   } else if (zone <= 2) {
-    feedback = `이지 런 잘 됐어. HR ${avgHR}(Z${zone}) 유지. ${pace < 470 ? `페이스(${paceStr})가 조금 빠른 편이야 — 여유 있게 달려도 돼.` : ""}`;
+    feedback = `Good easy run. HR ${avgHR} (Z${zone}) kept in check. ${pace < 470 ? `Pace (${paceStr}) is a little fast — feel free to slow down a bit.` : ""}`;
   } else if (zone === 3) {
-    feedback = `HR ${avgHR}로 MAF(${maf})보다 조금 올라갔어. 다음엔 페이스를 10~15초 더 줄여봐.`;
+    feedback = `HR ${avgHR} crept above MAF (${maf}). Try backing off 10–15 sec/km next time.`;
   } else {
-    feedback = `HR ${avgHR}(${zoneLabels[zone]}) — 올 이지 훈련 중엔 HR ${maf} 이하로 유지하는 게 목표야. 다음엔 천천히!`;
+    feedback = `HR ${avgHR} (${zoneLabels[zone]}) — the goal during all-easy training is to stay under HR ${maf}. Take it easier next time!`;
   }
 
   // 다이내믹스
@@ -313,41 +312,41 @@ function generateGfEvening(gf) {
 
   function evalGCT(ms) {
     if (!ms) return null;
-    if (ms < 230) return { rating:"최상", color:"#16a34a", tip:"지면 접촉 시간이 매우 짧아 — 탄성이 좋은 폼이야." };
-    if (ms < 260) return { rating:"좋음", color:"#22c55e", tip:null };
-    if (ms < 290) return { rating:"보통", color:"#f59e0b", tip:"발을 빠르게 들어올리는 연습을 해봐." };
-    return { rating:"개선 필요", color:"#ef4444", tip:"케이던스 높이기가 도움 돼." };
+    if (ms < 230) return { rating:"Excellent", color:"#16a34a", tip:"Very short ground contact — great elastic form." };
+    if (ms < 260) return { rating:"Good", color:"#22c55e", tip:null };
+    if (ms < 290) return { rating:"Fair", color:"#f59e0b", tip:"Practice lifting your feet faster off the ground." };
+    return { rating:"Needs Work", color:"#ef4444", tip:"Try increasing cadence to reduce ground contact." };
   }
   function evalVO(cm) {
     if (!cm) return null;
-    if (cm < 6)  return { rating:"최상", color:"#16a34a", tip:null };
-    if (cm < 8)  return { rating:"좋음", color:"#22c55e", tip:null };
-    if (cm < 10) return { rating:"보통", color:"#f59e0b", tip:"위아래 튀는 동작을 줄여봐. 코어를 더 잡아봐." };
-    return { rating:"개선 필요", color:"#ef4444", tip:"수직 진동이 큰 편이야 — 에너지를 앞으로 써봐." };
+    if (cm < 6)  return { rating:"Excellent", color:"#16a34a", tip:null };
+    if (cm < 8)  return { rating:"Good", color:"#22c55e", tip:null };
+    if (cm < 10) return { rating:"Fair", color:"#f59e0b", tip:"Minimize the bouncing motion. Engage your core more." };
+    return { rating:"Needs Work", color:"#ef4444", tip:"High vertical oscillation — try directing energy forward." };
   }
   function evalCadence(spm) {
     if (!spm) return null;
-    if (spm >= 175) return { rating:"좋음", color:"#22c55e", tip:null };
-    if (spm >= 165) return { rating:"보통", color:"#f59e0b", tip:"케이던스를 5~10 높이면 효율이 올라가." };
-    return { rating:"낮음", color:"#ef4444", tip:"보폭을 줄이고 발 회전을 빠르게 해봐." };
+    if (spm >= 175) return { rating:"Good", color:"#22c55e", tip:null };
+    if (spm >= 165) return { rating:"Fair", color:"#f59e0b", tip:"Bumping cadence by 5–10 spm will improve efficiency." };
+    return { rating:"Low", color:"#ef4444", tip:"Shorten your stride and spin your feet faster." };
   }
 
   const dynamics = {
-    gct:     { value:gct,   unit:"ms",  label:"지면 접촉", ...evalGCT(gct) },
-    vo:      { value:vo,    unit:"cm",  label:"수직 진동", ...evalVO(vo) },
-    vr:      { value:vr,    unit:"%",   label:"수직 비율", rating: vr ? (vr<8?"좋음":"보통") : null, color: vr ? (vr<8?"#22c55e":"#f59e0b") : null },
-    cadence: { value:cad,   unit:"spm", label:"케이던스",  ...evalCadence(cad) },
-    power:   { value:power, unit:"W",   label:"파워 (NP)", rating:null },
+    gct:     { value:gct,   unit:"ms",  label:"Ground Contact", ...evalGCT(gct) },
+    vo:      { value:vo,    unit:"cm",  label:"Vert. Oscillation", ...evalVO(vo) },
+    vr:      { value:vr,    unit:"%",   label:"Vert. Ratio", rating: vr ? (vr<8?"Good":"Fair") : null, color: vr ? (vr<8?"#22c55e":"#f59e0b") : null },
+    cadence: { value:cad,   unit:"spm", label:"Cadence",  ...evalCadence(cad) },
+    power:   { value:power, unit:"W",   label:"Power (NP)", rating:null },
   };
 
-  const trainingEffectKo = {
-    "NO_BENEFIT":"효과 없음","MINOR_BENEFIT":"미미한 효과","MAINTAINING":"유지",
-    "MAINTAINING_AEROBIC_BASE":"유산소 기초 유지","IMPROVING":"향상",
-    "HIGHLY_IMPROVING":"크게 향상","OVERREACHING":"과훈련","AEROBIC_BASE":"유산소 기초",
+  const trainingEffectEn = {
+    "NO_BENEFIT":"No Benefit","MINOR_BENEFIT":"Minor Benefit","MAINTAINING":"Maintaining",
+    "MAINTAINING_AEROBIC_BASE":"Maintaining Aerobic Base","IMPROVING":"Improving",
+    "HIGHLY_IMPROVING":"Highly Improving","OVERREACHING":"Overreaching","AEROBIC_BASE":"Aerobic Base",
   };
 
   const dynamicsTip = [dynamics.gct, dynamics.vo, dynamics.cadence]
-    .filter(d => d?.tip && d?.rating && !["최상","좋음"].includes(d.rating))
+    .filter(d => d?.tip && d?.rating && !["Excellent","Good"].includes(d.rating))
     .map(d => d.tip)[0];
   if (dynamicsTip) feedback += " · " + dynamicsTip;
 
@@ -360,7 +359,7 @@ function generateGfEvening(gf) {
     feedback, dynamics,
     aerobicEffect: todayRun.aerobicEffect,
     anaerobicEffect: todayRun.anaerobicEffect,
-    trainingEffectLabel: trainingEffectKo[todayRun.trainingEffectLabel] ?? todayRun.trainingEffectLabel ?? null,
+    trainingEffectLabel: trainingEffectEn[todayRun.trainingEffectLabel] ?? todayRun.trainingEffectLabel ?? null,
     trainingLoad: todayRun.trainingLoad,
     hrZoneSec: todayRun.hrZoneSec ?? null,
     elevationGainM: todayRun.elevationGainM,

@@ -372,27 +372,27 @@ function generate() {
 
   <!-- Jenny Daily Report -->
   ${dailyGf ? `
-  <div class="section-title">🌙 Jenny 오늘 런 분석</div>
+  <div class="section-title">🌙 Jenny Today's Run</div>
   <div class="daily-report-card" style="border-left:4px solid ${dailyGf.zoneColor ?? '#ec4899'}">
     ${dailyGf.hasRun ? `
       <div class="dr-grid">
-        <div class="dr-item"><span class="dr-label">거리</span><span class="dr-val" style="font-weight:600">${dailyGf.km}km</span></div>
-        <div class="dr-item"><span class="dr-label">페이스</span><span class="dr-val">${dailyGf.paceStr}/km</span></div>
-        <div class="dr-item"><span class="dr-label">평균 HR</span><span class="dr-val" style="color:${dailyGf.zoneColor}">${dailyGf.avgHR} bpm · ${dailyGf.zoneLabel}</span></div>
-        ${dailyGf.steps ? `<div class="dr-item"><span class="dr-label">걸음수</span><span class="dr-val">${dailyGf.steps.toLocaleString()}보</span></div>` : ''}
-        ${dailyGf.elevationGainM ? `<div class="dr-item"><span class="dr-label">고도 상승</span><span class="dr-val">+${dailyGf.elevationGainM}m</span></div>` : ''}
-        ${dailyGf.fastest1kmSec ? `<div class="dr-item"><span class="dr-label">최고 1km</span><span class="dr-val">${secToMMSS(dailyGf.fastest1kmSec)}</span></div>` : ''}
+        <div class="dr-item"><span class="dr-label">Distance</span><span class="dr-val" style="font-weight:600">${dailyGf.km}km</span></div>
+        <div class="dr-item"><span class="dr-label">Pace</span><span class="dr-val">${dailyGf.paceStr}/km</span></div>
+        <div class="dr-item"><span class="dr-label">Avg HR</span><span class="dr-val" style="color:${dailyGf.zoneColor}">${dailyGf.avgHR} bpm · ${dailyGf.zoneLabel}</span></div>
+        ${dailyGf.steps ? `<div class="dr-item"><span class="dr-label">Steps</span><span class="dr-val">${dailyGf.steps.toLocaleString()}</span></div>` : ''}
+        ${dailyGf.elevationGainM ? `<div class="dr-item"><span class="dr-label">Elevation</span><span class="dr-val">+${dailyGf.elevationGainM}m</span></div>` : ''}
+        ${dailyGf.fastest1kmSec ? `<div class="dr-item"><span class="dr-label">Best 1km</span><span class="dr-val">${secToMMSS(dailyGf.fastest1kmSec)}</span></div>` : ''}
       </div>
 
       ${dailyGf.dynamics ? `
-      <div style="margin:10px 0 6px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">러닝 다이내믹스</div>
+      <div style="margin:10px 0 6px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">Running Dynamics</div>
       <div class="dr-grid" style="grid-template-columns:repeat(auto-fill,minmax(130px,1fr))">
         ${[
-          { key:'gct',     label:'지면 접촉', unit:'ms' },
-          { key:'vo',      label:'수직 진동', unit:'cm' },
-          { key:'vr',      label:'수직 비율', unit:'%' },
-          { key:'cadence', label:'케이던스',  unit:'spm' },
-          { key:'power',   label:'파워 (NP)', unit:'W' },
+          { key:'gct',     label:'Ground Contact', unit:'ms' },
+          { key:'vo',      label:'Vert. Oscillation', unit:'cm' },
+          { key:'vr',      label:'Vert. Ratio',    unit:'%' },
+          { key:'cadence', label:'Cadence',         unit:'spm' },
+          { key:'power',   label:'Power (NP)',      unit:'W' },
         ].map(({key,label,unit}) => {
           const d = dailyGf.dynamics[key];
           if (!d?.value) return '';
@@ -406,22 +406,22 @@ function generate() {
         }).join('')}
       </div>
       ${[dailyGf.dynamics.gct, dailyGf.dynamics.vo, dailyGf.dynamics.cadence]
-          .filter(d => d?.tip && d?.rating && !['최상','좋음'].includes(d.rating))
+          .filter(d => d?.tip && d?.rating && !['Excellent','Good'].includes(d.rating))
           .slice(0,1)
           .map(d => `<div class="dr-advice" style="margin-top:6px">💡 ${d.tip}</div>`).join('')}
       ` : ''}
 
       ${dailyGf.aerobicEffect != null || dailyGf.trainingEffectLabel ? `
-      <div style="margin:10px 0 4px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">훈련 효과</div>
+      <div style="margin:10px 0 4px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">Training Effect</div>
       <div class="dr-grid">
-        ${dailyGf.trainingEffectLabel ? `<div class="dr-item"><span class="dr-label">효과 유형</span><span class="dr-val">${dailyGf.trainingEffectLabel}</span></div>` : ''}
-        ${dailyGf.aerobicEffect != null ? `<div class="dr-item"><span class="dr-label">유산소</span><span class="dr-val">${dailyGf.aerobicEffect}/5.0</span></div>` : ''}
-        ${dailyGf.anaerobicEffect != null ? `<div class="dr-item"><span class="dr-label">무산소</span><span class="dr-val">${dailyGf.anaerobicEffect}/5.0</span></div>` : ''}
-        ${dailyGf.trainingLoad != null ? `<div class="dr-item"><span class="dr-label">훈련 부하</span><span class="dr-val">${dailyGf.trainingLoad}</span></div>` : ''}
+        ${dailyGf.trainingEffectLabel ? `<div class="dr-item"><span class="dr-label">Type</span><span class="dr-val">${dailyGf.trainingEffectLabel}</span></div>` : ''}
+        ${dailyGf.aerobicEffect != null ? `<div class="dr-item"><span class="dr-label">Aerobic</span><span class="dr-val">${dailyGf.aerobicEffect}/5.0</span></div>` : ''}
+        ${dailyGf.anaerobicEffect != null ? `<div class="dr-item"><span class="dr-label">Anaerobic</span><span class="dr-val">${dailyGf.anaerobicEffect}/5.0</span></div>` : ''}
+        ${dailyGf.trainingLoad != null ? `<div class="dr-item"><span class="dr-label">Training Load</span><span class="dr-val">${dailyGf.trainingLoad}</span></div>` : ''}
       </div>` : ''}
 
       ${dailyGf.hrZoneSec && dailyGf.hrZoneSec.some(v => v > 0) ? `
-      <div style="margin:10px 0 4px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">HR 존별 시간</div>
+      <div style="margin:10px 0 4px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">HR Zone Breakdown</div>
       <div style="display:flex;gap:4px;align-items:flex-end;height:40px;margin-bottom:4px">
         ${dailyGf.hrZoneSec.map((sec, i) => {
           const maxSec = Math.max(...dailyGf.hrZoneSec);
@@ -429,7 +429,7 @@ function generate() {
           const colors = ['#22c55e','#16a34a','#f59e0b','#ef4444','#991b1b'];
           const mins = Math.round(sec / 60);
           return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
-            <div style="font-size:9px;color:var(--text3)">${mins}분</div>
+            <div style="font-size:9px;color:var(--text3)">${mins}min</div>
             <div style="width:100%;background:${colors[i]};height:${Math.max(4, pct * 0.34)}px;border-radius:2px 2px 0 0;opacity:${sec>0?1:0.15}"></div>
             <div style="font-size:9px;color:var(--text3)">Z${i+1}</div>
           </div>`;
@@ -438,7 +438,7 @@ function generate() {
 
       <div class="dr-advice">📝 ${dailyGf.feedback}</div>
     ` : `<div class="dr-advice">${dailyGf.feedback}</div>`}
-    <div style="font-size:11px;color:var(--muted);margin-top:8px">${new Date(dailyGf.generatedAt).toLocaleString('ko-KR')} 생성</div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">${new Date(dailyGf.generatedAt).toLocaleString('en-US')} generated</div>
   </div>
   ` : ''}
 
