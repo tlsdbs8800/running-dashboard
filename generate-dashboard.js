@@ -299,7 +299,63 @@ function generate() {
           <div class="dr-item"><span class="dr-label">거리</span><span class="dr-val" style="font-weight:600">${daily.km}km ${daily.planComparison ? '· '+daily.planComparison : ''}</span></div>
           <div class="dr-item"><span class="dr-label">페이스</span><span class="dr-val">${daily.paceStr}/km</span></div>
           <div class="dr-item"><span class="dr-label">평균 HR</span><span class="dr-val" style="color:${daily.zoneColor}">${daily.avgHR} bpm · ${daily.zoneLabel}</span></div>
+          ${daily.steps ? `<div class="dr-item"><span class="dr-label">걸음수</span><span class="dr-val">${daily.steps.toLocaleString()}보</span></div>` : ''}
+          ${daily.elevationGainM ? `<div class="dr-item"><span class="dr-label">고도 상승</span><span class="dr-val">+${daily.elevationGainM}m</span></div>` : ''}
+          ${daily.fastest1kmSec ? `<div class="dr-item"><span class="dr-label">최고 1km</span><span class="dr-val">${secToMMSS(daily.fastest1kmSec)}</span></div>` : ''}
         </div>
+
+        ${daily.dynamics ? `
+        <div style="margin:10px 0 6px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">러닝 다이내믹스</div>
+        <div class="dr-grid" style="grid-template-columns:repeat(auto-fill,minmax(130px,1fr))">
+          ${[
+            { key:'gct',     label:'지면 접촉',   unit:'ms' },
+            { key:'vo',      label:'수직 진동',   unit:'cm' },
+            { key:'vr',      label:'수직 비율',   unit:'%' },
+            { key:'cadence', label:'케이던스',    unit:'spm' },
+            { key:'power',   label:'파워 (NP)',   unit:'W' },
+          ].map(({key,label,unit}) => {
+            const d = daily.dynamics[key];
+            if (!d?.value) return '';
+            return `<div class="dr-item">
+              <span class="dr-label">${label}</span>
+              <span class="dr-val" style="color:${d.color ?? 'var(--text)'}">
+                ${d.value}${unit}
+                ${d.rating ? `<span style="font-size:10px;margin-left:4px">(${d.rating})</span>` : ''}
+              </span>
+            </div>`;
+          }).join('')}
+        </div>
+        ${[daily.dynamics.gct, daily.dynamics.vo, daily.dynamics.cadence]
+            .filter(d => d?.tip && d?.rating && !['최상','좋음'].includes(d.rating))
+            .slice(0,1)
+            .map(d => `<div class="dr-advice" style="margin-top:6px">💡 ${d.tip}</div>`).join('')}
+        ` : ''}
+
+        ${daily.aerobicEffect != null || daily.trainingEffectLabel ? `
+        <div style="margin:10px 0 4px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">훈련 효과</div>
+        <div class="dr-grid">
+          ${daily.trainingEffectLabel ? `<div class="dr-item"><span class="dr-label">효과 유형</span><span class="dr-val">${daily.trainingEffectLabel}</span></div>` : ''}
+          ${daily.aerobicEffect != null ? `<div class="dr-item"><span class="dr-label">유산소</span><span class="dr-val">${daily.aerobicEffect}/5.0</span></div>` : ''}
+          ${daily.anaerobicEffect != null ? `<div class="dr-item"><span class="dr-label">무산소</span><span class="dr-val">${daily.anaerobicEffect}/5.0</span></div>` : ''}
+          ${daily.trainingLoad != null ? `<div class="dr-item"><span class="dr-label">훈련 부하</span><span class="dr-val">${daily.trainingLoad}</span></div>` : ''}
+        </div>` : ''}
+
+        ${daily.hrZoneSec && daily.hrZoneSec.some(v => v > 0) ? `
+        <div style="margin:10px 0 4px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">HR 존별 시간</div>
+        <div style="display:flex;gap:4px;align-items:flex-end;height:40px;margin-bottom:4px">
+          ${daily.hrZoneSec.map((sec, i) => {
+            const maxSec = Math.max(...daily.hrZoneSec);
+            const pct = maxSec > 0 ? sec / maxSec * 100 : 0;
+            const colors = ['#22c55e','#16a34a','#f59e0b','#ef4444','#991b1b'];
+            const mins = Math.round(sec / 60);
+            return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+              <div style="font-size:9px;color:var(--text3)">${mins}분</div>
+              <div style="width:100%;background:${colors[i]};height:${Math.max(4, pct * 0.34)}px;border-radius:2px 2px 0 0;opacity:${sec>0?1:0.15}"></div>
+              <div style="font-size:9px;color:var(--text3)">Z${i+1}</div>
+            </div>`;
+          }).join('')}
+        </div>` : ''}
+
         <div class="dr-advice">📝 ${daily.feedback}</div>
       ` : `<div class="dr-advice">${daily.feedback}</div>`}
       ${daily.tomorrowPlan ? `<div class="dr-tomorrow">내일: ${daily.tomorrowPlan.label} — ${daily.tomorrowPlan.desc}</div>` : ''}
@@ -542,7 +598,7 @@ function generate() {
     <table>
       <thead>
         <tr>
-          <th>날짜</th><th>거리</th><th>페이스</th><th>평균 HR</th><th>시간</th><th>HR 존</th>
+          <th>날짜</th><th>거리</th><th>페이스</th><th>평균 HR</th><th>HR 존</th><th>케이던스</th><th>지면접촉</th><th>수직진동</th><th>파워</th><th>훈련효과</th>
         </tr>
       </thead>
       <tbody>
@@ -551,13 +607,18 @@ function generate() {
           const z = hrZone(r.avgHR, yunhoMAF);
           const zoneClass = ["","z1","z2","z3","z4","z4"][z];
           const zLabel = ["","Z1","Z2","Z3","Z4","Z5"][z];
+          const teKo = { "NO_BENEFIT":"없음","MINOR_BENEFIT":"미미","MAINTAINING":"유지","MAINTAINING_AEROBIC_BASE":"기초유지","IMPROVING":"향상","HIGHLY_IMPROVING":"크게향상","OVERREACHING":"과훈련","AEROBIC_BASE":"유산소기초" };
           return `<tr>
             <td>${r.date}</td>
             <td>${fmtKm(r.distanceM)}</td>
             <td>${paceStr}/km</td>
             <td>${r.avgHR ?? '--'} bpm</td>
-            <td>${secToHHMMSS(r.durationSec)}</td>
             <td><span class="pace-chip ${zoneClass}">${zLabel}</span></td>
+            <td>${r.cadence ? r.cadence + ' spm' : '--'}</td>
+            <td>${r.groundContactTimeMs ? r.groundContactTimeMs + ' ms' : '--'}</td>
+            <td>${r.verticalOscillationCm ? r.verticalOscillationCm + ' cm' : '--'}</td>
+            <td>${r.normPowerW ?? r.avgPowerW ? (r.normPowerW ?? r.avgPowerW) + ' W' : '--'}</td>
+            <td>${r.trainingEffectLabel ? (teKo[r.trainingEffectLabel] ?? r.trainingEffectLabel) : '--'}</td>
           </tr>`;
         }).join("")}
       </tbody>

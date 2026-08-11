@@ -74,6 +74,33 @@ def fetch_user_data(user_id, config):
             "avgPaceSecPerKm": round(dur / (dist / 1000)) if dist > 0 else None,
             "calories": a.get("calories"),
             "name": a.get("activityName", ""),
+            # Running dynamics
+            "cadence": round(a["averageRunningCadenceInStepsPerMinute"]) if a.get("averageRunningCadenceInStepsPerMinute") else None,
+            "groundContactTimeMs": round(a["avgGroundContactTime"]) if a.get("avgGroundContactTime") else None,
+            "verticalOscillationCm": round(a["avgVerticalOscillation"] * 10) / 10 if a.get("avgVerticalOscillation") else None,
+            "verticalRatio": round(a["avgVerticalRatio"] * 10) / 10 if a.get("avgVerticalRatio") else None,
+            "strideLengthCm": round(a["avgStrideLength"] * 10) / 10 if a.get("avgStrideLength") else None,
+            # Power
+            "avgPowerW": round(a["avgPower"]) if a.get("avgPower") else None,
+            "normPowerW": round(a["normPower"]) if a.get("normPower") else None,
+            # Training effect
+            "aerobicEffect": round(a["aerobicTrainingEffect"] * 10) / 10 if a.get("aerobicTrainingEffect") else None,
+            "anaerobicEffect": round(a["anaerobicTrainingEffect"] * 10) / 10 if a.get("anaerobicTrainingEffect") else None,
+            "trainingEffectLabel": a.get("trainingEffectLabel"),
+            "trainingLoad": round(a["activityTrainingLoad"]) if a.get("activityTrainingLoad") else None,
+            # HR zones (time in seconds per zone)
+            "hrZoneSec": [
+                round(a.get("hrTimeInZone_1") or 0),
+                round(a.get("hrTimeInZone_2") or 0),
+                round(a.get("hrTimeInZone_3") or 0),
+                round(a.get("hrTimeInZone_4") or 0),
+                round(a.get("hrTimeInZone_5") or 0),
+            ],
+            # Elevation & splits
+            "elevationGainM": round(a["elevationGain"]) if a.get("elevationGain") else None,
+            "fastest1kmSec": a.get("fastestSplit_1000"),
+            "fastest5kmSec": a.get("fastestSplit_5000"),
+            "steps": a.get("steps"),
         })
     print(f"[{name}] 러닝 {len(activities)}개 수집")
 
@@ -156,9 +183,12 @@ def fetch_user_data(user_id, config):
 def merge(existing, fresh):
     if not existing:
         return fresh
-    seen_ids = {a["id"] for a in existing.get("activities", [])}
-    new_acts = [a for a in fresh.get("activities", []) if a["id"] not in seen_ids]
-    acts = sorted(new_acts + existing.get("activities", []), key=lambda a: a["date"], reverse=True)[:200]
+    # Update existing activities with fresh data (picks up newly added fields)
+    fresh_by_id = {a["id"]: a for a in fresh.get("activities", [])}
+    updated = [{**a, **fresh_by_id[a["id"]]} if a["id"] in fresh_by_id else a
+               for a in existing.get("activities", [])]
+    new_acts = [a for a in fresh.get("activities", []) if a["id"] not in {a["id"] for a in updated}]
+    acts = sorted(new_acts + updated, key=lambda a: a["date"], reverse=True)[:200]
 
     seen_w = {w["date"] for w in existing.get("weight") or []}
     wt = sorted((existing.get("weight") or []) + [w for w in (fresh.get("weight") or []) if w["date"] not in seen_w],

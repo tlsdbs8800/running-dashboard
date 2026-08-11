@@ -155,6 +155,49 @@ function generateEvening(yunho, plan) {
     else planComparison = `⚠️ 계획보다 ${Math.abs(kmDiff).toFixed(1)}km 적게 달림`;
   }
 
+  // 러닝 다이내믹스 분석
+  const gct   = todayRun.groundContactTimeMs;
+  const vo    = todayRun.verticalOscillationCm;
+  const vr    = todayRun.verticalRatio;
+  const cad   = todayRun.cadence;
+  const power = todayRun.normPowerW ?? todayRun.avgPowerW;
+
+  function evalGCT(ms) {
+    if (!ms) return null;
+    if (ms < 230) return { rating: "최상", color: "#16a34a", tip: "지면 접촉 시간이 매우 짧아 — 탄성이 좋은 폼이야." };
+    if (ms < 260) return { rating: "좋음", color: "#22c55e", tip: "지면 접촉 시간 양호." };
+    if (ms < 290) return { rating: "보통", color: "#f59e0b", tip: "지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐." };
+    return { rating: "개선 필요", color: "#ef4444", tip: "지면 접촉이 길어 — 케이던스 높이기(빠른 발 회전)가 도움 돼." };
+  }
+  function evalVO(cm) {
+    if (!cm) return null;
+    if (cm < 6)  return { rating: "최상", color: "#16a34a", tip: "수직 진동이 매우 낮아 — 에너지 낭비 없는 효율적인 폼이야." };
+    if (cm < 8)  return { rating: "좋음", color: "#22c55e", tip: "수직 진동 양호." };
+    if (cm < 10) return { rating: "보통", color: "#f59e0b", tip: "위아래 튀는 동작을 줄이면 효율이 올라가. 코어를 더 잡아봐." };
+    return { rating: "개선 필요", color: "#ef4444", tip: "수직 진동이 큰 편이야 — 앞으로 나아가는 에너지를 위로 낭비하고 있어." };
+  }
+  function evalCadence(spm) {
+    if (!spm) return null;
+    if (spm >= 180) return { rating: "최상", color: "#16a34a", tip: "케이던스 최적. 관절 부담도 낮아." };
+    if (spm >= 175) return { rating: "좋음", color: "#22c55e", tip: "케이던스 좋아." };
+    if (spm >= 165) return { rating: "보통", color: "#f59e0b", tip: "케이던스를 5~10 높이면 부상 위험도 줄고 효율도 올라가." };
+    return { rating: "낮음", color: "#ef4444", tip: "케이던스가 낮아 — 보폭을 줄이고 발 회전을 빠르게 해봐." };
+  }
+
+  const dynamics = {
+    gct:     { value: gct,   unit: "ms",  label: "지면접촉",   ...evalGCT(gct) },
+    vo:      { value: vo,    unit: "cm",  label: "수직진동",   ...evalVO(vo) },
+    vr:      { value: vr,    unit: "%",   label: "수직비율",   rating: vr ? (vr < 8 ? "좋음" : "보통") : null, color: vr ? (vr < 8 ? "#22c55e" : "#f59e0b") : null },
+    cadence: { value: cad,   unit: "spm", label: "케이던스",   ...evalCadence(cad) },
+    power:   { value: power, unit: "W",   label: "파워(NP)",   rating: null },
+  };
+
+  const trainingEffectKo = {
+    "NO_BENEFIT": "효과 없음", "MINOR_BENEFIT": "미미한 효과", "MAINTAINING": "유지",
+    "MAINTAINING_AEROBIC_BASE": "유산소 기초 유지", "IMPROVING": "향상",
+    "HIGHLY_IMPROVING": "크게 향상", "OVERREACHING": "과훈련", "AEROBIC_BASE": "유산소 기초",
+  };
+
   // 종합 피드백
   let feedback = "";
   const paceStr = secToMMSS(pace);
@@ -172,6 +215,12 @@ function generateEvening(yunho, plan) {
   // 내일 예고
   const tomorrow = getTomorrow(plan, today);
 
+  // 다이내믹스 코칭 멘트 추가
+  const dynamicsTips = [dynamics.gct, dynamics.vo, dynamics.cadence]
+    .filter(d => d?.tip && d?.rating && !["최상","좋음"].includes(d.rating))
+    .map(d => d.tip);
+  if (dynamicsTips.length > 0) feedback += " · " + dynamicsTips[0];
+
   return {
     mode: "evening",
     date: today,
@@ -185,6 +234,16 @@ function generateEvening(yunho, plan) {
     plannedKm: plannedKm || null,
     feedback,
     tomorrowPlan: tomorrow,
+    dynamics,
+    aerobicEffect: todayRun.aerobicEffect,
+    anaerobicEffect: todayRun.anaerobicEffect,
+    trainingEffectLabel: trainingEffectKo[todayRun.trainingEffectLabel] ?? todayRun.trainingEffectLabel ?? null,
+    trainingLoad: todayRun.trainingLoad,
+    hrZoneSec: todayRun.hrZoneSec ?? null,
+    elevationGainM: todayRun.elevationGainM,
+    fastest1kmSec: todayRun.fastest1kmSec,
+    fastest5kmSec: todayRun.fastest5kmSec,
+    steps: todayRun.steps,
   };
 }
 
