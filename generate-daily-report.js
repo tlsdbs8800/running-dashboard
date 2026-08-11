@@ -114,11 +114,20 @@ function generateEvening(yunho, plan) {
   const today = todayStr();
   const maf   = yunho?.mafHR ?? 146;
 
-  // 오늘 런 찾기
-  const todayRun = (yunho?.activities ?? []).find(a => a.date === today);
+  // 오늘 런 찾기 — 없으면 최근 1일 이내 런으로 fallback
+  const yesterday = new Date(); yesterday.setDate(yesterday.getDate() - 1);
+  const yesterdayStr = yesterday.toISOString().slice(0, 10);
+  let todayRun = (yunho?.activities ?? []).find(a => a.date === today);
+  let runDate = today;
+  if (!todayRun) {
+    const recentRun = (yunho?.activities ?? [])[0];
+    if (recentRun && recentRun.date >= yesterdayStr) {
+      todayRun = recentRun;
+      runDate = recentRun.date;
+    }
+  }
 
   if (!todayRun) {
-    // 오늘 런 없음 — 휴식일이거나 아직 동기화 안 됨
     const todayPlan = plan?.yunho?.schedule?.find(s => s.date === today);
     return {
       mode: "evening",
@@ -259,7 +268,13 @@ function getTomorrow(plan, todayDate) {
 function generateGfEvening(gf) {
   const today  = todayStr();
   const maf    = gf?.mafHR ?? 155;
-  const todayRun = (gf?.activities ?? []).find(a => a.date === today);
+  const yday   = new Date(); yday.setDate(yday.getDate() - 1);
+  const ydayStr = yday.toISOString().slice(0, 10);
+  let todayRun = (gf?.activities ?? []).find(a => a.date === today);
+  if (!todayRun) {
+    const recent = (gf?.activities ?? [])[0];
+    if (recent && recent.date >= ydayStr) todayRun = recent;
+  }
 
   if (!todayRun) {
     return {

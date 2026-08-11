@@ -1,9 +1,71 @@
 {
   "mode": "evening",
-  "date": "2026-08-08",
-  "generatedAt": "2026-08-08T09:00:07.827Z",
-  "hasRun": false,
-  "isRestDay": false,
-  "feedback": "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
-  "tomorrowPlan": null
+  "date": "2026-08-11",
+  "generatedAt": "2026-08-11T22:41:13.083Z",
+  "hasRun": true,
+  "km": 4,
+  "paceStr": "7:54",
+  "avgHR": 136,
+  "maxHR": 152,
+  "zone": 2,
+  "zoneLabel": "Z2 (MAF 이지)",
+  "zoneColor": "#16a34a",
+  "planComparison": "",
+  "plannedKm": null,
+  "feedback": "완벽한 이지 런이야! HR 136 · 7:54/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
+  "tomorrowPlan": null,
+  "dynamics": {
+    "gct": {
+      "value": 273,
+      "unit": "ms",
+      "label": "지면접촉",
+      "rating": "보통",
+      "color": "#f59e0b",
+      "tip": "지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐."
+    },
+    "vo": {
+      "value": 7,
+      "unit": "cm",
+      "label": "수직진동",
+      "rating": "좋음",
+      "color": "#22c55e",
+      "tip": "수직 진동 양호."
+    },
+    "vr": {
+      "value": 9.9,
+      "unit": "%",
+      "label": "수직비율",
+      "rating": "보통",
+      "color": "#f59e0b"
+    },
+    "cadence": {
+      "value": 177,
+      "unit": "spm",
+      "label": "케이던스",
+      "rating": "좋음",
+      "color": "#22c55e",
+      "tip": "케이던스 좋아."
+    },
+    "power": {
+      "value": 223,
+      "unit": "W",
+      "label": "파워(NP)",
+      "rating": null
+    }
+  },
+  "aerobicEffect": 2.4,
+  "anaerobicEffect": null,
+  "trainingEffectLabel": "유산소 기초",
+  "trainingLoad": 34,
+  "hrZoneSec": [
+    1877,
+    0,
+    0,
+    0,
+    0
+  ],
+  "elevationGainM": 20,
+  "fastest1kmSec": 460.22900390625,
+  "fastest5kmSec": null,
+  "steps": 5598
 }
