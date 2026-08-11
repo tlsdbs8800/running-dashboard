@@ -1,0 +1,109 @@
+name: Garmin Sync
+
+on:
+  schedule:
+    # 오전 7시 KST (22:00 UTC)
+    - cron: '0 22 * * *'
+    # 오후 10시 KST (13:00 UTC)
+    - cron: '0 13 * * *'
+    # 런 후 감지: 오후 4시~11시 KST (07:00~14:00 UTC), 30분마다
+    - cron: '30 7-13 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'morning | evening | check'
+        default: 'check'
+        required: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: |
+          pip install garth
+          npm ci
+
+      - name: Restore garth tokens
+        run: |
+          mkdir -p sessions/garth-yunho sessions/garth-gf
+          echo "${{ secrets.GARTH_YUNHO_TOKENS }}" | base64 -d | tar xzf - -C . 2>/dev/null || true
+          echo "${{ secrets.GARTH_GF_TOKENS }}"    | base64 -d | tar xzf - -C . 2>/dev/null || true
+
+      - name: Determine mode
+        id: mode
+        run: |
+          HOUR=$(date -u +%H)
+          MIN=$(date -u +%M)
+          if   [ -n "${{ github.event.inputs.mode }}" ]; then MODE="${{ github.event.inputs.mode }}"
+          elif [ "$HOUR" = "22" ] && [ "$MIN" = "00" ]; then MODE="morning"
+          elif [ "$HOUR" = "13" ] && [ "$MIN" = "00" ]; then MODE="evening"
+          else MODE="check"
+          fi
+          echo "mode=$MODE" >> $GITHUB_OUTPUT
+          echo "모드: $MODE"
+
+      - name: Sync Garmin data
+        run: python3 sync-garth.py
+
+      - name: Check for new run
+        id: newrun
+        if: steps.mode.outputs.mode == 'check'
+        run: |
+          TODAY=$(TZ=Asia/Seoul date +%Y-%m-%d)
+          COUNT=$(python3 -c "
+          import json
+          d = json.load(open('data/yunho.json'))
+          print(len([a for a in d.get('activities',[]) if a['date']=='$TODAY']))
+          ")
+          echo "오늘 런: ${COUNT}개"
+          echo "has_run=$([ $COUNT -gt 0 ] && echo true || echo false)" >> $GITHUB_OUTPUT
+
+      - name: Generate morning report
+        if: steps.mode.outputs.mode == 'morning'
+        run: node generate-daily-report.js morning
+
+      - name: Generate evening report
+        if: steps.mode.outputs.mode == 'evening' || steps.newrun.outputs.has_run == 'true'
+        run: node generate-daily-report.js evening
+
+      - name: Generate weekly plan (Sunday evening)
+        if: (steps.mode.outputs.mode == 'evening' || steps.newrun.outputs.has_run == 'true') && (github.event.schedule == '0 13 * * *' || github.event.inputs.mode == 'evening')
+        run: |
+          DAY=$(TZ=Asia/Seoul date +%u)
+          [ "$DAY" = "7" ] && node generate-plan.js && echo "주간 플랜 생성" || true
+
+      - name: Generate dashboard
+        run: node generate-dashboard.js
+
+      - name: Commit and push
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ dashboard.html
+          LABEL=$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')
+          MODE="${{ steps.mode.outputs.mode }}"
+          git commit -m "sync: $LABEL [$MODE] 자동 갱신" 2>/dev/null || echo "변경사항 없음"
+          git push || true
+
+      - name: Save refreshed tokens back to secrets
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          YUNHO=$(tar czf - sessions/garth-yunho 2>/dev/null | base64 -w 0) && \
+            gh secret set GARTH_YUNHO_TOKENS --body "$YUNHO" -R ${{ github.repository }} || true
+          GF=$(tar czf - sessions/garth-gf 2>/dev/null | base64 -w 0) && \
+            gh secret set GARTH_GF_TOKENS --body "$GF" -R ${{ github.repository }} || true
