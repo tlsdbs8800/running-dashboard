@@ -1,19 +1,71 @@
 {
-  "mode": "morning",
-  "date": "2026-08-12",
-  "generatedAt": "2026-08-12T21:02:19.427Z",
-  "readiness": 67,
-  "readinessLvl": "MODERATE",
-  "sleepScore": 71,
-  "sleepMin": 382,
-  "hrv": null,
-  "verdict": "🟡 보통 — 계획대로, 몸 무거우면 1km 줄이기",
-  "verdictColor": "#d97706",
-  "advice": " · 페이스 10~15초 여유있게",
-  "adjustedLabel": "휴식",
-  "hrvNote": "",
-  "sleepNote": "6시간 22분 · 수면 점수 71",
-  "todayPlanType": null,
-  "todayPlanOrigLabel": null,
-  "todayPlanDesc": null
+  "mode": "evening",
+  "date": "2026-08-13",
+  "generatedAt": "2026-08-13T09:21:45.735Z",
+  "hasRun": true,
+  "km": 12,
+  "paceStr": "8:09",
+  "avgHR": 139,
+  "maxHR": 154,
+  "zone": 2,
+  "zoneLabel": "Z2 (MAF 이지)",
+  "zoneColor": "#16a34a",
+  "planComparison": "",
+  "plannedKm": null,
+  "feedback": "완벽한 이지 런이야! HR 139 · 8:09/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
+  "tomorrowPlan": null,
+  "dynamics": {
+    "gct": {
+      "value": 272,
+      "unit": "ms",
+      "label": "지면접촉",
+      "rating": "보통",
+      "color": "#f59e0b",
+      "tip": "지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐."
+    },
+    "vo": {
+      "value": 6.7,
+      "unit": "cm",
+      "label": "수직진동",
+      "rating": "좋음",
+      "color": "#22c55e",
+      "tip": "수직 진동 양호."
+    },
+    "vr": {
+      "value": 10,
+      "unit": "%",
+      "label": "수직비율",
+      "rating": "보통",
+      "color": "#f59e0b"
+    },
+    "cadence": {
+      "value": 180,
+      "unit": "spm",
+      "label": "케이던스",
+      "rating": "최상",
+      "color": "#16a34a",
+      "tip": "케이던스 최적. 관절 부담도 낮아."
+    },
+    "power": {
+      "value": 214,
+      "unit": "W",
+      "label": "파워(NP)",
+      "rating": null
+    }
+  },
+  "aerobicEffect": 3.2,
+  "anaerobicEffect": null,
+  "trainingEffectLabel": "유산소 기초",
+  "trainingLoad": 71,
+  "hrZoneSec": [
+    5858,
+    0,
+    0,
+    0,
+    0
+  ],
+  "elevationGainM": 38,
+  "fastest1kmSec": 472.1099853515625,
+  "fastest5kmSec": 2432.697998046875,
+  "steps": 17578
 }

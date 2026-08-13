@@ -1,7 +1,67 @@
 {
   "mode": "evening",
-  "date": "2026-08-12",
-  "generatedAt": "2026-08-12T21:02:19.429Z",
-  "hasRun": false,
-  "feedback": "No run data yet today. If you ran, sync your Garmin watch with your phone."
+  "date": "2026-08-13",
+  "generatedAt": "2026-08-13T09:21:45.736Z",
+  "hasRun": true,
+  "km": 5.6,
+  "paceStr": "8:12",
+  "avgHR": 144,
+  "maxHR": 157,
+  "zone": 1,
+  "zoneLabel": "Z1 (Very Easy)",
+  "zoneColor": "#22c55e",
+  "feedback": "Good easy run. HR 144 (Z1) kept in check.  · Practice lifting your feet faster off the ground.",
+  "dynamics": {
+    "gct": {
+      "value": 284,
+      "unit": "ms",
+      "label": "Ground Contact",
+      "rating": "Fair",
+      "color": "#f59e0b",
+      "tip": "Practice lifting your feet faster off the ground."
+    },
+    "vo": {
+      "value": 7.5,
+      "unit": "cm",
+      "label": "Vert. Oscillation",
+      "rating": "Good",
+      "color": "#22c55e",
+      "tip": null
+    },
+    "vr": {
+      "value": 10.4,
+      "unit": "%",
+      "label": "Vert. Ratio",
+      "rating": "Fair",
+      "color": "#f59e0b"
+    },
+    "cadence": {
+      "value": 169,
+      "unit": "spm",
+      "label": "Cadence",
+      "rating": "Fair",
+      "color": "#f59e0b",
+      "tip": "Bumping cadence by 5–10 spm will improve efficiency."
+    },
+    "power": {
+      "value": 182,
+      "unit": "W",
+      "label": "Power (NP)",
+      "rating": null
+    }
+  },
+  "aerobicEffect": 3,
+  "anaerobicEffect": null,
+  "trainingEffectLabel": "Aerobic Base",
+  "trainingLoad": null,
+  "hrZoneSec": [
+    2447,
+    315,
+    0,
+    0,
+    0
+  ],
+  "elevationGainM": 20,
+  "fastest1kmSec": 470.8550109863281,
+  "steps": 7816
 }
