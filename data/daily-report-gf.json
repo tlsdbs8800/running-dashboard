@@ -1,7 +1,7 @@
 {
   "mode": "evening",
   "date": "2026-08-13",
-  "generatedAt": "2026-08-13T09:37:44.609Z",
+  "generatedAt": "2026-08-13T09:41:49.186Z",
   "hasRun": true,
   "km": 5.6,
   "paceStr": "8:12",
@@ -65,9 +65,9 @@
   "fastest1kmSec": 470.8550109863281,
   "steps": 7816,
   "coaching": {
-    "headline": "Easy run 🏃‍♂️",
-    "coaching": "Today's run was well within the MAF HR zone, with an average HR of 144bpm and a max HR of 157bpm, indicating a solid aerobic effort. The pace of 8:12/km was slightly above the target range, but the cadence of 169spm and power of 182W suggest efficient running mechanics. Ground contact time of 284ms and vertical oscillation of 7.5cm also indicate good running form.",
-    "trend": "Recent runs show a consistent pace and HR, indicating a stable aerobic base, with a slight increase in HR over the past two runs. This suggests that the body is adapting to the training load.",
-    "nextRun": "Next run: 7km, target HR 140-150bpm, pace 8:00-8:10/km"
+    "headline": "Easy pace nailed 🏃",
+    "coaching": "Today's run was a great example of easy pace done right, with an average heart rate of 144bpm, well under the MAF target of 155bpm, and a pace of 8:12/km, which is close to the target range of 7:50-8:10/km. The aerobic training effect of 3/5.0 suggests a good base-building session. However, the max HR of 157bpm was slightly above the target, indicating a brief moment of higher intensity.",
+    "trend": "Recent runs show a consistent pace and increasing distance, which is great for building endurance. The heart rate has remained relatively low, which is in line with the MAF training philosophy.",
+    "nextRun": "Next run: 7km at a target pace of 7:55-8:05/km, with a heart rate ceiling of 152bpm, and focus on maintaining a consistent cadence of 168-170spm."
   }
 }

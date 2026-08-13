@@ -389,79 +389,75 @@ function buildCoachingPrompt(report, userData, lang) {
   const maf = userData?.mafHR ?? 146;
 
   if (lang === "en") {
-    // Jenny — English coaching
     const r = report;
-    return `Runner profile:
-- Age: ${userData?.age ?? 25} | MAF HR: ${maf}bpm | VO2max: ${vo2max ?? "unknown"}
-- Goal: complete 20km comfortably | Philosophy: all-easy runs, max 3x/week
-- Target pace: 7:50–8:10/km under MAF HR
+    return `You are coaching a 25-year-old female runner (Jenny) doing MAF aerobic base training.
+Her MAF HR is ${maf}bpm. Goal: run 20km comfortably. Philosophy: ALL runs stay easy (HR under ${maf}).
+Target pace: 7:50–8:10/km. Max 3 runs per week. VO2max: ${vo2max ?? "unknown"}.
 
-Today's run (${r.date}):
-- Distance: ${r.km}km | Pace: ${r.paceStr}/km | Avg HR: ${r.avgHR}bpm (${r.zoneLabel}) | Max HR: ${r.maxHR ?? "--"}
-- Cadence: ${r.dynamics?.cadence?.value ?? "--"}spm | Ground Contact: ${r.dynamics?.gct?.value ?? "--"}ms | Vert. Osc: ${r.dynamics?.vo?.value ?? "--"}cm | Power: ${r.dynamics?.power?.value ?? "--"}W
-- Aerobic effect: ${r.aerobicEffect ?? "--"}/5 | Training load: ${r.trainingLoad ?? "--"}
+TODAY'S RUN — ${r.date}:
+Distance: ${r.km}km | Pace: ${r.paceStr}/km | Avg HR: ${r.avgHR}bpm (${r.zoneLabel}) | Max HR: ${r.maxHR ?? "—"}
+Cadence: ${r.dynamics?.cadence?.value ?? "—"}spm | Ground Contact: ${r.dynamics?.gct?.value ?? "—"}ms | Vert Osc: ${r.dynamics?.vo?.value ?? "—"}cm | Power: ${r.dynamics?.power?.value ?? "—"}W
+Aerobic Training Effect: ${r.aerobicEffect ?? "—"}/5.0 | Training Load: ${r.trainingLoad ?? "—"}
 
-Recent runs:
+RECENT RUNS (newest first):
 ${recentRuns}
+Weekly km so far: ${thisWeek}km
 
-Weekly mileage so far: ${thisWeek}km
-
-Respond ONLY with this JSON (no markdown, no explanation):
+Write a JSON response. Use plain English only — no Korean, no other languages. Be specific, cite numbers, be encouraging but honest.
 {
-  "headline": "one-line verdict with emoji (max 60 chars)",
-  "coaching": "professional analysis of today's run, 2-3 sentences citing specific numbers",
-  "trend": "1-2 sentence insight from recent run history",
-  "nextRun": "specific next session recommendation with distance, target HR and pace"
+  "headline": "punchy one-liner with one emoji (max 8 words)",
+  "coaching": "2-3 sentences: assess today's effort vs MAF targets, call out what was good or needs work, reference actual numbers",
+  "trend": "1-2 sentences on what the recent run history shows (pace/HR improvements, consistency, load patterns)",
+  "nextRun": "one concrete next session: exact distance, target pace range, HR ceiling, any form focus"
 }`;
   }
 
-  // Yunho — Korean coaching
   const r = report;
   if (r.mode === "morning") {
-    return `러너 프로필:
-- 나이: ${userData?.age ?? 34}세 | MAF HR: ${maf}bpm | VO2max: ${vo2max ?? "미확인"}
-- 목표: 하프마라톤(21.1km) 2시간 이내 (목표 페이스 5:41/km)
-- 현재 체중: ${weight ?? "--"}kg (목표 70kg)
+    return `당신은 MAF 훈련 전문 러닝 코치입니다. 반드시 순수한 한국어로만 작성하세요. 영어, 한자, 다른 언어 단어를 절대 섞지 마세요.
+
+코치 대상: 34세 남성 (윤호)
+MAF HR: ${maf}bpm | VO2max: ${vo2max ?? "미확인"} | 목표: 하프마라톤 2시간 이내 (5:41/km)
+현재 체중: ${weight ?? "--"}kg → 목표 70kg
 
 오늘 컨디션 (${r.date}):
-- 훈련 준비도: ${r.readiness ?? "--"}점 (${r.readinessLvl ?? "--"})
-- 수면: ${r.sleepMin ? Math.floor(r.sleepMin/60)+"시간 "+r.sleepMin%60+"분" : "--"} | 수면 점수: ${r.sleepScore ?? "--"}
-- 오늘 계획: ${r.todayPlanOrigLabel ?? "휴식"} — ${r.todayPlanDesc ?? ""}
+훈련 준비도: ${r.readiness ?? "--"}점 (${r.readinessLvl ?? "--"}) | 수면: ${r.sleepMin ? Math.floor(r.sleepMin/60)+"시간 "+r.sleepMin%60+"분" : "--"} | 수면 점수: ${r.sleepScore ?? "--"}
+오늘 계획: ${r.todayPlanOrigLabel ?? "휴식"} — ${r.todayPlanDesc ?? ""}
 
 최근 런:
 ${recentRuns}
 
-전문 러닝 코치로서 다음 JSON만 반환 (마크다운 없이):
+아래 JSON만 반환하세요. 마크다운, 코드블록 없이 JSON 텍스트만:
 {
-  "headline": "오늘 컨디션 한 줄 요약 (이모지 포함, 30자 이내)",
-  "coaching": "컨디션 기반 오늘 훈련 조언 2-3문장 (구체적 수치 포함)",
-  "trend": "최근 훈련 흐름 인사이트 1-2문장",
-  "nextRun": "오늘 훈련 구체적 가이드 (페이스, HR 목표, 거리 포함)"
+  "headline": "오늘 컨디션 한 줄 (이모지 1개 포함, 20자 이내, 순수 한국어)",
+  "coaching": "준비도와 수면 기반으로 오늘 훈련 어떻게 접근할지 2-3문장. 구체적 수치 인용.",
+  "trend": "최근 훈련 흐름에서 보이는 패턴 1-2문장.",
+  "nextRun": "오늘 훈련 가이드: 목표 거리, 페이스 범위, HR 상한선 명시."
 }`;
   }
 
-  return `러너 프로필:
-- 나이: ${userData?.age ?? 34}세 | MAF HR: ${maf}bpm | VO2max: ${vo2max ?? "미확인"}
-- 목표: 하프마라톤(21.1km) 2시간 이내 (목표 페이스 5:41/km)
-- 현재 체중: ${weight ?? "--"}kg (목표 70kg)
+  return `당신은 MAF 훈련 전문 러닝 코치입니다. 반드시 순수한 한국어로만 작성하세요. 영어, 한자, 러시아어 등 다른 언어 단어를 절대 섞지 마세요.
+
+코치 대상: 34세 남성 (윤호)
+MAF HR: ${maf}bpm | VO2max: ${vo2max ?? "미확인"} | 현재 체중: ${weight ?? "--"}kg (목표 70kg)
+최종 목표: 하프마라톤(21.1km) 2시간 이내 완주 (필요 페이스: 5:41/km)
 
 오늘 런 (${r.date}):
-- 거리: ${r.km}km | 페이스: ${r.paceStr}/km | 평균HR: ${r.avgHR}bpm (${r.zoneLabel}) | 최대HR: ${r.maxHR ?? "--"}
-- 케이던스: ${r.dynamics?.cadence?.value ?? "--"}spm | 지면접촉: ${r.dynamics?.gct?.value ?? "--"}ms | 수직진동: ${r.dynamics?.vo?.value ?? "--"}cm | 파워: ${r.dynamics?.power?.value ?? "--"}W
-- 유산소효과: ${r.aerobicEffect ?? "--"}/5 | 훈련부하: ${r.trainingLoad ?? "--"}
-- 계획 대비: ${r.planComparison || "계획 없음"}
+거리: ${r.km}km | 페이스: ${r.paceStr}/km | 평균 심박수: ${r.avgHR}bpm (${r.zoneLabel}) | 최대 심박수: ${r.maxHR ?? "없음"}
+케이던스: ${r.dynamics?.cadence?.value ?? "없음"}spm | 지면 접촉: ${r.dynamics?.gct?.value ?? "없음"}ms | 수직 진동: ${r.dynamics?.vo?.value ?? "없음"}cm | 파워: ${r.dynamics?.power?.value ?? "없음"}W
+유산소 훈련 효과: ${r.aerobicEffect ?? "없음"}/5.0 | 훈련 부하: ${r.trainingLoad ?? "없음"}
+계획 대비: ${r.planComparison || "이번 주 계획 없음"}
 
-최근 6회 기록:
+최근 6회 기록 (최신순):
 ${recentRuns}
+이번 주 누적 거리: ${thisWeek}km
 
-이번 주 누적: ${thisWeek}km
-
-전문 러닝 코치로서 다음 JSON만 반환 (마크다운 없이):
+아래 JSON만 반환하세요. 마크다운, 코드블록 없이 JSON 텍스트만. 모든 값은 순수 한국어:
 {
-  "headline": "오늘 런 한 줄 핵심 평가 (이모지 포함, 30자 이내)",
-  "coaching": "오늘 런 전문 분석 2-3문장 (수치 인용, MAF 훈련 관점)",
-  "trend": "최근 트렌드 인사이트 1-2문장 (페이스/HR 변화, 적응도 등)",
-  "nextRun": "다음 훈련 구체적 추천 (거리, 목표 페이스, HR 범위 포함)"
+  "headline": "오늘 런 핵심 한 줄 평가 (이모지 1개 포함, 20자 이내)",
+  "coaching": "오늘 런 전문 분석 2-3문장. 실제 수치(심박수, 페이스, 케이던스 등)를 인용하고 MAF 훈련 목표 관점에서 평가.",
+  "trend": "최근 6회 기록에서 보이는 페이스/심박수 변화나 적응 패턴 1-2문장.",
+  "nextRun": "다음 훈련 구체적 추천: 목표 거리, 페이스 범위(mm:ss/km), 심박수 상한선 명시."
 }`;
 }
 
@@ -485,7 +481,14 @@ async function enrichWithAI(report, userData, lang = "ko") {
       ],
     });
 
-    const coaching = JSON.parse(msg.choices[0].message.content);
+    const raw = JSON.parse(msg.choices[0].message.content);
+    // strip any non-Korean stray characters from Korean fields
+    const clean = (s) => typeof s === "string"
+      ? s.replace(/[一-鿿㐀-䶿Ѐ-ӿ]/g, "").replace(/\s+/g, " ").trim()
+      : s;
+    const coaching = lang === "ko"
+      ? { headline: clean(raw.headline), coaching: clean(raw.coaching), trend: clean(raw.trend), nextRun: clean(raw.nextRun) }
+      : raw;
     console.log(`  [AI] ${coaching.headline}`);
     return { ...report, coaching };
   } catch (e) {
