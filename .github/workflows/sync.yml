@@ -76,10 +76,14 @@ jobs:
       - name: Generate morning report
         if: steps.mode.outputs.mode == 'morning'
         run: node generate-daily-report.js morning
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Generate evening report
         if: steps.mode.outputs.mode == 'evening' || steps.newrun.outputs.has_run == 'true'
         run: node generate-daily-report.js evening
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Generate weekly plan (Sunday evening)
         if: (steps.mode.outputs.mode == 'evening' || steps.newrun.outputs.has_run == 'true') && (github.event.schedule == '0 13 * * *' || github.event.inputs.mode == 'evening')

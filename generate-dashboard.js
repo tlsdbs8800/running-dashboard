@@ -362,7 +362,15 @@ function generate() {
           }).join('')}
         </div>` : ''}
 
-        <div class="dr-advice">📝 ${daily.feedback}</div>
+        ${daily.coaching ? `
+        <div style="margin-top:12px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(168,85,247,0.08));border:1px solid rgba(99,102,241,0.2);border-radius:10px;padding:12px 14px">
+          <div style="font-size:10px;font-weight:700;color:#6366f1;letter-spacing:.08em;margin-bottom:8px">✦ AI COACHING</div>
+          <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:8px">${daily.coaching.headline}</div>
+          <div style="font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:8px">${daily.coaching.coaching}</div>
+          ${daily.coaching.trend ? `<div style="font-size:12px;color:var(--text3);line-height:1.6;border-top:1px solid rgba(99,102,241,0.15);padding-top:8px;margin-top:4px">📈 ${daily.coaching.trend}</div>` : ''}
+          ${daily.coaching.nextRun ? `<div style="font-size:12px;color:#6366f1;font-weight:500;margin-top:8px">▶ ${daily.coaching.nextRun}</div>` : ''}
+        </div>
+        ` : `<div class="dr-advice">📝 ${daily.feedback}</div>`}
       ` : `<div class="dr-advice">${daily.feedback}</div>`}
       ${daily.tomorrowPlan ? `<div class="dr-tomorrow">내일: ${daily.tomorrowPlan.label} — ${daily.tomorrowPlan.desc}</div>` : ''}
     `}
@@ -436,7 +444,15 @@ function generate() {
         }).join('')}
       </div>` : ''}
 
-      <div class="dr-advice">📝 ${dailyGf.feedback}</div>
+      ${dailyGf.coaching ? `
+      <div style="margin-top:12px;background:linear-gradient(135deg,rgba(236,72,153,0.08),rgba(168,85,247,0.08));border:1px solid rgba(236,72,153,0.2);border-radius:10px;padding:12px 14px">
+        <div style="font-size:10px;font-weight:700;color:#ec4899;letter-spacing:.08em;margin-bottom:8px">✦ AI COACHING</div>
+        <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:8px">${dailyGf.coaching.headline}</div>
+        <div style="font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:8px">${dailyGf.coaching.coaching}</div>
+        ${dailyGf.coaching.trend ? `<div style="font-size:12px;color:var(--text3);line-height:1.6;border-top:1px solid rgba(236,72,153,0.15);padding-top:8px;margin-top:4px">📈 ${dailyGf.coaching.trend}</div>` : ''}
+        ${dailyGf.coaching.nextRun ? `<div style="font-size:12px;color:#ec4899;font-weight:500;margin-top:8px">▶ ${dailyGf.coaching.nextRun}</div>` : ''}
+      </div>
+      ` : `<div class="dr-advice">📝 ${dailyGf.feedback}</div>`}
     ` : `<div class="dr-advice">${dailyGf.feedback}</div>`}
     <div style="font-size:11px;color:var(--muted);margin-top:8px">${new Date(dailyGf.generatedAt).toLocaleString('en-US')} generated</div>
   </div>

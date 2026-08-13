@@ -7,6 +7,7 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import Anthropic from "@anthropic-ai/sdk";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const mode = process.argv[2] ?? "morning"; // morning | evening
@@ -368,25 +369,150 @@ function generateGfEvening(gf) {
   };
 }
 
+// ─── AI COACHING ─────────────────────────────────────────────────────────────
+function buildCoachingPrompt(report, userData, lang) {
+  const recentRuns = (userData?.activities ?? []).slice(0, 6).map(a => {
+    const p = a.avgPaceSecPerKm ? `${Math.floor(a.avgPaceSecPerKm/60)}:${String(a.avgPaceSecPerKm%60).padStart(2,"0")}` : "--";
+    return `  ${a.date} · ${((a.distanceM??0)/1000).toFixed(1)}km · ${p}/km · HR ${a.avgHR??'--'}`;
+  }).join("\n");
+
+  const thisWeek = (() => {
+    const mon = new Date(); mon.setDate(mon.getDate() - mon.getDay() + 1);
+    const monStr = mon.toISOString().slice(0,10);
+    return (userData?.activities ?? [])
+      .filter(a => a.date >= monStr)
+      .reduce((s, a) => s + (a.distanceM ?? 0) / 1000, 0).toFixed(1);
+  })();
+
+  const vo2max = userData?.vo2max?.[0]?.value ?? null;
+  const weight = userData?.weight?.[0]?.kg ?? null;
+  const maf = userData?.mafHR ?? 146;
+
+  if (lang === "en") {
+    // Jenny — English coaching
+    const r = report;
+    return `Runner profile:
+- Age: ${userData?.age ?? 25} | MAF HR: ${maf}bpm | VO2max: ${vo2max ?? "unknown"}
+- Goal: complete 20km comfortably | Philosophy: all-easy runs, max 3x/week
+- Target pace: 7:50–8:10/km under MAF HR
+
+Today's run (${r.date}):
+- Distance: ${r.km}km | Pace: ${r.paceStr}/km | Avg HR: ${r.avgHR}bpm (${r.zoneLabel}) | Max HR: ${r.maxHR ?? "--"}
+- Cadence: ${r.dynamics?.cadence?.value ?? "--"}spm | Ground Contact: ${r.dynamics?.gct?.value ?? "--"}ms | Vert. Osc: ${r.dynamics?.vo?.value ?? "--"}cm | Power: ${r.dynamics?.power?.value ?? "--"}W
+- Aerobic effect: ${r.aerobicEffect ?? "--"}/5 | Training load: ${r.trainingLoad ?? "--"}
+
+Recent runs:
+${recentRuns}
+
+Weekly mileage so far: ${thisWeek}km
+
+Respond ONLY with this JSON (no markdown, no explanation):
+{
+  "headline": "one-line verdict with emoji (max 60 chars)",
+  "coaching": "professional analysis of today's run, 2-3 sentences citing specific numbers",
+  "trend": "1-2 sentence insight from recent run history",
+  "nextRun": "specific next session recommendation with distance, target HR and pace"
+}`;
+  }
+
+  // Yunho — Korean coaching
+  const r = report;
+  if (r.mode === "morning") {
+    return `러너 프로필:
+- 나이: ${userData?.age ?? 34}세 | MAF HR: ${maf}bpm | VO2max: ${vo2max ?? "미확인"}
+- 목표: 하프마라톤(21.1km) 2시간 이내 (목표 페이스 5:41/km)
+- 현재 체중: ${weight ?? "--"}kg (목표 70kg)
+
+오늘 컨디션 (${r.date}):
+- 훈련 준비도: ${r.readiness ?? "--"}점 (${r.readinessLvl ?? "--"})
+- 수면: ${r.sleepMin ? Math.floor(r.sleepMin/60)+"시간 "+r.sleepMin%60+"분" : "--"} | 수면 점수: ${r.sleepScore ?? "--"}
+- 오늘 계획: ${r.todayPlanOrigLabel ?? "휴식"} — ${r.todayPlanDesc ?? ""}
+
+최근 런:
+${recentRuns}
+
+전문 러닝 코치로서 다음 JSON만 반환 (마크다운 없이):
+{
+  "headline": "오늘 컨디션 한 줄 요약 (이모지 포함, 30자 이내)",
+  "coaching": "컨디션 기반 오늘 훈련 조언 2-3문장 (구체적 수치 포함)",
+  "trend": "최근 훈련 흐름 인사이트 1-2문장",
+  "nextRun": "오늘 훈련 구체적 가이드 (페이스, HR 목표, 거리 포함)"
+}`;
+  }
+
+  return `러너 프로필:
+- 나이: ${userData?.age ?? 34}세 | MAF HR: ${maf}bpm | VO2max: ${vo2max ?? "미확인"}
+- 목표: 하프마라톤(21.1km) 2시간 이내 (목표 페이스 5:41/km)
+- 현재 체중: ${weight ?? "--"}kg (목표 70kg)
+
+오늘 런 (${r.date}):
+- 거리: ${r.km}km | 페이스: ${r.paceStr}/km | 평균HR: ${r.avgHR}bpm (${r.zoneLabel}) | 최대HR: ${r.maxHR ?? "--"}
+- 케이던스: ${r.dynamics?.cadence?.value ?? "--"}spm | 지면접촉: ${r.dynamics?.gct?.value ?? "--"}ms | 수직진동: ${r.dynamics?.vo?.value ?? "--"}cm | 파워: ${r.dynamics?.power?.value ?? "--"}W
+- 유산소효과: ${r.aerobicEffect ?? "--"}/5 | 훈련부하: ${r.trainingLoad ?? "--"}
+- 계획 대비: ${r.planComparison || "계획 없음"}
+
+최근 6회 기록:
+${recentRuns}
+
+이번 주 누적: ${thisWeek}km
+
+전문 러닝 코치로서 다음 JSON만 반환 (마크다운 없이):
+{
+  "headline": "오늘 런 한 줄 핵심 평가 (이모지 포함, 30자 이내)",
+  "coaching": "오늘 런 전문 분석 2-3문장 (수치 인용, MAF 훈련 관점)",
+  "trend": "최근 트렌드 인사이트 1-2문장 (페이스/HR 변화, 적응도 등)",
+  "nextRun": "다음 훈련 구체적 추천 (거리, 목표 페이스, HR 범위 포함)"
+}`;
+}
+
+async function enrichWithAI(report, userData, lang = "ko") {
+  if (!process.env.ANTHROPIC_API_KEY) return report;
+  if (report.mode === "evening" && !report.hasRun) return report;
+
+  try {
+    const client = new Anthropic();
+    const systemPrompt = lang === "en"
+      ? "You are an elite running coach specializing in MAF aerobic base training. Respond only with valid JSON, no markdown."
+      : "당신은 MAF 훈련 전문 엘리트 러닝 코치입니다. 유효한 JSON만 반환하세요. 마크다운 없이.";
+
+    const msg = await client.messages.create({
+      model: "claude-sonnet-4-6",
+      max_tokens: 600,
+      system: systemPrompt,
+      messages: [{ role: "user", content: buildCoachingPrompt(report, userData, lang) }],
+    });
+
+    const text = msg.content[0].text.trim();
+    const coaching = JSON.parse(text);
+    console.log(`  [AI] ${coaching.headline}`);
+    return { ...report, coaching };
+  } catch (e) {
+    console.warn(`  [AI coaching 실패, 기본 피드백 사용] ${e.message}`);
+    return report;
+  }
+}
+
 // ─── MAIN ────────────────────────────────────────────────────────────────────
-const yunho = load("yunho.json");
-const gf    = load("gf.json");
-const plan  = load("weekly-plan.json");
+(async () => {
+  const yunho = load("yunho.json");
+  const gf    = load("gf.json");
+  const plan  = load("weekly-plan.json");
 
-let report;
-if (mode === "evening") {
-  report = generateEvening(yunho, plan);
-} else {
-  report = generateMorning(yunho, plan);
-}
+  let report = mode === "evening"
+    ? generateEvening(yunho, plan)
+    : generateMorning(yunho, plan);
 
-writeFileSync(join(__dirname, "data/daily-report.json"), JSON.stringify(report, null, 2));
-console.log(`[daily-report] ${mode} 리포트 생성 완료 → data/daily-report.json`);
-console.log(`  ${report.verdict ?? report.feedback ?? ""}`);
+  report = await enrichWithAI(report, yunho, "ko");
 
-// Jenny evening report (항상 생성)
-if (gf) {
-  const gfReport = generateGfEvening(gf);
-  writeFileSync(join(__dirname, "data/daily-report-gf.json"), JSON.stringify(gfReport, null, 2));
-  console.log(`[daily-report-gf] Jenny 리포트 생성 완료`);
-}
+  writeFileSync(join(__dirname, "data/daily-report.json"), JSON.stringify(report, null, 2));
+  console.log(`[daily-report] ${mode} 리포트 생성 완료 → data/daily-report.json`);
+  console.log(`  ${report.coaching?.headline ?? report.verdict ?? report.feedback ?? ""}`);
+
+  if (gf) {
+    let gfReport = generateGfEvening(gf);
+    gfReport = await enrichWithAI(gfReport, gf, "en");
+    writeFileSync(join(__dirname, "data/daily-report-gf.json"), JSON.stringify(gfReport, null, 2));
+    console.log(`[daily-report-gf] Jenny 리포트 생성 완료`);
+    if (gfReport.coaching?.headline) console.log(`  [AI] ${gfReport.coaching.headline}`);
+  }
+})();
