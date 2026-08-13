@@ -7,7 +7,7 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import Anthropic from "@anthropic-ai/sdk";
+import Groq from "groq-sdk";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const mode = process.argv[2] ?? "morning"; // morning | evening
@@ -466,24 +466,26 @@ ${recentRuns}
 }
 
 async function enrichWithAI(report, userData, lang = "ko") {
-  if (!process.env.ANTHROPIC_API_KEY) return report;
+  if (!process.env.GROQ_API_KEY) return report;
   if (report.mode === "evening" && !report.hasRun) return report;
 
   try {
-    const client = new Anthropic();
+    const client = new Groq({ apiKey: process.env.GROQ_API_KEY });
     const systemPrompt = lang === "en"
       ? "You are an elite running coach specializing in MAF aerobic base training. Respond only with valid JSON, no markdown."
       : "당신은 MAF 훈련 전문 엘리트 러닝 코치입니다. 유효한 JSON만 반환하세요. 마크다운 없이.";
 
-    const msg = await client.messages.create({
-      model: "claude-sonnet-4-6",
+    const msg = await client.chat.completions.create({
+      model: "llama-3.3-70b-versatile",
       max_tokens: 600,
-      system: systemPrompt,
-      messages: [{ role: "user", content: buildCoachingPrompt(report, userData, lang) }],
+      response_format: { type: "json_object" },
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: buildCoachingPrompt(report, userData, lang) },
+      ],
     });
 
-    const text = msg.content[0].text.trim();
-    const coaching = JSON.parse(text);
+    const coaching = JSON.parse(msg.choices[0].message.content);
     console.log(`  [AI] ${coaching.headline}`);
     return { ...report, coaching };
   } catch (e) {

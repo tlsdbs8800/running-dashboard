@@ -1,7 +1,7 @@
 {
   "mode": "evening",
   "date": "2026-08-13",
-  "generatedAt": "2026-08-13T09:30:01.644Z",
+  "generatedAt": "2026-08-13T09:37:44.609Z",
   "hasRun": true,
   "km": 5.6,
   "paceStr": "8:12",
@@ -63,5 +63,11 @@
   ],
   "elevationGainM": 20,
   "fastest1kmSec": 470.8550109863281,
-  "steps": 7816
+  "steps": 7816,
+  "coaching": {
+    "headline": "Easy run 🏃‍♂️",
+    "coaching": "Today's run was well within the MAF HR zone, with an average HR of 144bpm and a max HR of 157bpm, indicating a solid aerobic effort. The pace of 8:12/km was slightly above the target range, but the cadence of 169spm and power of 182W suggest efficient running mechanics. Ground contact time of 284ms and vertical oscillation of 7.5cm also indicate good running form.",
+    "trend": "Recent runs show a consistent pace and HR, indicating a stable aerobic base, with a slight increase in HR over the past two runs. This suggests that the body is adapting to the training load.",
+    "nextRun": "Next run: 7km, target HR 140-150bpm, pace 8:00-8:10/km"
+  }
 }

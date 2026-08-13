@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.116.0",
-    "@etweisberg/garmin-connect-mcp": "^0.1.22"
+    "@etweisberg/garmin-connect-mcp": "^0.1.22",
+    "groq-sdk": "^1.5.0"
   }
 }
