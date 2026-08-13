@@ -1,7 +1,7 @@
 {
   "mode": "evening",
   "date": "2026-08-13",
-  "generatedAt": "2026-08-13T09:41:49.186Z",
+  "generatedAt": "2026-08-13T11:08:25.133Z",
   "hasRun": true,
   "km": 5.6,
   "paceStr": "8:12",
@@ -65,9 +65,9 @@
   "fastest1kmSec": 470.8550109863281,
   "steps": 7816,
   "coaching": {
-    "headline": "Easy pace nailed 🏃",
-    "coaching": "Today's run was a great example of easy pace done right, with an average heart rate of 144bpm, well under the MAF target of 155bpm, and a pace of 8:12/km, which is close to the target range of 7:50-8:10/km. The aerobic training effect of 3/5.0 suggests a good base-building session. However, the max HR of 157bpm was slightly above the target, indicating a brief moment of higher intensity.",
-    "trend": "Recent runs show a consistent pace and increasing distance, which is great for building endurance. The heart rate has remained relatively low, which is in line with the MAF training philosophy.",
-    "nextRun": "Next run: 7km at a target pace of 7:55-8:05/km, with a heart rate ceiling of 152bpm, and focus on maintaining a consistent cadence of 168-170spm."
+    "headline": "Great job today! 👍",
+    "coaching": "Today's run was a great effort, with a pace of 8:12/km and an average heart rate of 144bpm, which is below the MAF target of 155bpm. The cadence of 169spm and ground contact time of 284ms are also positive indicators. However, max HR slightly exceeded the target, so let's focus on keeping it under 155bpm in the next run.",
+    "trend": "Recent runs show a consistent pace range of 8:01-8:14/km and heart rates within the aerobic zone, indicating a good aerobic base is being built. The weekly load is relatively low so far, with only 5.6km completed.",
+    "nextRun": "For the next run, aim for a 6km distance with a target pace range of 7:50-8:10/km, keeping the heart rate under 155bpm and focusing on maintaining a consistent cadence and good form."
   }
 }
