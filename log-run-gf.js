@@ -1,17 +1,24 @@
 /**
- * Jenny 런 수동 입력 (가민 없이 애플워치/스트라바 데이터로)
+ * Jenny 런 수동 입력 (Apple Watch / Strava 데이터)
  *
- * 사용법:
+ * 기본:
  *   node log-run-gf.js --km 5.2 --pace 7:45 --hr 148
- *   node log-run-gf.js --km 5.2 --pace 7:45 --hr 148 --date 2026-08-11
  *
- * 옵션:
- *   --km    거리 (필수)
- *   --pace  평균 페이스 mm:ss (필수)
- *   --hr    평균 심박수 (선택)
- *   --maxhr 최대 심박수 (선택)
- *   --date  날짜 yyyy-mm-dd (기본: 오늘)
- *   --name  활동 이름 (기본: "Apple Watch Run")
+ * 전체 옵션:
+ *   --km       거리 km           (필수)
+ *   --pace     평균 페이스 mm:ss  (필수)
+ *   --hr       평균 심박수
+ *   --maxhr    최대 심박수
+ *   --calories 칼로리 (kcal)
+ *   --steps    총 걸음수
+ *   --cadence  케이던스 (spm)
+ *   --elevation 고도 상승 (m)
+ *   --gct      지면 접촉 시간 (ms)  — Apple Watch Series 8+ / Ultra
+ *   --vo       수직 진동 (cm)       — Apple Watch Series 8+ / Ultra
+ *   --power    러닝 파워 (W)        — Apple Watch Series 8+ / Ultra
+ *   --stride   보폭 (cm)
+ *   --date     날짜 yyyy-mm-dd (기본: 오늘)
+ *   --name     활동 이름 (기본: "Apple Watch Run")
  */
 
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
@@ -26,23 +33,32 @@ function getArg(name) {
   const i = args.indexOf(`--${name}`);
   return i !== -1 ? args[i + 1] : null;
 }
+function getFloat(name) { const v = getArg(name); return v != null ? parseFloat(v) : null; }
+function getInt(name)   { const v = getArg(name); return v != null ? parseInt(v)   : null; }
 
-const km    = parseFloat(getArg("km"));
-const pace  = getArg("pace");
-const hr    = getArg("hr") ? parseInt(getArg("hr")) : null;
-const maxhr = getArg("maxhr") ? parseInt(getArg("maxhr")) : null;
-const date  = getArg("date") ?? new Date().toISOString().slice(0, 10);
-const name  = getArg("name") ?? "Apple Watch Run";
+const km        = getFloat("km");
+const pace      = getArg("pace");
+const hr        = getInt("hr");
+const maxhr     = getInt("maxhr");
+const calories  = getInt("calories");
+const steps     = getInt("steps");
+const cadence   = getInt("cadence");
+const elevation = getFloat("elevation");
+const gct       = getInt("gct");      // ground contact time ms
+const vo        = getFloat("vo");     // vertical oscillation cm
+const power     = getInt("power");    // running power W
+const stride    = getFloat("stride"); // stride length cm
+const date      = getArg("date") ?? new Date().toISOString().slice(0, 10);
+const name      = getArg("name") ?? "Apple Watch Run";
 
 if (!km || !pace) {
   console.error("필수 항목 누락. 예: node log-run-gf.js --km 5.2 --pace 7:45 --hr 148");
   process.exit(1);
 }
 
-// pace mm:ss → sec/km
 const [paceMin, paceSec] = pace.split(":").map(Number);
 const paceSecPerKm = paceMin * 60 + paceSec;
-const distanceM = Math.round(km * 1000);
+const distanceM  = Math.round(km * 1000);
 const durationSec = Math.round(paceSecPerKm * km);
 
 const dataFile = join(__dirname, "data/gf.json");
@@ -53,7 +69,6 @@ if (!existing) {
   process.exit(1);
 }
 
-// 중복 체크 (같은 날짜 + 비슷한 거리)
 const duplicate = (existing.activities ?? []).find(a =>
   a.date === date && Math.abs((a.distanceM ?? 0) - distanceM) < 200
 );
@@ -63,16 +78,24 @@ if (duplicate) {
 }
 
 const newRun = {
-  id: Date.now(),   // 임시 ID
+  id: Date.now(),
   date,
   distanceM,
   durationSec,
-  avgHR: hr,
-  maxHR: maxhr,
-  avgPaceSecPerKm: paceSecPerKm,
-  calories: hr ? Math.round(durationSec / 60 * 0.15 * 60) : null,
+  avgHR:               hr,
+  maxHR:               maxhr,
+  avgPaceSecPerKm:     paceSecPerKm,
+  calories:            calories ?? (hr ? Math.round(durationSec / 60 * 0.15 * 60) : null),
+  steps:               steps,
+  cadence:             cadence,
+  elevationGainM:      elevation,
+  groundContactTimeMs: gct,
+  verticalOscillationCm: vo,
+  avgPowerW:           power,
+  normPowerW:          power,  // Apple Watch doesn't separate norm power
+  strideLengthCm:      stride,
   name,
-  source: "manual",
+  source: "apple-watch",
 };
 
 existing.activities = [newRun, ...(existing.activities ?? [])]
@@ -81,17 +104,23 @@ existing.activities = [newRun, ...(existing.activities ?? [])]
 
 existing.lastSync = new Date().toISOString();
 writeFileSync(dataFile, JSON.stringify(existing, null, 2));
-console.log(`✅ Jenny 런 추가 완료`);
-console.log(`   ${date} · ${km}km · ${pace}/km${hr ? ` · HR ${hr}` : ""}`);
 
-// 대시보드 자동 갱신
+const summary = [
+  `${date}`, `${km}km`, `${pace}/km`,
+  hr ? `HR ${hr}` : null,
+  cadence ? `${cadence}spm` : null,
+  gct ? `GCT ${gct}ms` : null,
+  vo ? `VO ${vo}cm` : null,
+  power ? `${power}W` : null,
+].filter(Boolean).join(" · ");
+console.log(`✅ Jenny 런 추가: ${summary}`);
+
 execSync("node generate-daily-report.js evening", { cwd: __dirname, stdio: "inherit" });
 execSync("node generate-dashboard.js", { cwd: __dirname, stdio: "inherit" });
 
-// GitHub push
 try {
   execSync(`git add data/gf.json data/daily-report-gf.json index.html`, { cwd: __dirname, stdio: "pipe" });
-  execSync(`git commit -m "log: Jenny ${date} 런 수동 입력 (${km}km)"`, { cwd: __dirname, stdio: "pipe" });
+  execSync(`git commit -m "log: Jenny ${date} Apple Watch 런 (${km}km)"`, { cwd: __dirname, stdio: "pipe" });
   execSync("git push", { cwd: __dirname, stdio: "inherit" });
   console.log("✅ GitHub 푸시 완료");
 } catch {

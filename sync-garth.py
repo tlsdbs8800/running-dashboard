@@ -9,6 +9,7 @@ Usage:
 
 import json
 import sys
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -42,6 +43,20 @@ USERS = {
 }
 
 
+def garth_get(path, params=None, retries=3):
+    """garth.connectapi with retry on 429."""
+    for attempt in range(retries):
+        try:
+            return garth.connectapi(path, params=params)
+        except Exception as e:
+            if "429" in str(e) and attempt < retries - 1:
+                wait = 60 * (attempt + 1)
+                print(f"  429 rate limit — {wait}초 후 재시도 ({attempt+1}/{retries-1})")
+                time.sleep(wait)
+            else:
+                raise
+
+
 def fetch_user_data(user_id, config):
     garth_dir = config["garth_dir"]
     name = config["name"]
@@ -50,13 +65,24 @@ def fetch_user_data(user_id, config):
         print(f"[{name}] garth 토큰 없음: {garth_dir} — 건너뜀")
         return None
 
-    garth.resume(str(garth_dir))
+    for attempt in range(3):
+        try:
+            garth.resume(str(garth_dir))
+            break
+        except Exception as e:
+            if "429" in str(e) and attempt < 2:
+                wait = 60 * (attempt + 1)
+                print(f"[{name}] 토큰 교환 429 — {wait}초 후 재시도")
+                time.sleep(wait)
+            else:
+                raise
+
     print(f"[{name}] 데이터 수집 시작...")
 
     today = datetime.now().strftime("%Y-%m-%d")
 
     # Activities (last 50 runs)
-    acts_raw = garth.connectapi(
+    acts_raw = garth_get(
         "activitylist-service/activities/search/activities",
         params={"start": 0, "limit": 50, "activityType": "running"},
     )
@@ -107,7 +133,7 @@ def fetch_user_data(user_id, config):
     # VO2Max
     vo2max = None
     try:
-        res = garth.connectapi(f"metrics-service/metrics/maxmet/latest/{today}")
+        res = garth_get(f"metrics-service/metrics/maxmet/latest/{today}")
         g = (res or {}).get("generic", {})
         if g.get("calendarDate"):
             vo2max = [{"date": g["calendarDate"], "value": g.get("vo2MaxPreciseValue") or g.get("vo2MaxValue")}]
@@ -118,7 +144,7 @@ def fetch_user_data(user_id, config):
     weight = None
     try:
         start = (datetime.now() - timedelta(days=365)).strftime("%Y-%m-%d")
-        res = garth.connectapi(f"weight-service/weight/range/{start}/{today}", params={"includeAll": "true"})
+        res = garth_get(f"weight-service/weight/range/{start}/{today}", params={"includeAll": "true"})
         if res and res.get("dateWeightList"):
             weight = [
                 {"date": w["calendarDate"], "kg": w["weight"] / 1000}
@@ -130,7 +156,7 @@ def fetch_user_data(user_id, config):
     # Sleep
     sleep = None
     try:
-        res = garth.connectapi(
+        res = garth_get(
             "sleep-service/sleep/dailySleepData",
             params={"date": today, "nonSleepBufferMinutes": 60},
         )
@@ -145,7 +171,7 @@ def fetch_user_data(user_id, config):
     # Training Readiness
     training_readiness = None
     try:
-        res = garth.connectapi(f"metrics-service/metrics/trainingreadiness/{today}")
+        res = garth_get(f"metrics-service/metrics/trainingreadiness/{today}")
         tr = res[0] if isinstance(res, list) else res
         if tr and tr.get("score") is not None:
             training_readiness = {
