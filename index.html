@@ -95,7 +95,7 @@
 <body>
 <div class="container">
   <h1>🏃 러닝 코치 대시보드</h1>
-  <div class="sync-time">마지막 동기화: 2026. 8. 17. 오후 5:45:58</div>
+  <div class="sync-time">마지막 동기화: 2026. 8. 17. PM 5:45:58</div>
 
   <!-- Daily Report: morning/evening -->
   
@@ -185,19 +185,11 @@
             </div>
         </div>
 
-        
-        <div style="margin-top:12px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(168,85,247,0.08));border:1px solid rgba(99,102,241,0.2);border-radius:10px;padding:12px 14px">
-          <div style="font-size:10px;font-weight:700;color:#6366f1;letter-spacing:.08em;margin-bottom:8px">✦ AI COACHING</div>
-          <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:8px">완주!</div>
-          <div style="font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:8px">오늘 윤호 선수의 5km 런 기록은 페이스 7분 32초, 평균 심박수 139bpm으로 MAF 이지 영역에서 진행된 것으로 보인다. 케이던스가 184spm, 지면 접촉 시간이 265ms로 보아 효율적인 달리기 형태를 유지하고 있음을 알 수 있다. 하지만 표인 5분 41초의 페이스에 비해 아직 느린 편으로 분석된다.</div>
-          <div style="font-size:12px;color:var(--text3);line-height:1.6;border-top:1px solid rgba(99,102,241,0.15);padding-top:8px;margin-top:4px">📈 최근 6회 기록을 살펴보면 페이스가 점점 빨라지는 추세를 보이고 있으나, 아직 목표 페이스에 대한 경험이 부족한 편으로 보인다. 특히 최근 기록에서 심박수가 일정한 수준을 유지하고 있어 엔도어린스 훈련이 효과적으로 진행되고 있음을 알 수 있다.</div>
-          <div style="font-size:12px;color:#6366f1;font-weight:500;margin-top:8px">▶ 다음 훈련에서는 8km 거리에서 7분 15초에서 7분 30초의 페이스로, 심박수 상한선은 145bpm으로 설정하여 달리기를 진행한다. 이는 목표인 5분 41초의 페이스를 점진적으로 향상시키기 위한 단계적인 훈련 계획이다.</div>
-        </div>
-        
+        <div class="dr-advice">📝 완벽한 이지 런이야! HR 139 · 7:32/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.</div>
       
       
     
-    <div style="font-size:11px;color:var(--muted);margin-top:8px">2026. 8. 17. 오후 5:52:48 생성</div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">2026. 8. 17. PM 1:52:29 생성</div>
   </div>
   
 
@@ -227,17 +219,9 @@
 
       
 
-      
-      <div style="margin-top:12px;background:linear-gradient(135deg,rgba(236,72,153,0.08),rgba(168,85,247,0.08));border:1px solid rgba(236,72,153,0.2);border-radius:10px;padding:12px 14px">
-        <div style="font-size:10px;font-weight:700;color:#ec4899;letter-spacing:.08em;margin-bottom:8px">✦ AI COACHING</div>
-        <div style="font-size:14px;font-weight:600;color:var(--text);margin-bottom:8px">Good start 🏃</div>
-        <div style="font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:8px">Today's run was slightly above the target HR of 155bpm, averaging 156bpm, so let's focus on keeping it easy next time. The pace of 7:50/km is within the target range, which is great. We need to work on keeping the heart rate in check, as the max HR of 165bpm is higher than desired.</div>
-        <div style="font-size:12px;color:var(--text3);line-height:1.6;border-top:1px solid rgba(236,72,153,0.15);padding-top:8px;margin-top:4px">📈 Recent runs show a good consistency in pace, with most runs between 8:03-8:14/km, and heart rates have been mostly under control, except for today's run. The weekly km so far is low at 5.0km, so we can look to increase that gradually.</div>
-        <div style="font-size:12px;color:#ec4899;font-weight:500;margin-top:8px">▶ Next run: 6km at a pace of 7:55-8:05/km, keeping the heart rate under 155bpm, with a focus on maintaining a smooth, efficient form</div>
-      </div>
-      
+      <div class="dr-advice">📝 HR 156 crept above MAF (155). Try backing off 10–15 sec/km next time.</div>
     
-    <div style="font-size:11px;color:var(--muted);margin-top:8px">8/17/2026, 5:52:49 PM generated</div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">8/17/2026, 1:52:29 PM generated</div>
   </div>
   
 
@@ -780,8 +764,8 @@
 </div>
 
 <script>
-const yunhoWeekly = [{"label":"05/31","km":20},{"label":"06/07","km":20},{"label":"06/14","km":25},{"label":"06/21","km":20},{"label":"06/28","km":21},{"label":"07/05","km":5},{"label":"07/12","km":0},{"label":"07/19","km":20},{"label":"07/26","km":17},{"label":"08/02","km":12},{"label":"08/09","km":21},{"label":"08/16","km":5}];
-const gfWeekly = [{"label":"05/31","km":7},{"label":"06/07","km":0},{"label":"06/14","km":12},{"label":"06/21","km":7},{"label":"06/28","km":11},{"label":"07/05","km":0},{"label":"07/12","km":0},{"label":"07/19","km":0},{"label":"07/26","km":0},{"label":"08/02","km":0},{"label":"08/09","km":5.6},{"label":"08/16","km":5}];
+const yunhoWeekly = [{"label":"05/31","km":25},{"label":"06/07","km":22.5},{"label":"06/14","km":25},{"label":"06/21","km":25},{"label":"06/28","km":21},{"label":"07/05","km":5},{"label":"07/12","km":0},{"label":"07/19","km":20},{"label":"07/26","km":17},{"label":"08/02","km":12},{"label":"08/09","km":21},{"label":"08/16","km":5}];
+const gfWeekly = [{"label":"05/31","km":12},{"label":"06/07","km":0},{"label":"06/14","km":12},{"label":"06/21","km":7},{"label":"06/28","km":11},{"label":"07/05","km":0},{"label":"07/12","km":0},{"label":"07/19","km":0},{"label":"07/26","km":0},{"label":"08/02","km":0},{"label":"08/09","km":5.6},{"label":"08/16","km":5}];
 const yunhoLR = [{"label":"05/31","km":10},{"label":"06/07","km":10},{"label":"06/14","km":10},{"label":"06/21","km":10},{"label":"06/28","km":11},{"label":"07/05","km":5},{"label":"07/12","km":null},{"label":"07/19","km":11},{"label":"07/26","km":12},{"label":"08/02","km":12},{"label":"08/09","km":12},{"label":"08/16","km":5}];
 const gfLR = [{"label":"05/31","km":7},{"label":"06/07","km":null},{"label":"06/14","km":7},{"label":"06/21","km":7},{"label":"06/28","km":7},{"label":"07/05","km":null},{"label":"07/12","km":null},{"label":"07/19","km":null},{"label":"07/26","km":null},{"label":"08/02","km":null},{"label":"08/09","km":5.6},{"label":"08/16","km":5}];
 

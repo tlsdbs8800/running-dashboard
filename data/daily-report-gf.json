@@ -1,7 +1,7 @@
 {
   "mode": "evening",
   "date": "2026-08-17",
-  "generatedAt": "2026-08-17T07:52:49.455Z",
+  "generatedAt": "2026-08-17T13:52:29.684Z",
   "hasRun": true,
   "km": 5,
   "paceStr": "7:50",
@@ -43,11 +43,5 @@
   "trainingEffectLabel": null,
   "hrZoneSec": null,
   "elevationGainM": null,
-  "steps": null,
-  "coaching": {
-    "headline": "Good start 🏃",
-    "coaching": "Today's run was slightly above the target HR of 155bpm, averaging 156bpm, so let's focus on keeping it easy next time. The pace of 7:50/km is within the target range, which is great. We need to work on keeping the heart rate in check, as the max HR of 165bpm is higher than desired.",
-    "trend": "Recent runs show a good consistency in pace, with most runs between 8:03-8:14/km, and heart rates have been mostly under control, except for today's run. The weekly km so far is low at 5.0km, so we can look to increase that gradually.",
-    "nextRun": "Next run: 6km at a pace of 7:55-8:05/km, keeping the heart rate under 155bpm, with a focus on maintaining a smooth, efficient form"
-  }
+  "steps": null
 }
