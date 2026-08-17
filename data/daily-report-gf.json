@@ -1,7 +1,53 @@
 {
   "mode": "evening",
   "date": "2026-08-17",
-  "generatedAt": "2026-08-17T07:47:24.699Z",
-  "hasRun": false,
-  "feedback": "No run data yet today. If you ran, sync your Garmin watch with your phone."
+  "generatedAt": "2026-08-17T07:52:49.455Z",
+  "hasRun": true,
+  "km": 5,
+  "paceStr": "7:50",
+  "avgHR": 156,
+  "maxHR": 165,
+  "zone": 3,
+  "zoneLabel": "Z3 (Moderate)",
+  "zoneColor": "#f59e0b",
+  "feedback": "HR 156 crept above MAF (155). Try backing off 10–15 sec/km next time.",
+  "dynamics": {
+    "gct": {
+      "value": null,
+      "unit": "ms",
+      "label": "Ground Contact"
+    },
+    "vo": {
+      "value": null,
+      "unit": "cm",
+      "label": "Vert. Oscillation"
+    },
+    "vr": {
+      "unit": "%",
+      "label": "Vert. Ratio",
+      "rating": null,
+      "color": null
+    },
+    "cadence": {
+      "value": null,
+      "unit": "spm",
+      "label": "Cadence"
+    },
+    "power": {
+      "value": null,
+      "unit": "W",
+      "label": "Power (NP)",
+      "rating": null
+    }
+  },
+  "trainingEffectLabel": null,
+  "hrZoneSec": null,
+  "elevationGainM": null,
+  "steps": null,
+  "coaching": {
+    "headline": "Good start 🏃",
+    "coaching": "Today's run was slightly above the target HR of 155bpm, averaging 156bpm, so let's focus on keeping it easy next time. The pace of 7:50/km is within the target range, which is great. We need to work on keeping the heart rate in check, as the max HR of 165bpm is higher than desired.",
+    "trend": "Recent runs show a good consistency in pace, with most runs between 8:03-8:14/km, and heart rates have been mostly under control, except for today's run. The weekly km so far is low at 5.0km, so we can look to increase that gradually.",
+    "nextRun": "Next run: 6km at a pace of 7:55-8:05/km, keeping the heart rate under 155bpm, with a focus on maintaining a smooth, efficient form"
+  }
 }
