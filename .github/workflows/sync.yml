@@ -4,10 +4,6 @@ on:
   schedule:
     # 오전 7시 KST (22:00 UTC) — 모닝 리포트
     - cron: '0 22 * * *'
-    # 오전 11시 KST (02:00 UTC) — 오전 런 감지
-    - cron: '0 2 * * *'
-    # 오후 7시 KST (10:00 UTC) — 저녁 런 감지
-    - cron: '0 10 * * *'
     # 오후 10시 KST (13:00 UTC) — 이브닝 리포트
     - cron: '0 13 * * *'
   workflow_dispatch:

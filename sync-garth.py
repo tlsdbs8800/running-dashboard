@@ -43,15 +43,15 @@ USERS = {
 }
 
 
-def garth_get(path, params=None, retries=3):
+def garth_get(path, params=None, retries=2):
     """garth.connectapi with retry on 429."""
     for attempt in range(retries):
         try:
             return garth.connectapi(path, params=params)
         except Exception as e:
             if "429" in str(e) and attempt < retries - 1:
-                wait = 60 * (attempt + 1)
-                print(f"  429 rate limit — {wait}초 후 재시도 ({attempt+1}/{retries-1})")
+                wait = 300  # 5분 대기
+                print(f"  429 rate limit — {wait}초 후 재시도...")
                 time.sleep(wait)
             else:
                 raise
@@ -65,15 +65,14 @@ def fetch_user_data(user_id, config):
         print(f"[{name}] garth 토큰 없음: {garth_dir} — 건너뜀")
         return None
 
-    for attempt in range(3):
+    for attempt in range(2):
         try:
             garth.resume(str(garth_dir))
             break
         except Exception as e:
-            if "429" in str(e) and attempt < 2:
-                wait = 60 * (attempt + 1)
-                print(f"[{name}] 토큰 교환 429 — {wait}초 후 재시도")
-                time.sleep(wait)
+            if "429" in str(e) and attempt < 1:
+                print(f"[{name}] 토큰 교환 429 — 300초 후 재시도")
+                time.sleep(300)
             else:
                 raise
 
@@ -253,10 +252,13 @@ def main():
     else:
         users = list(USERS.keys())
 
-    for user_id in users:
+    for i, user_id in enumerate(users):
         if user_id not in USERS:
             print(f"알 수 없는 유저: {user_id}")
             continue
+        if i > 0:
+            print("다음 유저 전 60초 대기 (Garmin rate limit 방지)...")
+            time.sleep(60)
         try:
             sync_user(user_id)
         except Exception as e:
