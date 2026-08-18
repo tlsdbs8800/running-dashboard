@@ -1,47 +1,67 @@
 {
   "mode": "evening",
-  "date": "2026-08-17",
-  "generatedAt": "2026-08-17T08:00:46.530Z",
+  "date": "2026-08-18",
+  "generatedAt": "2026-08-18T11:13:20.972Z",
   "hasRun": true,
   "km": 5,
-  "paceStr": "7:50",
-  "avgHR": 156,
-  "maxHR": 165,
-  "zone": 3,
-  "zoneLabel": "Z3 (Moderate)",
-  "zoneColor": "#f59e0b",
-  "feedback": "HR 156 crept above MAF (155). Try backing off 10–15 sec/km next time.",
+  "paceStr": "7:34",
+  "avgHR": 152,
+  "maxHR": 166,
+  "zone": 2,
+  "zoneLabel": "Z2 (MAF Easy)",
+  "zoneColor": "#16a34a",
+  "feedback": "Good easy run. HR 152 (Z2) kept in check. Pace (7:34) is a little fast — feel free to slow down a bit. · Practice lifting your feet faster off the ground.",
   "dynamics": {
     "gct": {
-      "value": null,
+      "value": 280,
       "unit": "ms",
-      "label": "Ground Contact"
+      "label": "Ground Contact",
+      "rating": "Fair",
+      "color": "#f59e0b",
+      "tip": "Practice lifting your feet faster off the ground."
     },
     "vo": {
-      "value": null,
+      "value": 7.7,
       "unit": "cm",
-      "label": "Vert. Oscillation"
+      "label": "Vert. Oscillation",
+      "rating": "Good",
+      "color": "#22c55e",
+      "tip": null
     },
     "vr": {
+      "value": 10,
       "unit": "%",
       "label": "Vert. Ratio",
-      "rating": null,
-      "color": null
+      "rating": "Fair",
+      "color": "#f59e0b"
     },
     "cadence": {
-      "value": null,
+      "value": 171,
       "unit": "spm",
-      "label": "Cadence"
+      "label": "Cadence",
+      "rating": "Fair",
+      "color": "#f59e0b",
+      "tip": "Bumping cadence by 5–10 spm will improve efficiency."
     },
     "power": {
-      "value": null,
+      "value": 190,
       "unit": "W",
       "label": "Power (NP)",
       "rating": null
     }
   },
-  "trainingEffectLabel": null,
-  "hrZoneSec": null,
-  "elevationGainM": null,
-  "steps": null
+  "aerobicEffect": 3.2,
+  "anaerobicEffect": null,
+  "trainingEffectLabel": "Aerobic Base",
+  "trainingLoad": null,
+  "hrZoneSec": [
+    790,
+    829,
+    640,
+    14,
+    0
+  ],
+  "elevationGainM": 3,
+  "fastest1kmSec": 433.78399658203125,
+  "steps": 6462
 }

@@ -472,16 +472,18 @@ async function enrichWithAI(report, userData, lang = "ko") {
       : "당신은 MAF 훈련 전문 엘리트 러닝 코치입니다. 유효한 JSON만 반환하세요. 마크다운 없이.";
 
     const msg = await client.chat.completions.create({
-      model: "llama-3.3-70b-versatile",
-      max_tokens: 600,
-      response_format: { type: "json_object" },
+      model: "openai/gpt-oss-120b",
+      max_tokens: 700,
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: buildCoachingPrompt(report, userData, lang) },
       ],
     });
 
-    const raw = JSON.parse(msg.choices[0].message.content);
+    const text = msg.choices[0].message.content;
+    const jsonMatch = text.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) throw new Error("JSON not found in response");
+    const raw = JSON.parse(jsonMatch[0]);
     // strip any non-Korean stray characters from Korean fields
     const clean = (s) => typeof s === "string"
       ? s.replace(/[一-鿿㐀-䶿Ѐ-ӿ]/g, "").replace(/\s+/g, " ").trim()
