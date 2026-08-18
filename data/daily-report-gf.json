@@ -1,7 +1,7 @@
 {
   "mode": "evening",
   "date": "2026-08-18",
-  "generatedAt": "2026-08-18T13:56:51.632Z",
+  "generatedAt": "2026-08-18T11:30:08.705Z",
   "hasRun": true,
   "km": 5,
   "paceStr": "7:34",
@@ -63,11 +63,5 @@
   ],
   "elevationGainM": 3,
   "fastest1kmSec": 433.78399658203125,
-  "steps": 6462,
-  "coaching": {
-    "headline": "Steady progress, keep that MAF magic! 🏃‍♀️",
-    "coaching": "Today's 5 km at 7:34 / km kept your average HR at 152 bpm, comfortably under your MAF ceiling of 155 bpm—great job staying in Zone 2. Your max HR spiked to 166 bpm, so watch for brief intensity bursts that can push you out of the easy zone. Cadence was solid at 171 spm and power held around 190 W, indicating good form.",
-    "trend": "Recent runs show you mostly staying below MAF HR, though the 5‑km on 2026‑08‑17 nudged to 156 bpm. Pace has varied between 7:34 and 8:14 / km, and weekly volume is still low at 10 km, so consistency will be key.",
-    "nextRun": "Run 7 km at 8:00–8:10 / km, keep HR ≤ 154 bpm, aim for 175 spm cadence and ground contact time ≤ 280 ms."
-  }
+  "steps": 6462
 }
