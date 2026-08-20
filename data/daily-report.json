@@ -1,19 +1,71 @@
 {
-  "mode": "morning",
-  "date": "2026-08-19",
-  "generatedAt": "2026-08-19T21:02:36.518Z",
-  "readiness": 42,
-  "readinessLvl": "LOW",
-  "sleepScore": 86,
-  "sleepMin": 509,
-  "hrv": null,
-  "verdict": "🔴 컨디션 낮음 — 볼륨 줄이고 여유있게",
-  "verdictColor": "#dc2626",
-  "advice": " · 페이스 20~30초 느리게 · HR 146 이하 철저히",
-  "adjustedLabel": "휴식",
-  "hrvNote": "",
-  "sleepNote": "8시간 29분 · 수면 점수 86",
-  "todayPlanType": null,
-  "todayPlanOrigLabel": null,
-  "todayPlanDesc": null
+  "mode": "evening",
+  "date": "2026-08-20",
+  "generatedAt": "2026-08-20T07:52:52.019Z",
+  "hasRun": true,
+  "km": 13,
+  "paceStr": "8:30",
+  "avgHR": 149,
+  "maxHR": 169,
+  "zone": 3,
+  "zoneLabel": "Z3 (적당히 힘듦)",
+  "zoneColor": "#f59e0b",
+  "planComparison": "",
+  "plannedKm": null,
+  "feedback": "HR 149로 MAF(146)보다 조금 올라갔어. 이지 런에선 Z2 이하 유지가 목표야. 다음엔 페이스를 10~15초 더 줄여봐. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
+  "tomorrowPlan": null,
+  "dynamics": {
+    "gct": {
+      "value": 269,
+      "unit": "ms",
+      "label": "지면접촉",
+      "rating": "보통",
+      "color": "#f59e0b",
+      "tip": "지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐."
+    },
+    "vo": {
+      "value": 6.4,
+      "unit": "cm",
+      "label": "수직진동",
+      "rating": "좋음",
+      "color": "#22c55e",
+      "tip": "수직 진동 양호."
+    },
+    "vr": {
+      "value": 10.1,
+      "unit": "%",
+      "label": "수직비율",
+      "rating": "보통",
+      "color": "#f59e0b"
+    },
+    "cadence": {
+      "value": 185,
+      "unit": "spm",
+      "label": "케이던스",
+      "rating": "최상",
+      "color": "#16a34a",
+      "tip": "케이던스 최적. 관절 부담도 낮아."
+    },
+    "power": {
+      "value": 208,
+      "unit": "W",
+      "label": "파워(NP)",
+      "rating": null
+    }
+  },
+  "aerobicEffect": 3.3,
+  "anaerobicEffect": 0.1,
+  "trainingEffectLabel": "유산소 기초",
+  "trainingLoad": 79,
+  "hrZoneSec": [
+    6505,
+    110,
+    0,
+    0,
+    0
+  ],
+  "elevationGainM": 106,
+  "fastest1kmSec": 487.9540100097656,
+  "fastest5kmSec": 2511.81298828125,
+  "steps": 20394
 }

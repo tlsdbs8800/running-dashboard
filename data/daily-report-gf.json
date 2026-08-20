@@ -1,19 +1,19 @@
 {
   "mode": "evening",
-  "date": "2026-08-19",
-  "generatedAt": "2026-08-19T21:02:36.520Z",
+  "date": "2026-08-20",
+  "generatedAt": "2026-08-20T07:52:52.020Z",
   "hasRun": true,
-  "km": 5,
-  "paceStr": "7:34",
-  "avgHR": 152,
-  "maxHR": 166,
+  "km": 6,
+  "paceStr": "8:36",
+  "avgHR": 145,
+  "maxHR": 159,
   "zone": 2,
   "zoneLabel": "Z2 (MAF Easy)",
   "zoneColor": "#16a34a",
-  "feedback": "Good easy run. HR 152 (Z2) kept in check. Pace (7:34) is a little fast — feel free to slow down a bit. · Practice lifting your feet faster off the ground.",
+  "feedback": "Good easy run. HR 145 (Z2) kept in check.  · Practice lifting your feet faster off the ground.",
   "dynamics": {
     "gct": {
-      "value": 280,
+      "value": 281,
       "unit": "ms",
       "label": "Ground Contact",
       "rating": "Fair",
@@ -21,7 +21,7 @@
       "tip": "Practice lifting your feet faster off the ground."
     },
     "vo": {
-      "value": 7.7,
+      "value": 7,
       "unit": "cm",
       "label": "Vert. Oscillation",
       "rating": "Good",
@@ -29,14 +29,14 @@
       "tip": null
     },
     "vr": {
-      "value": 10,
+      "value": 10.5,
       "unit": "%",
       "label": "Vert. Ratio",
       "rating": "Fair",
       "color": "#f59e0b"
     },
     "cadence": {
-      "value": 171,
+      "value": 174,
       "unit": "spm",
       "label": "Cadence",
       "rating": "Fair",
@@ -44,24 +44,24 @@
       "tip": "Bumping cadence by 5–10 spm will improve efficiency."
     },
     "power": {
-      "value": 190,
+      "value": 177,
       "unit": "W",
       "label": "Power (NP)",
       "rating": null
     }
   },
-  "aerobicEffect": 3.2,
+  "aerobicEffect": 3,
   "anaerobicEffect": null,
   "trainingEffectLabel": "Aerobic Base",
   "trainingLoad": null,
   "hrZoneSec": [
-    790,
-    829,
-    640,
-    14,
+    2688,
+    358,
+    54,
+    0,
     0
   ],
-  "elevationGainM": 3,
-  "fastest1kmSec": 433.78399658203125,
-  "steps": 6462
+  "elevationGainM": 59,
+  "fastest1kmSec": 509.010009765625,
+  "steps": 8994
 }
