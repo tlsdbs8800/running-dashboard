@@ -98,7 +98,12 @@ jobs:
           LABEL=$(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')
           MODE="${{ steps.mode.outputs.mode }}"
           git commit -m "sync: $LABEL [$MODE] 자동 갱신" 2>/dev/null || echo "변경사항 없음"
-          git push || true
+          if ! git pull --rebase origin main; then
+            git checkout --theirs data/ index.html
+            git add data/ index.html
+            GIT_EDITOR=true git rebase --continue
+          fi
+          git push
 
       - name: Save refreshed tokens back to secrets
         if: always()
