@@ -1,7 +1,7 @@
 {
   "mode": "evening",
   "date": "2026-08-20",
-  "generatedAt": "2026-08-20T12:00:02.740Z",
+  "generatedAt": "2026-08-20T14:01:58.393Z",
   "hasRun": true,
   "km": 6,
   "paceStr": "8:36",
@@ -63,5 +63,11 @@
   ],
   "elevationGainM": 59,
   "fastest1kmSec": 509.010009765625,
-  "steps": 8994
+  "steps": 8994,
+  "coaching": {
+    "headline": "Steady strides, keep the heart happy 😊",
+    "coaching": "Today's 6 km at 8:36/km kept your average HR at 145 bpm, well under the MAF ceiling of 155 bpm, which is solid aerobic work. However, the pace is slower than your target range (7:50–8:10/km) and you peaked at 159 bpm, so you need to tighten up the effort without letting HR creep up.",
+    "trend": "Recent runs show you can hit the target pace (7:34 on 8/18) but it pushes HR close to the limit, while slower runs keep HR comfortably low. Overall you’re maintaining consistency in volume (16 km this week) and showing a moderate aerobic training effect (3/5).",
+    "nextRun": "Run 7 km at 8:00–8:08 per km, keep HR ≤ 154 bpm, and focus on a steady cadence around 175 spm while aiming to reduce ground contact time a few milliseconds."
+  }
 }
