@@ -1290,13 +1290,13 @@
   "weight": [],
   "sleep": [
     {
-      "date": "2026-08-20",
+      "date": "2026-08-25",
       "score": null,
       "durationMin": null
     }
   ],
   "trainingReadiness": null,
-  "lastSync": "2026-08-20T17:48:41.486171",
+  "lastSync": "2026-08-25T10:02:33.304228",
   "birthYear": 2001,
   "age": 25,
   "mafHR": 155
