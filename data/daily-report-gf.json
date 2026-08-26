@@ -1,7 +1,7 @@
 {
   "mode": "evening",
   "date": "2026-08-26",
-  "generatedAt": "2026-08-26T00:36:55.979Z",
+  "generatedAt": "2026-08-26T14:08:17.517Z",
   "hasRun": true,
   "km": 5,
   "paceStr": "8:00",
@@ -63,5 +63,11 @@
   ],
   "elevationGainM": 33,
   "fastest1kmSec": 462.59600830078125,
-  "steps": 7150
+  "steps": 7150,
+  "coaching": {
+    "headline": "Steady progress, keep the easy vibe! 🚀",
+    "coaching": "Today's 5 km at an 8:00 / km pace kept your average HR at 147 bpm, comfortably below your MAF ceiling of 155 bpm, which is excellent. Your max HR spiked to 163 bpm, so watch for short bursts that push you over the limit. Cadence was strong at 178 spm and power at 185 W, showing good form.",
+    "trend": "Recent runs show a consistent aerobic effort with average HRs ranging from 144‑152 bpm and paces hovering around your 7:50‑8:10 /km window. The only outlier was the 8/17 run at 156 bpm, indicating a need to stay stricter with the MAF cap.",
+    "nextRun": "Run 6 km at a target pace of 7:55‑8:05 /km, keep HR ≤ 154 bpm, aim for cadence ~180 spm and ground‑contact time ≤ 270 ms."
+  }
 }
