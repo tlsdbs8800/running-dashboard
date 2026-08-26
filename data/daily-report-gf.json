@@ -1,7 +1,67 @@
 {
   "mode": "evening",
-  "date": "2026-08-25",
-  "generatedAt": "2026-08-25T14:04:30.598Z",
-  "hasRun": false,
-  "feedback": "No run data yet today. If you ran, sync your Garmin watch with your phone."
+  "date": "2026-08-26",
+  "generatedAt": "2026-08-26T00:36:55.979Z",
+  "hasRun": true,
+  "km": 5,
+  "paceStr": "8:00",
+  "avgHR": 147,
+  "maxHR": 163,
+  "zone": 2,
+  "zoneLabel": "Z2 (MAF Easy)",
+  "zoneColor": "#16a34a",
+  "feedback": "Perfect easy run! HR 147 · 8:00/km — nailed the target pace in the MAF zone. · Practice lifting your feet faster off the ground.",
+  "dynamics": {
+    "gct": {
+      "value": 273,
+      "unit": "ms",
+      "label": "Ground Contact",
+      "rating": "Fair",
+      "color": "#f59e0b",
+      "tip": "Practice lifting your feet faster off the ground."
+    },
+    "vo": {
+      "value": 6.9,
+      "unit": "cm",
+      "label": "Vert. Oscillation",
+      "rating": "Good",
+      "color": "#22c55e",
+      "tip": null
+    },
+    "vr": {
+      "value": 10,
+      "unit": "%",
+      "label": "Vert. Ratio",
+      "rating": "Fair",
+      "color": "#f59e0b"
+    },
+    "cadence": {
+      "value": 178,
+      "unit": "spm",
+      "label": "Cadence",
+      "rating": "Good",
+      "color": "#22c55e",
+      "tip": null
+    },
+    "power": {
+      "value": 185,
+      "unit": "W",
+      "label": "Power (NP)",
+      "rating": null
+    }
+  },
+  "aerobicEffect": 3.1,
+  "anaerobicEffect": null,
+  "trainingEffectLabel": "Aerobic Base",
+  "trainingLoad": null,
+  "hrZoneSec": [
+    1668,
+    588,
+    151,
+    0,
+    0
+  ],
+  "elevationGainM": 33,
+  "fastest1kmSec": 462.59600830078125,
+  "steps": 7150
 }

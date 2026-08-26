@@ -7,6 +7,39 @@
   "goalTimeMin": 120,
   "activities": [
     {
+      "id": 24106036063,
+      "date": "2026-08-25",
+      "distanceM": 5007,
+      "durationSec": 2405,
+      "avgHR": 148.0,
+      "maxHR": 165.0,
+      "avgPaceSecPerKm": 480,
+      "calories": 360.0,
+      "name": "Sydney Running",
+      "cadence": 185,
+      "groundContactTimeMs": 266,
+      "verticalOscillationCm": 6.5,
+      "verticalRatio": 9.7,
+      "strideLengthCm": 67.0,
+      "avgPowerW": 217,
+      "normPowerW": 219,
+      "aerobicEffect": 2.8,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": 46,
+      "hrZoneSec": [
+        2350,
+        16,
+        0,
+        0,
+        0
+      ],
+      "elevationGainM": 33,
+      "fastest1kmSec": 465.56298828125,
+      "fastest5kmSec": 2401.751953125,
+      "steps": 7386
+    },
+    {
       "id": 24093404770,
       "date": "2026-08-24",
       "distanceM": 5007,
@@ -2066,6 +2099,10 @@
   ],
   "vo2max": [
     {
+      "date": "2026-08-25",
+      "value": 45.6
+    },
+    {
       "date": "2026-08-24",
       "value": 45.7
     },
@@ -2110,20 +2147,20 @@
   ],
   "sleep": [
     {
-      "date": "2026-08-25",
-      "score": 80,
-      "durationMin": 409
+      "date": "2026-08-26",
+      "score": 79,
+      "durationMin": 398
     }
   ],
   "trainingReadiness": {
-    "date": "2026-08-25",
-    "score": 50,
+    "date": "2026-08-26",
+    "score": 53,
     "level": "MODERATE",
     "feedbackShort": "LISTEN_TO_YOUR_BODY",
-    "sleepScore": 80,
-    "recoveryTimeMin": 543
+    "sleepScore": 79,
+    "recoveryTimeMin": 295
   },
-  "lastSync": "2026-08-25T10:01:30.837692",
+  "lastSync": "2026-08-26T10:35:22.930482",
   "birthYear": 1992,
   "age": 34,
   "mafHR": 146
