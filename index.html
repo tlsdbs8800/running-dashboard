@@ -95,26 +95,194 @@
 <body>
 <div class="container">
   <h1>🏃 러닝 코치 대시보드</h1>
-  <div class="sync-time">마지막 동기화: 2026. 8. 26. AM 10:35:22</div>
+  <div class="sync-time">마지막 동기화: 2026. 8. 27. 오후 7:34:52</div>
 
   <!-- Daily Report: morning/evening -->
   
   <div class="section-title">🌙 오늘 런 분석</div>
-  <div class="daily-report-card" style="border-left:4px solid #3b82f6">
+  <div class="daily-report-card" style="border-left:4px solid #16a34a">
     
-      <div class="dr-advice">오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.</div>
+      
+        <div class="dr-grid">
+          <div class="dr-item"><span class="dr-label">거리</span><span class="dr-val" style="font-weight:600">13km </span></div>
+          <div class="dr-item"><span class="dr-label">페이스</span><span class="dr-val">8:08/km</span></div>
+          <div class="dr-item"><span class="dr-label">평균 HR</span><span class="dr-val" style="color:#16a34a">145 bpm · Z2 (MAF 이지)</span></div>
+          <div class="dr-item"><span class="dr-label">걸음수</span><span class="dr-val">19,716보</span></div>
+          <div class="dr-item"><span class="dr-label">고도 상승</span><span class="dr-val">+51m</span></div>
+          <div class="dr-item"><span class="dr-label">최고 1km</span><span class="dr-val">7:54</span></div>
+        </div>
+
+        
+        <div style="margin:10px 0 6px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">러닝 다이내믹스</div>
+        <div class="dr-grid" style="grid-template-columns:repeat(auto-fill,minmax(130px,1fr))">
+          <div class="dr-item">
+              <span class="dr-label">지면 접촉</span>
+              <span class="dr-val" style="color:#f59e0b">
+                266ms
+                <span style="font-size:10px;margin-left:4px">(보통)</span>
+              </span>
+            </div><div class="dr-item">
+              <span class="dr-label">수직 진동</span>
+              <span class="dr-val" style="color:#22c55e">
+                6.4cm
+                <span style="font-size:10px;margin-left:4px">(좋음)</span>
+              </span>
+            </div><div class="dr-item">
+              <span class="dr-label">수직 비율</span>
+              <span class="dr-val" style="color:#f59e0b">
+                9.8%
+                <span style="font-size:10px;margin-left:4px">(보통)</span>
+              </span>
+            </div><div class="dr-item">
+              <span class="dr-label">케이던스</span>
+              <span class="dr-val" style="color:#16a34a">
+                187spm
+                <span style="font-size:10px;margin-left:4px">(최상)</span>
+              </span>
+            </div><div class="dr-item">
+              <span class="dr-label">파워 (NP)</span>
+              <span class="dr-val" style="color:var(--text)">
+                213W
+                
+              </span>
+            </div>
+        </div>
+        <div class="dr-advice" style="margin-top:6px">💡 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.</div>
+        
+
+        
+        <div style="margin:10px 0 4px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">훈련 효과</div>
+        <div class="dr-grid">
+          <div class="dr-item"><span class="dr-label">효과 유형</span><span class="dr-val">유산소 기초</span></div>
+          <div class="dr-item"><span class="dr-label">유산소</span><span class="dr-val">3.4/5.0</span></div>
+          
+          <div class="dr-item"><span class="dr-label">훈련 부하</span><span class="dr-val">81</span></div>
+        </div>
+
+        
+        <div style="margin:10px 0 4px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">HR 존별 시간</div>
+        <div style="display:flex;gap:4px;align-items:flex-end;height:40px;margin-bottom:4px">
+          <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+              <div style="font-size:9px;color:var(--text3)">106분</div>
+              <div style="width:100%;background:#22c55e;height:34px;border-radius:2px 2px 0 0;opacity:1"></div>
+              <div style="font-size:9px;color:var(--text3)">Z1</div>
+            </div><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+              <div style="font-size:9px;color:var(--text3)">0분</div>
+              <div style="width:100%;background:#16a34a;height:4px;border-radius:2px 2px 0 0;opacity:0.15"></div>
+              <div style="font-size:9px;color:var(--text3)">Z2</div>
+            </div><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+              <div style="font-size:9px;color:var(--text3)">0분</div>
+              <div style="width:100%;background:#f59e0b;height:4px;border-radius:2px 2px 0 0;opacity:0.15"></div>
+              <div style="font-size:9px;color:var(--text3)">Z3</div>
+            </div><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+              <div style="font-size:9px;color:var(--text3)">0분</div>
+              <div style="width:100%;background:#ef4444;height:4px;border-radius:2px 2px 0 0;opacity:0.15"></div>
+              <div style="font-size:9px;color:var(--text3)">Z4</div>
+            </div><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+              <div style="font-size:9px;color:var(--text3)">0분</div>
+              <div style="width:100%;background:#991b1b;height:4px;border-radius:2px 2px 0 0;opacity:0.15"></div>
+              <div style="font-size:9px;color:var(--text3)">Z5</div>
+            </div>
+        </div>
+
+        <div class="dr-advice">📝 완벽한 이지 런이야! HR 145 · 8:08/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.</div>
+      
       
     
-    <div style="font-size:11px;color:var(--muted);margin-top:8px">2026. 8. 27. AM 8:26:02 생성</div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">2026. 8. 27. 오후 7:36:00 생성</div>
   </div>
   
 
   <!-- Jenny Daily Report -->
   
   <div class="section-title">🌙 Jenny Today's Run</div>
-  <div class="daily-report-card" style="border-left:4px solid #ec4899">
-    <div class="dr-advice">No run data yet today. If you ran, sync your Garmin watch with your phone.</div>
-    <div style="font-size:11px;color:var(--muted);margin-top:8px">8/27/2026, 8:26:02 AM generated</div>
+  <div class="daily-report-card" style="border-left:4px solid #16a34a">
+    
+      <div class="dr-grid">
+        <div class="dr-item"><span class="dr-label">Distance</span><span class="dr-val" style="font-weight:600">7km</span></div>
+        <div class="dr-item"><span class="dr-label">Pace</span><span class="dr-val">8:13/km</span></div>
+        <div class="dr-item"><span class="dr-label">Avg HR</span><span class="dr-val" style="color:#16a34a">153 bpm · Z2 (MAF Easy)</span></div>
+        <div class="dr-item"><span class="dr-label">Steps</span><span class="dr-val">10,122</span></div>
+        <div class="dr-item"><span class="dr-label">Elevation</span><span class="dr-val">+23m</span></div>
+        <div class="dr-item"><span class="dr-label">Best 1km</span><span class="dr-val">7:54</span></div>
+      </div>
+
+      
+      <div style="margin:10px 0 6px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">Running Dynamics</div>
+      <div class="dr-grid" style="grid-template-columns:repeat(auto-fill,minmax(130px,1fr))">
+        <div class="dr-item">
+            <span class="dr-label">Ground Contact</span>
+            <span class="dr-val" style="color:#f59e0b">
+              277ms
+              <span style="font-size:10px;margin-left:4px">(Fair)</span>
+            </span>
+          </div><div class="dr-item">
+            <span class="dr-label">Vert. Oscillation</span>
+            <span class="dr-val" style="color:#22c55e">
+              7cm
+              <span style="font-size:10px;margin-left:4px">(Good)</span>
+            </span>
+          </div><div class="dr-item">
+            <span class="dr-label">Vert. Ratio</span>
+            <span class="dr-val" style="color:#f59e0b">
+              10.2%
+              <span style="font-size:10px;margin-left:4px">(Fair)</span>
+            </span>
+          </div><div class="dr-item">
+            <span class="dr-label">Cadence</span>
+            <span class="dr-val" style="color:#22c55e">
+              176spm
+              <span style="font-size:10px;margin-left:4px">(Good)</span>
+            </span>
+          </div><div class="dr-item">
+            <span class="dr-label">Power (NP)</span>
+            <span class="dr-val" style="color:var(--text)">
+              178W
+              
+            </span>
+          </div>
+      </div>
+      <div class="dr-advice" style="margin-top:6px">💡 Practice lifting your feet faster off the ground.</div>
+      
+
+      
+      <div style="margin:10px 0 4px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">Training Effect</div>
+      <div class="dr-grid">
+        <div class="dr-item"><span class="dr-label">Type</span><span class="dr-val">Aerobic Base</span></div>
+        <div class="dr-item"><span class="dr-label">Aerobic</span><span class="dr-val">3/5.0</span></div>
+        
+        
+      </div>
+
+      
+      <div style="margin:10px 0 4px;font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.05em">HR Zone Breakdown</div>
+      <div style="display:flex;gap:4px;align-items:flex-end;height:40px;margin-bottom:4px">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+            <div style="font-size:9px;color:var(--text3)">14min</div>
+            <div style="width:100%;background:#22c55e;height:12.325188804975566px;border-radius:2px 2px 0 0;opacity:1"></div>
+            <div style="font-size:9px;color:var(--text3)">Z1</div>
+          </div><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+            <div style="font-size:9px;color:var(--text3)">38min</div>
+            <div style="width:100%;background:#16a34a;height:34px;border-radius:2px 2px 0 0;opacity:1"></div>
+            <div style="font-size:9px;color:var(--text3)">Z2</div>
+          </div><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+            <div style="font-size:9px;color:var(--text3)">6min</div>
+            <div style="width:100%;background:#f59e0b;height:5.845402043536207px;border-radius:2px 2px 0 0;opacity:1"></div>
+            <div style="font-size:9px;color:var(--text3)">Z3</div>
+          </div><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+            <div style="font-size:9px;color:var(--text3)">0min</div>
+            <div style="width:100%;background:#ef4444;height:4px;border-radius:2px 2px 0 0;opacity:0.15"></div>
+            <div style="font-size:9px;color:var(--text3)">Z4</div>
+          </div><div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+            <div style="font-size:9px;color:var(--text3)">0min</div>
+            <div style="width:100%;background:#991b1b;height:4px;border-radius:2px 2px 0 0;opacity:0.15"></div>
+            <div style="font-size:9px;color:var(--text3)">Z5</div>
+          </div>
+      </div>
+
+      <div class="dr-advice">📝 Good easy run. HR 153 (Z2) kept in check.  · Practice lifting your feet faster off the ground.</div>
+    
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">8/27/2026, 7:36:00 PM generated</div>
   </div>
   
 
@@ -124,18 +292,18 @@
     <div class="card">
       <div class="card-title">훈련 준비도</div>
       <div class="big-num" style="color:var(--orange)">
-        53<span style="font-size:16px;font-weight:400">/100</span>
+        44<span style="font-size:16px;font-weight:400">/100</span>
       </div>
       <div class="sub">
-        <span class="badge badge-moderate">
-          MODERATE
+        <span class="badge badge-low">
+          LOW
         </span>
       </div>
     </div>
     <div class="card">
       <div class="card-title">수면 점수</div>
-      <div class="big-num">79</div>
-      <div class="sub">6시간 38분</div>
+      <div class="big-num">87</div>
+      <div class="sub">7시간 49분</div>
     </div>
     <div class="card">
       <div class="card-title">VO2 Max</div>
@@ -455,6 +623,17 @@
       </thead>
       <tbody>
         <tr>
+            <td>2026-08-27</td>
+            <td>13.01km</td>
+            <td>8:08/km</td>
+            <td>145 bpm</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+            <td>187 spm</td>
+            <td>266 ms</td>
+            <td>6.4 cm</td>
+            <td>213 W</td>
+            <td>유산소기초</td>
+          </tr><tr>
             <td>2026-08-25</td>
             <td>5.01km</td>
             <td>8:00/km</td>
@@ -553,17 +732,6 @@
             <td>6.8 cm</td>
             <td>211 W</td>
             <td>유산소기초</td>
-          </tr><tr>
-            <td>2026-07-30</td>
-            <td>12.01km</td>
-            <td>7:33/km</td>
-            <td>147 bpm</td>
-            <td><span class="pace-chip z3">Z3</span></td>
-            <td>176 spm</td>
-            <td>272 ms</td>
-            <td>7.2 cm</td>
-            <td>235 W</td>
-            <td>유산소기초</td>
           </tr>
       </tbody>
     </table>
@@ -579,6 +747,13 @@
       <thead><tr><th>날짜</th><th>거리</th><th>페이스</th><th>평균 HR</th><th>시간</th><th>HR 존</th></tr></thead>
       <tbody>
         <tr>
+            <td>2026-08-27</td>
+            <td>7.01km</td>
+            <td>8:13/km</td>
+            <td>153 bpm</td>
+            <td>57:34</td>
+            <td><span class="pace-chip z2">Z2</span></td>
+          </tr><tr>
             <td>2026-08-25</td>
             <td>5.01km</td>
             <td>8:00/km</td>
@@ -641,13 +816,6 @@
             <td>135 bpm</td>
             <td>56:37</td>
             <td><span class="pace-chip z1">Z1</span></td>
-          </tr><tr>
-            <td>2026-06-15</td>
-            <td>5.01km</td>
-            <td>8:01/km</td>
-            <td>132 bpm</td>
-            <td>40:07</td>
-            <td><span class="pace-chip z1">Z1</span></td>
           </tr>
       </tbody>
     </table>
@@ -657,10 +825,10 @@
 </div>
 
 <script>
-const yunhoWeekly = [{"label":"06/07","km":22.5},{"label":"06/14","km":25},{"label":"06/21","km":25},{"label":"06/28","km":21},{"label":"07/05","km":5},{"label":"07/12","km":0},{"label":"07/19","km":20},{"label":"07/26","km":17},{"label":"08/02","km":12},{"label":"08/09","km":21},{"label":"08/16","km":23},{"label":"08/23","km":10}];
-const gfWeekly = [{"label":"06/07","km":0},{"label":"06/14","km":12},{"label":"06/21","km":7},{"label":"06/28","km":11},{"label":"07/05","km":0},{"label":"07/12","km":0},{"label":"07/19","km":0},{"label":"07/26","km":0},{"label":"08/02","km":0},{"label":"08/09","km":5.6},{"label":"08/16","km":16},{"label":"08/23","km":5}];
-const yunhoLR = [{"label":"06/07","km":10},{"label":"06/14","km":10},{"label":"06/21","km":10},{"label":"06/28","km":11},{"label":"07/05","km":5},{"label":"07/12","km":null},{"label":"07/19","km":11},{"label":"07/26","km":12},{"label":"08/02","km":12},{"label":"08/09","km":12},{"label":"08/16","km":13},{"label":"08/23","km":5}];
-const gfLR = [{"label":"06/07","km":null},{"label":"06/14","km":7},{"label":"06/21","km":7},{"label":"06/28","km":7},{"label":"07/05","km":null},{"label":"07/12","km":null},{"label":"07/19","km":null},{"label":"07/26","km":null},{"label":"08/02","km":null},{"label":"08/09","km":5.6},{"label":"08/16","km":6},{"label":"08/23","km":5}];
+const yunhoWeekly = [{"label":"06/07","km":20},{"label":"06/14","km":25},{"label":"06/21","km":20},{"label":"06/28","km":21},{"label":"07/05","km":5},{"label":"07/12","km":0},{"label":"07/19","km":20},{"label":"07/26","km":17},{"label":"08/02","km":12},{"label":"08/09","km":21},{"label":"08/16","km":23},{"label":"08/23","km":23}];
+const gfWeekly = [{"label":"06/07","km":0},{"label":"06/14","km":12},{"label":"06/21","km":7},{"label":"06/28","km":11},{"label":"07/05","km":0},{"label":"07/12","km":0},{"label":"07/19","km":0},{"label":"07/26","km":0},{"label":"08/02","km":0},{"label":"08/09","km":5.6},{"label":"08/16","km":16},{"label":"08/23","km":12}];
+const yunhoLR = [{"label":"06/07","km":10},{"label":"06/14","km":10},{"label":"06/21","km":10},{"label":"06/28","km":11},{"label":"07/05","km":5},{"label":"07/12","km":null},{"label":"07/19","km":11},{"label":"07/26","km":12},{"label":"08/02","km":12},{"label":"08/09","km":12},{"label":"08/16","km":13},{"label":"08/23","km":13}];
+const gfLR = [{"label":"06/07","km":null},{"label":"06/14","km":7},{"label":"06/21","km":7},{"label":"06/28","km":7},{"label":"07/05","km":null},{"label":"07/12","km":null},{"label":"07/19","km":null},{"label":"07/26","km":null},{"label":"08/02","km":null},{"label":"08/09","km":5.6},{"label":"08/16","km":6},{"label":"08/23","km":7}];
 
 const chartDefaults = {
   responsive: true,
@@ -701,7 +869,7 @@ new Chart(document.getElementById('longRunChart'), {
 });
 
 // Pace trend (sec/km → display as min:sec)
-const paceTrend = [{"date":"06-25","pace":487,"hr":137,"zone":2},{"date":"06-27","pace":474,"hr":139,"zone":2},{"date":"06-29","pace":483,"hr":135,"zone":1},{"date":"06-30","pace":454,"hr":133,"zone":1},{"date":"07-02","pace":494,"hr":140,"zone":2},{"date":"07-10","pace":350,"hr":167,"zone":4},{"date":"07-20","pace":462,"hr":138,"zone":2},{"date":"07-21","pace":460,"hr":143,"zone":2},{"date":"07-23","pace":481,"hr":143,"zone":2},{"date":"07-27","pace":464,"hr":138,"zone":2},{"date":"07-30","pace":453,"hr":147,"zone":3},{"date":"08-06","pace":494,"hr":140,"zone":2},{"date":"08-10","pace":489,"hr":134,"zone":1},{"date":"08-11","pace":474,"hr":136,"zone":2},{"date":"08-13","pace":489,"hr":139,"zone":2},{"date":"08-17","pace":452,"hr":139,"zone":2},{"date":"08-18","pace":454,"hr":131,"zone":1},{"date":"08-20","pace":510,"hr":149,"zone":3},{"date":"08-24","pace":413,"hr":146,"zone":2},{"date":"08-25","pace":480,"hr":148,"zone":3}];
+const paceTrend = [{"date":"06-27","pace":474,"hr":139,"zone":2},{"date":"06-29","pace":483,"hr":135,"zone":1},{"date":"06-30","pace":454,"hr":133,"zone":1},{"date":"07-02","pace":494,"hr":140,"zone":2},{"date":"07-10","pace":350,"hr":167,"zone":4},{"date":"07-20","pace":462,"hr":138,"zone":2},{"date":"07-21","pace":460,"hr":143,"zone":2},{"date":"07-23","pace":481,"hr":143,"zone":2},{"date":"07-27","pace":464,"hr":138,"zone":2},{"date":"07-30","pace":453,"hr":147,"zone":3},{"date":"08-06","pace":494,"hr":140,"zone":2},{"date":"08-10","pace":489,"hr":134,"zone":1},{"date":"08-11","pace":474,"hr":136,"zone":2},{"date":"08-13","pace":489,"hr":139,"zone":2},{"date":"08-17","pace":452,"hr":139,"zone":2},{"date":"08-18","pace":454,"hr":131,"zone":1},{"date":"08-20","pace":510,"hr":149,"zone":3},{"date":"08-24","pace":413,"hr":146,"zone":2},{"date":"08-25","pace":480,"hr":148,"zone":3},{"date":"08-27","pace":488,"hr":145,"zone":2}];
 const zoneColors = ['#6b7280','#16a34a','#2563eb','#d97706','#dc2626','#9333ea'];
 if (document.getElementById('paceTrendChart') && paceTrend.length > 0) {
   new Chart(document.getElementById('paceTrendChart'), {
@@ -739,7 +907,7 @@ if (document.getElementById('paceTrendChart') && paceTrend.length > 0) {
 }
 
 // HR zone bar chart
-const zoneCounts = [6,18,5,1,0];
+const zoneCounts = [5,19,5,1,0];
 const yunhoMAF = 146;
 function hrZoneLabels(maf) {
   return [`Z1\n<${maf-10}`, `Z2\n${maf-10}~${maf}`, `Z3\n~${maf+15}`, `Z4\n~${maf+28}`, `Z5\n${maf+29}+`];
@@ -763,7 +931,7 @@ if (document.getElementById('hrZoneChart')) {
 }
 
 // GF pace trend chart
-const gfPaceTrend = [{"date":"04-14","pace":474,"hr":149,"zone":2},{"date":"04-16","pace":471,"hr":143,"zone":1},{"date":"04-17","pace":478,"hr":151,"zone":2},{"date":"04-21","pace":472,"hr":146,"zone":2},{"date":"04-30","pace":501,"hr":145,"zone":2},{"date":"05-01","pace":490,"hr":143,"zone":1},{"date":"05-05","pace":473,"hr":153,"zone":2},{"date":"05-28","pace":468,"hr":152,"zone":2},{"date":"06-04","pace":486,"hr":142,"zone":1},{"date":"06-06","pace":462,"hr":141,"zone":1},{"date":"06-15","pace":481,"hr":132,"zone":1},{"date":"06-18","pace":485,"hr":135,"zone":1},{"date":"06-25","pace":484,"hr":128,"zone":1},{"date":"06-30","pace":483,"hr":128,"zone":1},{"date":"07-02","pace":494,"hr":130,"zone":1},{"date":"08-13","pace":492,"hr":144,"zone":1},{"date":"08-17","pace":470,"hr":156,"zone":3},{"date":"08-18","pace":454,"hr":152,"zone":2},{"date":"08-20","pace":516,"hr":145,"zone":2},{"date":"08-25","pace":480,"hr":147,"zone":2}];
+const gfPaceTrend = [{"date":"04-16","pace":471,"hr":143,"zone":1},{"date":"04-17","pace":478,"hr":151,"zone":2},{"date":"04-21","pace":472,"hr":146,"zone":2},{"date":"04-30","pace":501,"hr":145,"zone":2},{"date":"05-01","pace":490,"hr":143,"zone":1},{"date":"05-05","pace":473,"hr":153,"zone":2},{"date":"05-28","pace":468,"hr":152,"zone":2},{"date":"06-04","pace":486,"hr":142,"zone":1},{"date":"06-06","pace":462,"hr":141,"zone":1},{"date":"06-15","pace":481,"hr":132,"zone":1},{"date":"06-18","pace":485,"hr":135,"zone":1},{"date":"06-25","pace":484,"hr":128,"zone":1},{"date":"06-30","pace":483,"hr":128,"zone":1},{"date":"07-02","pace":494,"hr":130,"zone":1},{"date":"08-13","pace":492,"hr":144,"zone":1},{"date":"08-17","pace":470,"hr":156,"zone":3},{"date":"08-18","pace":454,"hr":152,"zone":2},{"date":"08-20","pace":516,"hr":145,"zone":2},{"date":"08-25","pace":480,"hr":147,"zone":2},{"date":"08-27","pace":493,"hr":153,"zone":2}];
 const gfMAF = 155;
 if (document.getElementById('gfPaceTrendChart') && gfPaceTrend.length > 0) {
   new Chart(document.getElementById('gfPaceTrendChart'), {
