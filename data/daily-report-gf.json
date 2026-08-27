@@ -1,73 +1,7 @@
 {
   "mode": "evening",
-  "date": "2026-08-26",
-  "generatedAt": "2026-08-26T14:08:17.517Z",
-  "hasRun": true,
-  "km": 5,
-  "paceStr": "8:00",
-  "avgHR": 147,
-  "maxHR": 163,
-  "zone": 2,
-  "zoneLabel": "Z2 (MAF Easy)",
-  "zoneColor": "#16a34a",
-  "feedback": "Perfect easy run! HR 147 · 8:00/km — nailed the target pace in the MAF zone. · Practice lifting your feet faster off the ground.",
-  "dynamics": {
-    "gct": {
-      "value": 273,
-      "unit": "ms",
-      "label": "Ground Contact",
-      "rating": "Fair",
-      "color": "#f59e0b",
-      "tip": "Practice lifting your feet faster off the ground."
-    },
-    "vo": {
-      "value": 6.9,
-      "unit": "cm",
-      "label": "Vert. Oscillation",
-      "rating": "Good",
-      "color": "#22c55e",
-      "tip": null
-    },
-    "vr": {
-      "value": 10,
-      "unit": "%",
-      "label": "Vert. Ratio",
-      "rating": "Fair",
-      "color": "#f59e0b"
-    },
-    "cadence": {
-      "value": 178,
-      "unit": "spm",
-      "label": "Cadence",
-      "rating": "Good",
-      "color": "#22c55e",
-      "tip": null
-    },
-    "power": {
-      "value": 185,
-      "unit": "W",
-      "label": "Power (NP)",
-      "rating": null
-    }
-  },
-  "aerobicEffect": 3.1,
-  "anaerobicEffect": null,
-  "trainingEffectLabel": "Aerobic Base",
-  "trainingLoad": null,
-  "hrZoneSec": [
-    1668,
-    588,
-    151,
-    0,
-    0
-  ],
-  "elevationGainM": 33,
-  "fastest1kmSec": 462.59600830078125,
-  "steps": 7150,
-  "coaching": {
-    "headline": "Steady progress, keep the easy vibe! 🚀",
-    "coaching": "Today's 5 km at an 8:00 / km pace kept your average HR at 147 bpm, comfortably below your MAF ceiling of 155 bpm, which is excellent. Your max HR spiked to 163 bpm, so watch for short bursts that push you over the limit. Cadence was strong at 178 spm and power at 185 W, showing good form.",
-    "trend": "Recent runs show a consistent aerobic effort with average HRs ranging from 144‑152 bpm and paces hovering around your 7:50‑8:10 /km window. The only outlier was the 8/17 run at 156 bpm, indicating a need to stay stricter with the MAF cap.",
-    "nextRun": "Run 6 km at a target pace of 7:55‑8:05 /km, keep HR ≤ 154 bpm, aim for cadence ~180 spm and ground‑contact time ≤ 270 ms."
-  }
+  "date": "2026-08-27",
+  "generatedAt": "2026-08-27T08:00:45.406Z",
+  "hasRun": false,
+  "feedback": "No run data yet today. If you ran, sync your Garmin watch with your phone."
 }

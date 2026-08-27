@@ -1,71 +1,9 @@
 {
   "mode": "evening",
-  "date": "2026-08-26",
-  "generatedAt": "2026-08-26T14:08:15.819Z",
-  "hasRun": true,
-  "km": 5,
-  "paceStr": "8:00",
-  "avgHR": 148,
-  "maxHR": 165,
-  "zone": 3,
-  "zoneLabel": "Z3 (적당히 힘듦)",
-  "zoneColor": "#f59e0b",
-  "planComparison": "",
-  "plannedKm": null,
-  "feedback": "HR 148로 MAF(146)보다 조금 올라갔어. 이지 런에선 Z2 이하 유지가 목표야. 다음엔 페이스를 10~15초 더 줄여봐. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
-  "tomorrowPlan": null,
-  "dynamics": {
-    "gct": {
-      "value": 266,
-      "unit": "ms",
-      "label": "지면접촉",
-      "rating": "보통",
-      "color": "#f59e0b",
-      "tip": "지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐."
-    },
-    "vo": {
-      "value": 6.5,
-      "unit": "cm",
-      "label": "수직진동",
-      "rating": "좋음",
-      "color": "#22c55e",
-      "tip": "수직 진동 양호."
-    },
-    "vr": {
-      "value": 9.7,
-      "unit": "%",
-      "label": "수직비율",
-      "rating": "보통",
-      "color": "#f59e0b"
-    },
-    "cadence": {
-      "value": 185,
-      "unit": "spm",
-      "label": "케이던스",
-      "rating": "최상",
-      "color": "#16a34a",
-      "tip": "케이던스 최적. 관절 부담도 낮아."
-    },
-    "power": {
-      "value": 219,
-      "unit": "W",
-      "label": "파워(NP)",
-      "rating": null
-    }
-  },
-  "aerobicEffect": 2.8,
-  "anaerobicEffect": null,
-  "trainingEffectLabel": "유산소 기초",
-  "trainingLoad": 46,
-  "hrZoneSec": [
-    2350,
-    16,
-    0,
-    0,
-    0
-  ],
-  "elevationGainM": 33,
-  "fastest1kmSec": 465.56298828125,
-  "fastest5kmSec": 2401.751953125,
-  "steps": 7386
+  "date": "2026-08-27",
+  "generatedAt": "2026-08-27T08:00:45.401Z",
+  "hasRun": false,
+  "isRestDay": false,
+  "feedback": "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
+  "tomorrowPlan": null
 }
