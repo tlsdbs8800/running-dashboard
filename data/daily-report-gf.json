@@ -1,7 +1,7 @@
 {
   "mode": "evening",
-  "date": "2026-08-27",
-  "generatedAt": "2026-08-27T23:03:41.327Z",
+  "date": "2026-08-28",
+  "generatedAt": "2026-08-28T06:02:02.200Z",
   "hasRun": true,
   "km": 7,
   "paceStr": "8:13",
@@ -65,9 +65,9 @@
   "fastest1kmSec": 473.8380126953125,
   "steps": 10122,
   "coaching": {
-    "headline": "Steady strides, keep the heart in check 🏃‍♀️",
-    "coaching": "Today's 7 km at 8:13 /​km kept your average HR at 153 bpm, comfortably under the MAF ceiling of 155 bpm, which is great. However, the pace is a bit slower than your target range (7:50‑8:10), and the max HR spiked to 161 bpm, suggesting a brief intensity surge you want to avoid.",
-    "trend": "Over the past week you’ve held HR below 155 on four of six runs, showing good aerobic consistency, but the faster paces on the 7/18 and 7/17 runs pushed HR above MAF. Weekly volume remains low at 12 km, so gradual buildup will be key.",
-    "nextRun": "Run 8 km at 7:55‑8:05 /​km, keep HR ≤ 154 bpm, maintain cadence ≥ 175 spm, and focus on smooth footstrike (ground contact < 280 ms)."
+    "headline": "Steady strides, keep the heart happy 😊",
+    "coaching": "Today's 7 km at 8:13/km kept your average HR at 153 bpm, safely under the MAF ceiling of 155 bpm, which is solid. However, the pace is a bit slower than your target range (7:50–8:10) and the peak HR of 161 bpm suggests brief intensity spikes you should smooth out.",
+    "trend": "Your recent runs show good HR control, mostly staying at or below 155 bpm, but pace varies from 8:36 to 7:34/km. Consistency is improving, though occasional HR spikes (e.g., 156 bpm on 8/17) need attention.",
+    "nextRun": "Run 8 km at a target pace of 7:55–8:05/km, keep HR ≤ 154 bpm, and focus on maintaining a cadence around 176–180 spm with ground contact time under 280 ms."
   }
 }
