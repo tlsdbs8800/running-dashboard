@@ -47,11 +47,28 @@ function nextMonday() {
   d.setUTCDate(now.getUTCDate() + daysUntilMon);
   return dateStr(d);
 }
-function lastNDays(activities, days) {
-  const cutoff = new Date();
-  cutoff.setUTCDate(cutoff.getUTCDate() - days);
-  const cutoffStr = dateStr(cutoff);
-  return (activities || []).filter((a) => a.date >= cutoffStr);
+function mondayOf(d) {
+  const day = d.getUTCDay(); // 0=Sun..6=Sat
+  const diff = day === 0 ? 6 : day - 1;
+  const m = new Date(d);
+  m.setUTCDate(d.getUTCDate() - diff);
+  return dateStr(m);
+}
+
+// Calendar week (Mon-Sun), `weeksAgo` weeks before the current week. 0 = this week (in progress).
+// Fixed boundaries avoid the rolling-window bug where a run near a week edge
+// got double-counted into two overlapping "last 7 days" windows.
+function calendarWeek(activities, weeksAgo) {
+  const start = addDays(mondayOf(new Date()), -7 * weeksAgo);
+  const end = addDays(start, 6);
+  return (activities || []).filter((a) => a.date >= start && a.date <= end);
+}
+
+// The `n` most recently completed calendar weeks (excludes the current in-progress week).
+function lastNCompletedWeeks(activities, n) {
+  const start = addDays(mondayOf(new Date()), -7 * n);
+  const end = addDays(mondayOf(new Date()), -1);
+  return (activities || []).filter((a) => a.date >= start && a.date <= end);
 }
 
 // Determine training phase from current long run distance
@@ -69,9 +86,9 @@ function phaseLabel(phase) {
 // ── 공통 주간 체크 (윤호/여친 모두 동일 기준으로 분석) ──────────────────
 function weeklyCheck(userData, isGf = false) {
   const acts = userData?.activities || [];
-  const lastWeek = lastNDays(acts, 7);
-  const prev2Week = lastNDays(acts, 14).filter(a => !lastNDays(acts,7).find(b => b.id === a.id));
-  const last4Weeks = lastNDays(acts, 28);
+  const lastWeek = calendarWeek(acts, 1);
+  const prev2Week = calendarWeek(acts, 2);
+  const last4Weeks = lastNCompletedWeeks(acts, 4);
 
   const mafHR = userData?.mafHR ?? (isGf ? 155 : 146);
   const hrCeiling = isGf ? 155 : mafHR + 15; // GF strict MAF ceiling, 윤호는 Z3까지 허용
@@ -170,8 +187,8 @@ function planForUser(userData, userName, isGf = false) {
   if (!userData) return null;
 
   const acts = userData.activities || [];
-  const lastWeek = lastNDays(acts, 7);
-  const last4Weeks = lastNDays(acts, 28);
+  const lastWeek = calendarWeek(acts, 1);
+  const last4Weeks = lastNCompletedWeeks(acts, 4);
 
   // Stats
   const lastWeekKm = lastWeek.reduce((s, a) => s + (a.distanceM ?? 0) / 1000, 0);
