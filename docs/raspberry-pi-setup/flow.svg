@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="260" viewBox="0 0 960 260" font-family="sans-serif">
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect width="960" height="260" fill="#fafafa"/>
+  <text x="480" y="28" text-anchor="middle" font-size="18" font-weight="bold">설정 순서 (총 6단계)</text>
+
+  <!-- steps -->
+  <g font-size="12">
+    <!-- step boxes -->
+    <rect x="15"  y="60" width="140" height="110" rx="8" fill="#fff" stroke="#4a90d9" stroke-width="2"/>
+    <text x="85" y="85" text-anchor="middle" font-weight="bold">1. SD카드 굽기</text>
+    <text x="85" y="105" text-anchor="middle">Raspberry Pi</text>
+    <text x="85" y="120" text-anchor="middle">Imager로</text>
+    <text x="85" y="135" text-anchor="middle">OS 설치 +</text>
+    <text x="85" y="150" text-anchor="middle">SSH/와이파이</text>
+    <text x="85" y="165" text-anchor="middle">사전 설정</text>
+
+    <rect x="175" y="60" width="140" height="110" rx="8" fill="#fff" stroke="#4a90d9" stroke-width="2"/>
+    <text x="245" y="85" text-anchor="middle" font-weight="bold">2. 부팅 + SSH</text>
+    <text x="245" y="105" text-anchor="middle">전원 연결,</text>
+    <text x="245" y="120" text-anchor="middle">맥에서</text>
+    <text x="245" y="135" text-anchor="middle">터미널로</text>
+    <text x="245" y="150" text-anchor="middle">원격 접속</text>
+
+    <rect x="335" y="60" width="140" height="110" rx="8" fill="#fff" stroke="#4a90d9" stroke-width="2"/>
+    <text x="405" y="85" text-anchor="middle" font-weight="bold">3. 환경 설치</text>
+    <text x="405" y="105" text-anchor="middle">git, python3,</text>
+    <text x="405" y="120" text-anchor="middle">node 설치 +</text>
+    <text x="405" y="135" text-anchor="middle">저장소</text>
+    <text x="405" y="150" text-anchor="middle">clone</text>
+
+    <rect x="495" y="60" width="140" height="110" rx="8" fill="#fff" stroke="#7b61ff" stroke-width="2"/>
+    <text x="565" y="85" text-anchor="middle" font-weight="bold">4. Tailscale</text>
+    <text x="565" y="105" text-anchor="middle">설치 + 로그인</text>
+    <text x="565" y="120" text-anchor="middle">→ 파이 전용</text>
+    <text x="565" y="135" text-anchor="middle">사설 주소</text>
+    <text x="565" y="150" text-anchor="middle">발급</text>
+
+    <rect x="655" y="60" width="140" height="110" rx="8" fill="#fff" stroke="#c0392b" stroke-width="2"/>
+    <text x="725" y="85" text-anchor="middle" font-weight="bold">5. cron + webhook</text>
+    <text x="725" y="105" text-anchor="middle">매일 자동 실행</text>
+    <text x="725" y="120" text-anchor="middle">등록 +</text>
+    <text x="725" y="135" text-anchor="middle">단축어용</text>
+    <text x="725" y="150" text-anchor="middle">트리거 서버</text>
+
+    <rect x="815" y="60" width="130" height="110" rx="8" fill="#fff" stroke="#f39c12" stroke-width="2"/>
+    <text x="880" y="85" text-anchor="middle" font-weight="bold">6. 단축어 수정</text>
+    <text x="880" y="105" text-anchor="middle">호출 주소를</text>
+    <text x="880" y="120" text-anchor="middle">파이의 Tailscale</text>
+    <text x="880" y="135" text-anchor="middle">주소로</text>
+    <text x="880" y="150" text-anchor="middle">교체</text>
+  </g>
+
+  <line x1="155" y1="115" x2="173" y2="115" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+  <line x1="315" y1="115" x2="333" y2="115" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+  <line x1="475" y1="115" x2="493" y2="115" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+  <line x1="635" y1="115" x2="653" y2="115" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+  <line x1="795" y1="115" x2="813" y2="115" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+
+  <text x="480" y="210" text-anchor="middle" font-size="12" fill="#666">1~2단계는 기기 도착 직후, 3~6단계는 순서대로 SSH 터미널에서 진행</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" font-family="sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="480" fill="#fafafa"/>
+  <text x="480" y="30" text-anchor="middle" font-size="20" font-weight="bold" fill="#222">러닝 대시보드 자동화 구조 (라즈베리파이 방식)</text>
+
+  <!-- iPhone -->
+  <rect x="40" y="90" width="160" height="90" rx="10" fill="#fff" stroke="#4a90d9" stroke-width="2"/>
+  <text x="120" y="125" text-anchor="middle" font-size="15" font-weight="bold">아이폰</text>
+  <text x="120" y="147" text-anchor="middle" font-size="12">단축어 버튼</text>
+  <text x="120" y="164" text-anchor="middle" font-size="12">(러닝 후 탭)</text>
+
+  <!-- Tailscale -->
+  <rect x="280" y="90" width="160" height="90" rx="10" fill="#fff" stroke="#7b61ff" stroke-width="2"/>
+  <text x="360" y="125" text-anchor="middle" font-size="15" font-weight="bold">Tailscale</text>
+  <text x="360" y="147" text-anchor="middle" font-size="12">사설망 터널</text>
+  <text x="360" y="164" text-anchor="middle" font-size="12">(외부에서도 집 IP로 접속)</text>
+
+  <!-- Raspberry Pi -->
+  <rect x="520" y="60" width="220" height="150" rx="10" fill="#fff" stroke="#c0392b" stroke-width="2"/>
+  <text x="630" y="90" text-anchor="middle" font-size="15" font-weight="bold">라즈베리파이 (집, 24시간 On)</text>
+  <text x="630" y="115" text-anchor="middle" font-size="12">webhook 서버</text>
+  <text x="630" y="135" text-anchor="middle" font-size="12">sync-garth.py</text>
+  <text x="630" y="155" text-anchor="middle" font-size="12">generate-*.js</text>
+  <text x="630" y="175" text-anchor="middle" font-size="12">cron (매일 자동 실행)</text>
+  <text x="630" y="195" text-anchor="middle" font-size="11" fill="#c0392b">→ 집 IP = 주거용 IP (차단 안 됨)</text>
+
+  <!-- Garmin -->
+  <rect x="800" y="30" width="140" height="70" rx="10" fill="#fff" stroke="#27ae60" stroke-width="2"/>
+  <text x="870" y="60" text-anchor="middle" font-size="14" font-weight="bold">Garmin</text>
+  <text x="870" y="80" text-anchor="middle" font-size="12">Connect</text>
+
+  <!-- GitHub -->
+  <rect x="800" y="150" width="140" height="70" rx="10" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="870" y="180" text-anchor="middle" font-size="14" font-weight="bold">GitHub</text>
+  <text x="870" y="200" text-anchor="middle" font-size="12">저장소 (git push)</text>
+
+  <!-- Dashboard -->
+  <rect x="520" y="280" width="220" height="80" rx="10" fill="#fff" stroke="#f39c12" stroke-width="2"/>
+  <text x="630" y="315" text-anchor="middle" font-size="15" font-weight="bold">index.html</text>
+  <text x="630" y="338" text-anchor="middle" font-size="12">대시보드 (폰/PC에서 열람)</text>
+
+  <!-- Arrows -->
+  <line x1="200" y1="135" x2="278" y2="135" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="240" y="125" text-anchor="middle" font-size="11">① 트리거 요청</text>
+
+  <line x1="440" y1="135" x2="518" y2="135" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="480" y="125" text-anchor="middle" font-size="11">② 전달</text>
+
+  <line x1="740" y1="110" x2="798" y2="80" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="790" y="105" text-anchor="middle" font-size="11">③ 데이터 요청</text>
+
+  <line x1="740" y1="150" x2="798" y2="175" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="800" y="145" text-anchor="middle" font-size="11">④ push</text>
+
+  <line x1="630" y1="210" x2="630" y2="278" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="670" y="250" text-anchor="middle" font-size="11">⑤ 갱신</text>
+
+  <text x="480" y="440" text-anchor="middle" font-size="12" fill="#666">기존 GitHub Actions는 ③에서 Garmin에 막혔지만(클라우드 IP), 라즈베리파이는 집 IP라 통과함</text>
+</svg>

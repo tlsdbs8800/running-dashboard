@@ -1,22 +1,22 @@
 {
   "mode": "evening",
-  "date": "2026-09-01",
-  "generatedAt": "2026-09-01T23:47:50.116Z",
+  "date": "2026-09-03",
+  "generatedAt": "2026-09-03T09:32:50.173Z",
   "hasRun": true,
-  "km": 5,
-  "paceStr": "7:00",
-  "avgHR": 154,
-  "maxHR": 174,
+  "km": 13,
+  "paceStr": "7:35",
+  "avgHR": 158,
+  "maxHR": 183,
   "zone": 3,
   "zoneLabel": "Z3 (적당히 힘듦)",
   "zoneColor": "#f59e0b",
   "planComparison": "",
   "plannedKm": null,
-  "feedback": "HR 154로 MAF(146)보다 조금 올라갔어. 이지 런에선 Z2 이하 유지가 목표야. 다음엔 페이스를 10~15초 더 줄여봐.",
+  "feedback": "HR 158로 MAF(146)보다 조금 올라갔어. 이지 런에선 Z2 이하 유지가 목표야. 다음엔 페이스를 10~15초 더 줄여봐.",
   "tomorrowPlan": null,
   "dynamics": {
     "gct": {
-      "value": 255,
+      "value": 259,
       "unit": "ms",
       "label": "지면접촉",
       "rating": "좋음",
@@ -24,7 +24,7 @@
       "tip": "지면 접촉 시간 양호."
     },
     "vo": {
-      "value": 6.6,
+      "value": 6.4,
       "unit": "cm",
       "label": "수직진동",
       "rating": "좋음",
@@ -32,14 +32,14 @@
       "tip": "수직 진동 양호."
     },
     "vr": {
-      "value": 8.9,
+      "value": 9.2,
       "unit": "%",
       "label": "수직비율",
       "rating": "보통",
       "color": "#f59e0b"
     },
     "cadence": {
-      "value": 190,
+      "value": 188,
       "unit": "spm",
       "label": "케이던스",
       "rating": "최상",
@@ -47,25 +47,25 @@
       "tip": "케이던스 최적. 관절 부담도 낮아."
     },
     "power": {
-      "value": 247,
+      "value": 229,
       "unit": "W",
       "label": "파워(NP)",
       "rating": null
     }
   },
-  "aerobicEffect": 3.4,
+  "aerobicEffect": 3.8,
   "anaerobicEffect": null,
-  "trainingEffectLabel": "TEMPO",
-  "trainingLoad": 85,
+  "trainingEffectLabel": "LACTATE_THRESHOLD",
+  "trainingLoad": 111,
   "hrZoneSec": [
-    1788,
-    226,
-    67,
-    0,
+    3752,
+    1331,
+    754,
+    64,
     0
   ],
-  "elevationGainM": 43,
-  "fastest1kmSec": 393.95599365234375,
-  "fastest5kmSec": 2098.780029296875,
-  "steps": 6660
+  "elevationGainM": 82,
+  "fastest1kmSec": 433.10400390625,
+  "fastest5kmSec": 2251,
+  "steps": 18654
 }

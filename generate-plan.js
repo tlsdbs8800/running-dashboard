@@ -225,27 +225,25 @@ function planForUser(userData, userName, isGf = false) {
   const canQuality = !isGf && (readiness === null || readiness >= 50);
   const mafHR = userData.mafHR ?? (isGf ? 155 : 146);
 
-  // ── 고정 주간 구조 ──────────────────────────────────────────────────────
-  // 월: 커플런  화: Solo Easy(윤호만)  수: 휴식  목: Long Run  금: 휴식  토: Easy/공복런  일: 휴식
+  // ── 고정 주간 구조 (2026-09-01 사용자 확정) ─────────────────────────────
+  // 월: Solo Easy(윤호만)  화: 커플런  수: 휴식  목: Long Run  금·토·일: 휴식
   const coupleKm = phase >= 3 ? 7 : phase === 2 ? 6 : 5;
   const soloEasyKm = Math.max(5, Math.round(targetWeeklyKm * 0.22));
   const longKm = longRunTarget;
-  const satKm = isGf ? Math.max(4, Math.round(targetWeeklyKm * 0.25)) : 5; // GF: easy run min 4km, 윤호: 공복런 5km fixed
 
   const monday = nextMonday();
 
-  // GF: 3 runs only (Mon couple, Thu long, Sat easy) — all easy, no intensity
-  // 윤호: full 5-session week with optional quality work
+  // GF: 커플런 + 롱런 2세션만 (윤호 월요일 솔로런엔 참여 안 함) — 전부 이지, 강도 없음
   const days = isGf ? [
     {
-      offset: 0, type: "couple",
-      label: `커플런 ${coupleKm}km`,
-      desc: `Jenny 페이스 기준 · HR ${mafHR-10}~${mafHR} 유지 · 대화 가능한 속도 · 7:50~8:10/km`,
+      offset: 0, type: "rest",
+      label: "휴식",
+      desc: "윤호 솔로런 하는 날 · Jenny는 휴식",
     },
     {
-      offset: 1, type: "rest",
-      label: "휴식",
-      desc: "가벼운 스트레칭 OK · 런 사이 최소 1일 휴식",
+      offset: 1, type: "couple",
+      label: `커플런 ${coupleKm}km`,
+      desc: `Jenny 페이스 기준 · HR ${mafHR-10}~${mafHR} 유지 · 대화 가능한 속도 · 7:50~8:10/km`,
     },
     {
       offset: 2, type: "rest",
@@ -263,9 +261,9 @@ function planForUser(userData, userName, isGf = false) {
       desc: "롱런 다음날 완전 회복 · 가벼운 걷기 OK",
     },
     {
-      offset: 5, type: "easy",
-      label: `Easy Run ${satKm}km`,
-      desc: `이지 런 · HR ${mafHR} 이하 · 7:50~8:10/km · 다리 풀어주기`,
+      offset: 5, type: "rest",
+      label: "휴식",
+      desc: "주말 휴식",
     },
     {
       offset: 6, type: "rest",
@@ -274,14 +272,14 @@ function planForUser(userData, userName, isGf = false) {
     },
   ] : [
     {
-      offset: 0, type: "couple",
-      label: `커플런 ${coupleKm}km`,
-      desc: "Jenny 페이스 맞추기 · Easy Z2 · HR 136~146(MAF) · 대화 가능한 속도",
-    },
-    {
-      offset: 1, type: "easy",
+      offset: 0, type: "easy",
       label: `Solo Easy Run ${soloEasyKm}km`,
       desc: "혼자 HR 136~146(MAF) 유지 · 페이스 신경 끄기 · 처음엔 9:00/km 이상도 정상",
+    },
+    {
+      offset: 1, type: "couple",
+      label: `커플런 ${coupleKm}km`,
+      desc: "Jenny 페이스 맞추기 · Easy Z2 · HR 136~146(MAF) · 대화 가능한 속도",
     },
     {
       offset: 2, type: "rest",
@@ -301,9 +299,9 @@ function planForUser(userData, userName, isGf = false) {
       desc: "롱런 다음날 완전 회복 · 가벼운 걷기 OK",
     },
     {
-      offset: 5, type: "fasted",
-      label: "공복런 5km",
-      desc: "기상 직후 아무것도 안 먹고 · Easy Z2 · HR 136~146(MAF) · 지방 연소 최적 구간",
+      offset: 5, type: "rest",
+      label: "휴식",
+      desc: "주말 휴식",
     },
     {
       offset: 6, type: "rest",

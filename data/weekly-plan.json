@@ -1,11 +1,11 @@
 {
   "weekStart": "2026-09-07",
   "weekEnd": "2026-09-13",
-  "generatedAt": "2026-08-31T08:36:45.721Z",
+  "generatedAt": "2026-09-01T07:23:39.011Z",
   "lthrTest": {
     "suitable": false,
-    "readiness": 35,
-    "reason": "준비도 35/100 — 60 이상일 때 추천",
+    "readiness": 59,
+    "reason": "준비도 59/100 — 60 이상일 때 추천",
     "recommendedDay": null
   },
   "yunho": {
@@ -17,27 +17,27 @@
       "avgWeekKm4w": 19.8,
       "longRunKm": 13,
       "avgHR": 146,
-      "readinessScore": 35,
-      "readinessLevel": "LOW",
+      "readinessScore": 59,
+      "readinessLevel": "MODERATE",
       "runsLastWeek": 3
     },
     "targetWeeklyKm": 23,
-    "longRunTarget": 13,
-    "coachNote": "🔴 볼륨 줄이고 회복 우선 — ⚠ 이지 런 비율 67% — 80/20 원칙 미달 (Z1~Z2 비율 부족) 준비도 보통(35/100).",
+    "longRunTarget": 14.6,
+    "coachNote": "🟡 플래그 확인 후 강도 조절 — ⚠ 이지 런 비율 67% — 80/20 원칙 미달 (Z1~Z2 비율 부족) 준비도 보통(59/100).",
     "schedule": [
       {
         "offset": 0,
-        "type": "couple",
-        "label": "커플런 7km",
-        "desc": "Jenny 페이스 맞추기 · Easy Z2 · HR 136~146(MAF) · 대화 가능한 속도",
+        "type": "easy",
+        "label": "Solo Easy Run 5km",
+        "desc": "혼자 HR 136~146(MAF) 유지 · 페이스 신경 끄기 · 처음엔 9:00/km 이상도 정상",
         "date": "2026-09-07",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "easy",
-        "label": "Solo Easy Run 5km",
-        "desc": "혼자 HR 136~146(MAF) 유지 · 페이스 신경 끄기 · 처음엔 9:00/km 이상도 정상",
+        "type": "couple",
+        "label": "커플런 7km",
+        "desc": "Jenny 페이스 맞추기 · Easy Z2 · HR 136~146(MAF) · 대화 가능한 속도",
         "date": "2026-09-08",
         "dayName": "화"
       },
@@ -52,8 +52,8 @@
       {
         "offset": 3,
         "type": "long",
-        "label": "Long Run 13km",
-        "desc": "전체 Easy Z2 · 준비도 낮음(35/100) — 완주가 목표",
+        "label": "Long Run 14.6km",
+        "desc": "처음 10km HR 135~145 유지 → 마지막 4km 페이스업 시도",
         "date": "2026-09-10",
         "dayName": "목"
       },
@@ -67,9 +67,9 @@
       },
       {
         "offset": 5,
-        "type": "fasted",
-        "label": "공복런 5km",
-        "desc": "기상 직후 아무것도 안 먹고 · Easy Z2 · HR 136~146(MAF) · 지방 연소 최적 구간",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "주말 휴식",
         "date": "2026-09-12",
         "dayName": "토"
       },
@@ -102,17 +102,17 @@
     "schedule": [
       {
         "offset": 0,
-        "type": "couple",
-        "label": "커플런 5km",
-        "desc": "Jenny 페이스 기준 · HR 145~155 유지 · 대화 가능한 속도 · 7:50~8:10/km",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "윤호 솔로런 하는 날 · Jenny는 휴식",
         "date": "2026-09-07",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "rest",
-        "label": "휴식",
-        "desc": "가벼운 스트레칭 OK · 런 사이 최소 1일 휴식",
+        "type": "couple",
+        "label": "커플런 5km",
+        "desc": "Jenny 페이스 기준 · HR 145~155 유지 · 대화 가능한 속도 · 7:50~8:10/km",
         "date": "2026-09-08",
         "dayName": "화"
       },
@@ -142,9 +142,9 @@
       },
       {
         "offset": 5,
-        "type": "easy",
-        "label": "Easy Run 4km",
-        "desc": "이지 런 · HR 155 이하 · 7:50~8:10/km · 다리 풀어주기",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "주말 휴식",
         "date": "2026-09-12",
         "dayName": "토"
       },
