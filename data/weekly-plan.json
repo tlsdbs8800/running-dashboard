@@ -1,11 +1,11 @@
 {
-  "weekStart": "2026-09-07",
-  "weekEnd": "2026-09-13",
-  "generatedAt": "2026-09-01T07:23:39.011Z",
+  "weekStart": "2026-09-14",
+  "weekEnd": "2026-09-20",
+  "generatedAt": "2026-09-07T21:52:50.366Z",
   "lthrTest": {
     "suitable": false,
-    "readiness": 59,
-    "reason": "준비도 59/100 — 60 이상일 때 추천",
+    "readiness": 45,
+    "reason": "준비도 45/100 — 60 이상일 때 추천",
     "recommendedDay": null
   },
   "yunho": {
@@ -14,23 +14,23 @@
     "phaseLabel": "빌드 단계",
     "analysis": {
       "lastWeekKm": 23,
-      "avgWeekKm4w": 19.8,
+      "avgWeekKm4w": 22.5,
       "longRunKm": 13,
-      "avgHR": 146,
-      "readinessScore": 59,
-      "readinessLevel": "MODERATE",
+      "avgHR": 151,
+      "readinessScore": 45,
+      "readinessLevel": "LOW",
       "runsLastWeek": 3
     },
     "targetWeeklyKm": 23,
-    "longRunTarget": 14.6,
-    "coachNote": "🟡 플래그 확인 후 강도 조절 — ⚠ 이지 런 비율 67% — 80/20 원칙 미달 (Z1~Z2 비율 부족) 준비도 보통(59/100).",
+    "longRunTarget": 13,
+    "coachNote": "🔴 볼륨 줄이고 회복 우선 — ⚠ 이지 런 비율 33% — 80/20 원칙 미달 (Z1~Z2 비율 부족) 준비도 보통(45/100).",
     "schedule": [
       {
         "offset": 0,
         "type": "easy",
         "label": "Solo Easy Run 5km",
         "desc": "혼자 HR 136~146(MAF) 유지 · 페이스 신경 끄기 · 처음엔 9:00/km 이상도 정상",
-        "date": "2026-09-07",
+        "date": "2026-09-14",
         "dayName": "월"
       },
       {
@@ -38,7 +38,7 @@
         "type": "couple",
         "label": "커플런 7km",
         "desc": "Jenny 페이스 맞추기 · Easy Z2 · HR 136~146(MAF) · 대화 가능한 속도",
-        "date": "2026-09-08",
+        "date": "2026-09-15",
         "dayName": "화"
       },
       {
@@ -46,15 +46,15 @@
         "type": "rest",
         "label": "휴식",
         "desc": "스트레칭 or 폼롤러 · 내일 롱런 준비",
-        "date": "2026-09-09",
+        "date": "2026-09-16",
         "dayName": "수"
       },
       {
         "offset": 3,
         "type": "long",
-        "label": "Long Run 14.6km",
-        "desc": "처음 10km HR 135~145 유지 → 마지막 4km 페이스업 시도",
-        "date": "2026-09-10",
+        "label": "Long Run 13km",
+        "desc": "전체 Easy Z2 · 준비도 낮음(45/100) — 완주가 목표",
+        "date": "2026-09-17",
         "dayName": "목"
       },
       {
@@ -62,7 +62,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "롱런 다음날 완전 회복 · 가벼운 걷기 OK",
-        "date": "2026-09-11",
+        "date": "2026-09-18",
         "dayName": "금"
       },
       {
@@ -70,7 +70,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "주말 휴식",
-        "date": "2026-09-12",
+        "date": "2026-09-19",
         "dayName": "토"
       },
       {
@@ -78,7 +78,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "한 주 마무리 · 다음 주 계획 확인",
-        "date": "2026-09-13",
+        "date": "2026-09-20",
         "dayName": "일"
       }
     ]
@@ -88,24 +88,24 @@
     "phase": 1,
     "phaseLabel": "기초 단계",
     "analysis": {
-      "lastWeekKm": 12,
+      "lastWeekKm": 0,
       "avgWeekKm4w": 8.4,
       "longRunKm": 7,
-      "avgHR": 150,
+      "avgHR": null,
       "readinessScore": null,
       "readinessLevel": "UNKNOWN",
-      "runsLastWeek": 2
+      "runsLastWeek": 0
     },
     "targetWeeklyKm": 12,
     "longRunTarget": 7.7,
-    "coachNote": "🟡 플래그 확인 후 강도 조절 — ⚠ 롱런 17% 증가 — 한계 15% 초과",
+    "coachNote": "✅ 이번 주 계획대로 진행",
     "schedule": [
       {
         "offset": 0,
         "type": "rest",
         "label": "휴식",
         "desc": "윤호 솔로런 하는 날 · Jenny는 휴식",
-        "date": "2026-09-07",
+        "date": "2026-09-14",
         "dayName": "월"
       },
       {
@@ -113,7 +113,7 @@
         "type": "couple",
         "label": "커플런 5km",
         "desc": "Jenny 페이스 기준 · HR 145~155 유지 · 대화 가능한 속도 · 7:50~8:10/km",
-        "date": "2026-09-08",
+        "date": "2026-09-15",
         "dayName": "화"
       },
       {
@@ -121,7 +121,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "내일 롱런 준비 · 충분한 수면",
-        "date": "2026-09-09",
+        "date": "2026-09-16",
         "dayName": "수"
       },
       {
@@ -129,7 +129,7 @@
         "type": "long",
         "label": "Long Run 7.7km",
         "desc": "전체 Easy Z2 · HR 155 이하 유지 · 7:50~8:10/km · 준비도 미확인/100",
-        "date": "2026-09-10",
+        "date": "2026-09-17",
         "dayName": "목"
       },
       {
@@ -137,7 +137,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "롱런 다음날 완전 회복 · 가벼운 걷기 OK",
-        "date": "2026-09-11",
+        "date": "2026-09-18",
         "dayName": "금"
       },
       {
@@ -145,7 +145,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "주말 휴식",
-        "date": "2026-09-12",
+        "date": "2026-09-19",
         "dayName": "토"
       },
       {
@@ -153,7 +153,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "한 주 마무리 · 다음 주 계획 확인",
-        "date": "2026-09-13",
+        "date": "2026-09-20",
         "dayName": "일"
       }
     ]
