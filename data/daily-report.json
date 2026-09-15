@@ -1,71 +1,16 @@
 {
   "mode": "evening",
-  "date": "2026-09-03",
-  "generatedAt": "2026-09-03T23:46:21.067Z",
-  "hasRun": true,
-  "km": 13,
-  "paceStr": "7:35",
-  "avgHR": 158,
-  "maxHR": 183,
-  "zone": 3,
-  "zoneLabel": "Z3 (적당히 힘듦)",
-  "zoneColor": "#f59e0b",
-  "planComparison": "",
-  "plannedKm": null,
-  "feedback": "HR 158로 MAF(146)보다 조금 올라갔어. 이지 런에선 Z2 이하 유지가 목표야. 다음엔 페이스를 10~15초 더 줄여봐.",
-  "tomorrowPlan": null,
-  "dynamics": {
-    "gct": {
-      "value": 259,
-      "unit": "ms",
-      "label": "지면접촉",
-      "rating": "좋음",
-      "color": "#22c55e",
-      "tip": "지면 접촉 시간 양호."
-    },
-    "vo": {
-      "value": 6.4,
-      "unit": "cm",
-      "label": "수직진동",
-      "rating": "좋음",
-      "color": "#22c55e",
-      "tip": "수직 진동 양호."
-    },
-    "vr": {
-      "value": 9.2,
-      "unit": "%",
-      "label": "수직비율",
-      "rating": "보통",
-      "color": "#f59e0b"
-    },
-    "cadence": {
-      "value": 188,
-      "unit": "spm",
-      "label": "케이던스",
-      "rating": "최상",
-      "color": "#16a34a",
-      "tip": "케이던스 최적. 관절 부담도 낮아."
-    },
-    "power": {
-      "value": 229,
-      "unit": "W",
-      "label": "파워(NP)",
-      "rating": null
-    }
-  },
-  "aerobicEffect": 3.8,
-  "anaerobicEffect": null,
-  "trainingEffectLabel": "LACTATE_THRESHOLD",
-  "trainingLoad": 111,
-  "hrZoneSec": [
-    3752,
-    1331,
-    754,
-    64,
-    0
-  ],
-  "elevationGainM": 82,
-  "fastest1kmSec": 433.10400390625,
-  "fastest5kmSec": 2251,
-  "steps": 18654
+  "date": "2026-09-15",
+  "generatedAt": "2026-09-15T10:17:54.476Z",
+  "hasRun": false,
+  "isRestDay": false,
+  "feedback": "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
+  "tomorrowPlan": {
+    "offset": 2,
+    "type": "rest",
+    "label": "휴식",
+    "desc": "스트레칭 or 폼롤러 · 내일 롱런 준비",
+    "date": "2026-09-16",
+    "dayName": "수"
+  }
 }
