@@ -21,9 +21,9 @@
       "readinessLevel": "LOW",
       "runsLastWeek": 3
     },
-    "targetWeeklyKm": 23,
-    "longRunTarget": 13,
-    "coachNote": "🔴 볼륨 줄이고 회복 우선 — ⚠ 이지 런 비율 33% — 80/20 원칙 미달 (Z1~Z2 비율 부족) 준비도 보통(45/100).",
+    "targetWeeklyKm": 14,
+    "longRunTarget": 6,
+    "coachNote": "🟢 감기 후 복귀 주 — 9/15 3km 복귀 런 OK (HR132, 가슴 이상 없음). 이번 주 총 15km 이하, 13km 롱런은 다음 주로. 모든 런 HR 140 이하.",
     "schedule": [
       {
         "offset": 0,
@@ -35,9 +35,9 @@
       },
       {
         "offset": 1,
-        "type": "couple",
-        "label": "커플런 7km",
-        "desc": "Jenny 페이스 맞추기 · Easy Z2 · HR 136~146(MAF) · 대화 가능한 속도",
+        "type": "easy",
+        "label": "복귀 런 3km ✓",
+        "desc": "3.00km · 8:21/km · HR 132 — 계획대로 완료",
         "date": "2026-09-15",
         "dayName": "화"
       },
@@ -45,15 +45,15 @@
         "offset": 2,
         "type": "rest",
         "label": "휴식",
-        "desc": "스트레칭 or 폼롤러 · 내일 롱런 준비",
+        "desc": "복귀 런 다음날 · 가슴/기침 이상 없는지 확인",
         "date": "2026-09-16",
         "dayName": "수"
       },
       {
         "offset": 3,
-        "type": "long",
-        "label": "Long Run 13km",
-        "desc": "전체 Easy Z2 · 준비도 낮음(45/100) — 완주가 목표",
+        "type": "couple",
+        "label": "커플런 5km",
+        "desc": "Jenny 페이스 · HR 140 이하 · 대화 가능한 속도 · 페이스 무시",
         "date": "2026-09-17",
         "dayName": "목"
       },
@@ -61,7 +61,7 @@
         "offset": 4,
         "type": "rest",
         "label": "휴식",
-        "desc": "롱런 다음날 완전 회복 · 가벼운 걷기 OK",
+        "desc": "회복 · 가벼운 걷기 OK",
         "date": "2026-09-18",
         "dayName": "금"
       },
@@ -69,15 +69,15 @@
         "offset": 5,
         "type": "rest",
         "label": "휴식",
-        "desc": "주말 휴식",
+        "desc": "주말 휴식 · 내일 커플런 준비",
         "date": "2026-09-19",
         "dayName": "토"
       },
       {
         "offset": 6,
-        "type": "rest",
-        "label": "휴식",
-        "desc": "한 주 마무리 · 다음 주 계획 확인",
+        "type": "couple",
+        "label": "커플런 6km",
+        "desc": "이번 주 가장 긴 런 · 전체 이지 · HR 136~146 · 13km 롱런은 다음 주",
         "date": "2026-09-20",
         "dayName": "일"
       }
@@ -96,9 +96,9 @@
       "readinessLevel": "UNKNOWN",
       "runsLastWeek": 0
     },
-    "targetWeeklyKm": 12,
-    "longRunTarget": 7.7,
-    "coachNote": "✅ 이번 주 계획대로 진행",
+    "targetWeeklyKm": 14,
+    "longRunTarget": 6,
+    "coachNote": "✅ 3주 만의 복귀 — 주 3회 올 이지, 페이스 신경 끄기",
     "schedule": [
       {
         "offset": 0,
@@ -110,9 +110,9 @@
       },
       {
         "offset": 1,
-        "type": "couple",
-        "label": "커플런 5km",
-        "desc": "Jenny 페이스 기준 · HR 145~155 유지 · 대화 가능한 속도 · 7:50~8:10/km",
+        "type": "easy",
+        "label": "복귀 런 ✓",
+        "desc": "Strava 데이터 입력 대기",
         "date": "2026-09-15",
         "dayName": "화"
       },
@@ -120,15 +120,15 @@
         "offset": 2,
         "type": "rest",
         "label": "휴식",
-        "desc": "내일 롱런 준비 · 충분한 수면",
+        "desc": "복귀 런 다음날 · 충분한 수면",
         "date": "2026-09-16",
         "dayName": "수"
       },
       {
         "offset": 3,
-        "type": "long",
-        "label": "Long Run 7.7km",
-        "desc": "전체 Easy Z2 · HR 155 이하 유지 · 7:50~8:10/km · 준비도 미확인/100",
+        "type": "couple",
+        "label": "커플런 5km",
+        "desc": "Jenny 페이스 기준 · HR 155 이하 · 7:50~8:10/km · 대화 가능한 속도",
         "date": "2026-09-17",
         "dayName": "목"
       },
@@ -136,7 +136,7 @@
         "offset": 4,
         "type": "rest",
         "label": "휴식",
-        "desc": "롱런 다음날 완전 회복 · 가벼운 걷기 OK",
+        "desc": "회복 · 가벼운 걷기 OK",
         "date": "2026-09-18",
         "dayName": "금"
       },
@@ -144,15 +144,15 @@
         "offset": 5,
         "type": "rest",
         "label": "휴식",
-        "desc": "주말 휴식",
+        "desc": "주말 휴식 · 내일 커플런 준비",
         "date": "2026-09-19",
         "dayName": "토"
       },
       {
         "offset": 6,
-        "type": "rest",
-        "label": "휴식",
-        "desc": "한 주 마무리 · 다음 주 계획 확인",
+        "type": "couple",
+        "label": "커플런 6km",
+        "desc": "이번 주 가장 긴 런 · 전체 이지 · HR 155 이하 · 10% 룰 (지난 롱런 7km 이내)",
         "date": "2026-09-20",
         "dayName": "일"
       }
