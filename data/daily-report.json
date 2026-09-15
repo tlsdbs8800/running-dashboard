@@ -1,10 +1,18 @@
 {
   "mode": "evening",
   "date": "2026-09-15",
-  "generatedAt": "2026-09-15T10:17:54.476Z",
-  "hasRun": false,
-  "isRestDay": false,
-  "feedback": "오늘 런 데이터가 아직 없어. 달렸다면 가민 워치를 폰과 동기화해줘.",
+  "generatedAt": "2026-09-15T10:28:57.784Z",
+  "hasRun": true,
+  "km": 3,
+  "paceStr": "8:21",
+  "avgHR": 132,
+  "maxHR": 145,
+  "zone": 1,
+  "zoneLabel": "Z1 (매우 쉬움)",
+  "zoneColor": "#22c55e",
+  "planComparison": "⚠️ 계획보다 4.0km 적게 달림",
+  "plannedKm": 7,
+  "feedback": "완벽한 이지 런이야! HR 132 · 8:21/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
   "tomorrowPlan": {
     "offset": 2,
     "type": "rest",
@@ -12,5 +20,59 @@
     "desc": "스트레칭 or 폼롤러 · 내일 롱런 준비",
     "date": "2026-09-16",
     "dayName": "수"
-  }
+  },
+  "dynamics": {
+    "gct": {
+      "value": 271,
+      "unit": "ms",
+      "label": "지면접촉",
+      "rating": "보통",
+      "color": "#f59e0b",
+      "tip": "지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐."
+    },
+    "vo": {
+      "value": 6.5,
+      "unit": "cm",
+      "label": "수직진동",
+      "rating": "좋음",
+      "color": "#22c55e",
+      "tip": "수직 진동 양호."
+    },
+    "vr": {
+      "value": 10,
+      "unit": "%",
+      "label": "수직비율",
+      "rating": "보통",
+      "color": "#f59e0b"
+    },
+    "cadence": {
+      "value": 183,
+      "unit": "spm",
+      "label": "케이던스",
+      "rating": "최상",
+      "color": "#16a34a",
+      "tip": "케이던스 최적. 관절 부담도 낮아."
+    },
+    "power": {
+      "value": 216,
+      "unit": "W",
+      "label": "파워(NP)",
+      "rating": null
+    }
+  },
+  "aerobicEffect": 2.1,
+  "anaerobicEffect": null,
+  "trainingEffectLabel": "RECOVERY",
+  "trainingLoad": 22,
+  "hrZoneSec": [
+    1505,
+    0,
+    0,
+    0,
+    0
+  ],
+  "elevationGainM": 25,
+  "fastest1kmSec": 487.85198974609375,
+  "fastest5kmSec": null,
+  "steps": 4556
 }
