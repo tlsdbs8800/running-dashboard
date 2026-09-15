@@ -62,7 +62,8 @@ async function refreshSessionIfNeeded(config) {
   try { playwright = await import("playwright"); }
   catch { throw new Error("playwright not available"); }
 
-  const browser = await playwright.chromium.launch({ headless: true, executablePath: '/opt/pw-browsers/chromium' });
+  // 경로 고정 금지 — 로컬과 CI의 chromium 위치가 달라서 playwright 번들을 기본으로 씀 (login.js와 동일하게 CHROMIUM_PATH로 오버라이드)
+  const browser = await playwright.chromium.launch({ headless: true, executablePath: process.env.CHROMIUM_PATH || undefined });
   const context = await browser.newContext();
   await context.addCookies(session.cookies.map((c) => ({
     name: c.name, value: c.value, domain: c.domain, path: "/",
