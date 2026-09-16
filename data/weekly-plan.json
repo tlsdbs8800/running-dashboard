@@ -23,7 +23,7 @@
     },
     "targetWeeklyKm": 14,
     "longRunTarget": 6,
-    "coachNote": "🟢 감기 후 복귀 주 — 9/15 3km 복귀 런 OK (HR132, 가슴 이상 없음). 이번 주 총 15km 이하, 13km 롱런은 다음 주로. 모든 런 HR 140 이하.",
+    "coachNote": "🟡 복귀 2번째 런이 HR 158 템포 — 회복 32h 필요. 일요일 6km는 반드시 HR 146 이하 (MAF). 페이스 8:00 이상이어도 정상.",
     "schedule": [
       {
         "offset": 0,
@@ -52,8 +52,8 @@
       {
         "offset": 3,
         "type": "couple",
-        "label": "커플런 5km",
-        "desc": "Jenny 페이스 · HR 140 이하 · 대화 가능한 속도 · 페이스 무시",
+        "label": "5km ✓ (HR 초과)",
+        "desc": "5.00km · 7:00/km · HR 158 (max 178) — 계획 HR 140 이하였음, 템포 강도로 뜀",
         "date": "2026-09-17",
         "dayName": "목"
       },
