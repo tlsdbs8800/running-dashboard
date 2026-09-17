@@ -1,7 +1,7 @@
 {
   "mode": "evening",
-  "date": "2026-09-16",
-  "generatedAt": "2026-09-16T22:14:16.696Z",
+  "date": "2026-09-17",
+  "generatedAt": "2026-09-17T00:06:22.818Z",
   "hasRun": true,
   "km": 5,
   "paceStr": "7:00",
@@ -10,16 +10,16 @@
   "zone": 3,
   "zoneLabel": "Z3 (적당히 힘듦)",
   "zoneColor": "#f59e0b",
-  "planComparison": "",
-  "plannedKm": null,
+  "planComparison": "✅ 계획 달성",
+  "plannedKm": 5,
   "feedback": "HR 158로 MAF(146)보다 조금 올라갔어. 이지 런에선 Z2 이하 유지가 목표야. 다음엔 페이스를 10~15초 더 줄여봐.",
   "tomorrowPlan": {
-    "offset": 3,
-    "type": "couple",
-    "label": "5km ✓ (HR 초과)",
-    "desc": "5.00km · 7:00/km · HR 158 (max 178) — 계획 HR 140 이하였음, 템포 강도로 뜀",
-    "date": "2026-09-17",
-    "dayName": "목"
+    "offset": 4,
+    "type": "rest",
+    "label": "휴식",
+    "desc": "회복 · 가벼운 걷기 OK",
+    "date": "2026-09-18",
+    "dayName": "금"
   },
   "dynamics": {
     "gct": {
