@@ -1,11 +1,11 @@
 {
-  "weekStart": "2026-09-14",
-  "weekEnd": "2026-09-20",
-  "generatedAt": "2026-09-07T21:52:50.366Z",
+  "weekStart": "2026-09-21",
+  "weekEnd": "2026-09-27",
+  "generatedAt": "2026-09-20T11:22:45.808Z",
   "lthrTest": {
     "suitable": false,
-    "readiness": 45,
-    "reason": "준비도 45/100 — 60 이상일 때 추천",
+    "readiness": null,
+    "reason": "준비도 미확인/100 — 60 이상일 때 추천",
     "recommendedDay": null
   },
   "yunho": {
@@ -13,72 +13,72 @@
     "phase": 3,
     "phaseLabel": "빌드 단계",
     "analysis": {
-      "lastWeekKm": 23,
-      "avgWeekKm4w": 22.5,
+      "lastWeekKm": 0,
+      "avgWeekKm4w": 23,
       "longRunKm": 13,
-      "avgHR": 151,
-      "readinessScore": 45,
-      "readinessLevel": "LOW",
-      "runsLastWeek": 3
+      "avgHR": null,
+      "readinessScore": null,
+      "readinessLevel": "UNKNOWN",
+      "runsLastWeek": 0
     },
-    "targetWeeklyKm": 14,
-    "longRunTarget": 6,
-    "coachNote": "🟡 복귀 2번째 런이 HR 158 템포 — 회복 32h 필요. 일요일 6km는 반드시 HR 146 이하 (MAF). 페이스 8:00 이상이어도 정상.",
+    "targetWeeklyKm": 21,
+    "longRunTarget": 10,
+    "coachNote": "🟢 복귀 2주차 — 볼륨은 감기 전 수준(21km)으로, 강도는 전부 이지. 목요일 HR 158 같은 런 금지: 시계 HR 상한 알림 146 켜기. 롱런 10km는 13km의 77% — 페이스업 없음.",
     "schedule": [
       {
         "offset": 0,
         "type": "easy",
-        "label": "Solo Easy Run 5km",
-        "desc": "혼자 HR 136~146(MAF) 유지 · 페이스 신경 끄기 · 처음엔 9:00/km 이상도 정상",
-        "date": "2026-09-14",
+        "label": "Solo Easy 5km",
+        "desc": "HR 136~146(MAF) · 페이스 무시 · 8:00대 정상",
+        "date": "2026-09-21",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "easy",
-        "label": "복귀 런 3km ✓",
-        "desc": "3.00km · 8:21/km · HR 132 — 계획대로 완료",
-        "date": "2026-09-15",
+        "type": "couple",
+        "label": "커플런 6km",
+        "desc": "Jenny 페이스 · HR 146 이하 · 대화 가능한 속도",
+        "date": "2026-09-22",
         "dayName": "화"
       },
       {
         "offset": 2,
         "type": "rest",
         "label": "휴식",
-        "desc": "복귀 런 다음날 · 가슴/기침 이상 없는지 확인",
-        "date": "2026-09-16",
+        "desc": "스트레칭 · 폼롤러 · 내일 롱런 준비",
+        "date": "2026-09-23",
         "dayName": "수"
       },
       {
         "offset": 3,
-        "type": "couple",
-        "label": "5km ✓ (HR 초과)",
-        "desc": "5.00km · 7:00/km · HR 158 (max 178) — 계획 HR 140 이하였음, 템포 강도로 뜀",
-        "date": "2026-09-17",
+        "type": "long",
+        "label": "Long Run 10km",
+        "desc": "전체 이지 · HR 136~146 · 페이스업 없음 · Jenny와 7km까지 같이, 이후 3km 솔로",
+        "date": "2026-09-24",
         "dayName": "목"
       },
       {
         "offset": 4,
         "type": "rest",
         "label": "휴식",
-        "desc": "회복 · 가벼운 걷기 OK",
-        "date": "2026-09-18",
+        "desc": "롱런 다음날 완전 회복 · 걷기 OK",
+        "date": "2026-09-25",
         "dayName": "금"
       },
       {
         "offset": 5,
         "type": "rest",
         "label": "휴식",
-        "desc": "주말 휴식 · 내일 커플런 준비",
-        "date": "2026-09-19",
+        "desc": "주말 휴식",
+        "date": "2026-09-26",
         "dayName": "토"
       },
       {
         "offset": 6,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "이번 주 가장 긴 런 · 전체 이지 · HR 136~146 · 13km 롱런은 다음 주",
-        "date": "2026-09-20",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "다음 주 13km 롱런 복귀 준비",
+        "date": "2026-09-27",
         "dayName": "일"
       }
     ]
@@ -89,71 +89,71 @@
     "phaseLabel": "기초 단계",
     "analysis": {
       "lastWeekKm": 0,
-      "avgWeekKm4w": 8.4,
+      "avgWeekKm4w": 7,
       "longRunKm": 7,
       "avgHR": null,
       "readinessScore": null,
       "readinessLevel": "UNKNOWN",
       "runsLastWeek": 0
     },
-    "targetWeeklyKm": 14,
-    "longRunTarget": 6,
-    "coachNote": "✅ 3주 만의 복귀 — 주 3회 올 이지, 페이스 신경 끄기",
+    "targetWeeklyKm": 12,
+    "longRunTarget": 7,
+    "coachNote": "✅ 복귀 2주차 — 주 2회 이지, 롱런 7km (지난 최장 7km 유지, 증량 없음)",
     "schedule": [
       {
         "offset": 0,
         "type": "rest",
         "label": "휴식",
         "desc": "윤호 솔로런 하는 날 · Jenny는 휴식",
-        "date": "2026-09-14",
+        "date": "2026-09-21",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "easy",
-        "label": "복귀 런 ✓",
-        "desc": "Strava 데이터 입력 대기",
-        "date": "2026-09-15",
+        "type": "couple",
+        "label": "커플런 6km",
+        "desc": "Jenny 페이스 기준 · HR 155 이하 · 7:50~8:10/km · 대화 가능한 속도",
+        "date": "2026-09-22",
         "dayName": "화"
       },
       {
         "offset": 2,
         "type": "rest",
         "label": "휴식",
-        "desc": "복귀 런 다음날 · 충분한 수면",
-        "date": "2026-09-16",
+        "desc": "내일 롱런 준비 · 충분한 수면",
+        "date": "2026-09-23",
         "dayName": "수"
       },
       {
         "offset": 3,
-        "type": "couple",
-        "label": "커플런 5km",
-        "desc": "Jenny 페이스 기준 · HR 155 이하 · 7:50~8:10/km · 대화 가능한 속도",
-        "date": "2026-09-17",
+        "type": "long",
+        "label": "Long Run 7km",
+        "desc": "전체 이지 · HR 155 이하 · 7:50~8:10/km · 윤호와 같이 출발, 7km에서 종료",
+        "date": "2026-09-24",
         "dayName": "목"
       },
       {
         "offset": 4,
         "type": "rest",
         "label": "휴식",
-        "desc": "회복 · 가벼운 걷기 OK",
-        "date": "2026-09-18",
+        "desc": "롱런 다음날 완전 회복 · 가벼운 걷기 OK",
+        "date": "2026-09-25",
         "dayName": "금"
       },
       {
         "offset": 5,
         "type": "rest",
         "label": "휴식",
-        "desc": "주말 휴식 · 내일 커플런 준비",
-        "date": "2026-09-19",
+        "desc": "주말 휴식",
+        "date": "2026-09-26",
         "dayName": "토"
       },
       {
         "offset": 6,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "이번 주 가장 긴 런 · 전체 이지 · HR 155 이하 · 10% 룰 (지난 롱런 7km 이내)",
-        "date": "2026-09-20",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "한 주 마무리 · 다음 주 계획 확인",
+        "date": "2026-09-27",
         "dayName": "일"
       }
     ]

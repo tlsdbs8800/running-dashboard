@@ -2813,20 +2813,13 @@
   ],
   "sleep": [
     {
-      "date": "2026-09-17",
-      "score": 87,
-      "durationMin": 480
+      "date": "2026-09-20",
+      "score": null,
+      "durationMin": null
     }
   ],
-  "trainingReadiness": {
-    "date": "2026-09-17",
-    "score": 54,
-    "level": "MODERATE",
-    "feedbackShort": "RECOVERY_IN_PROGRESS",
-    "sleepScore": 87,
-    "recoveryTimeMin": 1954
-  },
-  "lastSync": "2026-09-17T08:14:00.834426",
+  "trainingReadiness": null,
+  "lastSync": "2026-09-20T21:21:22.797070",
   "birthYear": 1992,
   "age": 34,
   "mafHR": 146
