@@ -1,18 +1,18 @@
 {
   "mode": "evening",
   "date": "2026-09-22",
-  "generatedAt": "2026-09-22T00:30:20.091Z",
+  "generatedAt": "2026-09-22T06:41:06.270Z",
   "hasRun": true,
-  "km": 5,
-  "paceStr": "7:27",
-  "avgHR": 141,
+  "km": 6,
+  "paceStr": "7:55",
+  "avgHR": 145,
   "maxHR": 156,
   "zone": 2,
   "zoneLabel": "Z2 (MAF 이지)",
   "zoneColor": "#16a34a",
-  "planComparison": "⚠️ 계획보다 1.0km 적게 달림",
+  "planComparison": "✅ 계획 달성",
   "plannedKm": 6,
-  "feedback": "완벽한 이지 런이야! HR 141 · 7:27/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
+  "feedback": "완벽한 이지 런이야! HR 145 · 7:55/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
   "tomorrowPlan": {
     "offset": 2,
     "type": "rest",
@@ -23,7 +23,7 @@
   },
   "dynamics": {
     "gct": {
-      "value": 260,
+      "value": 263,
       "unit": "ms",
       "label": "지면접촉",
       "rating": "보통",
@@ -31,7 +31,7 @@
       "tip": "지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐."
     },
     "vo": {
-      "value": 6.6,
+      "value": 6.3,
       "unit": "cm",
       "label": "수직진동",
       "rating": "좋음",
@@ -39,14 +39,14 @@
       "tip": "수직 진동 양호."
     },
     "vr": {
-      "value": 9.3,
+      "value": 9.6,
       "unit": "%",
       "label": "수직비율",
       "rating": "보통",
       "color": "#f59e0b"
     },
     "cadence": {
-      "value": 187,
+      "value": 189,
       "unit": "spm",
       "label": "케이던스",
       "rating": "최상",
@@ -54,25 +54,25 @@
       "tip": "케이던스 최적. 관절 부담도 낮아."
     },
     "power": {
-      "value": 229,
+      "value": 220,
       "unit": "W",
       "label": "파워(NP)",
       "rating": null
     }
   },
-  "aerobicEffect": 2.9,
+  "aerobicEffect": 2.7,
   "anaerobicEffect": null,
   "trainingEffectLabel": "유산소 기초",
-  "trainingLoad": 52,
+  "trainingLoad": 44,
   "hrZoneSec": [
-    2204,
+    2855,
     0,
     0,
     0,
     0
   ],
-  "elevationGainM": 43,
-  "fastest1kmSec": 415.8330078125,
-  "fastest5kmSec": 2245.15087890625,
-  "steps": 6996
+  "elevationGainM": 34,
+  "fastest1kmSec": 457.6820068359375,
+  "fastest5kmSec": 2372.027099609375,
+  "steps": 8982
 }

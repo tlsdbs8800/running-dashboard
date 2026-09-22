@@ -35,9 +35,9 @@
       },
       {
         "offset": 1,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "Jenny 페이스 · HR 146 이하 · 대화 가능한 속도",
+        "type": "easy",
+        "label": "Solo Easy 6km ✓",
+        "desc": "6.01km · 7:55/km · HR 145 (max 156) — MAF 존, 13km 조건 통과",
         "date": "2026-09-22",
         "dayName": "화"
       },
@@ -110,9 +110,9 @@
       },
       {
         "offset": 1,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "Jenny 페이스 기준 · HR 155 이하 · 7:50~8:10/km · 대화 가능한 속도",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "컨디션 저하 · 목요일 롱런 위해 회복",
         "date": "2026-09-22",
         "dayName": "화"
       },
