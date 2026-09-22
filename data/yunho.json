@@ -37,7 +37,10 @@
       "elevationGainM": 34,
       "fastest1kmSec": 457.6820068359375,
       "fastest5kmSec": 2372.027099609375,
-      "steps": 8982
+      "steps": 8982,
+      "startTimeLocal": "2026-09-22 15:48:26",
+      "tempC": 16.2,
+      "humidity": 72
     },
     {
       "id": 24440071031,
@@ -70,7 +73,10 @@
       "elevationGainM": 43,
       "fastest1kmSec": 415.8330078125,
       "fastest5kmSec": 2245.15087890625,
-      "steps": 6996
+      "steps": 6996,
+      "startTimeLocal": "2026-09-21 16:47:41",
+      "tempC": 18.9,
+      "humidity": 66
     },
     {
       "id": 24389185005,
@@ -103,7 +109,10 @@
       "elevationGainM": 34,
       "fastest1kmSec": 382.88800048828125,
       "fastest5kmSec": 2098.89892578125,
-      "steps": 6688
+      "steps": 6688,
+      "startTimeLocal": "2026-09-17 07:07:05",
+      "tempC": 9.2,
+      "humidity": 60
     },
     {
       "id": 24366368647,
@@ -136,7 +145,10 @@
       "elevationGainM": 25,
       "fastest1kmSec": 487.85198974609375,
       "fastest5kmSec": null,
-      "steps": 4556
+      "steps": 4556,
+      "startTimeLocal": "2026-09-15 16:23:06",
+      "tempC": 21.4,
+      "humidity": 59
     },
     {
       "id": 24219259490,
@@ -169,7 +181,8 @@
       "elevationGainM": 82,
       "fastest1kmSec": 433.10400390625,
       "fastest5kmSec": 2251.0,
-      "steps": 18654
+      "steps": 18654,
+      "startTimeLocal": "2026-09-03 15:16:58"
     },
     {
       "id": 24192332946,
@@ -202,7 +215,8 @@
       "elevationGainM": 43,
       "fastest1kmSec": 393.95599365234375,
       "fastest5kmSec": 2098.780029296875,
-      "steps": 6660
+      "steps": 6660,
+      "startTimeLocal": "2026-09-01 15:43:23"
     },
     {
       "id": 24180345846,
@@ -235,7 +249,8 @@
       "elevationGainM": 27,
       "fastest1kmSec": 400.07598876953125,
       "fastest5kmSec": 2166.510009765625,
-      "steps": 6698
+      "steps": 6698,
+      "startTimeLocal": "2026-08-31 16:51:40"
     },
     {
       "id": 24132538269,
@@ -279,7 +294,8 @@
       "elevationGainM": 51,
       "fastest1kmSec": 473.84100341796875,
       "fastest5kmSec": 2412.0,
-      "steps": 19716
+      "steps": 19716,
+      "startTimeLocal": "2026-08-27 15:14:46"
     },
     {
       "id": 24106036522,
@@ -323,7 +339,8 @@
       "elevationGainM": 33,
       "fastest1kmSec": 465.56298828125,
       "fastest5kmSec": 2401.751953125,
-      "steps": 7386
+      "steps": 7386,
+      "startTimeLocal": "2026-08-25 16:16:46"
     },
     {
       "id": 24093404770,
@@ -356,7 +373,8 @@
       "elevationGainM": 38,
       "fastest1kmSec": 398.135009765625,
       "fastest5kmSec": 2064.93798828125,
-      "steps": 6258
+      "steps": 6258,
+      "startTimeLocal": "2026-08-24 16:51:53"
     },
     {
       "id": 24044974529,
@@ -400,7 +418,8 @@
       "elevationGainM": 106,
       "fastest1kmSec": 487.9540100097656,
       "fastest5kmSec": 2511.81298828125,
-      "steps": 20394
+      "steps": 20394,
+      "startTimeLocal": "2026-08-20 15:01:34"
     },
     {
       "id": 24019070902,
@@ -444,7 +463,8 @@
       "elevationGainM": 3,
       "fastest1kmSec": 436.47100830078125,
       "fastest5kmSec": 2267.950927734375,
-      "steps": 6796
+      "steps": 6796,
+      "startTimeLocal": "2026-08-18 16:58:16"
     },
     {
       "id": 24006579919,
@@ -477,7 +497,8 @@
       "elevationGainM": 40,
       "fastest1kmSec": 442.47698974609375,
       "fastest5kmSec": 2261.68310546875,
-      "steps": 6910
+      "steps": 6910,
+      "startTimeLocal": "2026-08-17 16:52:58"
     },
     {
       "id": 23958590444,
@@ -521,7 +542,8 @@
       "elevationGainM": 38,
       "fastest1kmSec": 472.1099853515625,
       "fastest5kmSec": 2432.697998046875,
-      "steps": 17578
+      "steps": 17578,
+      "startTimeLocal": "2026-08-13 15:47:20"
     },
     {
       "id": 23932365049,
@@ -554,7 +576,8 @@
       "elevationGainM": 20,
       "fastest1kmSec": 460.22900390625,
       "fastest5kmSec": null,
-      "steps": 5598
+      "steps": 5598,
+      "startTimeLocal": "2026-08-11 17:06:54"
     },
     {
       "id": 23919354791,
@@ -587,7 +610,8 @@
       "elevationGainM": 37,
       "fastest1kmSec": 480.0090026855469,
       "fastest5kmSec": 2447.531005859375,
-      "steps": 7302
+      "steps": 7302,
+      "startTimeLocal": "2026-08-10 16:27:59"
     },
     {
       "id": 23870866659,
@@ -620,7 +644,8 @@
       "elevationGainM": 35,
       "fastest1kmSec": 477.9070129394531,
       "fastest5kmSec": 2436.279052734375,
-      "steps": 17678
+      "steps": 17678,
+      "startTimeLocal": "2026-08-06 15:01:47"
     },
     {
       "id": 23784700835,
@@ -653,7 +678,8 @@
       "elevationGainM": 65,
       "fastest1kmSec": 412.0419921875,
       "fastest5kmSec": 2200.60888671875,
-      "steps": 15964
+      "steps": 15964,
+      "startTimeLocal": "2026-07-30 15:03:26"
     },
     {
       "id": 23745901608,
@@ -686,7 +712,8 @@
       "elevationGainM": 32,
       "fastest1kmSec": 445.8580017089844,
       "fastest5kmSec": 2317.51904296875,
-      "steps": 6924
+      "steps": 6924,
+      "startTimeLocal": "2026-07-27 14:50:05"
     },
     {
       "id": 23696934448,
@@ -719,7 +746,8 @@
       "elevationGainM": 77,
       "fastest1kmSec": 441.364990234375,
       "fastest5kmSec": 2387.68603515625,
-      "steps": 15832
+      "steps": 15832,
+      "startTimeLocal": "2026-07-23 07:44:29"
     },
     {
       "id": 23671157735,
@@ -752,7 +780,8 @@
       "elevationGainM": 38,
       "fastest1kmSec": 424.15301513671875,
       "fastest5kmSec": 2298.343017578125,
-      "steps": 6894
+      "steps": 6894,
+      "startTimeLocal": "2026-07-21 09:01:31"
     },
     {
       "id": 23659330886,
@@ -785,7 +814,8 @@
       "elevationGainM": 31,
       "fastest1kmSec": 444.5350036621094,
       "fastest5kmSec": null,
-      "steps": 5566
+      "steps": 5566,
+      "startTimeLocal": "2026-07-20 08:45:37"
     },
     {
       "id": 23543345159,
@@ -818,7 +848,8 @@
       "elevationGainM": 35,
       "fastest1kmSec": 316.1289978027344,
       "fastest5kmSec": 1750.81298828125,
-      "steps": 5190
+      "steps": 5190,
+      "startTimeLocal": "2026-07-10 15:23:50"
     },
     {
       "id": 23450374499,
@@ -862,7 +893,8 @@
       "elevationGainM": 48,
       "fastest1kmSec": 473.3500061035156,
       "fastest5kmSec": 2485.360107421875,
-      "steps": 16262
+      "steps": 16262,
+      "startTimeLocal": "2026-07-02 16:06:30"
     },
     {
       "id": 23426652249,
@@ -906,7 +938,8 @@
       "elevationGainM": 25,
       "fastest1kmSec": 334.8190002441406,
       "fastest5kmSec": 2269.906982421875,
-      "steps": 6616
+      "steps": 6616,
+      "startTimeLocal": "2026-06-30 17:09:38"
     },
     {
       "id": 23413995575,
@@ -939,7 +972,8 @@
       "elevationGainM": 35,
       "fastest1kmSec": 473.2080078125,
       "fastest5kmSec": 2432.696044921875,
-      "steps": 7220
+      "steps": 7220,
+      "startTimeLocal": "2026-06-29 14:55:41"
     },
     {
       "id": 23390298504,
@@ -972,7 +1006,8 @@
       "elevationGainM": 35,
       "fastest1kmSec": 462.47698974609375,
       "fastest5kmSec": 2370.888916015625,
-      "steps": 7210
+      "steps": 7210,
+      "startTimeLocal": "2026-06-27 08:20:55"
     },
     {
       "id": 23372317013,
@@ -1016,7 +1051,8 @@
       "elevationGainM": 43,
       "fastest1kmSec": 457.22198486328125,
       "fastest5kmSec": 2408.52294921875,
-      "steps": 14350
+      "steps": 14350,
+      "startTimeLocal": "2026-06-25 16:21:31"
     },
     {
       "id": 23348085860,
@@ -1049,7 +1085,8 @@
       "elevationGainM": 52,
       "fastest1kmSec": 445.4209899902344,
       "fastest5kmSec": 2298.14892578125,
-      "steps": 6608
+      "steps": 6608,
+      "startTimeLocal": "2026-06-23 16:24:57"
     },
     {
       "id": 23336553971,
@@ -1082,7 +1119,8 @@
       "elevationGainM": 33,
       "fastest1kmSec": 336.61199951171875,
       "fastest5kmSec": 1941.7230224609375,
-      "steps": 5634
+      "steps": 5634,
+      "startTimeLocal": "2026-06-22 17:21:36"
     },
     {
       "id": 23302702157,
@@ -1115,7 +1153,8 @@
       "elevationGainM": 41,
       "fastest1kmSec": 417.29901123046875,
       "fastest5kmSec": 2256.928955078125,
-      "steps": 6608
+      "steps": 6608,
+      "startTimeLocal": "2026-06-19 16:23:59"
     },
     {
       "id": 23291432607,
@@ -1159,7 +1198,8 @@
       "elevationGainM": 53,
       "fastest1kmSec": 462.63800048828125,
       "fastest5kmSec": 2430.8369140625,
-      "steps": 14494
+      "steps": 14494,
+      "startTimeLocal": "2026-06-18 16:18:42"
     },
     {
       "id": 23266005966,
@@ -1192,7 +1232,8 @@
       "elevationGainM": 28,
       "fastest1kmSec": 460.60198974609375,
       "fastest5kmSec": 2330.885009765625,
-      "steps": 6904
+      "steps": 6904,
+      "startTimeLocal": "2026-06-16 16:38:20"
     },
     {
       "id": 23253704275,
@@ -1236,7 +1277,8 @@
       "elevationGainM": 4,
       "fastest1kmSec": 464.9909973144531,
       "fastest5kmSec": 2400.366943359375,
-      "steps": 6954
+      "steps": 6954,
+      "startTimeLocal": "2026-06-15 16:12:35"
     },
     {
       "id": 23228594376,
@@ -1269,7 +1311,8 @@
       "elevationGainM": 33,
       "fastest1kmSec": 380.22698974609375,
       "fastest5kmSec": null,
-      "steps": 3082
+      "steps": 3082,
+      "startTimeLocal": "2026-06-13 09:48:35"
     },
     {
       "id": 23208215126,
@@ -1302,7 +1345,8 @@
       "elevationGainM": 43,
       "fastest1kmSec": 465.6940002441406,
       "fastest5kmSec": 2385.868896484375,
-      "steps": 14182
+      "steps": 14182,
+      "startTimeLocal": "2026-06-11 15:27:11"
     },
     {
       "id": 23184003704,
@@ -1335,7 +1379,8 @@
       "elevationGainM": 46,
       "fastest1kmSec": 446.76800537109375,
       "fastest5kmSec": 2324.472900390625,
-      "steps": 6722
+      "steps": 6722,
+      "startTimeLocal": "2026-06-09 16:50:01"
     },
     {
       "id": 23171109664,
@@ -1368,7 +1413,8 @@
       "elevationGainM": 34,
       "fastest1kmSec": 463.3890075683594,
       "fastest5kmSec": 2347.637939453125,
-      "steps": 6982
+      "steps": 6982,
+      "startTimeLocal": "2026-06-08 15:00:37"
     },
     {
       "id": 23172899955,
@@ -1412,7 +1458,8 @@
       "elevationGainM": 43,
       "fastest1kmSec": 457.7080078125,
       "fastest5kmSec": 2326.5439453125,
-      "steps": 6866
+      "steps": 6866,
+      "startTimeLocal": "2026-06-06 09:58:10"
     },
     {
       "id": 23172897987,
@@ -1456,7 +1503,8 @@
       "elevationGainM": 55,
       "fastest1kmSec": 464.19500732421875,
       "fastest5kmSec": 2511.968994140625,
-      "steps": 14222
+      "steps": 14222,
+      "startTimeLocal": "2026-06-04 16:15:39"
     },
     {
       "id": 23099907401,
@@ -1489,7 +1537,8 @@
       "elevationGainM": 39,
       "fastest1kmSec": 453.6650085449219,
       "fastest5kmSec": 2336.803955078125,
-      "steps": 7054
+      "steps": 7054,
+      "startTimeLocal": "2026-06-02 16:49:56"
     },
     {
       "id": 23087540930,
@@ -1522,7 +1571,8 @@
       "elevationGainM": 21,
       "fastest1kmSec": 455.8380126953125,
       "fastest5kmSec": 2361.45703125,
-      "steps": 6980
+      "steps": 6980,
+      "startTimeLocal": "2026-06-01 16:27:57"
     },
     {
       "id": 23052374930,
@@ -1555,7 +1605,8 @@
       "elevationGainM": 48,
       "fastest1kmSec": 465.7080078125,
       "fastest5kmSec": 2400.166015625,
-      "steps": 14408
+      "steps": 14408,
+      "startTimeLocal": "2026-05-29 15:25:01"
     },
     {
       "id": 23040700677,
@@ -1599,7 +1650,8 @@
       "elevationGainM": 22,
       "fastest1kmSec": 459.0429992675781,
       "fastest5kmSec": 2350.5048828125,
-      "steps": 7048
+      "steps": 7048,
+      "startTimeLocal": "2026-05-28 16:52:14"
     },
     {
       "id": 23002792799,
@@ -1632,7 +1684,8 @@
       "elevationGainM": 5,
       "fastest1kmSec": 464.9909973144531,
       "fastest5kmSec": 2432.9560546875,
-      "steps": 7048
+      "steps": 7048,
+      "startTimeLocal": "2026-05-25 16:23:09"
     },
     {
       "id": 22968004646,
@@ -1665,7 +1718,8 @@
       "elevationGainM": 52,
       "fastest1kmSec": 461.53399658203125,
       "fastest5kmSec": 2382.281005859375,
-      "steps": 13886
+      "steps": 13886,
+      "startTimeLocal": "2026-05-22 15:13:31"
     },
     {
       "id": 22955906467,
@@ -1698,7 +1752,8 @@
       "elevationGainM": 21,
       "fastest1kmSec": 449.5,
       "fastest5kmSec": 2467.922119140625,
-      "steps": 6794
+      "steps": 6794,
+      "startTimeLocal": "2026-05-21 15:07:56"
     },
     {
       "id": 22932068196,
@@ -1731,7 +1786,8 @@
       "elevationGainM": 10,
       "fastest1kmSec": 460.8949890136719,
       "fastest5kmSec": 2390.943115234375,
-      "steps": 7000
+      "steps": 7000,
+      "startTimeLocal": "2026-05-19 16:27:30"
     },
     {
       "id": 22920376232,
@@ -1764,7 +1820,8 @@
       "elevationGainM": 34,
       "fastest1kmSec": 452.0190124511719,
       "fastest5kmSec": 2328.883056640625,
-      "steps": 6976
+      "steps": 6976,
+      "startTimeLocal": "2026-05-18 16:36:24"
     },
     {
       "id": 22886034441,
@@ -1797,7 +1854,8 @@
       "elevationGainM": 50,
       "fastest1kmSec": 440.42498779296875,
       "fastest5kmSec": 2337.611083984375,
-      "steps": 13566
+      "steps": 13566,
+      "startTimeLocal": "2026-05-15 15:00:19"
     },
     {
       "id": 22874266987,
@@ -2900,7 +2958,7 @@
     "sleepScore": 91,
     "recoveryTimeMin": 1062
   },
-  "lastSync": "2026-09-22T16:40:56.502000",
+  "lastSync": "2026-09-22T16:46:22.498905",
   "birthYear": 1992,
   "age": 34,
   "mafHR": 146

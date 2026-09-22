@@ -310,6 +310,7 @@ function generate() {
           <div class="dr-item"><span class="dr-label">평균 HR</span><span class="dr-val" style="color:${daily.zoneColor}">${daily.avgHR} bpm · ${daily.zoneLabel}</span></div>
           ${daily.steps ? `<div class="dr-item"><span class="dr-label">걸음수</span><span class="dr-val">${daily.steps.toLocaleString()}보</span></div>` : ''}
           ${daily.elevationGainM ? `<div class="dr-item"><span class="dr-label">고도 상승</span><span class="dr-val">+${daily.elevationGainM}m</span></div>` : ''}
+          ${daily.tempC != null ? `<div class="dr-item"><span class="dr-label">날씨</span><span class="dr-val">${daily.tempC}°C · ${daily.humidity}%</span></div>` : ''}
           ${daily.fastest1kmSec ? `<div class="dr-item"><span class="dr-label">최고 1km</span><span class="dr-val">${secToMMSS(daily.fastest1kmSec)}</span></div>` : ''}
         </div>
 
@@ -392,6 +393,7 @@ function generate() {
         <div class="dr-item"><span class="dr-label">Avg HR</span><span class="dr-val" style="color:${dailyGf.zoneColor}">${dailyGf.avgHR} bpm · ${dailyGf.zoneLabel}</span></div>
         ${dailyGf.steps ? `<div class="dr-item"><span class="dr-label">Steps</span><span class="dr-val">${dailyGf.steps.toLocaleString()}</span></div>` : ''}
         ${dailyGf.elevationGainM ? `<div class="dr-item"><span class="dr-label">Elevation</span><span class="dr-val">+${dailyGf.elevationGainM}m</span></div>` : ''}
+        ${dailyGf.tempC != null ? `<div class="dr-item"><span class="dr-label">Weather</span><span class="dr-val">${dailyGf.tempC}°C · ${dailyGf.humidity}%</span></div>` : ''}
         ${dailyGf.fastest1kmSec ? `<div class="dr-item"><span class="dr-label">Best 1km</span><span class="dr-val">${secToMMSS(dailyGf.fastest1kmSec)}</span></div>` : ''}
       </div>
 

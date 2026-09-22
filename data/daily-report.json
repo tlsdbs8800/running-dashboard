@@ -1,7 +1,7 @@
 {
   "mode": "evening",
   "date": "2026-09-22",
-  "generatedAt": "2026-09-22T06:41:06.270Z",
+  "generatedAt": "2026-09-22T06:47:46.421Z",
   "hasRun": true,
   "km": 6,
   "paceStr": "7:55",
@@ -72,6 +72,8 @@
     0
   ],
   "elevationGainM": 34,
+  "tempC": 16.2,
+  "humidity": 72,
   "fastest1kmSec": 457.6820068359375,
   "fastest5kmSec": 2372.027099609375,
   "steps": 8982

@@ -57,6 +57,28 @@ def garth_get(path, params=None, retries=2):
                 raise
 
 
+def add_weather(activities, acts_raw):
+    """최근 2주 런에 시작 시각 기온/습도 부착 (Open-Meteo, 키 없음). 실패해도 싱크는 계속."""
+    # ponytail: 최근 14일만 — 그 전은 archive API 필요, 필요해지면 추가
+    if not acts_raw or not acts_raw[0].get("startLatitude"):
+        return
+    try:
+        import urllib.request
+        lat, lon = acts_raw[0]["startLatitude"], acts_raw[0]["startLongitude"]
+        url = (f"https://api.open-meteo.com/v1/forecast?latitude={lat:.2f}&longitude={lon:.2f}"
+               "&hourly=temperature_2m,relative_humidity_2m&past_days=14&forecast_days=1&timezone=auto")
+        with urllib.request.urlopen(url, timeout=15) as r:
+            h = json.load(r)["hourly"]
+        idx = {t: i for i, t in enumerate(h["time"])}
+        for a in activities:
+            key = (a.get("startTimeLocal") or "")[:13].replace(" ", "T") + ":00"
+            if key in idx:
+                a["tempC"] = h["temperature_2m"][idx[key]]
+                a["humidity"] = h["relative_humidity_2m"][idx[key]]
+    except Exception as e:
+        print(f"  날씨 조회 실패 (무시): {e}")
+
+
 def fetch_user_data(user_id, config):
     garth_dir = config["garth_dir"]
     name = config["name"]
@@ -126,8 +148,10 @@ def fetch_user_data(user_id, config):
             "fastest1kmSec": a.get("fastestSplit_1000"),
             "fastest5kmSec": a.get("fastestSplit_5000"),
             "steps": a.get("steps"),
+            "startTimeLocal": a.get("startTimeLocal"),
         })
     print(f"[{name}] 러닝 {len(activities)}개 수집")
+    add_weather(activities, acts_raw)
 
     # VO2Max
     vo2max = None

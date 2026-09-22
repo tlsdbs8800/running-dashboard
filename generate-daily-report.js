@@ -251,6 +251,8 @@ function generateEvening(yunho, plan) {
     trainingLoad: todayRun.trainingLoad,
     hrZoneSec: todayRun.hrZoneSec ?? null,
     elevationGainM: todayRun.elevationGainM,
+    tempC: todayRun.tempC ?? null,
+    humidity: todayRun.humidity ?? null,
     fastest1kmSec: todayRun.fastest1kmSec,
     fastest5kmSec: todayRun.fastest5kmSec,
     steps: todayRun.steps,
@@ -364,6 +366,8 @@ function generateGfEvening(gf) {
     trainingLoad: todayRun.trainingLoad,
     hrZoneSec: todayRun.hrZoneSec ?? null,
     elevationGainM: todayRun.elevationGainM,
+    tempC: todayRun.tempC ?? null,
+    humidity: todayRun.humidity ?? null,
     fastest1kmSec: todayRun.fastest1kmSec,
     steps: todayRun.steps,
   };
