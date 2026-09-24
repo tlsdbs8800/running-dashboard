@@ -1,7 +1,7 @@
 {
   "mode": "evening",
   "date": "2026-09-24",
-  "generatedAt": "2026-09-24T11:33:57.733Z",
+  "generatedAt": "2026-09-24T17:58:54.007Z",
   "hasRun": true,
   "km": 7,
   "paceStr": "8:24",
@@ -65,5 +65,11 @@
   "tempC": 22.8,
   "humidity": 70,
   "fastest1kmSec": 485.9150085449219,
-  "steps": 10136
+  "steps": 10136,
+  "coaching": {
+    "headline": "Steady strides, keep that heart in check! 🏃‍♀️",
+    "coaching": "Today's 7 km at 8:24 /​km kept your average HR at 154 bpm, right under the MAF ceiling of 155 bpm, so the aerobic base effort was solid. However, the pace is a bit slower than your 7:50‑8:10 /​km target and the peak HR of 165 bpm shows occasional spikes that you should smooth out. Keep focusing on staying in Zone 2 the whole run and watch the short bursts that push the HR up.",
+    "trend": "Your recent runs show a stable HR range (145‑156 bpm) and gradual pace improvement, but the average speed is still a few seconds per km above the goal. Consistency is good, but the aerobic training effect is only moderate (3/5).",
+    "nextRun": "Run 8 km at a target pace of 7:55‑8:05 /​km, keep HR no higher than 155 bpm, and work on cadence above 170 spm while aiming for ground‑contact time under 280 ms."
+  }
 }
