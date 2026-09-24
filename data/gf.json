@@ -7,6 +7,42 @@
   "goalTimeMin": null,
   "activities": [
     {
+      "id": 24478153068,
+      "date": "2026-09-24",
+      "distanceM": 7006,
+      "durationSec": 3533,
+      "avgHR": 154.0,
+      "maxHR": 165.0,
+      "avgPaceSecPerKm": 504,
+      "calories": 409.0,
+      "name": "Sydney Running",
+      "cadence": 172,
+      "groundContactTimeMs": 283,
+      "verticalOscillationCm": 7.2,
+      "verticalRatio": 10.4,
+      "strideLengthCm": 69.0,
+      "avgPowerW": 177,
+      "normPowerW": 178,
+      "aerobicEffect": 3.0,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": null,
+      "hrZoneSec": [
+        969,
+        1775,
+        790,
+        0,
+        0
+      ],
+      "elevationGainM": 23,
+      "fastest1kmSec": 485.9150085449219,
+      "fastest5kmSec": 2513.422119140625,
+      "steps": 10136,
+      "startTimeLocal": "2026-09-24 15:58:22",
+      "tempC": 22.8,
+      "humidity": 70
+    },
+    {
       "id": 24132538269,
       "date": "2026-08-27",
       "distanceM": 7009,
@@ -1396,13 +1432,13 @@
   "weight": [],
   "sleep": [
     {
-      "date": "2026-09-22",
+      "date": "2026-09-24",
       "score": null,
       "durationMin": null
     }
   ],
   "trainingReadiness": null,
-  "lastSync": "2026-09-22T16:47:28.306652",
+  "lastSync": "2026-09-24T21:33:46.748829",
   "birthYear": 2001,
   "age": 25,
   "mafHR": 155

@@ -23,7 +23,7 @@
     },
     "targetWeeklyKm": 24,
     "longRunTarget": 13,
-    "coachNote": "🟢 복귀 2주차 — 볼륨은 감기 전 수준(21km)으로, 강도는 전부 이지. 목요일 HR 158 같은 런 금지: 시계 HR 상한 알림 146 켜기. 롱런 10km는 13km의 77% — 페이스업 없음.",
+    "coachNote": "🟢 복귀 완료 — 13km를 HR 148로 마침 (9/3은 HR 158). 다음 주 15km 가능. 금·토·일 휴식.",
     "schedule": [
       {
         "offset": 0,
@@ -52,8 +52,8 @@
       {
         "offset": 3,
         "type": "long",
-        "label": "Long Run 10~13km (조건부)",
-        "desc": "13km 조건: 화 커플런 HR 146 이하 + 목 아침 준비도 60 이상. 10km 지점 HR 150 넘으면 10에서 종료. 페이스업 없음.",
+        "label": "Long Run 13km ✓",
+        "desc": "13.01km · 8:16/km · HR 148 (max 164) · 22.8°C — 전 구간 Z1, 9/3 대비 HR 10 낮춤",
         "date": "2026-09-24",
         "dayName": "목"
       },
@@ -127,8 +127,8 @@
       {
         "offset": 3,
         "type": "long",
-        "label": "Long Run 7km",
-        "desc": "전체 이지 · HR 155 이하 · 7:50~8:10/km · 윤호와 같이 출발, 7km에서 종료",
+        "label": "Long Run 7km ✓",
+        "desc": "7.01km · 8:24/km · HR 154 (max 165) — HR 상한 155 지킴, 복귀 후 최장",
         "date": "2026-09-24",
         "dayName": "목"
       },

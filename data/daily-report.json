@@ -1,29 +1,29 @@
 {
   "mode": "evening",
-  "date": "2026-09-23",
-  "generatedAt": "2026-09-23T00:04:17.582Z",
+  "date": "2026-09-24",
+  "generatedAt": "2026-09-24T11:33:57.732Z",
   "hasRun": true,
-  "km": 6,
-  "paceStr": "7:55",
-  "avgHR": 145,
-  "maxHR": 156,
-  "zone": 2,
-  "zoneLabel": "Z2 (MAF 이지)",
-  "zoneColor": "#16a34a",
-  "planComparison": "",
-  "plannedKm": null,
-  "feedback": "완벽한 이지 런이야! HR 145 · 7:55/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
+  "km": 13,
+  "paceStr": "8:16",
+  "avgHR": 148,
+  "maxHR": 164,
+  "zone": 3,
+  "zoneLabel": "Z3 (적당히 힘듦)",
+  "zoneColor": "#f59e0b",
+  "planComparison": "✅ 계획 달성",
+  "plannedKm": 13,
+  "feedback": "HR 148로 MAF(146)보다 조금 올라갔어. 이지 런에선 Z2 이하 유지가 목표야. 다음엔 페이스를 10~15초 더 줄여봐. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
   "tomorrowPlan": {
-    "offset": 3,
-    "type": "long",
-    "label": "Long Run 10~13km (조건부)",
-    "desc": "13km 조건: 화 커플런 HR 146 이하 + 목 아침 준비도 60 이상. 10km 지점 HR 150 넘으면 10에서 종료. 페이스업 없음.",
-    "date": "2026-09-24",
-    "dayName": "목"
+    "offset": 4,
+    "type": "rest",
+    "label": "휴식",
+    "desc": "롱런 다음날 완전 회복 · 걷기 OK",
+    "date": "2026-09-25",
+    "dayName": "금"
   },
   "dynamics": {
     "gct": {
-      "value": 263,
+      "value": 268,
       "unit": "ms",
       "label": "지면접촉",
       "rating": "보통",
@@ -31,7 +31,7 @@
       "tip": "지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐."
     },
     "vo": {
-      "value": 6.3,
+      "value": 6.4,
       "unit": "cm",
       "label": "수직진동",
       "rating": "좋음",
@@ -39,14 +39,14 @@
       "tip": "수직 진동 양호."
     },
     "vr": {
-      "value": 9.6,
+      "value": 9.9,
       "unit": "%",
       "label": "수직비율",
       "rating": "보통",
       "color": "#f59e0b"
     },
     "cadence": {
-      "value": 189,
+      "value": 185,
       "unit": "spm",
       "label": "케이던스",
       "rating": "최상",
@@ -54,27 +54,27 @@
       "tip": "케이던스 최적. 관절 부담도 낮아."
     },
     "power": {
-      "value": 220,
+      "value": 213,
       "unit": "W",
       "label": "파워(NP)",
       "rating": null
     }
   },
-  "aerobicEffect": 2.7,
+  "aerobicEffect": 3.3,
   "anaerobicEffect": null,
   "trainingEffectLabel": "유산소 기초",
-  "trainingLoad": 44,
+  "trainingLoad": 76,
   "hrZoneSec": [
-    2855,
+    6448,
     0,
     0,
     0,
     0
   ],
-  "elevationGainM": 34,
-  "tempC": 16.2,
-  "humidity": 72,
-  "fastest1kmSec": 457.6820068359375,
-  "fastest5kmSec": 2372.027099609375,
-  "steps": 8982
+  "elevationGainM": 57,
+  "tempC": 22.8,
+  "humidity": 70,
+  "fastest1kmSec": 472.39300537109375,
+  "fastest5kmSec": 2422.239990234375,
+  "steps": 19812
 }
