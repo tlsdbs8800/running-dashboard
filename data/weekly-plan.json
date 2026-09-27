@@ -27,17 +27,17 @@
     "schedule": [
       {
         "offset": 0,
-        "type": "easy",
-        "label": "Solo Easy 5km",
-        "desc": "HR 136~146(MAF) · 페이스 무시",
+        "type": "couple",
+        "label": "커플런 6km",
+        "desc": "제니 페이스로 출발 · HR 146 이하 · 같이 시작해서 같이 끝내기",
         "date": "2026-09-28",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "제니 페이스로 출발 · HR 146 이하 · 같이 시작해서 같이 끝내기",
+        "type": "easy",
+        "label": "Solo Easy 5km",
+        "desc": "HR 136~146(MAF) · 페이스 무시 · 어제 여파로 HR 조금 높으면 정상",
         "date": "2026-09-29",
         "dayName": "화"
       },
@@ -102,17 +102,17 @@
     "schedule": [
       {
         "offset": 0,
-        "type": "rest",
-        "label": "휴식",
-        "desc": "윤호 솔로런 · 제니 휴식",
+        "type": "couple",
+        "label": "커플런 6km",
+        "desc": "제니 페이스 기준 · HR 155 이하 · 7:50~8:10/km",
         "date": "2026-09-28",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "제니 페이스 기준 · HR 155 이하 · 7:50~8:10/km",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "윤호 솔로런 · 제니 휴식 (목 롱런까지 이틀 회복)",
         "date": "2026-09-29",
         "dayName": "화"
       },
