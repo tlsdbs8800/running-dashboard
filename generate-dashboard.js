@@ -657,8 +657,8 @@ function generate() {
     ${["yunho", "gf"].map((uid) => {
       const p = plan[uid];
       if (!p) return `<div class="card" style="color:var(--text3);display:flex;align-items:center;justify-content:center">${uid === "gf" ? "Jenny 계획 없음" : "윤호 계획 없음"}</div>`;
-      const typeColor = { rest: "#e5e7eb", easy: "#dcfce7", tempo: "#dbeafe", long: "#ede9fe", couple: "#fce7f3", fasted: "#fef9c3" };
-      const typeText  = { rest: "#6b7280", easy: "#166534", tempo: "#1e40af", long: "#6d28d9", couple: "#9d174d", fasted: "#854d0e" };
+      const typeColor = { rest: "#e5e7eb", easy: "#dcfce7", tempo: "#dbeafe", long: "#ede9fe", couple: "#fce7f3", fasted: "#fef9c3", cross: "#cffafe" };
+      const typeText  = { rest: "#6b7280", easy: "#166534", tempo: "#1e40af", long: "#6d28d9", couple: "#9d174d", fasted: "#854d0e", cross: "#0e7490" };
       return `
       <div class="card">
         <div class="runner-header" style="margin-bottom:8px">
