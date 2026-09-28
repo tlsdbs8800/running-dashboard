@@ -1,22 +1,29 @@
 {
   "mode": "evening",
-  "date": "2026-09-25",
-  "generatedAt": "2026-09-25T00:17:16.715Z",
+  "date": "2026-09-28",
+  "generatedAt": "2026-09-28T07:34:23.495Z",
   "hasRun": true,
-  "km": 13,
-  "paceStr": "8:16",
-  "avgHR": 148,
-  "maxHR": 164,
-  "zone": 3,
-  "zoneLabel": "Z3 (적당히 힘듦)",
-  "zoneColor": "#f59e0b",
-  "planComparison": "",
-  "plannedKm": null,
-  "feedback": "HR 148로 MAF(146)보다 조금 올라갔어. 이지 런에선 Z2 이하 유지가 목표야. 다음엔 페이스를 10~15초 더 줄여봐. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
-  "tomorrowPlan": null,
+  "km": 6,
+  "paceStr": "7:40",
+  "avgHR": 136,
+  "maxHR": 149,
+  "zone": 2,
+  "zoneLabel": "Z2 (MAF 이지)",
+  "zoneColor": "#16a34a",
+  "planComparison": "✅ 계획 달성",
+  "plannedKm": 6,
+  "feedback": "완벽한 이지 런이야! HR 136 · 7:40/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
+  "tomorrowPlan": {
+    "offset": 1,
+    "type": "easy",
+    "label": "Solo Easy 5km",
+    "desc": "HR 136~146(MAF) · 페이스 무시 · 어제 여파로 HR 조금 높으면 정상",
+    "date": "2026-09-29",
+    "dayName": "화"
+  },
   "dynamics": {
     "gct": {
-      "value": 268,
+      "value": 263,
       "unit": "ms",
       "label": "지면접촉",
       "rating": "보통",
@@ -24,7 +31,7 @@
       "tip": "지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐."
     },
     "vo": {
-      "value": 6.4,
+      "value": 6.6,
       "unit": "cm",
       "label": "수직진동",
       "rating": "좋음",
@@ -32,14 +39,14 @@
       "tip": "수직 진동 양호."
     },
     "vr": {
-      "value": 9.9,
+      "value": 9.4,
       "unit": "%",
       "label": "수직비율",
       "rating": "보통",
       "color": "#f59e0b"
     },
     "cadence": {
-      "value": 185,
+      "value": 187,
       "unit": "spm",
       "label": "케이던스",
       "rating": "최상",
@@ -47,27 +54,27 @@
       "tip": "케이던스 최적. 관절 부담도 낮아."
     },
     "power": {
-      "value": 213,
+      "value": 226,
       "unit": "W",
       "label": "파워(NP)",
       "rating": null
     }
   },
-  "aerobicEffect": 3.3,
+  "aerobicEffect": 3,
   "anaerobicEffect": null,
   "trainingEffectLabel": "유산소 기초",
-  "trainingLoad": 76,
+  "trainingLoad": 52,
   "hrZoneSec": [
-    6448,
+    2744,
     0,
     0,
     0,
     0
   ],
-  "elevationGainM": 57,
-  "tempC": 22.8,
-  "humidity": 70,
-  "fastest1kmSec": 472.39300537109375,
-  "fastest5kmSec": 2422.239990234375,
-  "steps": 19812
+  "elevationGainM": 32,
+  "tempC": 16.8,
+  "humidity": 60,
+  "fastest1kmSec": 428.31500244140625,
+  "fastest5kmSec": 2272.9189453125,
+  "steps": 8568
 }

@@ -1,19 +1,19 @@
 {
   "mode": "evening",
-  "date": "2026-09-25",
-  "generatedAt": "2026-09-25T00:17:18.822Z",
+  "date": "2026-09-28",
+  "generatedAt": "2026-09-28T07:34:23.497Z",
   "hasRun": true,
-  "km": 7,
-  "paceStr": "8:24",
-  "avgHR": 154,
-  "maxHR": 165,
+  "km": 6,
+  "paceStr": "7:40",
+  "avgHR": 152,
+  "maxHR": 166,
   "zone": 2,
   "zoneLabel": "Z2 (MAF Easy)",
   "zoneColor": "#16a34a",
-  "feedback": "Good easy run. HR 154 (Z2) kept in check.  · Practice lifting your feet faster off the ground.",
+  "feedback": "Good easy run. HR 152 (Z2) kept in check. Pace (7:40) is a little fast — feel free to slow down a bit. · Practice lifting your feet faster off the ground.",
   "dynamics": {
     "gct": {
-      "value": 283,
+      "value": 271,
       "unit": "ms",
       "label": "Ground Contact",
       "rating": "Fair",
@@ -21,7 +21,7 @@
       "tip": "Practice lifting your feet faster off the ground."
     },
     "vo": {
-      "value": 7.2,
+      "value": 7,
       "unit": "cm",
       "label": "Vert. Oscillation",
       "rating": "Good",
@@ -29,47 +29,41 @@
       "tip": null
     },
     "vr": {
-      "value": 10.4,
+      "value": 9.7,
       "unit": "%",
       "label": "Vert. Ratio",
       "rating": "Fair",
       "color": "#f59e0b"
     },
     "cadence": {
-      "value": 172,
+      "value": 179,
       "unit": "spm",
       "label": "Cadence",
-      "rating": "Fair",
-      "color": "#f59e0b",
-      "tip": "Bumping cadence by 5–10 spm will improve efficiency."
+      "rating": "Good",
+      "color": "#22c55e",
+      "tip": null
     },
     "power": {
-      "value": 178,
+      "value": 191,
       "unit": "W",
       "label": "Power (NP)",
       "rating": null
     }
   },
-  "aerobicEffect": 3,
+  "aerobicEffect": 3.5,
   "anaerobicEffect": null,
   "trainingEffectLabel": "Aerobic Base",
   "trainingLoad": null,
   "hrZoneSec": [
-    969,
-    1775,
-    790,
-    0,
+    872,
+    1235,
+    642,
+    17,
     0
   ],
-  "elevationGainM": 23,
-  "tempC": 22.8,
-  "humidity": 70,
-  "fastest1kmSec": 485.9150085449219,
-  "steps": 10136,
-  "coaching": {
-    "headline": "Steady progress, keep the heart in check 🚀",
-    "coaching": "Today you hit 7 km at an 8:24/km pace with an average HR of 154 bpm, just under your MAF ceiling of 155 bpm, which is solid. However, the max HR spiked to 165 bpm and the pace was a bit slower than your 7:50‑8:10/km target, so aim to keep intensity truly easy throughout.",
-    "trend": "Recent runs show a fairly consistent HR range (145‑156 bpm) but pacing is still drifting above the goal, with only one run (8/27) close to the target zone. Aerobic training effect is moderate (3/5), indicating you’re building base but need tighter pacing control.",
-    "nextRun": "Run 6 km at 7:55‑8:05 per km, keep HR ≤ 154 bpm, maintain cadence ≥ 170 spm and aim to reduce ground contact time to ≤ 280 ms."
-  }
+  "elevationGainM": 32,
+  "tempC": 16.8,
+  "humidity": 60,
+  "fastest1kmSec": 428.95098876953125,
+  "steps": 8220
 }
