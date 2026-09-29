@@ -38,10 +38,10 @@ BWB  = (-33.8725202, 151.1853721)   # Blackwattle Bay Park
 # 설계 우선순위: ① 낮은 고도 ② 경치(바다·하버·공원) ③ 차 없음 ④ 보행자 적음.
 # 규칙: 경유점은 최소한으로, 물가 보행로 노드 위에만. 많이 넣으면 서로 충돌해 지그재그가 난다.
 # 되밟음(같은 길 겹쳐 밟기)은 편도 기준 0에 가깝게 유지.
-NORTH = [BAR,
-         (-33.85520, 151.20908),   # Dawes Point — 하버브리지 아래
-         (-33.85704, 151.20952),   # Campbells Cove — 없으면 The Rocks 골목으로 샘
-         QUAY, OPERA]
+# 북쪽(Dawes Point / Walsh Bay)은 폐기.
+#  - BRouter 도로망에 Dawes Point가 없어서 383m 직선(가짜 경로)이 생긴다
+#  - 우회로가 Millers Point 능선(고도 36.5m)을 넘어 시내 안쪽으로 들어간다
+# 남쪽 해안만 씀: 최고 고도 14m, 150m 넘는 직선 0개.
 SOUTH = [BAR,
          PYRB,                     # 피어몬트 브리지
          (-33.86818, 151.19714),   # Pyrmont Bay Park — 해안선 따라가며 거리 확보
@@ -56,9 +56,7 @@ def outback(pts):
     return [a, b], da + db
 
 if __name__ == "__main__":
-    n, dn = outback(NORTH)
-    s, ds = outback(SOUTH)
-    print(f"북쪽 왕복 {dn/1000:.2f}km / 남쪽 왕복 {ds/1000:.2f}km / 합계 {(dn+ds)/1000:.2f}km")
+    print("outback_exact(SOUTH, 3000|4000, 이름) 으로 생성")
     merge(n + s, "윤호 14km — 바랑가루 롱런").write("yunho-14km.gpx", encoding="UTF-8", xml_declaration=True)
     merge(s, "제니 8km — 바랑가루 롱런").write("jenny-8km.gpx", encoding="UTF-8", xml_declaration=True)
     print("yunho-14km.gpx, jenny-8km.gpx 생성")

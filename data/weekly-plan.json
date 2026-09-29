@@ -53,7 +53,7 @@
         "offset": 3,
         "type": "long",
         "label": "Long Run 14km (시티)",
-        "desc": "Wilson Parking 바랑가루 리저브(지하) 주차 · 지상서 GPS 잡고 15:15 출발 · 솔로 6km 북쪽(Dawes Pt→Campbells Cove→서큘러키 3km 반환) → 16:05 주차장 입구서 제니 합류 → 커플 7.85km 남쪽(피어몬트 브리지→Pyrmont Bay→Pirrama Rd→Pirrama Park→Jones Bay Jetty 반환). 시계 한 활동 유지 · HR 146 이하 · 11km에서 150↑면 종료",
+        "desc": "Wilson Parking 바랑가루 리저브 주차 · 지상서 GPS 잡고 15:15 출발 · 솔로 6km 남쪽 해안(Wulugul Walk→피어몬트 브리지→Pirrama Rd 3km 반환) → 16:05 주차장 앞 제니 합류 → 커플 7.85km 같은 해안 더 멀리(Pirrama Park→Jones Bay Jetty 반환). 전 구간 최고고도 14m · 시계 한 활동 유지 · HR 146 이하",
         "date": "2026-10-01",
         "dayName": "목"
       },
@@ -128,7 +128,7 @@
         "offset": 3,
         "type": "long",
         "label": "Long Run 7.85km (시티)",
-        "desc": "16:05 바랑가루 리저브 Wilson Parking 앞 합류 (Wynyard역 도보 10분) · 피어몬트 해안 왕복 · 전 구간 물가·공원, 차량 없음 · 제니가 페이스 정하기 8:00~8:10 · HR 155 이하",
+        "desc": "16:05 바랑가루 리저브 Wilson Parking 앞 합류 (Wynyard역 도보 10분) · 피어몬트 해안 왕복 · 최고고도 14m, 차량 없음, 전 구간 물가·공원 · 제니가 페이스 정하기 8:00~8:10 · HR 155 이하",
         "date": "2026-10-01",
         "dayName": "목"
       },
