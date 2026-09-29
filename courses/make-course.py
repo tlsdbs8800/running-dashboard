@@ -24,7 +24,7 @@ def merge(gpxs, name):
             seg.append(p)
     return ET.ElementTree(out)
 
-BAR  = (-33.8584893, 151.2011648)   # 바랑가루 리저브 (주차/출발)
+BAR  = (-33.85640, 151.20186)       # Wilson Parking 바랑가루 리저브 (지하) — OSM amenity=parking, operator=Wilson Parking
 WALSH= (-33.8551809, 151.2052887)
 DAWES= (-33.8552501, 151.2091868)
 QUAY = (-33.8613593, 151.2107193)
@@ -39,15 +39,16 @@ BWB  = (-33.8725202, 151.1853721)   # Blackwattle Bay Park
 # 규칙: 경유점은 최소한으로, 물가 보행로 노드 위에만. 많이 넣으면 서로 충돌해 지그재그가 난다.
 # 되밟음(같은 길 겹쳐 밟기)은 편도 기준 0에 가깝게 유지.
 NORTH = [BAR,
-         (-33.85520, 151.20908),   # Dawes Point — 하버브리지 바로 아래
+         (-33.85520, 151.20908),   # Dawes Point — 하버브리지 아래
          (-33.85704, 151.20952),   # Campbells Cove — 없으면 The Rocks 골목으로 샘
          QUAY, OPERA]
 SOUTH = [BAR,
          PYRB,                     # 피어몬트 브리지
+         (-33.86818, 151.19714),   # Pyrmont Bay Park — 해안선 따라가며 거리 확보
          (-33.86616, 151.19460),   # Pirrama Rd 해안
          (-33.86373, 151.19171),   # Pirrama Park (피어몬트 곶)
-         (-33.86596, 151.18912)]   # Jones Bay Jetty — 반도 서쪽 끝, 여기까지가 평지
-# 더 늘리면(Blackwattle Bay 방향) km당 고도가 13.9 → 16.6m로 뛴다. 거리보다 고도 우선.
+         (-33.86596, 151.18912)]   # Jones Bay Jetty — 평지 해안의 끝
+# 여기서 더 늘리면 Blackwattle Bay 언덕(16.6m/km)이거나 되밟음이 생긴다.
 
 def outback(pts):
     a, da = route(pts)
