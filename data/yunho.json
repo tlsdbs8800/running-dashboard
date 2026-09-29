@@ -7,6 +7,42 @@
   "goalTimeMin": 120,
   "activities": [
     {
+      "id": 24537414288,
+      "date": "2026-09-29",
+      "distanceM": 5006,
+      "durationSec": 2365,
+      "avgHR": 147.0,
+      "maxHR": 165.0,
+      "avgPaceSecPerKm": 472,
+      "calories": 349.0,
+      "name": "Sydney Running",
+      "cadence": 189,
+      "groundContactTimeMs": 262,
+      "verticalOscillationCm": 6.4,
+      "verticalRatio": 9.5,
+      "strideLengthCm": 66.7,
+      "avgPowerW": 219,
+      "normPowerW": 221,
+      "aerobicEffect": 2.6,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": 41,
+      "hrZoneSec": [
+        2356,
+        0,
+        0,
+        0,
+        0
+      ],
+      "elevationGainM": 35,
+      "fastest1kmSec": 461.0580139160156,
+      "fastest5kmSec": 2363.693115234375,
+      "steps": 7426,
+      "startTimeLocal": "2026-09-29 16:03:45",
+      "tempC": 19.9,
+      "humidity": 48
+    },
+    {
       "id": 24525506606,
       "date": "2026-09-28",
       "distanceM": 6005,
@@ -39,8 +75,8 @@
       "fastest5kmSec": 2272.9189453125,
       "steps": 8568,
       "startTimeLocal": "2026-09-28 16:41:50",
-      "tempC": 16.8,
-      "humidity": 60
+      "tempC": 16.7,
+      "humidity": 57
     },
     {
       "id": 24478256923,
@@ -2933,6 +2969,10 @@
   ],
   "vo2max": [
     {
+      "date": "2026-09-29",
+      "value": 45.9
+    },
+    {
       "date": "2026-09-28",
       "value": 45.9
     },
@@ -3025,20 +3065,20 @@
   ],
   "sleep": [
     {
-      "date": "2026-09-28",
-      "score": 75,
-      "durationMin": 451
+      "date": "2026-09-29",
+      "score": 91,
+      "durationMin": 505
     }
   ],
   "trainingReadiness": {
-    "date": "2026-09-28",
-    "score": 55,
+    "date": "2026-09-29",
+    "score": 71,
     "level": "MODERATE",
-    "feedbackShort": "LISTEN_TO_YOUR_BODY",
-    "sleepScore": 75,
-    "recoveryTimeMin": 1164
+    "feedbackShort": "RECOVERED_AND_READY",
+    "sleepScore": 91,
+    "recoveryTimeMin": 952
   },
-  "lastSync": "2026-09-28T17:33:10.482611",
+  "lastSync": "2026-09-29T16:53:45.088036",
   "birthYear": 1992,
   "age": 34,
   "mafHR": 146
