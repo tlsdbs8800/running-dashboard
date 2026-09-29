@@ -53,7 +53,7 @@
         "offset": 3,
         "type": "long",
         "label": "Long Run 14km (시티)",
-        "desc": "바랑가루 리저브 Wilson 주차 · 지상 올라와 GPS 잡고 15:15 출발 · 솔로 6km 북쪽(Walsh Bay→Dawes Pt→서큘러키→오페라하우스→식물원 입구 왕복) → 16:05 리저브에서 제니 합류 → 같이 8km 남쪽(Wulugul Walk→달링하버→피어몬트→GPS 4km 반환). 시계 멈추지 말고 한 활동 · HR 146 이하 · 11km에서 150↑면 12km 종료",
+        "desc": "바랑가루 리저브 주차 · 지상서 GPS 잡고 15:15 출발 · 솔로 6.6km 북쪽(Dawes Pt→Campbells Cove→서큘러키 왕복) → 16:05 리저브서 제니 합류 → 커플 7.4km 남쪽(피어몬트 브리지→Pirrama Rd→Pirrama Park→Jones Bay Jetty 왕복). 시계 한 활동으로 유지 · HR 146 이하 · 11km에서 150↑면 종료",
         "date": "2026-10-01",
         "dayName": "목"
       },
@@ -127,8 +127,8 @@
       {
         "offset": 3,
         "type": "long",
-        "label": "Long Run 8km (시티)",
-        "desc": "16:05 바랑가루 리저브 합류 (Wynyard역에서 도보 12분) · 남쪽 왕복 · 제니가 페이스 정하기 8:00~8:10 · HR 155 이하 · 달링하버 구간은 속도 줄이기",
+        "label": "Long Run 7.4km (시티)",
+        "desc": "16:05 바랑가루 리저브 합류 (Wynyard역 도보 12분) · 피어몬트 해안 왕복 · 제니가 페이스 정하기 8:00~8:10 · HR 155 이하 · 달링하버 구간만 속도 줄이기",
         "date": "2026-10-01",
         "dayName": "목"
       },
