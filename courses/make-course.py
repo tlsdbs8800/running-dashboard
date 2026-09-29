@@ -35,21 +35,23 @@ PYBAY= (-33.8681871, 151.1971382)
 PIRR = (-33.8642704, 151.1915099)   # 피어몬트 포인트(Pirrama Park)
 BWB  = (-33.8725202, 151.1853721)   # Blackwattle Bay Park
 
-# 해안 산책로 좌표는 OSM(Overpass)에서 실제 way를 뽑아 씀.
-# 경유점을 촘촘히 박지 않으면 BRouter가 최단경로로 시내 안쪽을 질러간다.
-NORTH = [BAR, (-33.85653, 151.20678),   # Cliff Top Walk (바랑가루 곶)
-              WALSH, DAWES,
-              (-33.85581, 151.21029),   # Hickson Road Reserve
-              (-33.85690, 151.21011),   # Campbells Cove
-              QUAY]
-SOUTH = [BAR, (-33.85605, 151.20211),   # Wulugul Walk 북단
-              (-33.86171, 151.20064),   # Wulugul Walk 중간
-              (-33.86586, 151.20126),   # Wulugul Walk 남단
-              PYRB, PYBAY,
-              (-33.86838, 151.19661),   # Pirrama Rd 해안
-              (-33.86699, 151.19552),
-              (-33.86616, 151.19460),
-              (-33.86373, 151.19171)]   # Pirrama Park
+# 좌표는 OSM(Overpass)에서 실제 보행로 way를 뽑아 씀.
+# 교훈: 경유점은 적게, 물가 위 노드로. 많이 넣으면 서로 충돌해 지그재그가 생기고,
+# 곶 북단 같은 "되돌아가야 하는" 점을 앞에 넣으면 BRouter가 내륙으로 크게 돈다.
+NORTH = [BAR,
+         (-33.85520, 151.20908),   # Dawes Point (하버브리지 아래)
+         (-33.85704, 151.20952),   # Campbells Cove — 이게 있어야 The Rocks로 안 샘
+         QUAY,
+         OPERA]
+SOUTH = [BAR,
+         (-33.86171, 151.20064),   # Wulugul Walk 중간
+         (-33.86586, 151.20126),   # Wulugul Walk 남단
+         (-33.87450, 151.20050),   # 달링하버 남단 — 평지로 거리 벌기 (Blackwattle Bay 쪽은 언덕)
+         PYRB, PYBAY,
+         (-33.86838, 151.19661),   # Pirrama Rd 해안
+         (-33.86699, 151.19552),
+         (-33.86616, 151.19460),
+         (-33.86373, 151.19171)]   # Pirrama Park
 
 def outback(pts):
     a, da = route(pts)
