@@ -1,7 +1,7 @@
 {
   "mode": "evening",
-  "date": "2026-09-28",
-  "generatedAt": "2026-09-28T20:13:50.129Z",
+  "date": "2026-09-29",
+  "generatedAt": "2026-09-29T01:30:23.057Z",
   "hasRun": true,
   "km": 6,
   "paceStr": "7:40",
@@ -67,9 +67,9 @@
   "fastest1kmSec": 428.95098876953125,
   "steps": 8220,
   "coaching": {
-    "headline": "Steady progress, keep the heart in check 🚀",
-    "coaching": "Today's 6 km at 7:40 /km kept your average HR at 152 bpm, safely under your MAF ceiling of 155 bpm, which is great. Your max HR spiked to 166 bpm, so aim to smooth out those peaks. Cadence was solid at 179 spm, but keep an eye on ground contact time to stay efficient.",
-    "trend": "Recent runs show a gradual shift toward faster paces while staying in zone 2, with HRs ranging from 145–154 bpm and a notable drop from 8:36 to 7:34 /km. Consistency is improving, and the aerobic training effect of 3.5 indicates good stimulus.",
-    "nextRun": "Run 8 km at 7:55–8:05 /km, keep HR ≤154 bpm, and focus on maintaining ~180 spm cadence with relaxed stride to limit ground contact time."
+    "headline": "Steady progress, keep the MAF magic! 🏃‍♀️",
+    "coaching": "Today's 6 km at 7:40 /​km kept your average HR at 152 bpm, comfortably below your MAF ceiling of 155 bpm, and the cadence of 179 spm is right on target. The max HR of 166 bpm shows a brief spike, so stay mindful of any surges, especially on hills or intervals. Overall the effort was solid MAF‑easy and you’re building aerobic power.",
+    "trend": "Your last six runs have stayed under the 155 bpm limit and are gradually edging toward the 7:50–8:10 /km sweet spot, with a modest increase in aerobic training effect (now 3.5/5). Consistency is improving, but occasional slower paces (8:24 /km) suggest you can tighten up on easy days.",
+    "nextRun": "Run 8 km at a target pace of 7:55–8:05 /km, keep HR ≤ 154 bpm, focus on maintaining a cadence around 180 spm and a ground‑contact time under 270 ms."
   }
 }
