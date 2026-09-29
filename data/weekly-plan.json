@@ -52,8 +52,8 @@
       {
         "offset": 3,
         "type": "long",
-        "label": "Long Run 14km",
-        "desc": "전체 이지 · HR 146 이하 · 페이스업 없음 · 11km 지점 HR 150 넘으면 12km에서 종료",
+        "label": "Long Run 14km (시티)",
+        "desc": "15:10 바랑가루 출발 · 솔로 6km 북쪽 루프(Walsh Bay→Dawes Pt→서큘러키→오페라하우스 왕복) → 16:05 페리워프에서 제니 합류 → 같이 8km 남쪽(Wulugul Walk→달링하버→피어몬트→Blackwattle Bay 4km 반환). 시계 멈추지 말고 한 활동으로 · HR 146 이하 · 11km에서 150↑면 12km 종료",
         "date": "2026-10-01",
         "dayName": "목"
       },
@@ -127,8 +127,8 @@
       {
         "offset": 3,
         "type": "long",
-        "label": "Long Run 8km",
-        "desc": "전체 이지 · HR 155 이하 · 복귀 후 최장 · 윤호와 같이 출발, 8km에서 종료",
+        "label": "Long Run 8km (시티)",
+        "desc": "16:05 바랑가루 페리워프 합류 · 남쪽 왕복 · 제니가 페이스 정하기 8:00~8:10 · HR 155 이하 · 관광객 많은 달링하버 구간은 속도 줄이기",
         "date": "2026-10-01",
         "dayName": "목"
       },
