@@ -35,8 +35,21 @@ PYBAY= (-33.8681871, 151.1971382)
 PIRR = (-33.8642704, 151.1915099)   # 피어몬트 포인트(Pirrama Park)
 BWB  = (-33.8725202, 151.1853721)   # Blackwattle Bay Park
 
-NORTH = [BAR, WALSH, DAWES, QUAY, OPERA, RBG]          # 솔로 아웃
-SOUTH = [BAR, PYRB, PYBAY, PIRR, BWB]                  # 커플 아웃
+# 해안 산책로 좌표는 OSM(Overpass)에서 실제 way를 뽑아 씀.
+# 경유점을 촘촘히 박지 않으면 BRouter가 최단경로로 시내 안쪽을 질러간다.
+NORTH = [BAR, (-33.85653, 151.20678),   # Cliff Top Walk (바랑가루 곶)
+              WALSH, DAWES,
+              (-33.85581, 151.21029),   # Hickson Road Reserve
+              (-33.85690, 151.21011),   # Campbells Cove
+              QUAY]
+SOUTH = [BAR, (-33.85605, 151.20211),   # Wulugul Walk 북단
+              (-33.86171, 151.20064),   # Wulugul Walk 중간
+              (-33.86586, 151.20126),   # Wulugul Walk 남단
+              PYRB, PYBAY,
+              (-33.86838, 151.19661),   # Pirrama Rd 해안
+              (-33.86699, 151.19552),
+              (-33.86616, 151.19460),
+              (-33.86373, 151.19171)]   # Pirrama Park
 
 def outback(pts):
     a, da = route(pts)
@@ -58,6 +71,15 @@ def _hav(a, b):
     R = 6371000; p1, p2 = map(math.radians, (a[0], b[0]))
     dl = math.radians(b[1] - a[1]); dp = p2 - p1
     return 2 * R * math.asin(math.sqrt(math.sin(dp/2)**2 + math.cos(p1)*math.cos(p2)*math.sin(dl/2)**2))
+
+def elevation_gain(tree):
+    """BRouter가 일부 점의 <ele>를 빼먹어서 직전 값으로 메움."""
+    NS = "{http://www.topografix.com/GPX/1/1}"
+    e = []
+    for p in tree.getroot().iter(NS + "trkpt"):
+        t = p.find(NS + "ele")
+        e.append(float(t.text) if t is not None else (e[-1] if e else 0.0))
+    return sum(max(0, e[i] - e[i-1]) for i in range(1, len(e)))
 
 def _trkpts(gpx):
     NS = "http://www.topografix.com/GPX/1/1"
