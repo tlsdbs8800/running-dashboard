@@ -107,8 +107,16 @@ function longRunProgression(activities, numWeeks = 12) {
       const d = new Date(a.date);
       return d >= weekStart && d <= weekEnd;
     });
-    const maxKm = runs.length > 0 ? Math.max(...runs.map((a) => (a.distanceM ?? 0) / 1000)) : null;
-    weeks.push({ label, km: maxKm ? Math.round(maxKm * 10) / 10 : null });
+    // 그 주 최장 러닝 자체를 잡아서 고도/기온을 같이 넘긴다 (HR 비교 오독 방지용)
+    const best = runs.reduce((b, a) => (b === null || (a.distanceM ?? 0) > (b.distanceM ?? 0) ? a : b), null);
+    const maxKm = best ? (best.distanceM ?? 0) / 1000 : null;
+    weeks.push({
+      label,
+      km: maxKm ? Math.round(maxKm * 10) / 10 : null,
+      elevationGainM: best?.elevationGainM,
+      tempC: best?.tempC,
+      humidity: best?.humidity,
+    });
   }
   return weeks;
 }
@@ -790,12 +798,27 @@ new Chart(document.getElementById('longRunChart'), {
   data: {
     labels: lrLabels,
     datasets: [
-      { label: '윤호 Long Run (km)', data: yunhoLR.map(w => w.km), borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', tension: 0.3, fill: true, pointRadius: 4 },
-      ...(gfLR.length ? [{ label: 'Jenny Long Run (km)', data: gfLR.map(w => w.km), borderColor: '#ec4899', backgroundColor: 'rgba(236,72,153,0.1)', tension: 0.3, fill: true, pointRadius: 4 }] : []),
+      { label: '윤호 Long Run (km)', data: yunhoLR.map(w => w.km), lr: yunhoLR, borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', tension: 0.3, fill: true, pointRadius: 4 },
+      ...(gfLR.length ? [{ label: 'Jenny Long Run (km)', data: gfLR.map(w => w.km), lr: gfLR, borderColor: '#ec4899', backgroundColor: 'rgba(236,72,153,0.1)', tension: 0.3, fill: true, pointRadius: 4 }] : []),
       { label: '목표 (21.1km)', data: lrLabels.map(() => 21.1), borderColor: '#22c55e', borderDash: [5,5], borderWidth: 1.5, pointRadius: 0, fill: false }
     ]
   },
-  options: { ...chartDefaults, scales: { ...chartDefaults.scales, y: { ...chartDefaults.scales.y, suggestedMax: 25, title: { display: true, text: 'km' } } } }
+  options: {
+    ...chartDefaults,
+    // 고도 / 기온은 보정 없이 날것으로만 보여준다
+    plugins: { ...chartDefaults.plugins, tooltip: { callbacks: {
+      afterBody: (items) => items.flatMap((it) => {
+        const w = it.dataset.lr?.[it.dataIndex];
+        if (!w || !w.km) return [];
+        const who = it.dataset.label.split(' ')[0];
+        const out = [];
+        if (w.elevationGainM != null) out.push(\`\${who} 고도 +\${Math.round(w.elevationGainM)}m (\${(w.elevationGainM / w.km).toFixed(1)} m/km)\`);
+        if (w.tempC != null) out.push(\`\${who} 기온 \${w.tempC}°C\${w.humidity != null ? \` · 습도 \${w.humidity}%\` : ''}\`);
+        return out;
+      })
+    }}},
+    scales: { ...chartDefaults.scales, y: { ...chartDefaults.scales.y, suggestedMax: 25, title: { display: true, text: 'km' } } }
+  }
 });
 
 // Pace trend (sec/km → display as min:sec)
