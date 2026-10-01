@@ -23,7 +23,7 @@
     },
     "targetWeeklyKm": 25,
     "longRunTarget": 14,
-    "coachNote": "🟢 복귀 완료, 정상 빌드 재개 — 롱런 14km (13km 4회 소화 후 +1km, 본인 증량 패턴 유지). 전부 이지, HR 146 이하. 10/5 주는 회복주 예정.",
+    "coachNote": "🟢 복귀 완료 — 14km를 HR 145·전구간 Z1으로 완주 (26.8°C 조건). 다음 주 회복주, 그 다음 15~16km.",
     "schedule": [
       {
         "offset": 0,
@@ -52,8 +52,8 @@
       {
         "offset": 3,
         "type": "long",
-        "label": "Long Run 14km (시티)",
-        "desc": "Wilson Parking 바랑가루 리저브 주차 · 지상서 GPS 잡고 15:15 출발 · 솔로 6km 남쪽 해안(Wulugul Walk→피어몬트 브리지→Pirrama Rd 3km 반환) → 16:05 주차장 앞 제니 합류 → 커플 7.85km 같은 해안 더 멀리(Pirrama Park→Jones Bay Jetty 반환). 전 구간 최고고도 14m · 시계 한 활동 유지 · HR 146 이하",
+        "label": "Long Run 14km ✓",
+        "desc": "14.01km · 8:08/km · HR 145 (max 158) · 26.8°C — 전 구간 Z1, 복귀 후 최장·최고 품질",
         "date": "2026-10-01",
         "dayName": "목"
       },
@@ -127,8 +127,8 @@
       {
         "offset": 3,
         "type": "long",
-        "label": "Long Run 7.85km (시티)",
-        "desc": "16:05 바랑가루 리저브 Wilson Parking 앞 합류 (Wynyard역 도보 10분) · 피어몬트 해안 왕복 · 최고고도 14m, 차량 없음, 전 구간 물가·공원 · 제니가 페이스 정하기 8:00~8:10 · HR 155 이하",
+        "label": "Long Run 8km ✓",
+        "desc": "8.00km · 8:17/km · HR 154 (max 167) — 복귀 후 최장, HR 상한 155 지킴. Z3 22분은 숙제",
         "date": "2026-10-01",
         "dayName": "목"
       },
