@@ -1,7 +1,7 @@
 {
   "mode": "evening",
-  "date": "2026-10-01",
-  "generatedAt": "2026-10-01T18:55:38.363Z",
+  "date": "2026-10-02",
+  "generatedAt": "2026-10-02T01:18:21.351Z",
   "hasRun": true,
   "km": 8,
   "paceStr": "8:17",
@@ -65,5 +65,11 @@
   "tempC": 25.4,
   "humidity": 49,
   "fastest1kmSec": 489.3789978027344,
-  "steps": 11340
+  "steps": 11340,
+  "coaching": {
+    "headline": "Steady strides, keep the heart happy 😊",
+    "coaching": "Today's 8 km was right on the MAF HR ceiling at an average of 154 bpm, which is excellent. However the 8:17 min/km pace sits just outside your target range of 7:50–8:10, and the peak HR of 167 bpm shows a brief surge beyond easy effort. Keep the cadence around 170‑175 spm and aim to stay below 155 bpm the whole run.",
+    "trend": "Your recent runs show consistent aerobic heart rates under the MAF limit, but pace has varied from 7:40 to 8:36 min/km. Training load is light (14 km this week) with a modest aerobic effect, indicating room to build volume safely.",
+    "nextRun": "Run 10 km at a target pace of 7:55–8:05 min/km, keep HR ≤ 154 bpm, focus on raising cadence to ~175 spm and reducing ground contact time to under 280 ms."
+  }
 }
