@@ -39,8 +39,8 @@
       "fastest5kmSec": 2478.051025390625,
       "steps": 20848,
       "startTimeLocal": "2026-10-01 15:45:56",
-      "tempC": 26.8,
-      "humidity": 42
+      "tempC": 28.4,
+      "humidity": 27
     },
     {
       "id": 24537414288,
@@ -75,8 +75,8 @@
       "fastest5kmSec": 2363.693115234375,
       "steps": 7426,
       "startTimeLocal": "2026-09-29 16:03:45",
-      "tempC": 18.0,
-      "humidity": 55
+      "tempC": 18.4,
+      "humidity": 53
     },
     {
       "id": 24525506606,
@@ -111,8 +111,8 @@
       "fastest5kmSec": 2272.9189453125,
       "steps": 8568,
       "startTimeLocal": "2026-09-28 16:41:50",
-      "tempC": 16.5,
-      "humidity": 61
+      "tempC": 16.9,
+      "humidity": 64
     },
     {
       "id": 24478256923,
@@ -147,7 +147,7 @@
       "fastest5kmSec": 2422.239990234375,
       "steps": 19812,
       "startTimeLocal": "2026-09-24 15:11:10",
-      "tempC": 21.4,
+      "tempC": 21.5,
       "humidity": 75
     },
     {
@@ -183,8 +183,8 @@
       "fastest5kmSec": 2372.027099609375,
       "steps": 8982,
       "startTimeLocal": "2026-09-22 15:48:26",
-      "tempC": 16.2,
-      "humidity": 80
+      "tempC": 16.0,
+      "humidity": 79
     },
     {
       "id": 24440071031,
@@ -219,8 +219,8 @@
       "fastest5kmSec": 2245.15087890625,
       "steps": 6996,
       "startTimeLocal": "2026-09-21 16:47:41",
-      "tempC": 17.6,
-      "humidity": 74
+      "tempC": 19.4,
+      "humidity": 65
     },
     {
       "id": 24389185005,
@@ -3105,20 +3105,20 @@
   ],
   "sleep": [
     {
-      "date": "2026-10-01",
-      "score": 71,
-      "durationMin": 376
+      "date": "2026-10-04",
+      "score": 59,
+      "durationMin": 322
     }
   ],
   "trainingReadiness": {
-    "date": "2026-10-01",
-    "score": 45,
-    "level": "LOW",
-    "feedbackShort": "FIND_TIME_TO_RELAX",
-    "sleepScore": 71,
-    "recoveryTimeMin": 1396
+    "date": "2026-10-04",
+    "score": 58,
+    "level": "MODERATE",
+    "feedbackShort": "FOCUS_ON_ENERGY_LEVELS",
+    "sleepScore": 59,
+    "recoveryTimeMin": 15
   },
-  "lastSync": "2026-10-01T20:41:19.795705",
+  "lastSync": "2026-10-04T20:42:46.161676",
   "birthYear": 1992,
   "age": 34,
   "mafHR": 146

@@ -39,8 +39,8 @@
       "fastest5kmSec": 2483.7548828125,
       "steps": 11340,
       "startTimeLocal": "2026-10-01 16:36:54",
-      "tempC": 25.4,
-      "humidity": 49
+      "tempC": 26.8,
+      "humidity": 42
     },
     {
       "id": 24525518690,
@@ -75,8 +75,8 @@
       "fastest5kmSec": 2272.64501953125,
       "steps": 8220,
       "startTimeLocal": "2026-09-28 16:41:50",
-      "tempC": 16.5,
-      "humidity": 61
+      "tempC": 16.9,
+      "humidity": 64
     },
     {
       "id": 24478153068,
@@ -111,7 +111,7 @@
       "fastest5kmSec": 2513.422119140625,
       "steps": 10136,
       "startTimeLocal": "2026-09-24 15:58:22",
-      "tempC": 21.4,
+      "tempC": 21.5,
       "humidity": 75
     },
     {
@@ -1504,13 +1504,13 @@
   "weight": [],
   "sleep": [
     {
-      "date": "2026-10-01",
+      "date": "2026-10-04",
       "score": null,
       "durationMin": null
     }
   ],
   "trainingReadiness": null,
-  "lastSync": "2026-10-01T20:42:23.343860",
+  "lastSync": "2026-10-04T20:43:49.522127",
   "birthYear": 2001,
   "age": 25,
   "mafHR": 155
