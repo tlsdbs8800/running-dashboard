@@ -91,7 +91,7 @@ function weeklyCheck(userData, isGf = false) {
   const last4Weeks = lastNCompletedWeeks(acts, 4);
 
   const mafHR = userData?.mafHR ?? (isGf ? 155 : 146);
-  const hrCeiling = isGf ? 155 : mafHR + 15; // GF strict MAF ceiling, 윤호는 Z3까지 허용
+  const hrCeiling = isGf ? 150 : mafHR + 15; // GF 상한 155→150 (2026-10: Z3 체류가 11→22→32분으로 증가해 하향), 윤호는 Z3까지 허용
   const longRunMaxPct = isGf ? 10 : 15;
   const longRunFlagPct = isGf ? 15 : 20;
 

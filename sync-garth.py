@@ -36,7 +36,7 @@ USERS = {
         "goal_distance_km": 20,
         "goal_time_min": None,
         "max_runs_per_week": 3,
-        "hr_ceiling": 155,
+        "hr_ceiling": 150,
         "target_pace_sec_min": 470,
         "target_pace_sec_max": 490,
     },
