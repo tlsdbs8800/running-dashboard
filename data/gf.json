@@ -780,7 +780,8 @@
       "fastest1kmSec": 456.73699951171875,
       "fastest5kmSec": 2363.52392578125,
       "steps": 13308,
-      "startTimeLocal": "2026-04-17 15:40:43"
+      "startTimeLocal": "2026-04-17 15:40:43",
+      "decouplingPct": 6.2
     },
     {
       "id": 22544129669,
@@ -1120,7 +1121,8 @@
       "fastest1kmSec": 385.51300048828125,
       "fastest5kmSec": 2005.0880126953125,
       "steps": 12606,
-      "startTimeLocal": "2025-06-07 11:16:36"
+      "startTimeLocal": "2025-06-07 11:16:36",
+      "decouplingPct": 5.4
     },
     {
       "id": 19339184079,
@@ -1290,7 +1292,8 @@
       "fastest1kmSec": 360.4469909667969,
       "fastest5kmSec": 2139.465087890625,
       "steps": 11364,
-      "startTimeLocal": "2025-05-24 08:10:24"
+      "startTimeLocal": "2025-05-24 08:10:24",
+      "decouplingPct": 1.8
     },
     {
       "id": 19179927387,
@@ -1546,7 +1549,7 @@
     }
   ],
   "trainingReadiness": null,
-  "lastSync": "2026-10-05T22:00:38.782514",
+  "lastSync": "2026-10-05T22:18:24.410109",
   "birthYear": 2001,
   "age": 25,
   "mafHR": 155

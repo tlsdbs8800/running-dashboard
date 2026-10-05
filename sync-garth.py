@@ -57,6 +57,31 @@ def garth_get(path, params=None, retries=2):
                 raise
 
 
+def add_decoupling(activities, known):
+    """롱런(9km+) 심박 드리프트: (전반 효율 - 후반 효율) / 전반 효율 * 100.
+    5% 아래면 유산소 역치 내. known에 이미 있는 런은 details를 다시 안 받는다."""
+    todo = [a for a in activities
+            if (a.get("distanceM") or 0) >= 9000 and a["id"] not in known]
+    print(f"  디커플링: 신규 {len(todo)}개 계산, 기존 {len(known)}개 재사용")
+    for i, a in enumerate(todo):
+        try:
+            if i:
+                time.sleep(2)  # detail 연속 호출 완충
+            d = garth_get(f"/activity-service/activity/{a['id']}/details",
+                          params={"maxChartSize": 2000})
+            keys = [x["key"] for x in d["metricDescriptors"]]
+            iS, iHR = keys.index("directSpeed"), keys.index("directHeartRate")
+            rows = [(m["metrics"][iS], m["metrics"][iHR]) for m in d["activityDetailMetrics"]]
+            rows = [r for r in rows if None not in r and r[1] > 80 and r[0] > 0.5]
+            if len(rows) < 40:
+                continue
+            half = len(rows) // 2
+            ef = lambda p: (sum(r[0] for r in p) / len(p)) / (sum(r[1] for r in p) / len(p))
+            a["decouplingPct"] = round((ef(rows[:half]) - ef(rows[half:])) / ef(rows[:half]) * 100, 1)
+        except Exception as e:
+            print(f"  디커플링 실패 {a['date']}: {e}")
+
+
 def add_weather(activities, acts_raw):
     """최근 2주 런에 시작 시각 기온/습도 부착 (Open-Meteo, 키 없음). 실패해도 싱크는 계속."""
     # ponytail: 최근 14일만 — 그 전은 archive API 필요, 필요해지면 추가
@@ -79,7 +104,7 @@ def add_weather(activities, acts_raw):
         print(f"  날씨 조회 실패 (무시): {e}")
 
 
-def fetch_user_data(user_id, config):
+def fetch_user_data(user_id, config, existing=None):
     garth_dir = config["garth_dir"]
     name = config["name"]
 
@@ -152,6 +177,9 @@ def fetch_user_data(user_id, config):
         })
     print(f"[{name}] 러닝 {len(activities)}개 수집")
     add_weather(activities, acts_raw)
+    add_decoupling(activities, {a["id"]: a["decouplingPct"]
+                                for a in (existing or {}).get("activities") or []
+                                if a.get("decouplingPct") is not None})
 
     # VO2Max
     vo2max = None
@@ -259,7 +287,7 @@ def sync_user(user_id):
         except Exception:
             pass
 
-    fresh = fetch_user_data(user_id, config)
+    fresh = fetch_user_data(user_id, config, existing)
     if not fresh:
         return
 

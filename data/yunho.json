@@ -76,7 +76,8 @@
       "steps": 20848,
       "startTimeLocal": "2026-10-01 15:45:56",
       "tempC": 31.2,
-      "humidity": 17
+      "humidity": 17,
+      "decouplingPct": 7.9
     },
     {
       "id": 24537414288,
@@ -184,7 +185,8 @@
       "steps": 19812,
       "startTimeLocal": "2026-09-24 15:11:10",
       "tempC": 23.3,
-      "humidity": 67
+      "humidity": 67,
+      "decouplingPct": 8.0
     },
     {
       "id": 24452105123,
@@ -362,7 +364,8 @@
       "fastest1kmSec": 433.10400390625,
       "fastest5kmSec": 2251.0,
       "steps": 18654,
-      "startTimeLocal": "2026-09-03 15:16:58"
+      "startTimeLocal": "2026-09-03 15:16:58",
+      "decouplingPct": 9.3
     },
     {
       "id": 24192332946,
@@ -475,7 +478,8 @@
       "fastest1kmSec": 473.84100341796875,
       "fastest5kmSec": 2412.0,
       "steps": 19716,
-      "startTimeLocal": "2026-08-27 15:14:46"
+      "startTimeLocal": "2026-08-27 15:14:46",
+      "decouplingPct": 4.2
     },
     {
       "id": 24106036522,
@@ -599,7 +603,8 @@
       "fastest1kmSec": 487.9540100097656,
       "fastest5kmSec": 2511.81298828125,
       "steps": 20394,
-      "startTimeLocal": "2026-08-20 15:01:34"
+      "startTimeLocal": "2026-08-20 15:01:34",
+      "decouplingPct": 4.6
     },
     {
       "id": 24019070902,
@@ -723,7 +728,8 @@
       "fastest1kmSec": 472.1099853515625,
       "fastest5kmSec": 2432.697998046875,
       "steps": 17578,
-      "startTimeLocal": "2026-08-13 15:47:20"
+      "startTimeLocal": "2026-08-13 15:47:20",
+      "decouplingPct": 1.3
     },
     {
       "id": 23932365049,
@@ -825,7 +831,8 @@
       "fastest1kmSec": 477.9070129394531,
       "fastest5kmSec": 2436.279052734375,
       "steps": 17678,
-      "startTimeLocal": "2026-08-06 15:01:47"
+      "startTimeLocal": "2026-08-06 15:01:47",
+      "decouplingPct": 5.8
     },
     {
       "id": 23784700835,
@@ -859,7 +866,8 @@
       "fastest1kmSec": 412.0419921875,
       "fastest5kmSec": 2200.60888671875,
       "steps": 15964,
-      "startTimeLocal": "2026-07-30 15:03:26"
+      "startTimeLocal": "2026-07-30 15:03:26",
+      "decouplingPct": 2.2
     },
     {
       "id": 23745901608,
@@ -927,7 +935,8 @@
       "fastest1kmSec": 441.364990234375,
       "fastest5kmSec": 2387.68603515625,
       "steps": 15832,
-      "startTimeLocal": "2026-07-23 07:44:29"
+      "startTimeLocal": "2026-07-23 07:44:29",
+      "decouplingPct": 3.9
     },
     {
       "id": 23671157735,
@@ -1074,7 +1083,8 @@
       "fastest1kmSec": 473.3500061035156,
       "fastest5kmSec": 2485.360107421875,
       "steps": 16262,
-      "startTimeLocal": "2026-07-02 16:06:30"
+      "startTimeLocal": "2026-07-02 16:06:30",
+      "decouplingPct": 3.7
     },
     {
       "id": 23426652249,
@@ -1232,7 +1242,8 @@
       "fastest1kmSec": 457.22198486328125,
       "fastest5kmSec": 2408.52294921875,
       "steps": 14350,
-      "startTimeLocal": "2026-06-25 16:21:31"
+      "startTimeLocal": "2026-06-25 16:21:31",
+      "decouplingPct": 0.5
     },
     {
       "id": 23348085860,
@@ -1379,7 +1390,8 @@
       "fastest1kmSec": 462.63800048828125,
       "fastest5kmSec": 2430.8369140625,
       "steps": 14494,
-      "startTimeLocal": "2026-06-18 16:18:42"
+      "startTimeLocal": "2026-06-18 16:18:42",
+      "decouplingPct": 4.0
     },
     {
       "id": 23266005966,
@@ -1526,7 +1538,8 @@
       "fastest1kmSec": 465.6940002441406,
       "fastest5kmSec": 2385.868896484375,
       "steps": 14182,
-      "startTimeLocal": "2026-06-11 15:27:11"
+      "startTimeLocal": "2026-06-11 15:27:11",
+      "decouplingPct": 5.0
     },
     {
       "id": 23184003704,
@@ -1684,7 +1697,8 @@
       "fastest1kmSec": 464.19500732421875,
       "fastest5kmSec": 2511.968994140625,
       "steps": 14222,
-      "startTimeLocal": "2026-06-04 16:15:39"
+      "startTimeLocal": "2026-06-04 16:15:39",
+      "decouplingPct": 2.6
     },
     {
       "id": 23099907401,
@@ -1786,7 +1800,8 @@
       "fastest1kmSec": 465.7080078125,
       "fastest5kmSec": 2400.166015625,
       "steps": 14408,
-      "startTimeLocal": "2026-05-29 15:25:01"
+      "startTimeLocal": "2026-05-29 15:25:01",
+      "decouplingPct": 3.1
     },
     {
       "id": 23040700677,
@@ -3158,7 +3173,7 @@
     "sleepScore": 85,
     "recoveryTimeMin": 990
   },
-  "lastSync": "2026-10-05T21:51:22.928813",
+  "lastSync": "2026-10-05T22:12:35.951727",
   "birthYear": 1992,
   "age": 34,
   "mafHR": 146

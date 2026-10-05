@@ -114,6 +114,7 @@ function longRunProgression(activities, numWeeks = 12) {
       label,
       km: maxKm ? Math.round(maxKm * 10) / 10 : null,
       elevationGainM: best?.elevationGainM,
+      decouplingPct: best?.decouplingPct,
       tempC: best?.tempC,
       humidity: best?.humidity,
     });
@@ -814,6 +815,7 @@ new Chart(document.getElementById('longRunChart'), {
         const out = [];
         if (w.elevationGainM != null) out.push(\`\${who} 고도 +\${Math.round(w.elevationGainM)}m (\${(w.elevationGainM / w.km).toFixed(1)} m/km)\`);
         if (w.tempC != null) out.push(\`\${who} 기온 \${w.tempC}°C\${w.humidity != null ? \` · 습도 \${w.humidity}%\` : ''}\`);
+        if (w.decouplingPct != null) out.push(\`\${who} 디커플링 \${w.decouplingPct > 0 ? '+' : ''}\${w.decouplingPct.toFixed(1)}% (5% 아래면 유산소 역치 내)\`);
         return out;
       })
     }}},
