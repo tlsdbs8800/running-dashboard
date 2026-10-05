@@ -7,6 +7,42 @@
   "goalTimeMin": null,
   "activities": [
     {
+      "id": 24610881481,
+      "date": "2026-10-05",
+      "distanceM": 6013,
+      "durationSec": 2823,
+      "avgHR": 148.0,
+      "maxHR": 160.0,
+      "avgPaceSecPerKm": 469,
+      "calories": 357.0,
+      "name": "Sydney Running",
+      "cadence": 176,
+      "groundContactTimeMs": 275,
+      "verticalOscillationCm": 7.2,
+      "verticalRatio": 9.9,
+      "strideLengthCm": 72.4,
+      "avgPowerW": 184,
+      "normPowerW": 185,
+      "aerobicEffect": 3.1,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": null,
+      "hrZoneSec": [
+        1746,
+        967,
+        110,
+        0,
+        0
+      ],
+      "elevationGainM": 13,
+      "fastest1kmSec": 456.64801025390625,
+      "fastest5kmSec": 2324.777099609375,
+      "steps": 8266,
+      "startTimeLocal": "2026-10-05 16:08:00",
+      "tempC": 19.8,
+      "humidity": 77
+    },
+    {
       "id": 24564039651,
       "date": "2026-10-01",
       "distanceM": 8003,
@@ -39,8 +75,8 @@
       "fastest5kmSec": 2483.7548828125,
       "steps": 11340,
       "startTimeLocal": "2026-10-01 16:36:54",
-      "tempC": 26.8,
-      "humidity": 42
+      "tempC": 31.0,
+      "humidity": 17
     },
     {
       "id": 24525518690,
@@ -75,8 +111,8 @@
       "fastest5kmSec": 2272.64501953125,
       "steps": 8220,
       "startTimeLocal": "2026-09-28 16:41:50",
-      "tempC": 16.9,
-      "humidity": 64
+      "tempC": 17.1,
+      "humidity": 63
     },
     {
       "id": 24478153068,
@@ -111,8 +147,8 @@
       "fastest5kmSec": 2513.422119140625,
       "steps": 10136,
       "startTimeLocal": "2026-09-24 15:58:22",
-      "tempC": 21.5,
-      "humidity": 75
+      "tempC": 23.3,
+      "humidity": 67
     },
     {
       "id": 24132538269,
@@ -1504,13 +1540,13 @@
   "weight": [],
   "sleep": [
     {
-      "date": "2026-10-04",
+      "date": "2026-10-05",
       "score": null,
       "durationMin": null
     }
   ],
   "trainingReadiness": null,
-  "lastSync": "2026-10-04T20:43:49.522127",
+  "lastSync": "2026-10-05T21:52:26.424361",
   "birthYear": 2001,
   "age": 25,
   "mafHR": 155
