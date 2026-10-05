@@ -1,7 +1,7 @@
 {
   "mode": "evening",
   "date": "2026-10-05",
-  "generatedAt": "2026-10-05T21:12:35.551Z",
+  "generatedAt": "2026-10-05T23:44:55.479Z",
   "hasRun": true,
   "km": 6,
   "paceStr": "7:49",
@@ -65,11 +65,5 @@
   "tempC": 19.8,
   "humidity": 77,
   "fastest1kmSec": 456.64801025390625,
-  "steps": 8266,
-  "coaching": {
-    "headline": "Steady strides, keep the heart in check 🚀",
-    "coaching": "Today's 6 km was solid: you hit the target pace (7:49/km) and stayed well under your MAF ceiling with an average HR of 148 bpm. The max HR of 160 bpm shows a brief spike—watch for surges that push you out of Zone 2. Keep the cadence high and aim for consistent HR throughout.",
-    "trend": "Over the past few weeks you’ve been hovering around the 8:00–8:20/km range with average HRs just under or at your MAF limit, showing good aerobic consistency but occasional HR spikes. Weekly volume is still low; building toward longer runs will be key.",
-    "nextRun": "Run 8 km at 8:00–8:10 per km, keep HR ≤ 154 bpm, focus on maintaining a cadence of ~176 spm and reducing vertical oscillation below 7 cm."
-  }
+  "steps": 8266
 }
