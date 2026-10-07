@@ -1,7 +1,7 @@
 {
   "mode": "evening",
-  "date": "2026-10-06",
-  "generatedAt": "2026-10-06T19:01:44.331Z",
+  "date": "2026-10-07",
+  "generatedAt": "2026-10-07T01:14:39.745Z",
   "hasRun": true,
   "km": 5,
   "paceStr": "7:30",
@@ -10,16 +10,16 @@
   "zone": 2,
   "zoneLabel": "Z2 (MAF 이지)",
   "zoneColor": "#16a34a",
-  "planComparison": "✅ 계획 달성",
-  "plannedKm": 5,
+  "planComparison": "",
+  "plannedKm": null,
   "feedback": "완벽한 이지 런이야! HR 143 · 7:30/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져.",
   "tomorrowPlan": {
-    "offset": 2,
-    "type": "rest",
-    "label": "휴식",
-    "desc": "스트레칭 · 폼롤러",
-    "date": "2026-10-07",
-    "dayName": "수"
+    "offset": 3,
+    "type": "long",
+    "label": "솔로 2km + 커플 8km = 10km",
+    "desc": "윤호 단독 2km 먼저 (신선할 때 HR 140~146 MAF) → 제니 합류 후 8km는 제니 페이스로 · 시계 한 활동 유지 · 회복주라 페이스업 없음",
+    "date": "2026-10-08",
+    "dayName": "목"
   },
   "dynamics": {
     "gct": {

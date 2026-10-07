@@ -1,75 +1,7 @@
 {
   "mode": "evening",
-  "date": "2026-10-06",
-  "generatedAt": "2026-10-06T19:01:46.346Z",
-  "hasRun": true,
-  "km": 6,
-  "paceStr": "7:49",
-  "avgHR": 148,
-  "maxHR": 160,
-  "zone": 2,
-  "zoneLabel": "Z2 (MAF Easy)",
-  "zoneColor": "#16a34a",
-  "feedback": "Good easy run. HR 148 (Z2) kept in check. Pace (7:49) is a little fast — feel free to slow down a bit. · Practice lifting your feet faster off the ground.",
-  "dynamics": {
-    "gct": {
-      "value": 275,
-      "unit": "ms",
-      "label": "Ground Contact",
-      "rating": "Fair",
-      "color": "#f59e0b",
-      "tip": "Practice lifting your feet faster off the ground."
-    },
-    "vo": {
-      "value": 7.2,
-      "unit": "cm",
-      "label": "Vert. Oscillation",
-      "rating": "Good",
-      "color": "#22c55e",
-      "tip": null
-    },
-    "vr": {
-      "value": 9.9,
-      "unit": "%",
-      "label": "Vert. Ratio",
-      "rating": "Fair",
-      "color": "#f59e0b"
-    },
-    "cadence": {
-      "value": 176,
-      "unit": "spm",
-      "label": "Cadence",
-      "rating": "Good",
-      "color": "#22c55e",
-      "tip": null
-    },
-    "power": {
-      "value": 185,
-      "unit": "W",
-      "label": "Power (NP)",
-      "rating": null
-    }
-  },
-  "aerobicEffect": 3.1,
-  "anaerobicEffect": null,
-  "trainingEffectLabel": "Aerobic Base",
-  "trainingLoad": null,
-  "hrZoneSec": [
-    1746,
-    967,
-    110,
-    0,
-    0
-  ],
-  "elevationGainM": 13,
-  "tempC": 19.8,
-  "humidity": 77,
-  "fastest1kmSec": 456.64801025390625,
-  "steps": 8266,
-  "coaching": {
-    "headline": "Steady strides, keep the heart happy 😊",
-    "coaching": "Today's 6 km at 7:49/km kept your average HR at 148 bpm, well under the MAF ceiling of 155 bpm, so you stayed in true Z2 aerobic zone. The max HR of 160 bpm was a brief spike—keep an eye on it—but your cadence of 176 spm and power of 185 W show solid form.",
-    "trend": "Your recent runs show consistent HR control (147‑154 bpm) while pacing hovers around the 7:40‑8:24/km range, indicating good aerobic stability. Training load remains light, which is fine for base building, but you’ll need a gradual increase to reach 20 km comfortably.",
-    "nextRun": "Run 8 km at a target pace of 8:00‑8:10 per km, keep HR no higher than 154 bpm, and focus on maintaining a cadence around 175 spm while lowering ground contact time toward 260 ms."
-  }
+  "date": "2026-10-07",
+  "generatedAt": "2026-10-07T01:14:41.705Z",
+  "hasRun": false,
+  "feedback": "No run data yet today. If you ran, sync your Garmin watch with your phone."
 }
