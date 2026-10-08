@@ -7,6 +7,43 @@
   "goalTimeMin": 120,
   "activities": [
     {
+      "id": 24647732300,
+      "date": "2026-10-08",
+      "distanceM": 10005,
+      "durationSec": 4965,
+      "avgHR": 139.0,
+      "maxHR": 149.0,
+      "avgPaceSecPerKm": 496,
+      "calories": 676.0,
+      "name": "Sydney Running",
+      "cadence": 186,
+      "groundContactTimeMs": 267,
+      "verticalOscillationCm": 6.4,
+      "verticalRatio": 9.9,
+      "strideLengthCm": 64.6,
+      "avgPowerW": 210,
+      "normPowerW": 213,
+      "aerobicEffect": 3.2,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": 65,
+      "hrZoneSec": [
+        4932,
+        0,
+        0,
+        0,
+        0
+      ],
+      "elevationGainM": 49,
+      "fastest1kmSec": 423.2749938964844,
+      "fastest5kmSec": 2369.666015625,
+      "steps": 15346,
+      "startTimeLocal": "2026-10-08 15:24:37",
+      "tempC": 19.6,
+      "humidity": 56,
+      "decouplingPct": 10.2
+    },
+    {
       "id": 24620482182,
       "date": "2026-10-06",
       "distanceM": 5005,
@@ -39,8 +76,8 @@
       "fastest5kmSec": 2251.547119140625,
       "steps": 7130,
       "startTimeLocal": "2026-10-06 10:03:51",
-      "tempC": 19.8,
-      "humidity": 75
+      "tempC": 20.4,
+      "humidity": 73
     },
     {
       "id": 24610106676,
@@ -75,8 +112,8 @@
       "fastest5kmSec": 2324.81396484375,
       "steps": 8620,
       "startTimeLocal": "2026-10-05 16:08:00",
-      "tempC": 20.2,
-      "humidity": 75
+      "tempC": 19.8,
+      "humidity": 77
     },
     {
       "id": 24563483955,
@@ -111,8 +148,8 @@
       "fastest5kmSec": 2478.051025390625,
       "steps": 20848,
       "startTimeLocal": "2026-10-01 15:45:56",
-      "tempC": 29.9,
-      "humidity": 19,
+      "tempC": 31.2,
+      "humidity": 17,
       "decouplingPct": 7.9
     },
     {
@@ -148,8 +185,8 @@
       "fastest5kmSec": 2363.693115234375,
       "steps": 7426,
       "startTimeLocal": "2026-09-29 16:03:45",
-      "tempC": 21.9,
-      "humidity": 40
+      "tempC": 19.5,
+      "humidity": 50
     },
     {
       "id": 24525506606,
@@ -184,8 +221,8 @@
       "fastest5kmSec": 2272.9189453125,
       "steps": 8568,
       "startTimeLocal": "2026-09-28 16:41:50",
-      "tempC": 16.7,
-      "humidity": 61
+      "tempC": 17.1,
+      "humidity": 63
     },
     {
       "id": 24478256923,
@@ -220,8 +257,8 @@
       "fastest5kmSec": 2422.239990234375,
       "steps": 19812,
       "startTimeLocal": "2026-09-24 15:11:10",
-      "tempC": 25.2,
-      "humidity": 53,
+      "tempC": 23.3,
+      "humidity": 67,
       "decouplingPct": 8.0
     },
     {
@@ -3092,6 +3129,10 @@
   ],
   "vo2max": [
     {
+      "date": "2026-10-08",
+      "value": 46.3
+    },
+    {
       "date": "2026-10-06",
       "value": 46.1
     },
@@ -3200,20 +3241,20 @@
   ],
   "sleep": [
     {
-      "date": "2026-10-06",
-      "score": 92,
-      "durationMin": 480
+      "date": "2026-10-08",
+      "score": 81,
+      "durationMin": 448
     }
   ],
   "trainingReadiness": {
-    "date": "2026-10-06",
-    "score": 66,
+    "date": "2026-10-08",
+    "score": 61,
     "level": "MODERATE",
-    "feedbackShort": "WELL_RESTED",
-    "sleepScore": 92,
-    "recoveryTimeMin": 1106
+    "feedbackShort": "RECOVERY_IN_PROGRESS",
+    "sleepScore": 81,
+    "recoveryTimeMin": 1280
   },
-  "lastSync": "2026-10-06T10:44:46.942376",
+  "lastSync": "2026-10-08T19:10:55.387266",
   "birthYear": 1992,
   "age": 34,
   "mafHR": 146

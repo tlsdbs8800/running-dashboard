@@ -1,34 +1,34 @@
 {
   "mode": "evening",
-  "date": "2026-10-07",
-  "generatedAt": "2026-10-07T01:14:39.745Z",
+  "date": "2026-10-08",
+  "generatedAt": "2026-10-08T08:12:12.415Z",
   "hasRun": true,
-  "km": 5,
-  "paceStr": "7:30",
-  "avgHR": 143,
-  "maxHR": 163,
+  "km": 10,
+  "paceStr": "8:16",
+  "avgHR": 139,
+  "maxHR": 149,
   "zone": 2,
   "zoneLabel": "Z2 (MAF 이지)",
   "zoneColor": "#16a34a",
-  "planComparison": "",
-  "plannedKm": null,
-  "feedback": "완벽한 이지 런이야! HR 143 · 7:30/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져.",
+  "planComparison": "✅ 계획보다 8.0km 더 달림",
+  "plannedKm": 2,
+  "feedback": "완벽한 이지 런이야! HR 139 · 8:16/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
   "tomorrowPlan": {
-    "offset": 3,
-    "type": "long",
-    "label": "솔로 2km + 커플 8km = 10km",
-    "desc": "윤호 단독 2km 먼저 (신선할 때 HR 140~146 MAF) → 제니 합류 후 8km는 제니 페이스로 · 시계 한 활동 유지 · 회복주라 페이스업 없음",
-    "date": "2026-10-08",
-    "dayName": "목"
+    "offset": 4,
+    "type": "rest",
+    "label": "휴식",
+    "desc": "완전 회복 · 사이클링 원하면 45분 이내 HR 130 이하",
+    "date": "2026-10-09",
+    "dayName": "금"
   },
   "dynamics": {
     "gct": {
-      "value": 259,
+      "value": 267,
       "unit": "ms",
       "label": "지면접촉",
-      "rating": "좋음",
-      "color": "#22c55e",
-      "tip": "지면 접촉 시간 양호."
+      "rating": "보통",
+      "color": "#f59e0b",
+      "tip": "지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐."
     },
     "vo": {
       "value": 6.4,
@@ -39,14 +39,14 @@
       "tip": "수직 진동 양호."
     },
     "vr": {
-      "value": 9.2,
+      "value": 9.9,
       "unit": "%",
       "label": "수직비율",
       "rating": "보통",
       "color": "#f59e0b"
     },
     "cadence": {
-      "value": 190,
+      "value": 186,
       "unit": "spm",
       "label": "케이던스",
       "rating": "최상",
@@ -54,27 +54,27 @@
       "tip": "케이던스 최적. 관절 부담도 낮아."
     },
     "power": {
-      "value": 230,
+      "value": 213,
       "unit": "W",
       "label": "파워(NP)",
       "rating": null
     }
   },
-  "aerobicEffect": 2.9,
+  "aerobicEffect": 3.2,
   "anaerobicEffect": null,
   "trainingEffectLabel": "유산소 기초",
-  "trainingLoad": 49,
+  "trainingLoad": 65,
   "hrZoneSec": [
-    2240,
+    4932,
     0,
     0,
     0,
     0
   ],
-  "elevationGainM": 31,
-  "tempC": 19.8,
-  "humidity": 75,
-  "fastest1kmSec": 423.7349853515625,
-  "fastest5kmSec": 2251.547119140625,
-  "steps": 7130
+  "elevationGainM": 49,
+  "tempC": 19.6,
+  "humidity": 56,
+  "fastest1kmSec": 423.2749938964844,
+  "fastest5kmSec": 2369.666015625,
+  "steps": 15346
 }
