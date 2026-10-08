@@ -1,7 +1,7 @@
 {
   "mode": "evening",
   "date": "2026-10-08",
-  "generatedAt": "2026-10-08T08:12:12.417Z",
+  "generatedAt": "2026-10-08T19:22:55.756Z",
   "hasRun": true,
   "km": 8,
   "paceStr": "8:33",
@@ -65,5 +65,11 @@
   "tempC": 19.6,
   "humidity": 56,
   "fastest1kmSec": 485.3299865722656,
-  "steps": 11988
+  "steps": 11988,
+  "coaching": {
+    "headline": "Steady progress, keep the MAF magic! 🚀",
+    "coaching": "Today you stayed well within the MAF heart‑rate limit at 149 bpm, which is solid aerobic work. However, your pace of 8:33 /km is outside the target 7:50–8:10 /km range, indicating room to improve speed while keeping HR below 155. Watch the brief spikes to 160 bpm and aim to keep the whole run under the MAF ceiling.",
+    "trend": "Your recent runs show consistent HR control (148–154 bpm) but mixed pacing; the 7:40 /km effort on 2026‑09‑28 was the fastest, while slower runs hover around 8:20 /km. Weekly volume is modest at 14 km, which is fine for base building.",
+    "nextRun": "Run 10 km at a target pace of 7:55–8:05 /km, keep HR ≤ 154 bpm, and focus on raising cadence to ~180 spm while reducing ground‑contact time toward < 270 ms."
+  }
 }
