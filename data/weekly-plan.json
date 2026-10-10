@@ -1,17 +1,17 @@
 {
-  "weekStart": "2026-10-05",
-  "weekEnd": "2026-10-11",
-  "generatedAt": "2026-10-04T21:00:00.000Z",
+  "weekStart": "2026-10-12",
+  "weekEnd": "2026-10-18",
+  "generatedAt": "2026-10-11T21:00:00.000Z",
   "lthrTest": {
     "suitable": false,
-    "readiness": 58,
-    "reason": "회복주 — 고강도 테스트 금지",
+    "readiness": 49,
+    "reason": "준비도 49 — 고강도 테스트 금지",
     "recommendedDay": null
   },
   "yunho": {
     "name": "윤호",
     "phase": 3,
-    "phaseLabel": "회복주",
+    "phaseLabel": "빌드 재개",
     "analysis": {
       "lastWeekKm": 0,
       "avgWeekKm4w": 23,
@@ -21,64 +21,64 @@
       "readinessLevel": "UNKNOWN",
       "runsLastWeek": 0
     },
-    "targetWeeklyKm": 21,
-    "longRunTarget": 10,
-    "coachNote": "🟡 회복주 — 4주 빌드(23→24→25km) 후 볼륨 16% 감축. 롱런 14 → 10km. 전부 이지 HR 146 이하. 다음 주 15~16km 복귀.",
+    "targetWeeklyKm": 24,
+    "longRunTarget": 12,
+    "coachNote": "🟡 준비도 49로 시작 — 10/9 라이딩 2회(Z5 7분, 부하 370)가 회복주를 깼다. 롱런 14km가 아니라 12km로 재진입. 솔로 MAF 세션 2회(화·토) 확보. 목 롱런은 쉬는 날 아침 = 디커플링 기준선 테스트.",
     "schedule": [
       {
         "offset": 0,
         "type": "couple",
-        "label": "커플런 6km ✓",
-        "desc": "6.01km · 7:49/km · HR 131 (max 143) — 전 구간 Z1, 제니 페이스 유지 성공",
-        "date": "2026-10-05",
+        "label": "커플런 6km",
+        "desc": "제니가 페이스 정하기 · 윤호 HR 130대 Z1 · 월요일은 가볍게",
+        "date": "2026-10-12",
         "dayName": "월"
       },
       {
         "offset": 1,
         "type": "easy",
-        "label": "Solo Easy 5km ✓",
-        "desc": "5.00km · 7:30/km · HR 143 (max 163) — MAF 140~146 정확히 적중, 이번 주 첫 MAF 세션",
-        "date": "2026-10-06",
+        "label": "Solo Easy 5km (MAF)",
+        "desc": "HR 140~146 · 7:15~7:30 · 오르막에서 속도 줄여 심박 유지",
+        "date": "2026-10-13",
         "dayName": "화"
       },
       {
         "offset": 2,
         "type": "rest",
         "label": "휴식",
-        "desc": "스트레칭 · 폼롤러",
-        "date": "2026-10-07",
+        "desc": "테스트 전날 — 7시간 30분 이상 수면이 조건",
+        "date": "2026-10-14",
         "dayName": "수"
       },
       {
         "offset": 3,
         "type": "long",
-        "label": "솔로 2km + 커플 8km = 10km ✓",
-        "desc": "10.01km · 8:16/km · HR 139 (max 149) · 19.6°C — 전 구간 Z1, 회복주 마무리",
-        "date": "2026-10-08",
+        "label": "Long Run 12km 아침 · 테스트",
+        "desc": "쉬는 날 아침 · 아침 식사 후 2시간 · 평지 · HR 142~144 고정 · 솔로 · 디커플링 기준선 측정 (10/1 퇴근후 14km는 +7.9%)",
+        "date": "2026-10-15",
         "dayName": "목"
       },
       {
         "offset": 4,
         "type": "rest",
         "label": "휴식",
-        "desc": "완전 회복 · 사이클링 원하면 45분 이내 HR 130 이하",
-        "date": "2026-10-09",
+        "desc": "롱런 다음날 · 사이클링 금지 (지난주 교훈)",
+        "date": "2026-10-16",
         "dayName": "금"
       },
       {
         "offset": 5,
-        "type": "rest",
-        "label": "휴식",
-        "desc": "주말 휴식",
-        "date": "2026-10-10",
+        "type": "easy",
+        "label": "Solo Easy 6km (MAF)",
+        "desc": "HR 140~146 · 이번 주 두 번째 MAF 세션",
+        "date": "2026-10-17",
         "dayName": "토"
       },
       {
         "offset": 6,
         "type": "rest",
         "label": "휴식",
-        "desc": "다음 주 15~16km 롱런 준비",
-        "date": "2026-10-11",
+        "desc": "다음 주 계획 확인",
+        "date": "2026-10-18",
         "dayName": "일"
       }
     ]
@@ -96,24 +96,24 @@
       "readinessLevel": "UNKNOWN",
       "runsLastWeek": 0
     },
-    "targetWeeklyKm": 13,
-    "longRunTarget": 8,
-    "coachNote": "✅ Z3 7분 — 3주 만에 22분에서 급감. 8:33 페이스가 제니 진짜 이지 구간. 다음 주 9km로 증량 가능.",
+    "targetWeeklyKm": 15,
+    "longRunTarget": 9,
+    "coachNote": "🟢 Z3 해결 (22→7분) — 8:33이 진짜 이지 페이스. 롱런 8→9km 증량. HR 상한 150 유지.",
     "schedule": [
       {
         "offset": 0,
         "type": "couple",
-        "label": "커플런 6km ✓",
-        "desc": "6.01km · 7:49/km · HR 148 (max 160) — Z3 2분, 3주 만에 급감 (11→22→32→2분)",
-        "date": "2026-10-05",
+        "label": "커플런 6km",
+        "desc": "제니가 앞에서 페이스 정하기 · 8:20~8:40/km · HR 150 이하",
+        "date": "2026-10-12",
         "dayName": "월"
       },
       {
         "offset": 1,
         "type": "rest",
         "label": "휴식",
-        "desc": "윤호 솔로런 · 제니 휴식",
-        "date": "2026-10-06",
+        "desc": "윤호 솔로런",
+        "date": "2026-10-13",
         "dayName": "화"
       },
       {
@@ -121,31 +121,31 @@
         "type": "rest",
         "label": "휴식",
         "desc": "충분한 수면",
-        "date": "2026-10-07",
+        "date": "2026-10-14",
         "dayName": "수"
       },
       {
         "offset": 3,
-        "type": "long",
-        "label": "Long Run 8km ✓",
-        "desc": "8.01km · 8:33/km · HR 149 (max 160) — Z3 7분, 목표 20분 아래 달성 (22→7분)",
-        "date": "2026-10-08",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "윤호 테스트 롱런 — 제니는 토요일로",
+        "date": "2026-10-15",
         "dayName": "목"
       },
       {
         "offset": 4,
         "type": "rest",
         "label": "휴식",
-        "desc": "완전 회복",
-        "date": "2026-10-09",
+        "desc": "",
+        "date": "2026-10-16",
         "dayName": "금"
       },
       {
         "offset": 5,
-        "type": "rest",
-        "label": "휴식",
-        "desc": "주말 휴식",
-        "date": "2026-10-10",
+        "type": "long",
+        "label": "Long Run 9km",
+        "desc": "복귀 후 최장 · 8:30~8:45/km · HR 150 이하 · Z3 20분 아래 유지",
+        "date": "2026-10-17",
         "dayName": "토"
       },
       {
@@ -153,7 +153,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "한 주 마무리",
-        "date": "2026-10-11",
+        "date": "2026-10-18",
         "dayName": "일"
       }
     ]
