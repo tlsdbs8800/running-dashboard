@@ -23,7 +23,7 @@
     },
     "targetWeeklyKm": 24,
     "longRunTarget": 12,
-    "coachNote": "🟡 준비도 49로 시작 — 10/9 라이딩 2회(Z5 7분, 부하 370)가 회복주를 깼다. 롱런 14km가 아니라 12km로 재진입. 솔로 MAF 세션 2회(화·토) 확보. 목 롱런은 쉬는 날 아침 = 디커플링 기준선 테스트.",
+    "coachNote": "🟡 빌드 재개 — 10/9 라이딩 2회(부하 370)가 회복주를 깨서 롱런은 14가 아닌 12km로 재진입. 테스트는 연기. 토요일 쉬므로 MAF 세션이 화요일 하나뿐 — 그래서 화요일을 7km로 늘림.",
     "schedule": [
       {
         "offset": 0,
@@ -36,8 +36,8 @@
       {
         "offset": 1,
         "type": "easy",
-        "label": "Solo Easy 5km (MAF)",
-        "desc": "HR 140~146 · 7:15~7:30 · 오르막에서 속도 줄여 심박 유지",
+        "label": "Solo Easy 7km (MAF)",
+        "desc": "HR 140~146 · 7:15~7:30 · 이번 주 유일한 MAF 세션이라 5→7km로 늘림 · 오르막에서 속도 줄여 심박 유지",
         "date": "2026-10-13",
         "dayName": "화"
       },
@@ -52,8 +52,8 @@
       {
         "offset": 3,
         "type": "long",
-        "label": "Long Run 12km 아침 · 테스트",
-        "desc": "쉬는 날 아침 · 아침 식사 후 2시간 · 평지 · HR 142~144 고정 · 솔로 · 디커플링 기준선 측정 (10/1 퇴근후 14km는 +7.9%)",
+        "label": "솔로 3km + 커플 9km = 12km",
+        "desc": "윤호 단독 3km 먼저 (신선할 때 HR 140~146) → 제니 합류 후 9km는 제니 페이스 · 시계 한 활동 유지",
         "date": "2026-10-15",
         "dayName": "목"
       },
@@ -67,9 +67,9 @@
       },
       {
         "offset": 5,
-        "type": "easy",
-        "label": "Solo Easy 6km (MAF)",
-        "desc": "HR 140~146 · 이번 주 두 번째 MAF 세션",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "주말 휴식",
         "date": "2026-10-17",
         "dayName": "토"
       },
@@ -98,7 +98,7 @@
     },
     "targetWeeklyKm": 15,
     "longRunTarget": 9,
-    "coachNote": "🟢 Z3 해결 (22→7분) — 8:33이 진짜 이지 페이스. 롱런 8→9km 증량. HR 상한 150 유지.",
+    "coachNote": "🟢 Z3 해결 (22→7분) — 8:33이 진짜 이지 페이스. 롱런 8→9km 증량, 목요일 커플런으로.",
     "schedule": [
       {
         "offset": 0,
@@ -126,9 +126,9 @@
       },
       {
         "offset": 3,
-        "type": "rest",
-        "label": "휴식",
-        "desc": "윤호 테스트 롱런 — 제니는 토요일로",
+        "type": "long",
+        "label": "Long Run 9km",
+        "desc": "복귀 후 최장 · 윤호가 3km 먼저 뛰고 합류 · 제니가 앞에서 페이스 정하기 8:30~8:45/km · HR 150 이하",
         "date": "2026-10-15",
         "dayName": "목"
       },
@@ -142,9 +142,9 @@
       },
       {
         "offset": 5,
-        "type": "long",
-        "label": "Long Run 9km",
-        "desc": "복귀 후 최장 · 8:30~8:45/km · HR 150 이하 · Z3 20분 아래 유지",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "주말 휴식",
         "date": "2026-10-17",
         "dayName": "토"
       },
