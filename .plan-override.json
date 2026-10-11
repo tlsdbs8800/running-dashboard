@@ -23,21 +23,21 @@
     },
     "targetWeeklyKm": 24,
     "longRunTarget": 12,
-    "coachNote": "🟡 빌드 재개 — 10/9 라이딩 2회(부하 370)가 회복주를 깨서 롱런은 14가 아닌 12km로 재진입. 테스트는 연기. 토요일 쉬므로 MAF 세션이 화요일 하나뿐 — 그래서 화요일을 7km로 늘림.",
+    "coachNote": "🟡 빌드 재개 — 10/9 라이딩 2회(부하 370)가 회복주를 깨서 롱런은 12km로 재진입. 테스트 연기. 월 솔로 7km가 이번 주 유일한 MAF 세션.",
     "schedule": [
       {
         "offset": 0,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "제니가 페이스 정하기 · 윤호 HR 130대 Z1 · 월요일은 가볍게",
+        "type": "easy",
+        "label": "Solo Easy 7km (MAF)",
+        "desc": "HR 140~146 · 7:15~7:30 · 이번 주 유일한 MAF 세션 · 휴식 이틀 뒤라 신선할 때 밟기 · 오르막에서 속도 줄여 심박 유지",
         "date": "2026-10-12",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "easy",
-        "label": "Solo Easy 7km (MAF)",
-        "desc": "HR 140~146 · 7:15~7:30 · 이번 주 유일한 MAF 세션이라 5→7km로 늘림 · 오르막에서 속도 줄여 심박 유지",
+        "type": "couple",
+        "label": "커플런 6km",
+        "desc": "제니가 페이스 정하기 · 윤호 HR 130대 Z1 · 어제 MAF 다음날이라 회복 주행",
         "date": "2026-10-13",
         "dayName": "화"
       },
@@ -102,17 +102,17 @@
     "schedule": [
       {
         "offset": 0,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "제니가 앞에서 페이스 정하기 · 8:20~8:40/km · HR 150 이하",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "윤호 솔로런 · 제니 휴식",
         "date": "2026-10-12",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "rest",
-        "label": "휴식",
-        "desc": "윤호 솔로런",
+        "type": "couple",
+        "label": "커플런 6km",
+        "desc": "제니가 앞에서 페이스 정하기 · 8:20~8:40/km · HR 150 이하",
         "date": "2026-10-13",
         "dayName": "화"
       },
