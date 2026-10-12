@@ -21,23 +21,23 @@
       "readinessLevel": "UNKNOWN",
       "runsLastWeek": 0
     },
-    "targetWeeklyKm": 24,
+    "targetWeeklyKm": 12,
     "longRunTarget": 12,
-    "coachNote": "🟡 빌드 재개 — 10/9 라이딩 2회(부하 370)가 회복주를 깨서 롱런은 12km로 재진입. 테스트 연기. 월 솔로 7km가 이번 주 유일한 MAF 세션.",
+    "coachNote": "🔴 준비도 39, 나흘 연속 하락 (50→49→40→39). 9시간 31분 자고도 수면점수 58, HRV 93%(43ms). 급성부하는 218로 내려가는 중이라 훈련 외 요인(수면 질·스트레스·근무) 의심. 이번 주는 목요일 롱런 하나만.",
     "schedule": [
       {
         "offset": 0,
-        "type": "easy",
-        "label": "Solo Easy 7km (MAF)",
-        "desc": "HR 140~146 · 7:15~7:30 · 이번 주 유일한 MAF 세션 · 휴식 이틀 뒤라 신선할 때 밟기 · 오르막에서 속도 줄여 심박 유지",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "35.5°C — 러닝 취소, 자전거 14분만",
         "date": "2026-10-12",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "제니가 페이스 정하기 · 윤호 HR 130대 Z1 · 어제 MAF 다음날이라 회복 주행",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "준비도 39 LOW · 나흘 연속 하락 · HRV 43ms — 솔로 7km 취소",
         "date": "2026-10-13",
         "dayName": "화"
       },
@@ -45,15 +45,15 @@
         "offset": 2,
         "type": "rest",
         "label": "휴식",
-        "desc": "테스트 전날 — 7시간 30분 이상 수면이 조건",
+        "desc": "수면 질 회복에 집중",
         "date": "2026-10-14",
         "dayName": "수"
       },
       {
         "offset": 3,
         "type": "long",
-        "label": "솔로 3km + 커플 9km = 12km",
-        "desc": "윤호 단독 3km 먼저 (신선할 때 HR 140~146) → 제니 합류 후 9km는 제니 페이스 · 시계 한 활동 유지",
+        "label": "롱런 12km (조건부)",
+        "desc": "목 아침 준비도로 결정 — 55+ 면 솔로3+커플9=12km / 45~55면 커플 9km만 / 45 미만이면 거리 더 줄이기",
         "date": "2026-10-15",
         "dayName": "목"
       },
@@ -96,23 +96,23 @@
       "readinessLevel": "UNKNOWN",
       "runsLastWeek": 0
     },
-    "targetWeeklyKm": 15,
+    "targetWeeklyKm": 9,
     "longRunTarget": 9,
-    "coachNote": "🟢 Z3 해결 (22→7분) — 8:33이 진짜 이지 페이스. 롱런 8→9km 증량, 목요일 커플런으로.",
+    "coachNote": "🟢 목요일 9km 하나만 — 복귀 후 최장. 윤호 컨디션과 무관하게 제니는 진행. 8:30~8:45/km · HR 150 이하.",
     "schedule": [
       {
         "offset": 0,
         "type": "rest",
         "label": "휴식",
-        "desc": "윤호 솔로런 · 제니 휴식",
+        "desc": "",
         "date": "2026-10-12",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "제니가 앞에서 페이스 정하기 · 8:20~8:40/km · HR 150 이하",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "윤호 휴식일로 변경",
         "date": "2026-10-13",
         "dayName": "화"
       },
@@ -120,7 +120,7 @@
         "offset": 2,
         "type": "rest",
         "label": "휴식",
-        "desc": "충분한 수면",
+        "desc": "내일 롱런 준비",
         "date": "2026-10-14",
         "dayName": "수"
       },
