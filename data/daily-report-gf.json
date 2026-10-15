@@ -1,19 +1,19 @@
 {
   "mode": "evening",
-  "date": "2026-10-09",
-  "generatedAt": "2026-10-09T01:42:30.695Z",
+  "date": "2026-10-15",
+  "generatedAt": "2026-10-15T09:37:36.686Z",
   "hasRun": true,
   "km": 8,
-  "paceStr": "8:33",
-  "avgHR": 149,
-  "maxHR": 160,
-  "zone": 2,
-  "zoneLabel": "Z2 (MAF Easy)",
-  "zoneColor": "#16a34a",
-  "feedback": "Good easy run. HR 149 (Z2) kept in check.  · Practice lifting your feet faster off the ground.",
+  "paceStr": "8:03",
+  "avgHR": 142,
+  "maxHR": 155,
+  "zone": 1,
+  "zoneLabel": "Z1 (Very Easy)",
+  "zoneColor": "#22c55e",
+  "feedback": "Perfect easy run! HR 142 · 8:03/km — nailed the target pace in the MAF zone. · Practice lifting your feet faster off the ground.",
   "dynamics": {
     "gct": {
-      "value": 280,
+      "value": 274,
       "unit": "ms",
       "label": "Ground Contact",
       "rating": "Fair",
@@ -29,14 +29,14 @@
       "tip": null
     },
     "vr": {
-      "value": 10.4,
+      "value": 10,
       "unit": "%",
       "label": "Vert. Ratio",
       "rating": "Fair",
       "color": "#f59e0b"
     },
     "cadence": {
-      "value": 175,
+      "value": 178,
       "unit": "spm",
       "label": "Cadence",
       "rating": "Good",
@@ -44,32 +44,26 @@
       "tip": null
     },
     "power": {
-      "value": 175,
+      "value": 181,
       "unit": "W",
       "label": "Power (NP)",
       "rating": null
     }
   },
-  "aerobicEffect": 3.1,
+  "aerobicEffect": 3.2,
   "anaerobicEffect": null,
   "trainingEffectLabel": "Aerobic Base",
   "trainingLoad": null,
   "hrZoneSec": [
-    2573,
-    1124,
-    414,
+    3659,
+    205,
+    0,
     0,
     0
   ],
-  "elevationGainM": 40,
-  "tempC": 19.6,
-  "humidity": 56,
-  "fastest1kmSec": 485.3299865722656,
-  "steps": 11988,
-  "coaching": {
-    "headline": "Steady progress, keep that heart in check 🏃‍♀️",
-    "coaching": "Today's 8 km run stayed aerobic with an average HR of 149 bpm, well under your MAF ceiling of 155 bpm, and your cadence was solid at 175 spm. However, the pace of 8:33 /km is outside your target range of 7:50–8:10 /km and the peak HR of 160 bpm shows you briefly exceeded the MAF limit. Keep the effort easy and focus on staying below 155 bpm throughout the whole run.",
-    "trend": "Recent runs show consistent aerobic HR (148‑154 bpm) but mixed pacing, with a few days under target and today slower at 8:33 /km. Weekly volume is modest (14 km) and your aerobic training effect remains moderate at 3.1/5.",
-    "nextRun": "Run 8 km at a target pace of 7:55–8:05 /km, keep HR ≤154 bpm, maintain cadence ≥170 spm and aim to reduce ground contact time to <270 ms."
-  }
+  "elevationGainM": 23,
+  "tempC": 16.7,
+  "humidity": 73,
+  "fastest1kmSec": 458.7669982910156,
+  "steps": 11462
 }
