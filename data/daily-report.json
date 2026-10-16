@@ -1,7 +1,7 @@
 {
   "mode": "evening",
-  "date": "2026-10-15",
-  "generatedAt": "2026-10-15T17:51:41.053Z",
+  "date": "2026-10-16",
+  "generatedAt": "2026-10-16T00:07:49.793Z",
   "hasRun": true,
   "km": 9,
   "paceStr": "7:34",
@@ -10,16 +10,16 @@
   "zone": 2,
   "zoneLabel": "Z2 (MAF 이지)",
   "zoneColor": "#16a34a",
-  "planComparison": "✅ 계획 달성",
-  "plannedKm": 9,
+  "planComparison": "",
+  "plannedKm": null,
   "feedback": "완벽한 이지 런이야! HR 140 · 7:34/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
   "tomorrowPlan": {
-    "offset": 4,
+    "offset": 5,
     "type": "rest",
     "label": "휴식",
-    "desc": "롱런 다음날 · 사이클링 금지 (지난주 교훈)",
-    "date": "2026-10-16",
-    "dayName": "금"
+    "desc": "주말 휴식",
+    "date": "2026-10-17",
+    "dayName": "토"
   },
   "dynamics": {
     "gct": {
