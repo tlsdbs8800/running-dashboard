@@ -27,17 +27,17 @@
     "schedule": [
       {
         "offset": 0,
-        "type": "rest",
-        "label": "휴식",
-        "desc": "수면 회복 우선 · 아침 준비도 55 이상이면 가볍게 5km 가능",
+        "type": "couple",
+        "label": "커플런 6km",
+        "desc": "제니 페이스 · HR 140 이하 회복 주행 · 준비도 61로 조건 충족 · 비 확률 높으니 노면 주의",
         "date": "2026-10-19",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "제니 페이스 · HR 140 이하 · MAF 아님, 회복 주행",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "수면 회복 계속 · 화요일 아침 준비도 65+ 이고 컨디션 좋으면 솔로 이지 5km 가능",
         "date": "2026-10-20",
         "dayName": "화"
       },
@@ -102,17 +102,17 @@
     "schedule": [
       {
         "offset": 0,
-        "type": "rest",
-        "label": "휴식",
-        "desc": "",
+        "type": "couple",
+        "label": "커플런 6km",
+        "desc": "제니가 앞에서 페이스 정하기 · 8:00~8:20/km · HR 150 이하",
         "date": "2026-10-19",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "couple",
-        "label": "커플런 6km",
-        "desc": "제니가 앞에서 페이스 정하기 · 8:00~8:20/km · HR 150 이하",
+        "type": "rest",
+        "label": "휴식",
+        "desc": "목요일 9km까지 이틀 회복",
         "date": "2026-10-20",
         "dayName": "화"
       },
