@@ -1,75 +1,7 @@
 {
   "mode": "evening",
-  "date": "2026-10-16",
-  "generatedAt": "2026-10-16T00:07:51.950Z",
-  "hasRun": true,
-  "km": 8,
-  "paceStr": "8:03",
-  "avgHR": 142,
-  "maxHR": 155,
-  "zone": 1,
-  "zoneLabel": "Z1 (Very Easy)",
-  "zoneColor": "#22c55e",
-  "feedback": "Perfect easy run! HR 142 · 8:03/km — nailed the target pace in the MAF zone. · Practice lifting your feet faster off the ground.",
-  "dynamics": {
-    "gct": {
-      "value": 274,
-      "unit": "ms",
-      "label": "Ground Contact",
-      "rating": "Fair",
-      "color": "#f59e0b",
-      "tip": "Practice lifting your feet faster off the ground."
-    },
-    "vo": {
-      "value": 6.9,
-      "unit": "cm",
-      "label": "Vert. Oscillation",
-      "rating": "Good",
-      "color": "#22c55e",
-      "tip": null
-    },
-    "vr": {
-      "value": 10,
-      "unit": "%",
-      "label": "Vert. Ratio",
-      "rating": "Fair",
-      "color": "#f59e0b"
-    },
-    "cadence": {
-      "value": 178,
-      "unit": "spm",
-      "label": "Cadence",
-      "rating": "Good",
-      "color": "#22c55e",
-      "tip": null
-    },
-    "power": {
-      "value": 181,
-      "unit": "W",
-      "label": "Power (NP)",
-      "rating": null
-    }
-  },
-  "aerobicEffect": 3.2,
-  "anaerobicEffect": null,
-  "trainingEffectLabel": "Aerobic Base",
-  "trainingLoad": null,
-  "hrZoneSec": [
-    3659,
-    205,
-    0,
-    0,
-    0
-  ],
-  "elevationGainM": 23,
-  "tempC": 16.7,
-  "humidity": 73,
-  "fastest1kmSec": 458.7669982910156,
-  "steps": 11462,
-  "coaching": {
-    "headline": "Steady stride, keep the heart happy 😊",
-    "coaching": "Today's 8 km at 8:03 / km kept your average HR at 142 bpm, well under the MAF ceiling of 155 bpm, so you stayed in Z1 and protected your aerobic base. Your cadence of 178 spm and power of 181 W were solid, but the max HR hit 155 indicates a brief spike—watch for any hidden effort on hills.",
-    "trend": "Recent runs show HRs hovering near 149‑154 bpm with slower paces, while today you dropped to 142 bpm and held a consistent pace, indicating improving aerobic efficiency. Consistency is growing, yet the aerobic training effect (3.2/5) suggests you can still add a bit more volume.",
-    "nextRun": "Run 9 km at 7:50‑8:10 / km, keep HR ≤ 154 bpm, focus on maintaining cadence above 175 spm and reducing ground contact time toward 260 ms."
-  }
+  "date": "2026-10-22",
+  "generatedAt": "2026-10-22T18:04:42.418Z",
+  "hasRun": false,
+  "feedback": "No run data yet today. If you ran, sync your Garmin watch with your phone."
 }
