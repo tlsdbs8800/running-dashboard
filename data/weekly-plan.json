@@ -1,17 +1,17 @@
 {
-  "weekStart": "2026-10-19",
-  "weekEnd": "2026-10-25",
-  "generatedAt": "2026-10-18T21:00:00.000Z",
+  "weekStart": "2026-10-26",
+  "weekEnd": "2026-11-01",
+  "generatedAt": "2026-10-22T21:00:00.000Z",
   "lthrTest": {
     "suitable": false,
-    "readiness": 31,
-    "reason": "준비도 31 · HRV 기준선 이하 — 테스트 금지",
+    "readiness": null,
+    "reason": "벤치마크 주간 — 고강도 테스트 금지",
     "recommendedDay": null
   },
   "yunho": {
     "name": "윤호",
     "phase": 3,
-    "phaseLabel": "재진입 (조건부)",
+    "phaseLabel": "벤치마크 주간",
     "analysis": {
       "lastWeekKm": 0,
       "avgWeekKm4w": 23,
@@ -21,40 +21,40 @@
       "readinessLevel": "UNKNOWN",
       "runsLastWeek": 0
     },
-    "targetWeeklyKm": 18,
-    "longRunTarget": 12,
-    "coachNote": "🔴 준비도 31 · HRV 35ms(기준선 36 미만) · 3일 연속 수면 부족. 급성부하 111로 최저라 훈련 탓이 아님 — 수면이 원인. 14km 빌드는 연기, 이번 주는 재진입. 목요일 거리는 그날 아침 결정.",
+    "targetWeeklyKm": 21,
+    "longRunTarget": 10,
+    "coachNote": "🟡 근무 월~금 5일 (평소 4일) — 기립 8~10시간 추가. 볼륨은 올리지 않고 21km 유지. 목요일 벤치마크가 메인 세션이며 앞으로 수개월의 비교 기준점이 된다.",
     "schedule": [
       {
         "offset": 0,
         "type": "couple",
         "label": "커플런 6km",
-        "desc": "제니 페이스 · HR 140 이하 회복 주행 · 준비도 61로 조건 충족 · 비 확률 높으니 노면 주의",
-        "date": "2026-10-19",
+        "desc": "제니 페이스 · HR 140 이하 Z1 · 주말 휴식 후 첫 런, 가볍게",
+        "date": "2026-10-26",
         "dayName": "월"
       },
       {
         "offset": 1,
-        "type": "rest",
-        "label": "휴식",
-        "desc": "수면 회복 계속 · 화요일 아침 준비도 65+ 이고 컨디션 좋으면 솔로 이지 5km 가능",
-        "date": "2026-10-20",
+        "type": "easy",
+        "label": "Solo Easy 5km (MAF)",
+        "desc": "HR 140~146 · 7:15~7:30 · 짧게 유지해서 목요일 벤치마크 보호",
+        "date": "2026-10-27",
         "dayName": "화"
       },
       {
         "offset": 2,
         "type": "rest",
         "label": "휴식",
-        "desc": "목요일 준비",
-        "date": "2026-10-21",
+        "desc": "벤치마크 전날 — 7시간 이상 수면이 조건",
+        "date": "2026-10-28",
         "dayName": "수"
       },
       {
         "offset": 3,
         "type": "long",
-        "label": "롱런 (조건부 8~12km)",
-        "desc": "목 아침 결정 — 준비도 60+ & HRV BALANCED면 솔로3+커플9=12km / 45~60이면 커플 9km만 / 45 미만이면 제니와 8km 이하",
-        "date": "2026-10-22",
+        "label": "벤치마크 9.82km",
+        "desc": "어밍턴 강변 평지 코스 (Garmin 525854114) · 솔로 · HR 142~144 고정 · 출발 2시간 전 500ml + 20분마다 150ml · 전후 체중 측정 · 제니와 같이 나가되 각자 페이스",
+        "date": "2026-10-29",
         "dayName": "목"
       },
       {
@@ -62,23 +62,23 @@
         "type": "rest",
         "label": "휴식",
         "desc": "",
-        "date": "2026-10-23",
+        "date": "2026-10-30",
         "dayName": "금"
       },
       {
         "offset": 5,
         "type": "rest",
         "label": "휴식",
-        "desc": "",
-        "date": "2026-10-24",
+        "desc": "주말 휴식",
+        "date": "2026-10-31",
         "dayName": "토"
       },
       {
         "offset": 6,
         "type": "rest",
         "label": "휴식",
-        "desc": "다음 주 계획 — 수면 회복되면 14km 복귀",
-        "date": "2026-10-25",
+        "desc": "다음 주 14K 코스 복귀",
+        "date": "2026-11-01",
         "dayName": "일"
       }
     ]
@@ -96,40 +96,40 @@
       "readinessLevel": "UNKNOWN",
       "runsLastWeek": 0
     },
-    "targetWeeklyKm": 15,
-    "longRunTarget": 9,
-    "coachNote": "🟢 10/15 8km를 HR 142 · Z3 0분으로 완주 — 8월 수준 넘어섬. 롱런 9km로 증량. 윤호 컨디션과 무관하게 진행.",
+    "targetWeeklyKm": 14,
+    "longRunTarget": 8,
+    "coachNote": "🟢 10/15 8km를 HR 142·Z3 0분으로 완주. 이번 주 목요일은 윤호 벤치마크와 같이 나가되 각자 페이스로.",
     "schedule": [
       {
         "offset": 0,
         "type": "couple",
         "label": "커플런 6km",
         "desc": "제니가 앞에서 페이스 정하기 · 8:00~8:20/km · HR 150 이하",
-        "date": "2026-10-19",
+        "date": "2026-10-26",
         "dayName": "월"
       },
       {
         "offset": 1,
         "type": "rest",
         "label": "휴식",
-        "desc": "목요일 9km까지 이틀 회복",
-        "date": "2026-10-20",
+        "desc": "윤호 솔로 MAF 세션",
+        "date": "2026-10-27",
         "dayName": "화"
       },
       {
         "offset": 2,
         "type": "rest",
         "label": "휴식",
-        "desc": "내일 롱런 준비",
-        "date": "2026-10-21",
+        "desc": "",
+        "date": "2026-10-28",
         "dayName": "수"
       },
       {
         "offset": 3,
         "type": "long",
-        "label": "Long Run 9km",
-        "desc": "복귀 후 최장 · 8:10~8:30/km · HR 150 이하 · Z3 10분 아래 유지",
-        "date": "2026-10-22",
+        "label": "Long Run 8km",
+        "desc": "윤호와 같이 출발, 각자 페이스 · 8:10~8:30/km · HR 150 이하 · Z3 10분 아래",
+        "date": "2026-10-29",
         "dayName": "목"
       },
       {
@@ -137,7 +137,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "",
-        "date": "2026-10-23",
+        "date": "2026-10-30",
         "dayName": "금"
       },
       {
@@ -145,7 +145,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "",
-        "date": "2026-10-24",
+        "date": "2026-10-31",
         "dayName": "토"
       },
       {
@@ -153,7 +153,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "",
-        "date": "2026-10-25",
+        "date": "2026-11-01",
         "dayName": "일"
       }
     ]

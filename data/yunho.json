@@ -7,6 +7,79 @@
   "goalTimeMin": 120,
   "activities": [
     {
+      "id": 24810584453,
+      "date": "2026-10-22",
+      "distanceM": 14005,
+      "durationSec": 7019,
+      "avgHR": 146.0,
+      "maxHR": 171.0,
+      "avgPaceSecPerKm": 501,
+      "calories": 945.0,
+      "name": "Sydney Running",
+      "cadence": 181,
+      "groundContactTimeMs": 267,
+      "verticalOscillationCm": 6.3,
+      "verticalRatio": 9.8,
+      "strideLengthCm": 64.0,
+      "avgPowerW": 204,
+      "normPowerW": 211,
+      "aerobicEffect": 3.3,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": 76,
+      "hrZoneSec": [
+        6934,
+        84,
+        0,
+        0,
+        0
+      ],
+      "elevationGainM": 71,
+      "fastest1kmSec": 445.0899963378906,
+      "fastest5kmSec": 2439.4169921875,
+      "steps": 21652,
+      "startTimeLocal": "2026-10-22 15:13:38",
+      "tempC": 21.8,
+      "humidity": 67,
+      "decouplingPct": 9.2
+    },
+    {
+      "id": 24775348722,
+      "date": "2026-10-19",
+      "distanceM": 6004,
+      "durationSec": 2890,
+      "avgHR": 132.0,
+      "maxHR": 147.0,
+      "avgPaceSecPerKm": 481,
+      "calories": 416.0,
+      "name": "Sydney Running",
+      "cadence": 182,
+      "groundContactTimeMs": 270,
+      "verticalOscillationCm": 6.7,
+      "verticalRatio": 9.8,
+      "strideLengthCm": 68.4,
+      "avgPowerW": 225,
+      "normPowerW": 229,
+      "aerobicEffect": 2.7,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": 43,
+      "hrZoneSec": [
+        2869,
+        0,
+        0,
+        0,
+        0
+      ],
+      "elevationGainM": 74,
+      "fastest1kmSec": 466.6419982910156,
+      "fastest5kmSec": 2395.886962890625,
+      "steps": 8706,
+      "startTimeLocal": "2026-10-19 17:25:13",
+      "tempC": 21.2,
+      "humidity": 53
+    },
+    {
       "id": 24729544898,
       "date": "2026-10-15",
       "distanceM": 9007,
@@ -3166,6 +3239,14 @@
   ],
   "vo2max": [
     {
+      "date": "2026-10-22",
+      "value": 46.5
+    },
+    {
+      "date": "2026-10-19",
+      "value": 46.7
+    },
+    {
       "date": "2026-10-15",
       "value": 46.5
     },
@@ -3282,20 +3363,20 @@
   ],
   "sleep": [
     {
-      "date": "2026-10-18",
-      "score": 51,
-      "durationMin": 347
+      "date": "2026-10-22",
+      "score": 64,
+      "durationMin": 465
     }
   ],
   "trainingReadiness": {
-    "date": "2026-10-18",
-    "score": 31,
+    "date": "2026-10-22",
+    "score": 30,
     "level": "LOW",
     "feedbackShort": "LISTEN_TO_YOUR_BODY",
-    "sleepScore": 51,
-    "recoveryTimeMin": 131
+    "sleepScore": 64,
+    "recoveryTimeMin": 1653
   },
-  "lastSync": "2026-10-18T06:31:34.190090",
+  "lastSync": "2026-10-22T18:40:47.840619",
   "birthYear": 1992,
   "age": 34,
   "mafHR": 146
