@@ -1,7 +1,69 @@
 {
   "mode": "evening",
-  "date": "2026-10-23",
-  "generatedAt": "2026-10-23T00:24:30.381Z",
-  "hasRun": false,
-  "feedback": "No run data yet today. If you ran, sync your Garmin watch with your phone."
+  "date": "2026-10-27",
+  "generatedAt": "2026-10-27T18:47:02.165Z",
+  "hasRun": true,
+  "km": 6,
+  "paceStr": "7:51",
+  "avgHR": 159,
+  "maxHR": 178,
+  "zone": 3,
+  "zoneLabel": "Z3 (Moderate)",
+  "zoneColor": "#f59e0b",
+  "feedback": "HR 159 crept above MAF (155). Try backing off 10–15 sec/km next time. · Practice lifting your feet faster off the ground.",
+  "dynamics": {
+    "gct": {
+      "value": 279,
+      "unit": "ms",
+      "label": "Ground Contact",
+      "rating": "Fair",
+      "color": "#f59e0b",
+      "tip": "Practice lifting your feet faster off the ground."
+    },
+    "vo": {
+      "value": 7.4,
+      "unit": "cm",
+      "label": "Vert. Oscillation",
+      "rating": "Good",
+      "color": "#22c55e",
+      "tip": null
+    },
+    "vr": {
+      "value": 10.1,
+      "unit": "%",
+      "label": "Vert. Ratio",
+      "rating": "Fair",
+      "color": "#f59e0b"
+    },
+    "cadence": {
+      "value": 172,
+      "unit": "spm",
+      "label": "Cadence",
+      "rating": "Fair",
+      "color": "#f59e0b",
+      "tip": "Bumping cadence by 5–10 spm will improve efficiency."
+    },
+    "power": {
+      "value": 194,
+      "unit": "W",
+      "label": "Power (NP)",
+      "rating": null
+    }
+  },
+  "aerobicEffect": 3.4,
+  "anaerobicEffect": null,
+  "trainingEffectLabel": "Aerobic Base",
+  "trainingLoad": null,
+  "hrZoneSec": [
+    483,
+    489,
+    1370,
+    376,
+    110
+  ],
+  "elevationGainM": 47,
+  "tempC": 19.7,
+  "humidity": 50,
+  "fastest1kmSec": 462.4700012207031,
+  "steps": 8136
 }
