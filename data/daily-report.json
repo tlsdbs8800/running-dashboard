@@ -1,7 +1,7 @@
 {
   "mode": "evening",
-  "date": "2026-10-27",
-  "generatedAt": "2026-10-27T18:47:00.174Z",
+  "date": "2026-10-28",
+  "generatedAt": "2026-10-28T00:58:19.403Z",
   "hasRun": true,
   "km": 5,
   "paceStr": "7:19",
@@ -10,16 +10,16 @@
   "zone": 2,
   "zoneLabel": "Z2 (MAF 이지)",
   "zoneColor": "#16a34a",
-  "planComparison": "✅ 계획 달성",
-  "plannedKm": 5,
+  "planComparison": "",
+  "plannedKm": null,
   "feedback": "완벽한 이지 런이야! HR 143 · 7:19/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져.",
   "tomorrowPlan": {
-    "offset": 2,
-    "type": "rest",
-    "label": "휴식",
-    "desc": "벤치마크 전날 — 7시간 이상 수면이 조건",
-    "date": "2026-10-28",
-    "dayName": "수"
+    "offset": 3,
+    "type": "long",
+    "label": "롱런 12~15km (조건부)",
+    "desc": "벤치마크 취소, 롱런으로 대체 · 조건: 수요일 밤 깬시간 40분 이하 + 준비도 60 이상이면 15km, 아니면 12km, 준비도 45 미만이면 8~10km · HR 142~146 · 11km 지점 HR 150 넘으면 12~13km에서 종료 · 수분 2시간 전 500ml + 20분마다 150ml · 첫 3km 8:20 이상 · 마지막 페이스업 금지",
+    "date": "2026-10-29",
+    "dayName": "목"
   },
   "dynamics": {
     "gct": {
