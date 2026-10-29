@@ -1,7 +1,49 @@
 {
   "mode": "evening",
-  "date": "2026-10-28",
-  "generatedAt": "2026-10-28T00:58:21.245Z",
-  "hasRun": false,
-  "feedback": "No run data yet today. If you ran, sync your Garmin watch with your phone."
+  "date": "2026-10-29",
+  "generatedAt": "2026-10-29T10:26:16.579Z",
+  "hasRun": true,
+  "km": 10,
+  "paceStr": "8:11",
+  "avgHR": 156,
+  "maxHR": 173,
+  "zone": 3,
+  "zoneLabel": "Z3 (Moderate)",
+  "zoneColor": "#f59e0b",
+  "feedback": "HR 156 crept above MAF (155). Try backing off 10–15 sec/km next time.",
+  "dynamics": {
+    "gct": {
+      "value": null,
+      "unit": "ms",
+      "label": "Ground Contact"
+    },
+    "vo": {
+      "value": null,
+      "unit": "cm",
+      "label": "Vert. Oscillation"
+    },
+    "vr": {
+      "unit": "%",
+      "label": "Vert. Ratio",
+      "rating": null,
+      "color": null
+    },
+    "cadence": {
+      "value": null,
+      "unit": "spm",
+      "label": "Cadence"
+    },
+    "power": {
+      "value": 132,
+      "unit": "W",
+      "label": "Power (NP)",
+      "rating": null
+    }
+  },
+  "trainingEffectLabel": null,
+  "hrZoneSec": null,
+  "elevationGainM": 44,
+  "tempC": null,
+  "humidity": null,
+  "steps": null
 }
