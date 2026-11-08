@@ -7,6 +7,115 @@
   "goalTimeMin": 120,
   "activities": [
     {
+      "id": 24971648427,
+      "date": "2026-11-05",
+      "distanceM": 15008,
+      "durationSec": 7393,
+      "avgHR": 148.0,
+      "maxHR": 167.0,
+      "avgPaceSecPerKm": 493,
+      "calories": 1044.0,
+      "name": "Sydney Running",
+      "cadence": 191,
+      "groundContactTimeMs": 262,
+      "verticalOscillationCm": 6.1,
+      "verticalRatio": 9.7,
+      "strideLengthCm": 63.4,
+      "avgPowerW": 211,
+      "normPowerW": 213,
+      "aerobicEffect": 3.5,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": 89,
+      "hrZoneSec": [
+        839,
+        5404,
+        1102,
+        0,
+        0
+      ],
+      "elevationGainM": 121,
+      "fastest1kmSec": 465.39801025390625,
+      "fastest5kmSec": 2510.156005859375,
+      "steps": 23554,
+      "startTimeLocal": "2026-11-05 15:21:58",
+      "tempC": 23.1,
+      "humidity": 26,
+      "decouplingPct": -8.0
+    },
+    {
+      "id": 24960412801,
+      "date": "2026-11-04",
+      "distanceM": 5007,
+      "durationSec": 2321,
+      "avgHR": 146.0,
+      "maxHR": 162.0,
+      "avgPaceSecPerKm": 464,
+      "calories": 352.0,
+      "name": "Sydney Running",
+      "cadence": 194,
+      "groundContactTimeMs": 257,
+      "verticalOscillationCm": 6.2,
+      "verticalRatio": 9.3,
+      "strideLengthCm": 66.3,
+      "avgPowerW": 218,
+      "normPowerW": 221,
+      "aerobicEffect": 2.7,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": 43,
+      "hrZoneSec": [
+        2321,
+        0,
+        0,
+        0,
+        0
+      ],
+      "elevationGainM": 30,
+      "fastest1kmSec": 439.5450134277344,
+      "fastest5kmSec": 2318.782958984375,
+      "steps": 7484,
+      "startTimeLocal": "2026-11-04 18:00:16",
+      "tempC": 25.0,
+      "humidity": 61
+    },
+    {
+      "id": 24935625990,
+      "date": "2026-11-02",
+      "distanceM": 6004,
+      "durationSec": 2831,
+      "avgHR": 138.0,
+      "maxHR": 156.0,
+      "avgPaceSecPerKm": 472,
+      "calories": 422.0,
+      "name": "Sydney Running",
+      "cadence": 184,
+      "groundContactTimeMs": 266,
+      "verticalOscillationCm": 6.6,
+      "verticalRatio": 9.6,
+      "strideLengthCm": 68.8,
+      "avgPowerW": 222,
+      "normPowerW": 225,
+      "aerobicEffect": 2.8,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": 47,
+      "hrZoneSec": [
+        2801,
+        0,
+        0,
+        0,
+        0
+      ],
+      "elevationGainM": 40,
+      "fastest1kmSec": 458.7770080566406,
+      "fastest5kmSec": 2347.347900390625,
+      "steps": 8664,
+      "startTimeLocal": "2026-11-02 16:21:37",
+      "tempC": 25.3,
+      "humidity": 49
+    },
+    {
       "id": 24889806320,
       "date": "2026-10-29",
       "distanceM": 15006,
@@ -186,7 +295,7 @@
       "steps": 8706,
       "startTimeLocal": "2026-10-19 17:25:13",
       "tempC": 21.2,
-      "humidity": 51
+      "humidity": 53
     },
     {
       "id": 24729544898,
@@ -3348,6 +3457,18 @@
   ],
   "vo2max": [
     {
+      "date": "2026-11-05",
+      "value": 46.9
+    },
+    {
+      "date": "2026-11-04",
+      "value": 47.0
+    },
+    {
+      "date": "2026-11-02",
+      "value": 47.0
+    },
+    {
       "date": "2026-10-29",
       "value": 46.7
     },
@@ -3484,20 +3605,20 @@
   ],
   "sleep": [
     {
-      "date": "2026-11-01",
-      "score": 59,
-      "durationMin": 283
+      "date": "2026-11-08",
+      "score": 63,
+      "durationMin": 339
     }
   ],
   "trainingReadiness": {
-    "date": "2026-11-01",
-    "score": 26,
+    "date": "2026-11-08",
+    "score": 40,
     "level": "LOW",
-    "feedbackShort": "FIND_TIME_TO_RELAX",
-    "sleepScore": 59,
-    "recoveryTimeMin": 15
+    "feedbackShort": "FOCUS_ON_SLEEP_QUALITY",
+    "sleepScore": 63,
+    "recoveryTimeMin": 1
   },
-  "lastSync": "2026-11-01T22:09:56.124877",
+  "lastSync": "2026-11-08T21:05:48.932645",
   "birthYear": 1992,
   "age": 34,
   "mafHR": 146
