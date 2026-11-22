@@ -7,6 +7,79 @@
   "goalTimeMin": null,
   "activities": [
     {
+      "id": 25128398193,
+      "date": "2026-11-19",
+      "distanceM": 12002,
+      "durationSec": 6201,
+      "avgHR": 148.0,
+      "maxHR": 167.0,
+      "avgPaceSecPerKm": 517,
+      "calories": 701.0,
+      "name": "Sydney Running",
+      "cadence": 178,
+      "groundContactTimeMs": 275,
+      "verticalOscillationCm": 6.6,
+      "verticalRatio": 10.2,
+      "strideLengthCm": 64.8,
+      "avgPowerW": 172,
+      "normPowerW": 175,
+      "aerobicEffect": 3.4,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": null,
+      "hrZoneSec": [
+        3735,
+        2040,
+        399,
+        17,
+        0
+      ],
+      "elevationGainM": 81,
+      "fastest1kmSec": 478.6059875488281,
+      "fastest5kmSec": 2515.52099609375,
+      "steps": 18430,
+      "startTimeLocal": "2026-11-19 17:11:22",
+      "tempC": 25.2,
+      "humidity": 57,
+      "decouplingPct": 5.0
+    },
+    {
+      "id": 25104862176,
+      "date": "2026-11-17",
+      "distanceM": 6009,
+      "durationSec": 2945,
+      "avgHR": 149.0,
+      "maxHR": 161.0,
+      "avgPaceSecPerKm": 490,
+      "calories": 351.0,
+      "name": "Sydney Running",
+      "cadence": 175,
+      "groundContactTimeMs": 278,
+      "verticalOscillationCm": 7.1,
+      "verticalRatio": 10.2,
+      "strideLengthCm": 69.9,
+      "avgPowerW": 180,
+      "normPowerW": 181,
+      "aerobicEffect": 2.9,
+      "anaerobicEffect": null,
+      "trainingEffectLabel": "AEROBIC_BASE",
+      "trainingLoad": null,
+      "hrZoneSec": [
+        1778,
+        1126,
+        41,
+        0,
+        0
+      ],
+      "elevationGainM": 13,
+      "fastest1kmSec": 475.0799865722656,
+      "fastest5kmSec": 2427.1298828125,
+      "steps": 8566,
+      "startTimeLocal": "2026-11-17 16:43:17",
+      "tempC": 21.8,
+      "humidity": 61
+    },
+    {
       "id": 25051551665,
       "date": "2026-11-12",
       "distanceM": 11004,
@@ -39,8 +112,8 @@
       "fastest5kmSec": 2673.487060546875,
       "steps": 16708,
       "startTimeLocal": "2026-11-12 17:18:18",
-      "tempC": 23.1,
-      "humidity": 52,
+      "tempC": 22.3,
+      "humidity": 59,
       "decouplingPct": 3.0
     },
     {
@@ -76,8 +149,8 @@
       "fastest5kmSec": 2356.89501953125,
       "steps": 8416,
       "startTimeLocal": "2026-11-10 16:57:25",
-      "tempC": 29.1,
-      "humidity": 21
+      "tempC": 25.4,
+      "humidity": 40
     },
     {
       "id": 24971646823,
@@ -112,8 +185,8 @@
       "fastest5kmSec": 2534.823974609375,
       "steps": 14666,
       "startTimeLocal": "2026-11-05 16:04:18",
-      "tempC": 21.2,
-      "humidity": 37,
+      "tempC": 20.2,
+      "humidity": 43,
       "decouplingPct": 3.2
     },
     {
@@ -1853,13 +1926,13 @@
   "weight": [],
   "sleep": [
     {
-      "date": "2026-11-15",
+      "date": "2026-11-22",
       "score": null,
       "durationMin": null
     }
   ],
   "trainingReadiness": null,
-  "lastSync": "2026-11-15T21:46:49.538335",
+  "lastSync": "2026-11-22T21:19:23.523905",
   "birthYear": 2001,
   "age": 25,
   "mafHR": 155

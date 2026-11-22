@@ -1,17 +1,17 @@
 {
-  "weekStart": "2026-11-16",
-  "weekEnd": "2026-11-22",
-  "generatedAt": "2026-11-15T21:00:00.000Z",
+  "weekStart": "2026-11-23",
+  "weekEnd": "2026-11-29",
+  "generatedAt": "2026-11-22T21:00:00.000Z",
   "lthrTest": {
     "suitable": false,
-    "readiness": 43,
-    "reason": "선교 출발 2주 전 — 고강도 테스트 불필요",
+    "readiness": 42,
+    "reason": "선교 출발 직전 — 테스트 불필요",
     "recommendedDay": null
   },
   "yunho": {
     "name": "윤호",
     "phase": 3,
-    "phaseLabel": "다지기",
+    "phaseLabel": "선교 전 마지막 주",
     "analysis": {
       "lastWeekKm": 0,
       "avgWeekKm4w": 23,
@@ -21,40 +21,40 @@
       "readinessLevel": "UNKNOWN",
       "runsLastWeek": 0
     },
-    "targetWeeklyKm": 27,
-    "longRunTarget": 16,
-    "coachNote": "🟡 12/1 선교 출발까지 2주 — 거리 증량 중단, 16km 다지기. 11/12 16km는 습도 53%(11/5는 26%)에 정지 8.5분인데 HR +2만 상승 = 좋은 결과. 이번 주 목표는 같은 거리를 HR 145 이하로. 솔로 구간을 142~146으로 되돌리는 게 핵심.",
+    "targetWeeklyKm": 24,
+    "longRunTarget": 14,
+    "coachNote": "🟡 12/1 선교 출발 — 마지막 주는 볼륨 소폭 감축(28→24km). 롱런 14km로. 새 기록 도전 금지, 지친 상태로 출발하지 않는 게 목적. 11/19 롱런(HR 141, 디커플링 0.8%, 25.8°C)이 좋은 마무리였음.",
     "schedule": [
       {
         "offset": 0,
         "type": "easy",
-        "label": "Solo MAF 5km",
-        "desc": "고정 코스 526932017 · HR 142~146 · 기준 7:06@HR145(11/9, 19.1°C) — 이게 최고 기록, 기온 보정해서 비교",
-        "date": "2026-11-16",
+        "label": "Solo MAF 5~6km",
+        "desc": "HR 142~146 · 코스 자유 · 11/19 롱런 솔로 구간이 8:34@HR140이었으니 이번엔 144~146으로 올려서 페이스 확인",
+        "date": "2026-11-23",
         "dayName": "월"
       },
       {
         "offset": 1,
         "type": "couple",
         "label": "커플런 6km",
-        "desc": "제니 페이스 · HR 140 이하 · 제니가 앞에서 페이스 정하기",
-        "date": "2026-11-17",
+        "desc": "제니 페이스 · HR 140 이하 · 11/17처럼 8:10 전후로 (그날 제니 Z3 1분)",
+        "date": "2026-11-24",
         "dayName": "화"
       },
       {
         "offset": 2,
         "type": "rest",
         "label": "휴식",
-        "desc": "롱런 전 비우기",
-        "date": "2026-11-18",
+        "desc": "",
+        "date": "2026-11-25",
         "dayName": "수"
       },
       {
         "offset": 3,
         "type": "long",
-        "label": "롱런 16km (목 또는 금)",
-        "desc": "코스 530037207 (솔로 4.28km + 제니 10.94km) · 솔로 구간 HR 142~146 엄수 (11/12에 149로 초과) · 마지막 3km 페이스 억제 (11/12에 HR 164까지) · 목표: 평균 HR 145 이하 · 습도 40% 아래인 날 고르면 비교가 깨끗함",
-        "date": "2026-11-19",
+        "label": "롱런 14km",
+        "desc": "16km가 아니라 14km — 출발 전 피로 남기지 않기 · 코스 530037207에서 2km 줄이거나 강변 코스 · HR 142~146 · 수분·소변색 체크",
+        "date": "2026-11-26",
         "dayName": "목"
       },
       {
@@ -62,7 +62,7 @@
         "type": "rest",
         "label": "휴식 (또는 롱런)",
         "desc": "목요일에 안 했으면 여기서",
-        "date": "2026-11-20",
+        "date": "2026-11-27",
         "dayName": "금"
       },
       {
@@ -70,15 +70,15 @@
         "type": "rest",
         "label": "휴식",
         "desc": "",
-        "date": "2026-11-21",
+        "date": "2026-11-28",
         "dayName": "토"
       },
       {
         "offset": 6,
         "type": "rest",
         "label": "휴식",
-        "desc": "다음 주(11/23~29)가 선교 전 마지막 주",
-        "date": "2026-11-22",
+        "desc": "11/30 출발 준비 · 12/1~14 필리핀",
+        "date": "2026-11-29",
         "dayName": "일"
       }
     ]
@@ -86,7 +86,7 @@
   "gf": {
     "name": "Jenny",
     "phase": 1,
-    "phaseLabel": "기초 단계",
+    "phaseLabel": "선교 전 마지막 주",
     "analysis": {
       "lastWeekKm": 0,
       "avgWeekKm4w": 7,
@@ -96,24 +96,24 @@
       "readinessLevel": "UNKNOWN",
       "runsLastWeek": 0
     },
-    "targetWeeklyKm": 18,
-    "longRunTarget": 12,
-    "coachNote": "🟢 11/12 11km가 최고의 런 — 최장 거리 갱신하면서 HR 147(이전 151), Z3+ 7분(이전 20분), 케이던스 181·보폭 65.2cm 둘 다 최고. 12km로 증량.",
+    "targetWeeklyKm": 16,
+    "longRunTarget": 10,
+    "coachNote": "🟢 11/19 12km 완주 (HR 148, 보폭 64.8cm 최저). 마지막 주는 10km로 줄여 피로 없이 출발. 12/15 복귀 후 12km부터 재개.",
     "schedule": [
       {
         "offset": 0,
         "type": "rest",
         "label": "휴식",
-        "desc": "윤호 솔로 MAF",
-        "date": "2026-11-16",
+        "desc": "윤호 솔로",
+        "date": "2026-11-23",
         "dayName": "월"
       },
       {
         "offset": 1,
         "type": "couple",
         "label": "커플런 6km",
-        "desc": "제니가 앞에서 페이스 정하기 · 8:10~8:30/km · HR 150 이하 · 케이던스 180 이상",
-        "date": "2026-11-17",
+        "desc": "제니가 앞에서 페이스 정하기 · 8:10~8:30/km · HR 150 이하 · 케이던스 180+",
+        "date": "2026-11-24",
         "dayName": "화"
       },
       {
@@ -121,15 +121,15 @@
         "type": "rest",
         "label": "휴식",
         "desc": "",
-        "date": "2026-11-18",
+        "date": "2026-11-25",
         "dayName": "수"
       },
       {
         "offset": 3,
         "type": "long",
-        "label": "롱런 12km",
-        "desc": "11km 성공 후 +9% · 8:20~8:40/km · HR 150 이하 · 케이던스 180+ 보폭 67cm 이하 유지",
-        "date": "2026-11-19",
+        "label": "롱런 10km",
+        "desc": "12km가 아니라 10km — 출발 전 다지기 · 8:20~8:40/km · HR 150 이하",
+        "date": "2026-11-26",
         "dayName": "목"
       },
       {
@@ -137,7 +137,7 @@
         "type": "rest",
         "label": "휴식 (또는 롱런)",
         "desc": "윤호와 같은 날",
-        "date": "2026-11-20",
+        "date": "2026-11-27",
         "dayName": "금"
       },
       {
@@ -145,7 +145,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "",
-        "date": "2026-11-21",
+        "date": "2026-11-28",
         "dayName": "토"
       },
       {
@@ -153,7 +153,7 @@
         "type": "rest",
         "label": "휴식",
         "desc": "",
-        "date": "2026-11-22",
+        "date": "2026-11-29",
         "dayName": "일"
       }
     ]
