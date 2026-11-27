@@ -1,49 +1,75 @@
 {
   "mode": "evening",
-  "date": "2026-10-29",
-  "generatedAt": "2026-10-29T10:26:16.579Z",
+  "date": "2026-11-27",
+  "generatedAt": "2026-11-27T22:02:15.512Z",
   "hasRun": true,
-  "km": 10,
-  "paceStr": "8:11",
-  "avgHR": 156,
+  "km": 4,
+  "paceStr": "7:55",
+  "avgHR": 153,
   "maxHR": 173,
-  "zone": 3,
-  "zoneLabel": "Z3 (Moderate)",
-  "zoneColor": "#f59e0b",
-  "feedback": "HR 156 crept above MAF (155). Try backing off 10–15 sec/km next time.",
+  "zone": 2,
+  "zoneLabel": "Z2 (MAF Easy)",
+  "zoneColor": "#16a34a",
+  "feedback": "Perfect easy run! HR 153 · 7:55/km — nailed the target pace in the MAF zone. · Practice lifting your feet faster off the ground.",
   "dynamics": {
     "gct": {
-      "value": null,
+      "value": 275,
       "unit": "ms",
-      "label": "Ground Contact"
+      "label": "Ground Contact",
+      "rating": "Fair",
+      "color": "#f59e0b",
+      "tip": "Practice lifting your feet faster off the ground."
     },
     "vo": {
-      "value": null,
+      "value": 7.2,
       "unit": "cm",
-      "label": "Vert. Oscillation"
+      "label": "Vert. Oscillation",
+      "rating": "Good",
+      "color": "#22c55e",
+      "tip": null
     },
     "vr": {
+      "value": 10,
       "unit": "%",
       "label": "Vert. Ratio",
-      "rating": null,
-      "color": null
+      "rating": "Fair",
+      "color": "#f59e0b"
     },
     "cadence": {
-      "value": null,
+      "value": 175,
       "unit": "spm",
-      "label": "Cadence"
+      "label": "Cadence",
+      "rating": "Good",
+      "color": "#22c55e",
+      "tip": null
     },
     "power": {
-      "value": 132,
+      "value": 189,
       "unit": "W",
       "label": "Power (NP)",
       "rating": null
     }
   },
-  "trainingEffectLabel": null,
-  "hrZoneSec": null,
-  "elevationGainM": 44,
-  "tempC": null,
-  "humidity": null,
-  "steps": null
+  "aerobicEffect": 2.9,
+  "anaerobicEffect": null,
+  "trainingEffectLabel": "Aerobic Base",
+  "trainingLoad": null,
+  "hrZoneSec": [
+    751,
+    507,
+    475,
+    173,
+    0
+  ],
+  "elevationGainM": 16,
+  "tempC": 25.4,
+  "humidity": 63,
+  "fastest1kmSec": 443.0719909667969,
+  "steps": 5558,
+  "coaching": {
+    "headline": "Steady progress, keep the heart happy 😊",
+    "coaching": "Today you hit 153 bpm, comfortably under your MAF ceiling of 155 bpm, and kept a 7:55 min/km pace, right inside your target zone. Your cadence of 175 spm and ground‑contact time of 275 ms are solid, but try to keep peak HR below 165 bpm on future runs.",
+    "trend": "The last week shows consistent HR below MAF with a slight dip on 11/10 (158 bpm) that you already corrected. Pace is hovering around your goal range, and overall volume is modest, which is fine for building the base.",
+    "nextRun": "Run 8 km at 8:00–8:10 min/km, keep HR ≤154 bpm, aim for 180 spm cadence and ground‑contact time ≤270 ms."
+  }
 }

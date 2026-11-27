@@ -1,29 +1,29 @@
 {
   "mode": "evening",
-  "date": "2026-10-29",
-  "generatedAt": "2026-10-29T10:26:16.577Z",
+  "date": "2026-11-27",
+  "generatedAt": "2026-11-27T22:02:13.570Z",
   "hasRun": true,
-  "km": 15,
-  "paceStr": "8:10",
-  "avgHR": 152,
-  "maxHR": 179,
-  "zone": 3,
-  "zoneLabel": "Z3 (적당히 힘듦)",
-  "zoneColor": "#f59e0b",
-  "planComparison": "✅ 계획보다 3.0km 더 달림",
-  "plannedKm": 12,
-  "feedback": "HR 152로 MAF(146)보다 조금 올라갔어. 이지 런에선 Z2 이하 유지가 목표야. 다음엔 페이스를 10~15초 더 줄여봐. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
+  "km": 8,
+  "paceStr": "7:40",
+  "avgHR": 145,
+  "maxHR": 159,
+  "zone": 2,
+  "zoneLabel": "Z2 (MAF 이지)",
+  "zoneColor": "#16a34a",
+  "planComparison": "",
+  "plannedKm": null,
+  "feedback": "완벽한 이지 런이야! HR 145 · 7:40/km — MAF 존에서 정확히 달렸어. 이 훈련이 쌓이면 같은 HR에서 페이스가 자연스럽게 빨라져. · 지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐.",
   "tomorrowPlan": {
-    "offset": 4,
+    "offset": 5,
     "type": "rest",
     "label": "휴식",
     "desc": "",
-    "date": "2026-10-30",
-    "dayName": "금"
+    "date": "2026-11-28",
+    "dayName": "토"
   },
   "dynamics": {
     "gct": {
-      "value": 262,
+      "value": 261,
       "unit": "ms",
       "label": "지면접촉",
       "rating": "보통",
@@ -31,7 +31,7 @@
       "tip": "지면 접촉을 줄이려면 발을 빠르게 들어올리는 연습을 해봐."
     },
     "vo": {
-      "value": 6.1,
+      "value": 6.4,
       "unit": "cm",
       "label": "수직진동",
       "rating": "좋음",
@@ -39,7 +39,7 @@
       "tip": "수직 진동 양호."
     },
     "vr": {
-      "value": 9.6,
+      "value": 9.4,
       "unit": "%",
       "label": "수직비율",
       "rating": "보통",
@@ -54,27 +54,27 @@
       "tip": "케이던스 최적. 관절 부담도 낮아."
     },
     "power": {
-      "value": 211,
+      "value": 227,
       "unit": "W",
       "label": "파워(NP)",
       "rating": null
     }
   },
-  "aerobicEffect": 3.6,
-  "anaerobicEffect": 0.5,
+  "aerobicEffect": 3.1,
+  "anaerobicEffect": null,
   "trainingEffectLabel": "유산소 기초",
-  "trainingLoad": 97,
+  "trainingLoad": 64,
   "hrZoneSec": [
-    6953,
-    230,
-    154,
+    393,
+    3162,
+    84,
     0,
     0
   ],
-  "elevationGainM": 87,
-  "tempC": 22.1,
-  "humidity": 51,
-  "fastest1kmSec": 451.4880065917969,
-  "fastest5kmSec": 2455.155029296875,
-  "steps": 23356
+  "elevationGainM": 31,
+  "tempC": 25.4,
+  "humidity": 63,
+  "fastest1kmSec": 425.2460021972656,
+  "fastest5kmSec": 2276.344970703125,
+  "steps": 11578
 }
