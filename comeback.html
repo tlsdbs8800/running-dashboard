@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light dark;box-sizing:border-box}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Philippines Comeback Plan</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --ground:#f2efe9; --surface:#fbfaf7; --ink:#1a1714; --muted:#5f574e; --faint:#8d857a;
+    --line:#d8d2c7; --line-soft:#e8e3da; --accent:#1f5d52; --accent-soft:#dbe9e4;
+    --warm:#b4511f; --warm-soft:#f6e3d7; --shadow:0 1px 2px rgba(26,23,20,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#13110f; --surface:#1c1917; --ink:#ece8e2; --muted:#a39b91; --faint:#756d64;
+      --line:#312c27; --line-soft:#252120; --accent:#5fc2ad; --accent-soft:#17312c;
+      --warm:#e08a55; --warm-soft:#2e1f16; --shadow:0 1px 2px rgba(0,0,0,.4);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#13110f; --surface:#1c1917; --ink:#ece8e2; --muted:#a39b91; --faint:#756d64;
+    --line:#312c27; --line-soft:#252120; --accent:#5fc2ad; --accent-soft:#17312c;
+    --warm:#e08a55; --warm-soft:#2e1f16; --shadow:0 1px 2px rgba(0,0,0,.4);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    background:var(--ground);color:var(--ink);
+    font-family:"IBM Plex Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+    line-height:1.62;-webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px;padding-block:26px 56px;display:flex;flex-direction:column;gap:30px}
+
+  h1,h2,h3{margin:0;text-wrap:balance}
+  h1{font-family:"Bricolage Grotesque","IBM Plex Sans KR",sans-serif;font-size:clamp(26px,6.2vw,34px);font-weight:800;letter-spacing:-.02em;line-height:1.14}
+  h2{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+  h3{font-size:15px;font-weight:600;letter-spacing:-.004em}
+  p{margin:0}
+
+  header{display:flex;flex-direction:column;gap:9px;border-bottom:2px solid var(--ink);padding-bottom:20px}
+  .eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
+  header .lede{color:var(--muted);font-size:14.5px;max-width:56ch}
+
+  /* 언어 전환 */
+  .tabs{display:flex;gap:0;border:1px solid var(--line);border-radius:3px;overflow:hidden;align-self:flex-start;background:var(--surface)}
+  .tabs button{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;font-weight:600;letter-spacing:.06em;
+    padding:8px 18px;border:none;background:none;color:var(--muted);cursor:pointer;transition:background .14s,color .14s;
+  }
+  .tabs button[aria-selected="true"]{background:var(--accent);color:var(--surface)}
+  .tabs button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+  section{display:flex;flex-direction:column;gap:13px}
+
+  /* 핵심 수치 */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+  .stat{
+    background:var(--surface);border:1px solid var(--line);border-radius:3px;
+    padding:14px 15px;display:flex;flex-direction:column;gap:2px;box-shadow:var(--shadow);
+  }
+  .stat .k{font-size:11.5px;color:var(--faint);font-family:"IBM Plex Mono",ui-monospace,monospace;letter-spacing:.05em;text-transform:uppercase}
+  .stat .v{font-family:"Bricolage Grotesque",ui-monospace,monospace;font-size:26px;font-weight:700;line-height:1.1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat .n{font-size:12px;color:var(--muted)}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{padding:8px 6px;text-align:right;border-bottom:1px solid var(--line-soft)}
+  th:first-child,td:first-child{text-align:left}
+  thead th{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--faint);font-weight:500;border-bottom:1.5px solid var(--line);
+  }
+  td{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+  td:first-child{font-family:"IBM Plex Sans KR",sans-serif;color:var(--muted);font-weight:400}
+  .good{color:var(--accent);font-weight:600}
+  .hot{color:var(--warm);font-weight:600}
+  .tscroll{overflow-x:auto}
+
+  /* 주차 계획 */
+  ol.weeks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+  ol.weeks li{
+    display:grid;grid-template-columns:62px 1fr;gap:14px;align-items:start;
+    background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:3px;padding:13px 15px;
+  }
+  ol.weeks .w{
+    font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;font-weight:600;
+    color:var(--accent);line-height:1.4;
+  }
+  ol.weeks .body{display:flex;flex-direction:column;gap:4px}
+  ol.weeks .main{font-size:14.5px;font-weight:600}
+  ol.weeks .sub{font-size:13px;color:var(--muted)}
+
+  dl.rows{margin:0;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:3px;padding:3px 15px}
+  dl.rows>div{display:flex;gap:14px;justify-content:space-between;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line-soft)}
+  dl.rows>div:last-child{border-bottom:none}
+  dl.rows dt{font-size:13.5px;color:var(--muted);flex:0 0 auto}
+  dl.rows dd{margin:0;text-align:right;font-size:13.5px;font-weight:500;font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+  dl.rows dd small{display:block;font-family:"IBM Plex Sans KR",sans-serif;font-weight:400;color:var(--faint);font-size:12px;letter-spacing:0}
+
+  .note{font-size:13.5px;color:var(--muted);background:var(--accent-soft);border-radius:3px;padding:12px 14px}
+  .note strong{color:var(--ink);font-weight:600}
+  .warn{font-size:13.5px;color:var(--muted);background:var(--warm-soft);border-radius:3px;padding:12px 14px}
+  .warn strong{color:var(--ink);font-weight:600}
+
+  /* 체크리스트 */
+  .checks{display:flex;flex-direction:column;gap:1px}
+  .checks label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:3px;cursor:pointer;font-size:13.5px;transition:background .13s}
+  .checks label:hover{background:var(--line-soft)}
+  .checks input{
+    appearance:none;width:16px;height:16px;flex:0 0 auto;margin-top:3px;
+    border:1.5px solid var(--faint);border-radius:2px;background:var(--surface);cursor:pointer;position:relative;
+  }
+  .checks input:checked{background:var(--accent);border-color:var(--accent)}
+  .checks input:checked::after{content:"";position:absolute;left:4px;top:.5px;width:4px;height:9px;border:solid var(--surface);border-width:0 2px 2px 0;transform:rotate(42deg)}
+  .checks input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .checks input:checked + span{color:var(--faint);text-decoration:line-through}
+  .checks span small{display:block;color:var(--faint);font-size:12px;text-decoration:none}
+
+  footer{border-top:1px solid var(--line);padding-top:16px;font-size:12px;color:var(--faint);display:flex;flex-direction:column;gap:4px}
+
+  @media (max-width:430px){
+    th,td{padding:7px 3px;font-size:12.5px}
+    ol.weeks li{grid-template-columns:1fr;gap:5px}
+    .stat .v{font-size:23px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow" id="eyebrow">Dec 1–14 Philippines · Back Dec 15</p>
+    <h1 id="title">Philippines Comeback Plan</h1>
+    <p class="lede" id="lede">Where you both are now, what two weeks off actually costs, and how to pick training back up without losing ground.</p>
+    <div class="tabs" role="tablist">
+      <button id="tab-en" role="tab" aria-selected="true" aria-controls="panel-en">Jenny · EN</button>
+      <button id="tab-ko" role="tab" aria-selected="false" aria-controls="panel-ko">윤호 · KO</button>
+    </div>
+  </header>
+
+  <!-- ============ ENGLISH / JENNY ============ -->
+  <div id="panel-en" role="tabpanel" aria-labelledby="tab-en">
+    <div class="wrap" style="padding:0;max-width:none;gap:30px">
+
+      <section>
+        <h2>Where you are</h2>
+        <div class="stats">
+          <div class="stat"><span class="k">Longest run</span><span class="v">12 km</span><span class="n">Nov 19 · HR 148</span></div>
+          <div class="stat"><span class="k">Weekly peak</span><span class="v">18 km</span><span class="n">week of Nov 16</span></div>
+          <div class="stat"><span class="k">Cadence</span><span class="v">178</span><span class="n">up from 171 in Oct</span></div>
+          <div class="stat"><span class="k">Stride</span><span class="v">65 cm</span><span class="n">down from 73 cm</span></div>
+        </div>
+        <p class="note"><strong>The big win this month:</strong> same pace, much lower heart rate. On Oct 26 you ran 7:51/km at HR 159 with 31 minutes above Zone 2. On Nov 24 you ran 7:52/km at HR 145 with <strong>zero</strong> minutes above Zone 2. Same speed, 14 beats lower.</p>
+      </section>
+
+      <section>
+        <h2>Long runs</h2>
+        <div class="tscroll">
+          <table>
+            <thead><tr><th>Date</th><th>Dist</th><th>Pace</th><th>HR</th><th>Temp</th></tr></thead>
+            <tbody>
+              <tr><td>Oct 29</td><td>10.0 km</td><td>8:11</td><td class="hot">156</td><td>—</td></tr>
+              <tr><td>Nov 5</td><td>10.0 km</td><td>8:09</td><td>151</td><td>20.2°C</td></tr>
+              <tr><td>Nov 12</td><td>11.0 km</td><td>8:24</td><td class="good">147</td><td>22.3°C</td></tr>
+              <tr><td>Nov 19</td><td>12.0 km</td><td>8:37</td><td class="good">148</td><td>25.2°C</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13.5px;color:var(--muted)">You added 2 km to your longest run while dropping heart rate by 8 beats. That is aerobic fitness improving, not just willpower.</p>
+      </section>
+
+      <section>
+        <h2>What two weeks off costs</h2>
+        <dl class="rows">
+          <div><dt>Blood plasma volume</dt><dd>drops first<small>this is why the first run back feels harder — HR sits 5–10 higher. It comes back in 2–3 runs.</small></dd></div>
+          <div><dt>VO2 max</dt><dd>4–6%<small>less if you walk a lot, which you will</small></dd></div>
+          <div><dt>Mitochondria, capillaries</dt><dd>barely<small>these take 3–4 weeks to fade</small></dd></div>
+          <div><dt>Tendon &amp; muscle resilience</dt><dd>slight<small>daily walking protects this</small></dd></div>
+        </dl>
+        <p class="note"><strong>Walking counts more than you think.</strong> 15,000–20,000 steps a day keeps a real share of your aerobic base and keeps tendons used to load. This is very different from lying still for two weeks.</p>
+      </section>
+
+      <section>
+        <h2>In the Philippines</h2>
+        <div class="checks" id="checks-en">
+          <label><input type="checkbox" id="c-en-watch"><span>Wear the watch while walking <small>so we can see how much base you kept</small></span></label>
+          <label><input type="checkbox" id="c-en-water"><span>2–2.5 L water a day <small>25–30°C and 70–80% humidity — much hotter than Sydney</small></span></label>
+          <label><input type="checkbox" id="c-en-urine"><span>Check urine colour <small>dark yellow means you are behind on fluid</small></span></label>
+          <label><input type="checkbox" id="c-en-run"><span>One or two 20–30 min easy runs if there is time <small>optional — walking alone is enough</small></span></label>
+        </div>
+        <p class="note"><strong>Heat is a bonus.</strong> Two weeks in that climate builds plasma volume and better sweating. You come back to Sydney in mid-summer, so that adaptation goes straight to work.</p>
+      </section>
+
+      <section>
+        <h2>Coming back · Dec 15</h2>
+        <ol class="weeks">
+          <li><span class="w">Week 1<br>Dec 15</span>
+            <div class="body"><span class="main">12 km total · longest 8 km</span>
+            <span class="sub">Short runs only. Heart rate under 150 the whole time — do not chase pace.</span></div></li>
+          <li><span class="w">Week 2<br>Dec 22</span>
+            <div class="body"><span class="main">15 km total · longest 10 km</span>
+            <span class="sub">Back to a normal rhythm. Cadence 178+ is the thing to watch.</span></div></li>
+          <li><span class="w">Week 3<br>Dec 29</span>
+            <div class="body"><span class="main">18 km total · longest 12 km</span>
+            <span class="sub">Fully back to where you are today.</span></div></li>
+        </ol>
+        <p class="warn"><strong>Do not start at 12 km.</strong> Your body will feel ready before your tendons are. The first run back will feel harder than it should — that is blood plasma, not lost fitness, and it resolves quickly.</p>
+      </section>
+
+      <section>
+        <h2>Shoes</h2>
+        <dl class="rows">
+          <div><dt>Salomon Aero Glide</dt><dd>default<small>lower stack, stable — this is the shoe that fixed the ankle pain</small></dd></div>
+          <div><dt>Nimbus 27</dt><dd>short runs first<small>break it in over 30–50 km before any long run</small></dd></div>
+        </dl>
+        <p style="font-size:13.5px;color:var(--muted)">Your read on the Nimbus matched the data exactly: at 7:00/km ground contact dropped to 264 ms — that is the bounce you felt. At 8:00/km it sat at 275–280 ms, which is the heavy feeling. We do not yet know how it behaves on a long run, so test it in week 3 and compare.</p>
+        <p class="warn"><strong>Watch the ankle.</strong> The Nimbus has a taller stack, so there is more room for the ankle to roll. If that under-knee tightness comes back, switch to the Salomon straight away.</p>
+      </section>
+
+      <section>
+        <h2>The one thing that matters</h2>
+        <p class="note"><strong>Cadence 178 or higher, stride under 70 cm.</strong> The ankle pain earlier this year came from overstriding — long steps landing ahead of your body. You fixed it, and the numbers prove it: stride went from 73 cm to 65 cm. When you get tired, stride stretches and cadence drops. That is the pattern to catch early.</p>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ============ KOREAN / YUNHO ============ -->
+  <div id="panel-ko" role="tabpanel" aria-labelledby="tab-ko" hidden>
+    <div class="wrap" style="padding:0;max-width:none;gap:30px">
+
+      <section>
+        <h2>현재 위치</h2>
+        <div class="stats">
+          <div class="stat"><span class="k">최장 거리</span><span class="v">16 km</span><span class="n">11/19 · HR 141</span></div>
+          <div class="stat"><span class="k">주간 최고</span><span class="v">28 km</span><span class="n">11/16 주</span></div>
+          <div class="stat"><span class="k">VO2 Max</span><span class="v">47.2</span><span class="n">6월 44.6에서 상승</span></div>
+          <div class="stat"><span class="k">MAF 5km</span><span class="v">7:06</span><span class="n">11/9 · HR 145</span></div>
+        </div>
+        <p class="note"><strong>11/19 롱런이 분기점이었습니다.</strong> 16km를 HR 141, 디커플링 <strong>0.8%</strong>로 완주 — 137분을 뛰고도 전·후반 효율이 사실상 같았습니다. 그것도 25.8°C에서.</p>
+      </section>
+
+      <section>
+        <h2>롱런 추이</h2>
+        <div class="tscroll">
+          <table>
+            <thead><tr><th>날짜</th><th>거리</th><th>페이스</th><th>HR</th><th>기온</th><th>디커플링</th></tr></thead>
+            <tbody>
+              <tr><td>10/22</td><td>14.0 km</td><td>8:21</td><td>146</td><td>21.8°C</td><td class="hot">+9.2%</td></tr>
+              <tr><td>10/29</td><td>15.0 km</td><td>8:10</td><td class="hot">152</td><td>22.4°C</td><td>+3.0%</td></tr>
+              <tr><td>11/12</td><td>16.0 km</td><td>8:26</td><td class="hot">150</td><td>23.1°C</td><td>−2.6%</td></tr>
+              <tr><td>11/19</td><td>16.0 km</td><td>8:35</td><td class="good">141</td><td>25.8°C</td><td class="good">+0.8%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:13.5px;color:var(--muted)"><strong style="color:var(--ink)">10/22의 +9.2%는 탈수였습니다.</strong> 117분을 물 없이 뛰었고, 걸어도 심박이 안 내려왔죠. 그 뒤로 사전 수분을 챙기면서 3.0% → 0.8%로 내려왔습니다. 11/5·11/12의 음수는 후반 내리막 때문이라 피로 지표로 쓸 수 없습니다.</p>
+      </section>
+
+      <section>
+        <h2>2주 공백이 실제로 빼앗는 것</h2>
+        <dl class="rows">
+          <div><dt>혈장량</dt><dd>가장 빨리 감소<small>복귀 첫 런에 HR이 5~10 높게 느껴지는 주원인 — 2~3회 뛰면 돌아옴</small></dd></div>
+          <div><dt>VO2 Max</dt><dd>4~6%<small>걷기를 많이 하면 더 적게</small></dd></div>
+          <div><dt>미토콘드리아·모세혈관</dt><dd>거의 유지<small>3~4주는 지나야 감소</small></dd></div>
+          <div><dt>건·인대 내성</dt><dd>약간<small>매일 걷기가 보호</small></dd></div>
+        </dl>
+        <p class="note"><strong>9월 독감 공백(12일)이 참고가 됩니다.</strong> 그때는 질병 + 완전 휴식이었는데도 9일 만에 13km로 복귀했고 VO2Max는 오히려 올랐습니다(44.6→45.9). 이번은 건강한 상태 + 매일 걷기라 더 유리합니다.</p>
+      </section>
+
+      <section>
+        <h2>복귀 3주 · 12/15~</h2>
+        <ol class="weeks">
+          <li><span class="w">1주차<br>12/15</span>
+            <div class="body"><span class="main">20 km · 롱런 12 km</span>
+            <span class="sub">현재의 70%. <strong>MAF 146 엄수</strong> — 9/17에 복귀 2번째 런을 HR 158로 뛴 전례가 있습니다.</span></div></li>
+          <li><span class="w">2주차<br>12/22</span>
+            <div class="body"><span class="main">24 km · 롱런 14 km</span>
+            <span class="sub">리듬 복구. 솔로 MAF 세션 확보.</span></div></li>
+          <li><span class="w">3주차<br>12/29</span>
+            <div class="body"><span class="main">28 km · 롱런 16 km</span>
+            <span class="sub">완전 복귀.</span></div></li>
+        </ol>
+        <p class="warn"><strong>Runna는 12/15 이후 시작.</strong> 지금 시작하면 3주 하다 2주 끊깁니다. 그리고 앱은 공백을 모르니 복귀 첫 주에 평소 수준을 줍니다 — <strong>첫 주는 플랜의 70~80%만</strong> 하세요. 주 3회 중 2회가 커플런(Z1)이라 플랜을 다 넣으면 주 5~6회가 됩니다.</p>
+      </section>
+
+      <section>
+        <h2>복귀 때 기준을 하나 바꿉니다</h2>
+        <p class="note">최근 롱런 페이스가 8:10 → 8:35로 느려진 건 체력이 아니라 <strong>제니 페이스 비중이 73%로 늘어서</strong>입니다. 솔로 구간도 11/19에 8:34 @ HR 140이었는데, 이건 MAF 상한(146)보다 6 낮게 뛴 결과예요. 11/23에 HR 146으로 올리니 <strong>7:10</strong>이 나왔습니다.<br><br><strong>복귀 후에는 솔로 구간을 144~146으로 유지하고, 페이스가 8:00 안쪽으로 돌아오는지</strong>를 보세요. 그게 실제 진전 지표입니다.</p>
+      </section>
+
+      <section>
+        <h2>필리핀에서</h2>
+        <div class="checks" id="checks-ko">
+          <label><input type="checkbox" id="c-ko-watch"><span>가민 차고 걷기 <small>돌아와서 베이스 유지 정도를 확인할 수 있음</small></span></label>
+          <label><input type="checkbox" id="c-ko-water"><span>하루 2~2.5L 수분 <small>25~30°C, 습도 70~80% — 시드니보다 훨씬 덥고 습함</small></span></label>
+          <label><input type="checkbox" id="c-ko-urine"><span>소변 색 확인 <small>진한 노란색이면 부족</small></span></label>
+          <label><input type="checkbox" id="c-ko-run"><span>아침에 20~30분 런 1~2회 <small>선택 — 없으면 걷기로 충분</small></span></label>
+        </div>
+        <p class="note"><strong>열 적응은 보너스입니다.</strong> 2주간 그 기후에 노출되면 혈장량이 늘고 발한 효율이 좋아집니다. 돌아올 때가 시드니 한여름이라 그대로 쓰입니다.</p>
+      </section>
+
+      <section>
+        <h2>수분 프로토콜 — 유지</h2>
+        <dl class="rows">
+          <div><dt>① 평소</dt><dd>하루 1.5–2 L<small>가장 큰 레버</small></dd></div>
+          <div><dt>② 런 당일 오후</dt><dd>의식적으로</dd></div>
+          <div><dt>③ 출발 2시간 전</dt><dd>500 ml</dd></div>
+          <div><dt>④ 출발 직전</dt><dd>소변 색 확인<small>짙으면 500ml 더 + 30~60분 대기</small></dd></div>
+          <div><dt>식사</dt><dd>가벼우면 2h, 든든하면 3–4h 전</dd></div>
+        </dl>
+      </section>
+
+    </div>
+  </div>
+
+  <footer>
+    <span id="foot1">Built from Garmin data through Nov 27, 2026. Weather from Open-Meteo.</span>
+    <span id="foot2">Checkboxes save in this browser only.</span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var tabEn = document.getElementById("tab-en");
+    var tabKo = document.getElementById("tab-ko");
+    var panEn = document.getElementById("panel-en");
+    var panKo = document.getElementById("panel-ko");
+    var title = document.getElementById("title");
+    var lede = document.getElementById("lede");
+    var eyebrow = document.getElementById("eyebrow");
+    var foot1 = document.getElementById("foot1");
+    var foot2 = document.getElementById("foot2");
+
+    var COPY = {
+      en: {
+        eyebrow: "Dec 1–14 Philippines · Back Dec 15",
+        title: "Philippines Comeback Plan",
+        lede: "Where you both are now, what two weeks off actually costs, and how to pick training back up without losing ground.",
+        f1: "Built from Garmin data through Nov 27, 2026. Weather from Open-Meteo.",
+        f2: "Checkboxes save in this browser only."
+      },
+      ko: {
+        eyebrow: "12/1–14 필리핀 · 12/15 복귀",
+        title: "필리핀 복귀 플랜",
+        lede: "지금 어디까지 왔는지, 2주 공백이 실제로 무엇을 빼앗는지, 그리고 어떻게 다시 올릴지.",
+        f1: "2026-11-27까지의 Garmin 데이터 기준. 기상은 Open-Meteo.",
+        f2: "체크 상태는 이 브라우저에만 저장됩니다."
+      }
+    };
+
+    function show(lang) {
+      var en = lang === "en";
+      tabEn.setAttribute("aria-selected", en ? "true" : "false");
+      tabKo.setAttribute("aria-selected", en ? "false" : "true");
+      panEn.hidden = !en;
+      panKo.hidden = en;
+      var c = COPY[lang];
+      eyebrow.textContent = c.eyebrow;
+      title.textContent = c.title;
+      lede.textContent = c.lede;
+      foot1.textContent = c.f1;
+      foot2.textContent = c.f2;
+      document.documentElement.lang = en ? "en" : "ko";
+      try { localStorage.setItem("comeback-lang", lang); } catch (e) {}
+    }
+
+    tabEn.addEventListener("click", function () { show("en"); });
+    tabKo.addEventListener("click", function () { show("ko"); });
+
+    var KEY = "comeback-checks-v1";
+    var boxes = Array.prototype.slice.call(document.querySelectorAll('input[type=checkbox]'));
+    function save() {
+      try {
+        var s = {};
+        boxes.forEach(function (b) { if (b.checked) s[b.id] = 1; });
+        localStorage.setItem(KEY, JSON.stringify(s));
+      } catch (e) {}
+    }
+    boxes.forEach(function (b) { b.addEventListener("change", save); });
+
+    try {
+      var saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+      boxes.forEach(function (b) { if (saved[b.id]) b.checked = true; });
+    } catch (e) {}
+    try { show(localStorage.getItem("comeback-lang") || "en"); } catch (e) { show("en"); }
+  })();
+</script>
+</body>
+</html>
