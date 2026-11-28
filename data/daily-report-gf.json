@@ -1,7 +1,7 @@
 {
   "mode": "evening",
-  "date": "2026-11-27",
-  "generatedAt": "2026-11-27T22:02:15.512Z",
+  "date": "2026-11-28",
+  "generatedAt": "2026-11-28T03:46:42.014Z",
   "hasRun": true,
   "km": 4,
   "paceStr": "7:55",
@@ -65,11 +65,5 @@
   "tempC": 25.4,
   "humidity": 63,
   "fastest1kmSec": 443.0719909667969,
-  "steps": 5558,
-  "coaching": {
-    "headline": "Steady progress, keep the heart happy 😊",
-    "coaching": "Today you hit 153 bpm, comfortably under your MAF ceiling of 155 bpm, and kept a 7:55 min/km pace, right inside your target zone. Your cadence of 175 spm and ground‑contact time of 275 ms are solid, but try to keep peak HR below 165 bpm on future runs.",
-    "trend": "The last week shows consistent HR below MAF with a slight dip on 11/10 (158 bpm) that you already corrected. Pace is hovering around your goal range, and overall volume is modest, which is fine for building the base.",
-    "nextRun": "Run 8 km at 8:00–8:10 min/km, keep HR ≤154 bpm, aim for 180 spm cadence and ground‑contact time ≤270 ms."
-  }
+  "steps": 5558
 }
